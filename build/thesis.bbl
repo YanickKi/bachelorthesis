@@ -19,6 +19,28 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{anders-fkt}{unpublished}{}
+      \name{author}{1}{}{%
+        {{hash=c9c9deae0401c72e0e9c59168d69d84c}{%
+           family={Anders},
+           familyi={A\bibinitperiod},
+           given={F.\bibnamedelimi B.},
+           giveni={F\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{c9c9deae0401c72e0e9c59168d69d84c}
+      \strng{fullhash}{c9c9deae0401c72e0e9c59168d69d84c}
+      \strng{bibnamehash}{c9c9deae0401c72e0e9c59168d69d84c}
+      \strng{authorbibnamehash}{c9c9deae0401c72e0e9c59168d69d84c}
+      \strng{authornamehash}{c9c9deae0401c72e0e9c59168d69d84c}
+      \strng{authorfullhash}{c9c9deae0401c72e0e9c59168d69d84c}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Vorlesungsskript}
+      \field{title}{Einführung in die Festkörpertheorie}
+      \field{year}{2020}
+    \endentry
     \entry{einstein}{article}{}
       \name{author}{1}{}{%
         {{hash=29a34a00e610eaed35baff40f473278f}{%
@@ -252,6 +274,28 @@
       \verb{url}
       \verb http://www.xm1math.net/texmaker/download.html
       \endverb
+    \endentry
+    \entry{uhrig-fktzwei}{unpublished}{}
+      \name{author}{1}{}{%
+        {{hash=99ee0a8eb9ad04433a669afe1998bb0c}{%
+           family={Uhrig},
+           familyi={U\bibinitperiod},
+           given={G.\bibnamedelimi S.},
+           giveni={G\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{99ee0a8eb9ad04433a669afe1998bb0c}
+      \strng{fullhash}{99ee0a8eb9ad04433a669afe1998bb0c}
+      \strng{bibnamehash}{99ee0a8eb9ad04433a669afe1998bb0c}
+      \strng{authorbibnamehash}{99ee0a8eb9ad04433a669afe1998bb0c}
+      \strng{authornamehash}{99ee0a8eb9ad04433a669afe1998bb0c}
+      \strng{authorfullhash}{99ee0a8eb9ad04433a669afe1998bb0c}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Vorlesungsskript}
+      \field{title}{Festkörpertheorie II}
+      \field{year}{2020}
     \endentry
     \entry{siunitx}{manual}{}
       \name{author}{1}{}{%

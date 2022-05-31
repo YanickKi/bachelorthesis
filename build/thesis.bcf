@@ -2344,18 +2344,22 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">kuypers</bcf:citekey>
-    <bcf:citekey order="2">koma</bcf:citekey>
-    <bcf:citekey order="3">toolbox</bcf:citekey>
-    <bcf:citekey order="4">l2tabu</bcf:citekey>
-    <bcf:citekey order="5">make</bcf:citekey>
-    <bcf:citekey order="6">gitbash</bcf:citekey>
-    <bcf:citekey order="7">texmaker</bcf:citekey>
-    <bcf:citekey order="8">siunitx</bcf:citekey>
-    <bcf:citekey order="9">biblatex</bcf:citekey>
-    <bcf:citekey order="10">biblatex</bcf:citekey>
-    <bcf:citekey order="11">handbook_adhesives</bcf:citekey>
-    <bcf:citekey order="12">einstein</bcf:citekey>
+    <bcf:citekey order="1">anders-fkt</bcf:citekey>
+    <bcf:citekey order="2">uhrig-fktzwei</bcf:citekey>
+    <bcf:citekey order="3">uhrig-fktzwei</bcf:citekey>
+    <bcf:citekey order="4">kuypers</bcf:citekey>
+    <bcf:citekey order="5">koma</bcf:citekey>
+    <bcf:citekey order="6">toolbox</bcf:citekey>
+    <bcf:citekey order="7">l2tabu</bcf:citekey>
+    <bcf:citekey order="8">make</bcf:citekey>
+    <bcf:citekey order="9">gitbash</bcf:citekey>
+    <bcf:citekey order="10">texmaker</bcf:citekey>
+    <bcf:citekey order="11">siunitx</bcf:citekey>
+    <bcf:citekey order="12">biblatex</bcf:citekey>
+    <bcf:citekey order="13">biblatex</bcf:citekey>
+    <bcf:citekey order="14">handbook_adhesives</bcf:citekey>
+    <bcf:citekey order="15">einstein</bcf:citekey>
+    <bcf:citekey order="16">anders-fkt</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
