@@ -1,40 +1,20 @@
-\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {ngerman}{}\relax 
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}%
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Theoretische Grundlagen}{2}{chapter.2}%
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}Greensche Funktionen}{2}{section.2.1}%
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Wichtige Hinweise zum Dokument}{5}{chapter.3}%
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Erstellen des Ausgabedokuments mit Make}{6}{section.3.1}%
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.2}Erstellen des Ausgabedokuments mit Texmaker}{6}{section.3.2}%
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.1}Einrichten der nötigen Befehle}{6}{subsection.3.2.1}%
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.2}Aufräumen}{6}{subsection.3.2.2}%
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}\LaTeX -Grundlagen}{8}{chapter.4}%
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.1}Zahlen und Einheiten}{8}{section.4.1}%
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.2}Das Literaturverzeichnis}{9}{section.4.2}%
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Abbildungen und Tabellen}{11}{chapter.5}%
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.1}Abbildungen}{11}{section.5.1}%
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.2}Tabellen}{12}{section.5.2}%
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {6}Berechnung}{13}{chapter.6}%
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.1}Tight-Binding-Hamiltonian}{13}{section.6.1}%
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {A}Ein Anhangskapitel}{14}{appendix.A}%
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\nonumberline Literatur}{15}{chapter*.9}%
-\defcounter {refsection}{0}\relax 
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
