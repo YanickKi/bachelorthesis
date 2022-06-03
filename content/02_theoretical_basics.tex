@@ -9,6 +9,7 @@ Die Greensche Funktion ist für zwei Operatoren definiert als
 \end{align}
 wobei $T_s$ der Zeitordnungsoperator, $\langle \ldots \rangle$ ein Erwartungswert und $\symup{\Theta} \left ( \tau' - \tau \right)$ die Heaviside-Funktion ist.\cite{greensfunction}
 Der Parameter $s$ sorgt mit $s=+1$ für bosonische bzw. $s=-1$ für fermionische Operatoren für das richtige Vorzeichen.
+<<<<<<< HEAD:content/02_theoretical_basics.tex
 Der Mittelwert ist bezüglich der großkanonischen Gesamtheit durch 
 \begin{equation*}
     \langle \ldots \rangle = \frac{1}{Z} \text{Sp}(\symup{e}^{-\beta H} \ldots)
@@ -19,6 +20,12 @@ Ein Operator $A$ besitzt im Heisenbergild die Darstellung
 \begin{equation*}
     A \left ( \tau \right ) = \symup{e}^{H \tau} A_\text{S} \symup{e}^{-H \tau}
 \end{equation*}
+Die imaginäre Zeit $\tau$ ist über die reale Zeit $t$ als $\tau = it$ definiert und ist, um die Konvergenz der Greenschen Funktion sicherzustellen 
+auf $|\tau| < \beta$ beschränkt. \cite{anders-fkt}
+Die Operatoren $A$ und $B$ Operatoren im Heisenbergild besitzen somit die Darstellung 
+\begin{equation}
+    A \left ( \tau \right ) = \symup{e}^{H \tau} A_\text{S} \symup{e}^{-H \tau} \label{eqn:heisenbergpic}
+\end{equation}
 mit $H$ als Hamiltonoperator und $A_\text{S}$ als Operator im Schrödingerbild. 
 In Gleichung \eqref{eqn:heisenbergpic} wurde das reduzierte Planksche Wirkungsquantum breits auf eins gesetzt, was in den folgenden Abschnitten beibehalten wird.
 Da in dieser Arbeit nur fermionische Systeme betrachtet werden, wird $s$ ab jetzt ohne weitere Bemerkungen auf $-1$ gesetzt.
@@ -62,3 +69,7 @@ Eine wichtige Eigenschaft der Greenschen Funktion ist die Linearität, aus welch
     G_{(\alpha A + \beta B), C} = \alpha G_{A,C} + \beta G_{B,C}
 \end{equation*}
 folgt.
+\begin{equation}
+    G_{A,B}(z) = \int_0^\beta \symup{d}\tau \; \symup{e}^{z\tau}\, G_{A,B}(\tau)
+\end{equation}
+
