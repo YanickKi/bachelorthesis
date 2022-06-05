@@ -1,10 +1,25 @@
 \chapter{Berechnung}
 \label{chap:berechnung}
-\section{Tight-Binding-Hamiltonian}
+\section{Berechnung der Greenschen Funktionen}
 \label{sec:hamiltonian}
-Der Hamiltonian in Ortsdarstellung ist 
-\begin{equation}
-    H = \sum_m \epsilon_m d_m^\dagger d_m - t \sum_{i,j} \left ( c_i^\dagger c_j + c_j^\dagger c_i \right )
-    + \sum_{m,j} \left ( V_{mj} d_m^\dagger c_j + V^*_{mj} c_j^\dagger d_m  \right)
-\end{equation}
-\cite{anders-fkt}
+Der komplette Hamiltonian des betrachteten Graphens mit Mangandefekt lautet in Ortsdarstellung 
+\begin{align}
+   H &=  H_0 + H_\text{Def} + H_\text{Kop}\\
+    &=- t \sum_{i,j}^N \left ( c_i^\dagger c_j + c_j^\dagger c_i \right ) \sum_m^5 \epsilon_m d_m^\dagger d_m
+    + \sum_m^5 \sum_j^3 \left ( V_{mj} d_m^\dagger c_j + V^*_{mj} c_j^\dagger d_m  \right) \; \text{.} \label{eqn:full_Hamiltonian}
+\end{align}
+Der Term $H_0$ beschreibt mit dem Hüpfparameter $t$ das Hüpfen zwischen nächsten Nachbarn des ungestörten Graphengitters.
+$H_\text{Def}$ umfasst die Störstelle lokal. Der Vernichter(Erzeuger) $d_m^{(\dagger)}$ vernichtet(erzeugt) dabei eine 
+Elektron in dem $m$-ten $d$-Orbital mit der Einteilchenenergie $\epsilon_m$.
+In dem letzten Term des Hamiltonians $H_\text{Kop}$ wird die Kopplung mit den Slater-Koster-integralen
+$V_{mj}$ zwischen den 5 $3d$-Orbitale des Manganatoms mit dem $j$-ten Nachbarkohlenstoffatoms betrachtet.
+Die Einträge der gesuchten Matrix $\underline{\underline{G}}$ werden mit Hilfe der Bewegunsgleichung \eqref{eqn:fouriereom} 
+\begin{equation*}
+    G_{d_m, d_{m'}^\dagger}(z) = \langle \{ d_m, d_{m'}^\dagger \} \rangle - G_{[H,d_m], d_{m'}^\dagger} (z)
+\end{equation*}
+bestimmt.
+Dazu wird der Kommutator $[H,d_m]$ aufgrund der Linearität dessen in drei einzelne Kommutatoren unterteilt, so dass 
+\begin{equation*}
+    [H,d_m] = [H_0,d_m] + [H_\text{Def},d_m] +[H_\text{Kop},d_m] 
+\end{equation*}
+folgt. 
