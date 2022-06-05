@@ -1,8 +1,42 @@
 \chapter{Einleitung}
-Hier folgt eine kurze Einleitung in die Thematik der Bachelorarbeit.
-Die Einleitung muss kurz sein, damit die vorgegebene Gesamtlänge der 
-Arbeit von 25 Seiten nicht überschritten wird. 
-Die Beschränkung der Seitenzahl sollte man ernst nehmen,
-da Überschreitung zu Abzügen in der Note führen kann. 
-Um der Längenbeschränkung zu genügen, darf auch nicht an der Schriftgröße,
-dem Zeilenabstand oder dem Satzspiegel (bedruckte Fläche der Seite) manipuliert werden.
+Graphen ist ein zweidimensionales, aus einer Atomschicht bestehendes Allotrop von Kohlenstoff, angeordnet in einem hexagonalen
+Bravais-Gitter. 
+Der größte Teil der Bindung geht von den $\text{sp}^2$-Hybridorbitalen aus, welche eine $\sigma$-Bindung eingehen, so dass 
+die die Bindungspartner in einem Winkel vom $\deg{120}$ zueinander liegen. 
+Das zu der Graphenebene senkrecht liegende p-Orbital sorgt mit dessen $\pi$-Bindung für eine gute Leitfähigkeit.\cite{graphene_properties}
+Eine $\sigma$ und eine $\pi$-Bindung sorgen für eine Doppelbindung.
+Graphen ist aufgrund dessen Eigenschaften von großem Interesse und ein aktuelles Forschungsthema.
+Einerseits ist die  Dichte mit $\qty{0.77}{\milli\gram\per\metre\squared}$ extrem gering, obwohl 
+Graphene eine hundertfache Stärke von Stahl bei der selben Dicke aufweist. 
+Anderseits ist Graphene das bisher bekannte am besten leitende Material bei Raumtemperetur mit einer Leitfähigkeit von 
+$\qty{10e6}{\siemens\per\metre}$\cite{graphene_properties}. 
+Dies lässt sich mit den Elektronen aus den schwachen $\pi$-Bindungen erklären, welche sich frei bewegen können.
+Außerdem sind die Bänder mit der Dispersionsrelation
+\begin{equation*}
+    \epsilon_{\vec{k}} \propto \pm \sqrt{3+2\cos(\sqrt{3}ak_y)+2\cos(\frac{3}{2}ak_x+\frac{\sqrt{3}}{2}ak_y) + 2\cos(\frac{3}{2}ak_x-\frac{\sqrt{3}}{2}ak_y) }
+\end{equation*}
+und der Form eines Kegels nennenswert.
+Das negative bzw. positive Vorzeichen beschreibt das Valenzband- bzw. Leitungsband. 
+Die Bänder berühren sich and den Diracpunkten\footnote{An den Diracpunkten ist die Dispersionsrelation null.}, wodurch ein Austausch von Elektronen auch bei verschwindender thermischer Anregung 
+stattfinden kann.\cite{graphene_properties}\\
+Die Struktur von Graphen kann nur mit einer zweiatomigen Basis beschrieben werden, da sonst keine Translationsinvarianz vorherrschen würde.
+Dazu kann das Kristallgitter in zwei Gitter (A und B) aufgeteilt werden.
+Die in der Abbildung \ref{fig:graphene_lattice} eingezeichneten Nächsten-Nachbarn-Vektoren können durch einen Drehwinkel $\varphi_i$ beschrieben werden, so dass sich 
+mit dem Gitterabstand a
+\begin{equation*}
+    \vec{\delta}_i(\varphi_i) = a\begin{pmatrix} \sin (\varphi_i) \\ \cos (\varphi_i)     \end{pmatrix}
+\end{equation*}
+ergibt.
+Wird das Koordinatensystem so gelegt, so dass $\vec{\delta}_1$ auf der x-Achse liegt, lassen sich die Abstandsvektoren mittels 
+\begin{equation*}
+    \vec{\delta}_1 = a \begin{pmatrix} 1            \\[6pt] 0                   \end{pmatrix}, \quad
+    \vec{\delta}_2 = a \begin{pmatrix} -\frac{1}{2} \\[6pt] \frac{\sqrt{3}}{2}  \end{pmatrix}, \quad 
+    \vec{\delta}_3 = a \begin{pmatrix} -\frac{1}{2} \\[6pt] -\frac{\sqrt{3}}{2} \end{pmatrix}
+\end{equation*}
+darstellen.
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.5\textwidth]{Plots/graphene_lattice.pdf}
+    \caption{Honigwabengitter von ungestörtem Graphen mit eingezeichneten Nächste-Nachbar-Vektoren.}
+    \label{fig:graphene_lattice}
+\end{figure}
