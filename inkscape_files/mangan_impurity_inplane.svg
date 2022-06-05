@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
-   sodipodi:docname="graphene_latttice.svg"
+   sodipodi:docname="mangan_impurity_inplane.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -26,8 +26,8 @@
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:zoom="1.4142136"
-     inkscape:cx="348.9572"
-     inkscape:cy="597.15168"
+     inkscape:cx="375.12014"
+     inkscape:cy="578.76689"
      inkscape:window-width="1920"
      inkscape:window-height="1024"
      inkscape:window-x="0"
@@ -373,12 +373,6 @@
        r="1.5" />
     <circle
        style="fill:#b4b4b4;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="path2575-0-74-54"
-       cx="100"
-       cy="150"
-       r="1.5" />
-    <circle
-       style="fill:#b4b4b4;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path2575-0-74-7"
        cx="130"
        cy="132.67949"
@@ -516,5 +510,11 @@
          style="font-size:7.05556px;fill:#3c3c3c;fill-opacity:1;stroke-width:0.264583"
          x="120.11043"
          y="113.84667">B</tspan></text>
+    <circle
+       style="fill:#ff9132;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path1145"
+       cx="100.02462"
+       cy="149.9866"
+       r="4" />
   </g>
 </svg>

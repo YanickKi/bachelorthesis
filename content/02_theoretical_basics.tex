@@ -66,10 +66,11 @@ folgt.
 \section{Tight Binding Modell}
 \label{sec:tightbinding}
 Im Allgemeinen wird das Hüpfen eines Elektrons zwischen zwei Gitterpunkten durch den Tight-Binding Hamiltonian 
-\begin{equation*}
-    H = -t\sum_{i,j} \left ( c_i^\dagger c_j + c_j^\dagger c_i \right ) 
-\end{equation*}
+\begin{equation}
+    H = -t\sum_{i,j} \left ( c_i^\dagger c_j + c_j^\dagger c_i \right ) \label{eqn:tight-binding-hamiltonian}
+\end{equation}
 beschrieben. 
 Dabei vernichtet(erzeugt) der Operator $c_i^{(\dagger)}$ ein Elektron am Gitterpunkt $i$.
 Der Parameter $t$ ist die Hüpfamplitude, welche ein Maß für die Hüpfwahrscheinlichkeit ist.
-In diesem Modell wird sich auf das nächste Nachbarn hüpfen beschränkt, so dass höheres Hüpfen vernachlässigt wird.
+In diesem Modell wird sich auf das nächste Nachbarn hüpfen beschränkt, so dass in der Gleichung \eqref{eqn:tight-binding-hamiltonian} nur über nächste 
+Nachbarn summiert wird.

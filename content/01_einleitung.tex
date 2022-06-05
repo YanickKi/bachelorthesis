@@ -2,14 +2,14 @@
 Graphen ist ein zweidimensionales, aus einer Atomschicht bestehendes Allotrop von Kohlenstoff, angeordnet in einem hexagonalen
 Bravais-Gitter. 
 Der größte Teil der Bindung geht von den $\text{sp}^2$-Hybridorbitalen aus, welche eine $\sigma$-Bindung eingehen, so dass 
-die die Bindungspartner in einem Winkel vom $\deg{120}$ zueinander liegen. 
+die die Bindungspartner in einem Winkel vom $\ang{120;;}$ zueinander liegen. 
 Das zu der Graphenebene senkrecht liegende p-Orbital sorgt mit dessen $\pi$-Bindung für eine gute Leitfähigkeit.\cite{graphene_properties}
 Eine $\sigma$ und eine $\pi$-Bindung sorgen für eine Doppelbindung.
 Graphen ist aufgrund dessen Eigenschaften von großem Interesse und ein aktuelles Forschungsthema.
 Einerseits ist die  Dichte mit $\qty{0.77}{\milli\gram\per\metre\squared}$ extrem gering, obwohl 
-Graphene eine hundertfache Stärke von Stahl bei der selben Dicke aufweist. 
-Anderseits ist Graphene das bisher bekannte am besten leitende Material bei Raumtemperetur mit einer Leitfähigkeit von 
-$\qty{10e6}{\siemens\per\metre}$\cite{graphene_properties}. 
+Graphen eine hundertfache Stärke von Stahl bei der selben Dicke aufweist. 
+Anderseits ist Graphen das bisher bekannte am besten leitende Material bei Raumtemperetur mit einer Leitfähigkeit von 
+$\qty{e6}{\siemens\per\metre}$\cite{graphene_properties}. 
 Dies lässt sich mit den Elektronen aus den schwachen $\pi$-Bindungen erklären, welche sich frei bewegen können.
 Außerdem sind die Bänder mit der Dispersionsrelation
 \begin{equation*}
@@ -29,14 +29,46 @@ mit dem Gitterabstand a
 ergibt.
 Wird das Koordinatensystem so gelegt, so dass $\vec{\delta}_1$ auf der x-Achse liegt, lassen sich die Abstandsvektoren mittels 
 \begin{equation*}
-    \vec{\delta}_1 = a \begin{pmatrix} 1            \\[6pt] 0                   \end{pmatrix}, \quad
-    \vec{\delta}_2 = a \begin{pmatrix} -\frac{1}{2} \\[6pt] \frac{\sqrt{3}}{2}  \end{pmatrix}, \quad 
-    \vec{\delta}_3 = a \begin{pmatrix} -\frac{1}{2} \\[6pt] -\frac{\sqrt{3}}{2} \end{pmatrix}
+    \vec{\delta}_1 = a \begin{pmatrix} 1            \\[4pt] 0                   \end{pmatrix}, \quad
+    \vec{\delta}_2 = a \begin{pmatrix} -\frac{1}{2} \\[4pt] \frac{\sqrt{3}}{2}  \end{pmatrix}, \quad 
+    \vec{\delta}_3 = a \begin{pmatrix} -\frac{1}{2} \\[4pt] -\frac{\sqrt{3}}{2} \end{pmatrix}
 \end{equation*}
-darstellen.
+darstellen. \\
 \begin{figure}
     \centering
     \includegraphics[width = 0.5\textwidth]{Plots/graphene_lattice.pdf}
     \caption{Honigwabengitter von ungestörtem Graphen mit eingezeichneten Nächste-Nachbar-Vektoren.}
     \label{fig:graphene_lattice}
 \end{figure}
+Wird nun ohne Beschränkung der Allgemeinheit ein Kohlenstoffatom aus dem Untergitter A entfernt und dort ein Manganatom eingesetzt, ändern sich die
+Abstandsvektoren. 
+Dies liegt daran, dass das Manganatom zu groß ist und nicht in diese Stelle passt, so dass es aus der Ebene entweicht und eine $z$-Komponente besitzt.
+Diese Situation ist in Abbildung \ref{fig:mangan_impurity} dargestellt.
+\begin{figure}
+    \begin{subfigure}{0.48\textwidth}%
+    \centering%
+    \includegraphics[height=3cm]{Plots/mangan_impurity_inplane.pdf}%
+    \caption{Mangandefekt in Graphen betrachtet in der $x\text{-}y$-Ebene.}%
+    \label{fig:mangan_impurity_inplane}%
+    \end{subfigure}%
+    \hfill% Fills available space in the center -> space between figures
+    \begin{subfigure}{0.48\textwidth}%
+    \centering%
+    \includegraphics[height=3cm]{Plots/mangan_impurity_z_component.pdf}%
+    \caption{Manganstörstelle betrachtet in der $x\text{-}z$-Ebene.}%
+    \label{fig:mangan_impurity_z_component}%
+    \end{subfigure}%
+    \caption{Darstellung des räumlichen Anordnung des Mangandefekts aus veschiedenen Ansichten.}%
+    \label{fig:mangan_impurity}%
+\end{figure}%
+Wie bereits in Abbildung \ref{fig:mangan_impurity} angedeutet, wird im folgenden angenommen, dass das Mangan mittig von den nächsten Nachbarn liegt, so dass 
+sich die $x$- und $y$-Komponente der Abstandsvektoren nicht ändert.
+Lediglich haben die Abstandsvektoren bei Betrachtung des Mangandefekts eine zustäzliche z-Komponente
+Diese $z$-Komponente lässt sich mittels trigonometrischen Beziehungen zu $z = -\cot (\theta)$ bestimmen, womit die 
+Abstandsvektoren durch 
+\begin{equation*}
+    \vec{\delta}_1 = a \begin{pmatrix} 1            \\[4pt] 0                   \\[4pt] \cot (\theta)\end{pmatrix}, \quad
+    \vec{\delta}_2 = a \begin{pmatrix} -\frac{1}{2} \\[4pt] \frac{\sqrt{3}}{2}  \\[4pt] \cot (\theta)\end{pmatrix}, \quad 
+    \vec{\delta}_3 = a \begin{pmatrix} -\frac{1}{2} \\[4pt] -\frac{\sqrt{3}}{2} \\[4pt] \cot (\theta)\end{pmatrix}
+\end{equation*}
+angegeben werden können. 
