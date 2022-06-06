@@ -1,25 +1,74 @@
 \chapter{Berechnung}
 \label{chap:berechnung}
 \section{Berechnung der Greenschen Funktionen}
-\label{sec:hamiltonian}
+\label{sec:calc_greensfunction}
 Der komplette Hamiltonian des betrachteten Graphens mit Mangandefekt lautet in Ortsdarstellung 
 \begin{align}
    H &=  H_0 + H_\text{Def} + H_\text{Kop}\\
-    &=- t \sum_{i,j}^N \left ( c_i^\dagger c_j + c_j^\dagger c_i \right ) \sum_m^5 \epsilon_m d_m^\dagger d_m
-    + \sum_m^5 \sum_j^3 \left ( V_{mj} d_m^\dagger c_j + V^*_{mj} c_j^\dagger d_m  \right) \; \text{.} \label{eqn:full_Hamiltonian}
+    &=- t \sum_{i,j}^N \left ( c_i^\dagger c_j + c_j^\dagger c_i \right )  + \sum_m^5 \epsilon_m d_m^\dagger d_m
+    + \sum_m^5 \sum_j^3 \left ( V_{mj} d_m^\dagger c_j + V^*_{mj} c_j^\dagger d_m \right )  \; \text{.} \label{eqn:full_Hamiltonian}
 \end{align}
 Der Term $H_0$ beschreibt mit dem Hüpfparameter $t$ das Hüpfen zwischen nächsten Nachbarn des ungestörten Graphengitters.
-$H_\text{Def}$ umfasst die Störstelle lokal. Der Vernichter(Erzeuger) $d_m^{(\dagger)}$ vernichtet(erzeugt) dabei eine 
+$H_\text{Def}$ umfasst die Störstelle lokal. Der Vernichter(Erzeuger) $d_m^{(\dagger)}$ vernichtet(erzeugt) dabei ein
 Elektron in dem $m$-ten $d$-Orbital mit der Einteilchenenergie $\epsilon_m$.
 In dem letzten Term des Hamiltonians $H_\text{Kop}$ wird die Kopplung mit den Slater-Koster-integralen
-$V_{mj}$ zwischen den 5 $3d$-Orbitale des Manganatoms mit dem $j$-ten Nachbarkohlenstoffatoms betrachtet.
-Die Einträge der gesuchten Matrix $\underline{\underline{G}}$ werden mit Hilfe der Bewegunsgleichung \eqref{eqn:fouriereom} 
+$V_{mj}$ zwischen dem $m$-ten $3d$-Orbitale des Manganatoms mit dem $p_z$-Orbital des $j$-ten Nachbarkohlenstoffatoms betrachtet.
+Aufgrund der Gitterperiodizität kann für die Operatoren $c_i$ und $c_j$ eine Fouriertransformation der Form 
+\begin{equation}
+    c_i = \frac{1}{\sqrt{N}} \sum_{\vec{k}} \symup{e}^{i\vec{k}\vec{l}} c_{\text{A}, \vec{k}} \; , 
+    \quad c_j = \frac{1}{\sqrt{N}} \sum_{\vec{k}} \symup{e}^{i\vec{k}(\vec{l}+\vec{\delta}_j)} c_{\text{B}, \vec{k}} \label{eqn:fourier_ladder}
+\end{equation}
+angesetzt werden.
+Dabei ist $N$ die Anzahl der Basen, $\vec{l}$ der Gittervektor der Basis, $\vec{k}$ der Wellenvektor und $\vec{\delta}_j$ der Abstandsvektor
+des $j$-ten Kohlenstoffatom auf dem Untergitter B, welches der nächste Nachbar von dem Kohlenstoffatoms auf dem Untergitter A mit dem Gittervektor $\vec{l}$ ist.
+Damit lässt sich der Hamiltonian des ungestörten Graphens zu 
+\begin{align*}
+    H_0 &= -\frac{t}{N} \sum_{\vec{l}, j} \sum_{\vec{k}\vec{k}'} ( \symup{e}^{-i\vec{k}\vec{l}}c^\dagger_{A,\vec{k}} 
+    \symup{e}^{i\vec{k}'(\vec{l}+\vec{\delta})}c_{B,\vec{k}'} + \symup{e}^{-i\vec{k}'(\vec{l}+\vec{\delta})} c^\dagger_{B,\vec{k}'} 
+    \symup{e}^{i\vec{k}\vec{l}}c_{A,\vec{k}}) \\
+    &= -\frac{t}{N} \sum_{\vec{l}, j} \sum_{\vec{k},\vec{k}'} ( \symup{e}^{-i(\vec{k}- \vec{k}')\vec{l}}\symup{e}^{i\vec{k}\vec{l}}c^\dagger_{A,\vec{k}} c_{B,\vec{k}'} + 
+    \symup{e}^{i(\vec{k}- \vec{k}')\vec{l}} \symup{e}^{-i\vec{k}\vec{l}} c^\dagger_{B,\vec{k}}c_{A,\vec{k}}) \\
+    &= -t \sum_{\vec{l}, \vec{k}} ( \symup{e}^{i\vec{k}\vec{l}}c^\dagger_{A,\vec{k}} c_{B,\vec{k}'} + 
+    \symup{e}^{-i\vec{k}\vec{l}} c^\dagger_{B,\vec{k}}c_{A,\vec{k}})
+\end{align*}
+schreiben.
+In dem letzten Schritt wurde $\sum_{\vec{l}}^N \symup{e}^{-i(\vec{k}- \vec{k}')\vec{l}} 
+= \sum_{\vec{l}}^N \symup{e}^{i(\vec{k}- \vec{k}')\vec{l}} = N\delta_{\vec{k}, \vec{k}'}$ ausgenutzt, so dass die Summe über $\vec{k}'$ verschwindet.
+In $H_\text{Def}$ und $H_\text{Kop}$ werden die transformierten Erzeuger ohne weitere Vereinfachungen eingesetzt,  so dass der Gesamthamiltonian zu 
+\begin{equation}
+    \begin{split}
+        H = &-t \sum_{j, \vec{k}} ( \symup{e}^{i\vec{k}\vec{l}}c^\dagger_{A,\vec{k}} c_{B,\vec{k}'} + 
+            \symup{e}^{-i\vec{k}\vec{l}} c^\dagger_{B,\vec{k}}c_{A,\vec{k}}) + \sum_m \epsilon_m d_m^\dagger d_m \\
+            &+ \frac{1}{\sqrt{N}}\sum_{m,j,\vec{k}} ( V_{mj}  \symup{e}^{i\vec{k}(\vec{l}+\vec{\delta}_j)} d_m^\dagger c_{\text{B},\vec{k}} 
+            + V^*_{mj} \symup{e}^{-i\vec{k}(\vec{l}+\vec{\delta}_j)}c^\dagger_{\text{B},\vec{k}} d_m )
+    \end{split}
+    \end{equation}
+bestimmt werden kann.
+Nun können die Einträge der gesuchten Matrix $\underline{\underline{G}}$ werden mit Hilfe der Bewegungsleichung \eqref{eqn:fouriereom} 
 \begin{equation*}
     G_{d_m, d_{m'}^\dagger}(z) = \langle \{ d_m, d_{m'}^\dagger \} \rangle - G_{[H,d_m], d_{m'}^\dagger} (z)
 \end{equation*}
-bestimmt.
-Dazu wird der Kommutator $[H,d_m]$ aufgrund der Linearität dessen in drei einzelne Kommutatoren unterteilt, so dass 
+bestimmt werden.
+Dazu wird der Kommutator $[H,d_m]$ aufgrund der Linearität dessen in drei einzelne Kommutatoren unterteilt, so dass
 \begin{equation*}
     [H,d_m] = [H_0,d_m] + [H_\text{Def},d_m] +[H_\text{Kop},d_m] 
 \end{equation*}
-folgt. 
+berechnet werden muss.
+Für den ersten Kommutator folgt
+\begin{align*}
+    [H_0,d_m]   = -t \sum_{j, \vec{k}}(&\symup{e}^{i\vec{k}\vec{l}} [c^\dagger_{A,\vec{k}} c_{B,\vec{k}'}, d_m]
+                +\symup{e}^{-i\vec{k}\vec{l}} [c^\dagger_{B,\vec{k}}c_{A,\vec{k}}, d_m] ) \\
+                \begin{split}
+                        = -t \sum_{j, \vec{k}}(&\symup{e}^{i\vec{k}\vec{l}}(c^\dagger_{A,\vec{k}} c_{B,\vec{k}} d_m
+                        -d_m c^\dagger_{A,\vec{k}} c_{B,\vec{k}}) \\ 
+                        +&\symup{e}^{-i\vec{k}\vec{l}}(c^\dagger_{B,\vec{k}}c_{A,\vec{k}} d_m
+                        -d_m c^\dagger_{B,\vec{k}}c_{A,\vec{k}}))
+                \end{split}\\
+                \begin{split}
+                    = -t \sum_{j, \vec{k}}    (&\symup{e}^{i\vec{k}\vec{l}}(-c^\dagger_{A,\vec{k}} d_m c_{B,\vec{k}}
+                    + c^\dagger_{A,\vec{k}} d_m  c_{B,\vec{k}}) \\
+                    +&\symup{e}^{-i\vec{k}\vec{l}}(-c^\dagger_{B,\vec{k}} d_m c_{A,\vec{k}}
+                    + c^\dagger_{B,\vec{k}} d_m  c_{A,\vec{k}}))
+                \end{split}\\ 
+                = 0\; \text{.}
+\end{align*}
