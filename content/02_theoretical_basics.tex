@@ -65,12 +65,26 @@ folgt.
 
 \section{Tight Binding Modell}
 \label{sec:tightbinding}
-Im Allgemeinen wird das Hüpfen eines Elektrons zwischen zwei Gitterpunkten durch den Tight-Binding Hamiltonian 
+Im Allgemeinen wird das Hüpfen eines Elektrons (bei Vernachlässigung des Spins) zwischen zwei Gitterpunkten durch den Tight-Binding Hamiltonian 
 \begin{equation}
-    H = -t\sum_{i,j} \left ( c_i^\dagger c_j + c_j^\dagger c_i \right ) \label{eqn:tight-binding-hamiltonian}
+    H = - \sum_{in,i'n'} t_{n,n'}^{i,i'}  c_{in}^\dagger c_{i'n'}  \label{eqn:tight-binding-hamiltonian}
 \end{equation}
-beschrieben. 
-Dabei vernichtet(erzeugt) der Operator $c_i^{(\dagger)}$ ein Elektron am Gitterpunkt $i$.
-Der Parameter $t$ ist die Hüpfamplitude, welche ein Maß für die Hüpfwahrscheinlichkeit ist.
-In diesem Modell wird sich auf das nächste Nachbarn hüpfen beschränkt, so dass in der Gleichung \eqref{eqn:tight-binding-hamiltonian} nur über nächste 
-Nachbarn summiert wird.
+beschrieben.\cite{SC_literature}
+Dabei vernichtet(erzeugt) der Operator $c_{in}^{(\dagger)}$ ein Elektron im Orbital $n$ am Gitterpunkt $i$.
+Die Hüpfparameter zu den betrachteten Orbitalen $\Psi_{lm}$ mit den Quantenzahlen $l$ und $m$, Basisvektoren $\vec{R}_\alpha$ und Gittervektoren
+$\vec{l}_i$ sind durch die Slater-Koster Integrale \cite{PhysRev.94.1498}
+\begin{equation} 
+    V_{lm,l'm'}^{i\alpha,i'\alpha'} = -t_{lm,l'm'}^{i\alpha,i'\alpha'} = \int \symup{d}^3r \, \overline{\Psi}_{lm} (\vec{r} - \vec{R}_\alpha - \vec{l}_i)
+    V(\vec{r} - \vec{R}_\alpha - \vec{l}_i) \Psi_{l'm'} (\vec{r} - \vec{R}_ {\alpha'} - \vec{l}_{i'})
+\end{equation}
+gegeben.\cite{SC_literature}
+Hierbei ist $V(\vec{r} - \vec{R}_\alpha - \vec{l}_i)$ das atomate Potential, welches ein Elektron in der Einheitszelle $i$ am Platz $\alpha$ verspürt.
+Diese hängen jedoch nur von dem Abstand $\vec{\delta}$ ab, wodurch sich diese zu 
+\begin{equation}
+    E_{lm,l'm'} = \int \symup{d}^3r \, \overline{\Psi}_{lm} (\vec{r})
+    V(\vec{r} - \vec{\delta}) \Psi_{l'm'} (\vec{r})
+\end{equation}
+ergeben.
+Diese können in die verschiedenen Bindungstypen (in dieser Problemstellung $\pi$ und $\sigma$-Bindung) zerlegt werden, so dass diese nur noch von dem Abstandsvektor 
+$\vec{\delta}$ und den Parametern $V_{ll'\beta}$ mit $l$ als Orbitale und $\beta$ als Bindungstyp ab.\cite{SC_literature}
+Die Parameter $V_{ll'\beta}$ können hinterher als Fitparameter oder experimentell-bestimmte werden fungieren.
