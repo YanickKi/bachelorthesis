@@ -1,8 +1,6 @@
 \chapter{Berechnung}
 \label{chap:berechnung}
-\section{Berechnung der Greenschen Funktionen}
-\label{sec:calc_greensfunction}
-Der komplette Hamiltonian des betrachteten Graphens mit Mangandefekt lautet in Ortsdarstellung 
+Der Hamiltonian des betrachteten Graphens mit Mangandefekt lautet
 \begin{align}
    H &=  H_0 + H_\text{Def} + H_\text{Kop}\\
     &=- t \sum_{i,j}^N \left ( c_i^\dagger c_j + c_j^\dagger c_i \right )  + \sum_m^5 \epsilon_m d_m^\dagger d_m
@@ -13,6 +11,36 @@ $H_\text{Def}$ umfasst die Störstelle lokal. Der Vernichter(Erzeuger) $d_m^{(\d
 Elektron in dem $m$-ten $d$-Orbital mit der Orbitalenergie\cite{anders-fkt} $\epsilon_m$.
 In dem letzten Term des Hamiltonians $H_\text{Kop}$ wird die Kopplung mit den Slater-Koster-integralen
 $V_{mj}$ zwischen dem $m$-ten $3d$-Orbitale des Manganatoms mit dem $p_z$-Orbital des $j$-ten Nachbarkohlenstoffatoms betrachtet.
+
+\section{Berechnung der Slater-Koster-Integrale}
+\label{sec:slaterkostercalc}
+Zur Berechnung der Slater-Koster-Integrale werden die Richtungscosinus benötigt, welche durch
+\begin{equation*}
+    l = \frac{\vec{\delta} \cdot \hat{x}}{\left | \vec{\delta} \right |} \; , \quad
+    m = \frac{\vec{\delta} \cdot \hat{y}}{\left | \vec{\delta} \right |} \; , \quad
+    n = \frac{\vec{\delta} \cdot \hat{z}}{\left | \vec{\delta} \right |}
+\end{equation*}
+gegeben sind.
+Dabei sind $\hat{x}$, $\hat{y}$ und $\hat{z}$ die Einheitsvektoren in die jeweiligen Richtungen. 
+Der Betrag des Abstandsvektors (siehe Abschnitt \ref{sec:TEMPLATE}) für das $i$-te Kohlenstoffatom um das Manganatom ist durch 
+\begin{equation*}
+    \left | \vec{\delta} \right | = a \sqrt{\cos^2(\varphi_i) + \sin^2(\varphi_i) + \cot^2(\theta)} = a \sqrt{1+\cot^2(\theta)} = \frac{a}{\sin(\theta)} \label{eqn:distance}
+\end{equation*}
+gegeben.
+In Gleichung \eqref{eqn:distance} wurde die trigonometrische Beziehung $\sin(\theta) = \sqrt{1+\cot^2(\theta)}$ \cite{trig} mit der Beschränkung
+$\theta \in [ 0, \sfrac{\pi}{2} ] $ ausgenutzt. 
+Diese Beschränkung ist jedoch gerechtfertigt, da das Manganatom nur unterhalb des Graphens und mittig von den drei umliegenden Kohlenstoffatomen betrachtet wird.
+Die Skalarprodukte ausgewertet und der Abstand eingesetzt ergibt
+\begin{equation*}
+    l = \cos(\varphi_i) \sin(\theta) \; , \quad
+    m = \sin(\varphi_i) \sin(\theta) \; , \quad
+    n = \cot(\theta) \sin(\theta) = \cos(\theta) \; .
+\end{equation*}
+
+
+
+\section{Berechnung der Greenschen Funktionen}
+\label{sec:calc_greensfunction}
 Aufgrund der Gitterperiodizität kann für die Operatoren $c_i$ und $c_j$ eine Fouriertransformation der Form 
 \begin{equation}
     c_i = \frac{1}{\sqrt{N}} \sum_{\vec{k}} \symup{e}^{i\vec{k}\vec{l}} c_{\text{A}, \vec{k}} \; , 
@@ -89,19 +117,3 @@ Die Lösung dieses Gleichungssystems lautet
     c_2 &= \frac{1}{\sqrt{3}}\left (\tilde{c}_0 - \left(  \frac{1}{2} - \frac{{\sqrt{3}}}{2} \right) \tilde{c}_1 - \left ( \frac{1}{2} + \frac{{\sqrt{3}}}{2} \right ) \tilde{c}_2 \right ) 
     \; \text{.}     \numberthis \label{eqn:solutionsole}
 \end{align*}
-\section{Berechnung der Slater-Koster-Integrale}
-Zur Berechnung der Slater-Koster-Integrale werden die Richtungscosinus benötigt, welche durch
-\begin{equation*}
-    l = \frac{\vec{\delta} \cdot \hat{x}}{\left | \vec{\delta} \right |} \quad
-    m = \frac{\vec{\delta} \cdot \hat{y}}{\left | \vec{\delta} \right |} \quad
-    n = \frac{\vec{\delta} \cdot \hat{z}}{\left | \vec{\delta} \right |}
-\end{equation*}
-gegeben sind.
-Der Betrag des Abstandsvektors (siehe Abschnitt \ref{sec:TEMPLATE}) für das $i$-te Kohlenstoffatom um das Manganatom ist durch 
-\begin{equation*}
-    \left | \vec{\delta} \right | = a \sqrt{\cos^2(\varphi_i) + \sin^2(\varphi_i) + \cot^2(\theta)} = a \sqrt{1+\cot^2(\theta)} = \frac{a}{\sin(\theta)} \label{eqn:distance}
-\end{equation*}
-gegeben.
-In Gleichung \eqref{eqn:distance} wurde die trigonometrische Beziehung $\sin(\theta) = \sqrt{1+\cot(\theta)}$ \cite{trig} mit der Beschränkung
-$\theta \in [ 0, \sfrac{\pi}{2} ] $ ausgenutzt. 
-Diese Beschränkung ist jedoch gerechtfertigt, da das Manganatom nur unterhalb des Graphens und mittig von den drei umliegenden Kohlenstoffatomen betrachtet wird.
