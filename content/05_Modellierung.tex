@@ -71,4 +71,37 @@ Für den ersten Kommutator folgt
                     + c^\dagger_{B,\vec{k}} d_m  c_{A,\vec{k}}))
                 \end{split}\\ 
                 = 0\; \text{.}
+\end{align*} \\
+\textcolor{red}{!!!!!!!!!!!!!!!!!!!METHODE MIT LINEARKOMBINATIONEN!!!!!!!!!!!!!!!!!!!} \\
+Aufgrund der dreizähligen Drehsymmetrie der Kohlenstoffatome um den Mangandefekt, können neue Vernichter aus Linearkombinationen der $c_i$
+in $H_\text{Kop}$ aufgestellt werden, so dass das Lineare Gleichungssystem mit komplexen Vorfaktoren 
+\begin{align*}
+    \tilde{c}_0 &= \frac{1}{\sqrt{3}}\left (c_1 + c_2 + c_3 \right ) \\
+    \tilde{c}_1 &= \frac{1}{\sqrt{3}}\left (c_1 + \symup{e}^{\symup{i}\frac{2\pi}{3}} c_2 + \symup{e}^{\symup{i}\frac{4\pi}{3}}c_3 \right ) \\
+    \tilde{c}_2 &= \frac{1}{\sqrt{3}}\left (c_1 + \symup{e}^{\symup{i}\frac{4\pi}{3}} c_2 + \symup{e}^{\symup{i}\frac{2\pi}{3}}c_3 \right ) \numberthis \label{eqn:sole} 
 \end{align*}
+gelöst werden muss. 
+Der Faktor $\frac{1}{\sqrt{3}}$ sichert dabei die Normierung und die Erfüllung der Antikommutatorrelationen $\{\tilde{c}_i,\tilde{c}^\dagger_j\} = \delta_{ij}$.
+Die Lösung dieses Gleichungssystems lautet 
+\begin{align*}
+    c_1 &= \frac{1}{\sqrt{3}}\left (\tilde{c}_0 + \tilde{c}_1 + \tilde{c}_2 \right ) \\
+    c_2 &= \frac{1}{\sqrt{3}}\left (\tilde{c}_0 - \left(  \frac{1}{2} + \frac{{\sqrt{3}}}{2} \right) \tilde{c}_1 - \left ( \frac{1}{2} - \frac{{\sqrt{3}}}{2} \right ) \tilde{c}_2 \right ) \\
+    c_2 &= \frac{1}{\sqrt{3}}\left (\tilde{c}_0 - \left(  \frac{1}{2} - \frac{{\sqrt{3}}}{2} \right) \tilde{c}_1 - \left ( \frac{1}{2} + \frac{{\sqrt{3}}}{2} \right ) \tilde{c}_2 \right ) 
+    \; \text{.}     \numberthis \label{eqn:solutionsole}
+\end{align*}
+\section{Berechnung der Slater-Koster-Integrale}
+Zur Berechnung der Slater-Koster-Integrale werden die Richtungscosinus benötigt, welche durch
+\begin{equation*}
+    l = \frac{\vec{\delta} \cdot \hat{x}}{\left | \vec{\delta} \right |} \quad
+    m = \frac{\vec{\delta} \cdot \hat{y}}{\left | \vec{\delta} \right |} \quad
+    n = \frac{\vec{\delta} \cdot \hat{z}}{\left | \vec{\delta} \right |}
+\end{equation*}
+gegeben sind.
+Der Betrag des Abstandsvektors (siehe Abschnitt \ref{sec:TEMPLATE}) für das $i$-te Kohlenstoffatom um das Manganatom ist durch 
+\begin{equation*}
+    \left | \vec{\delta} \right | = a \sqrt{\cos^2(\varphi_i) + \sin^2(\varphi_i) + \cot^2(\theta)} = a \sqrt{1+\cot^2(\theta)} = \frac{a}{\sin(\theta)} \label{eqn:distance}
+\end{equation*}
+gegeben.
+In Gleichung \eqref{eqn:distance} wurde die trigonometrische Beziehung $\sin(\theta) = \sqrt{1+\cot(\theta)}$ \cite{trig} mit der Beschränkung
+$\theta \in [ 0, \sfrac{\pi}{2} ] $ ausgenutzt. 
+Diese Beschränkung ist jedoch gerechtfertigt, da das Manganatom nur unterhalb des Graphens und mittig von den drei umliegenden Kohlenstoffatomen betrachtet wird.

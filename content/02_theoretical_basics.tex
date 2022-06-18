@@ -1,25 +1,26 @@
 \chapter{Theoretische Grundlagen}
 \label{chap:theoretische_grundlagen}
 \section{Greensche Funktionen}
-Die Greensche Funktion ist für zwei Operatoren definiert als 
+Die Greensche Funktion ist für zwei Operatoren mit der zetlichen Entwicklung 
+\begin{equation}
+    A \left ( \tau \right ) = \symup{e}^{H \tau} A_\text{S} \symup{e}^{-H \tau}  \label{eqn:heisenbergpic}
+\end{equation}
+definiert als 
 \begin{align}
     G_{A,B} \left (\tau, \tau' \right ) &= - \frac{1}{\hbar} \langle T_s \left ( A \left (\tau \right ) B \left ( \tau' \right ) \right ) \rangle \\
     & = - \frac{1}{\hbar} \left(  \langle A \left (\tau \right ) B \left ( \tau' \right ) \rangle \symup{\Theta} \left ( \tau - \tau' \right) + s 
     \langle B \left ( \tau' \right ) A \left (\tau \right ) \rangle \symup{\Theta} \left ( \tau' - \tau \right)  \right ) \; \text{,} \label{eqn:greensfunction}
 \end{align}
-wobei $T_s$ der Zeitordnungsoperator, $\langle \ldots \rangle$ ein Erwartungswert und $\symup{\Theta} \left ( \tau' - \tau \right)$ die Heaviside-Funktion ist.\cite{greensfunction}
+wobei $H$ der Hamiltonoperator, $A_\text{S}$ ein Operator im Schöringerbild, $T_s$ der Zeitordnungsoperator, 
+$\langle \ldots \rangle$ ein Erwartungswert und $\symup{\Theta} \left ( \tau' - \tau \right)$ die Heaviside-Funktion ist.\cite{greensfunction}
 Der Parameter $s$ sorgt mit $s=+1$ für bosonische bzw. $s=-1$ für fermionische Operatoren für das richtige Vorzeichen.
 Der Erwartungswert ist bezüglich der großkanonischen Gesamtheit durch 
 \begin{equation*}
     \langle \ldots \rangle = \frac{1}{Z} \text{Sp}(\symup{e}^{-\beta H} \ldots)
 \end{equation*}
 gegeben.\cite{greensfunction}
+Die Zustandssumme $Z$ stellt dabei einen Normierungsfaktor dar.
 %Die imaginäre Zeit $\tau$ ist über die reale Zeit $t$ als $\tau = it$ definiert.
-Ein Operator $A$ besitzt im Heisenbergild die Darstellung 
-\begin{equation}
-    A \left ( \tau \right ) = \symup{e}^{H \tau} A_\text{S} \symup{e}^{-H \tau}  \label{eqn:heisenbergpic}
-\end{equation}
-mit $H$ als Hamiltonoperator und $A_\text{S}$ als Operator im Schrödingerbild. 
 In Gleichung \eqref{eqn:heisenbergpic} wurde das reduzierte Planksche Wirkungsquantum breits auf eins gesetzt, was in den folgenden Abschnitten beibehalten wird.
 Da in dieser Arbeit nur fermionische Systeme betrachtet werden, wird $s$ ab jetzt ohne weitere Bemerkungen auf $-1$ gesetzt.
 Unter der Annahme, dass die partielle Ableitung von $A$ verschwindet, ist die zeitliche Enwticklung eines Operators 
@@ -47,7 +48,7 @@ Somit folgt
     -  \langle B \left ( \tau' \right ) A \left (\tau \right ) \rangle \symup{\delta} \left ( \tau' - \tau \right)
     \end{split}
     \\[2ex]
-    =\, & G_{[H,A],B}(\tau, \tau') - \langle [A,B] \rangle \symup{\delta} \left ( \tau - \tau' \right) \; \text{.}
+    =\; & G_{[H,A],B}(\tau, \tau') - \langle [A,B] \rangle \symup{\delta} \left ( \tau - \tau' \right) \; \text{.}
 \end{align*} 
 Dabei ist  $\symup{\delta} (\tau-\tau') = \symup{\delta} (\tau'-\tau) $ die Deltadistribution, welche durch Ableitung der Heaviside-funktion gewonnen werden kann.
 In der dritten Zeile wurde die Heisenbergsche Bewegungsgleichung \eqref{eqn:heisenbergeom} ausgenutzt.
@@ -81,10 +82,10 @@ gegeben.\cite{SC_literature}
 Hierbei ist $V(\vec{r} - \vec{R}_\alpha - \vec{l}_i)$ das atomate Potential, welches ein Elektron in der Einheitszelle $i$ am Platz $\alpha$ verspürt.
 Diese hängen jedoch nur von dem Abstand $\vec{\delta}$ ab, wodurch sich diese zu 
 \begin{equation}
-    E_{lm,l'm'} = \int \symup{d}^3r \, \overline{\Psi}_{lm} (\vec{r})
+    E_{lm,l'm'} = \int \symup{d}^3r \, \overline{\Psi}_{lm} (\vec{r}-\vec{\delta})
     V(\vec{r} - \vec{\delta}) \Psi_{l'm'} (\vec{r})
 \end{equation}
 ergeben.
 Diese können in die verschiedenen Bindungstypen (in dieser Problemstellung $\pi$ und $\sigma$-Bindung) zerlegt werden, so dass diese nur noch von dem Abstandsvektor 
 $\vec{\delta}$ und den Parametern $V_{ll'\beta}$ mit $l$ als Orbitale und $\beta$ als Bindungstyp ab.\cite{SC_literature}
-Die Parameter $V_{ll'\beta}$ können hinterher als Fitparameter oder experimentell-bestimmte werden fungieren.
+Die Parameter $V_{ll'\beta}$ können hinterher als Fitparameter oder experimentell-bestimmte Werte fungieren.
