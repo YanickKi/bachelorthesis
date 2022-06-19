@@ -38,13 +38,13 @@ Die Skalarprodukte ausgewertet und der Abstand eingesetzt ergibt
     m = \sin(\varphi_i) \sin(\theta) \; , \quad
     n = \cot(\theta) \sin(\theta) = \cos(\theta) \; .
 \end{equation*}
-Diese Ausdrücke für die Richtungskosinus werden in die fünf Slater-Koster-Integrale für die Kopplung zwischen den drei umliegenden 
+Diese Ausdrücke für die Richtungskosinus werden in die Slater-Koster-Integrale für die Kopplung zwischen den drei umliegenden 
 $p_z$-Orbitale der Kohlenstoffatome und den fünf $d$-Orbitalen des Manganatoms (siehe Anhang \ref{TEMPLATE}) eingesetzt.
 Diese ergeben die Tabelle \ref{tab:slaterkosters }.
 \begin{table}
     \centering
     \caption{Slater-Koster-Integrale für den Überlapp der $p_z$-Orbitale des $j$-ten umliegenden
-    Kohlenstoffatom und der fünf $3d$-Orbitale der Manganatoms in Abhängigkeit von dem Winkel $\theta$.}
+    Kohlenstoffatom und der fünf $3d$-Orbitale des Manganatoms in Abhängigkeit von dem Winkel $\theta$.}
     \label{tab:slaterkosters}
     \begin{tabular}{l c c c}
     & \multicolumn{3}{c}{$j$-tes Kohlenstoffatom}\\
@@ -143,3 +143,33 @@ Die Lösung dieses Gleichungssystems lautet
     c_2 &= \frac{1}{\sqrt{3}}\left (\tilde{c}_0 - \left(  \frac{1}{2} - \frac{{\sqrt{3}}}{2} \right) \tilde{c}_1 - \left ( \frac{1}{2} + \frac{{\sqrt{3}}}{2} \right ) \tilde{c}_2 \right ) 
     \; \text{.}     \numberthis \label{eqn:solutionsole}
 \end{align*}
+Diese Linearkombinationen \eqref{eqn:solutionsole} können gemeinsam mit den Slater-Koster-Integralen in den Hamiltonian $H_\text{Kop}$, der die Kopplung 
+zwischen den $p_z$- und $3d$-Orbitalen beschreibt, eingesetzt werden.
+Somit ergibt sich 
+\begin{equation}
+    \begin{split}
+    H_\text{Kop} = \frac{1}{3} 
+        &\left  (   \left   (-\frac{3}{4}\sqrt{3}   \symup{i}    b   V_{pd\sigma} + \frac{3}{2}  \symup{i}   b   V_{pd\pi} \right ) \tilde{c}^\dagger_1  
+                    +\left  ( \frac{3}{4}\sqrt{3}   \symup{i}    b   V_{pd\sigma} - \frac{3}{2}  \symup{i}   b   V_{pd\pi} \right ) \tilde{c}^\dagger_2 \right )            d_1\\
+        +&\left (    \left  ( \frac{3}{2}\sqrt{3}                           f   V_{pd\sigma} + \frac{3}{2}              h   V_{pd\pi} \right ) \tilde{c}^\dagger_1  
+                    +\left  ( \frac{3}{2}\sqrt{3}                           f   V_{pd\sigma} + \frac{3}{2}              h   V_{pd\pi} \right ) \tilde{c}^\dagger_2 \right ) d_2\\
+        +&\left (    \left  ( \frac{3}{2}\sqrt{3}               \symup{i}   f   V_{pd\sigma} + \frac{3}{2}  \symup{i}   h   V_{pd\pi} \right ) \tilde{c}^\dagger_1  
+                    +\left  (-\sqrt{3}\frac{3}{2}               \symup{i}   f   V_{pd\sigma} - \frac{3}{2}  \symup{i}   h   V_{pd\pi} \right ) \tilde{c}^\dagger_2 \right ) d_3\\
+        +&\left (   3 q V_{pd\sigma} + 3 \sqrt{3}  b V_{pd\pi} \right )    \tilde{c}^\dagger_0                                                                              d_4\\
+        +&\left (   \left   ( \frac{3}{4}\sqrt{3}                           b   V_{pd\sigma} - \frac{3}{2}              b   V_{pd\pi} \right ) \tilde{c}^\dagger_1  
+                    +\left  ( \frac{3}{4}\sqrt{3}                           b   V_{pd\sigma} - \frac{3}{2}              b   V_{pd\pi} \right ) \tilde{c}^\dagger_2 \right ) d_5\\
+                    & + \text{h.c.} \; .
+                 \end{split}
+      \label{eqn:lcinhamiltonian}
+\end{equation} 
+Nun werden in in Gleichung \eqref{eqn:lcinhamiltonian} neue Linearkombinationen der Vernichter $d_i$ ersichtlich.
+Diese lauten 
+\begin{align*}
+    \tilde{d}_0 &= \frac{1}{\sqrt{2}} (d_5-\symup{i}d_1) & \tilde{d}_1 &= \frac{1}{\sqrt{2}} (d_5-\symup{i}d_1) \\
+    \tilde{d}_2 &= \frac{1}{\sqrt{2}} (d_2+\symup{i}d_3) & \tilde{d}_3 &= \frac{1}{\sqrt{2}} (d_2-\symup{i}d_3) \; . 
+\end{align*}
+Der Vorfaktor $\frac{1}{2}$ dient erneut zur Normierung und gewährt ebenfalls die Antikommutatorrelation $\{ \tilde{d}_i, \tilde{d}^\dagger_j \} = \delta_{ij}$ .
+Mit den neuen Linearkombinationen für Vernichter $d_i$ vereinfacht sich $H_\text{Kop}$ zu 
+%\begin{equation*}
+%    
+%\end{equation*}
