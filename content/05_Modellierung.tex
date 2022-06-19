@@ -1,12 +1,14 @@
 \chapter{Berechnung}
 \label{chap:berechnung}
 Der Hamiltonian des betrachteten Graphens mit Mangandefekt lautet
-\begin{align}
+\begin{align*}
    H &=  H_0 + H_\text{Def} + H_\text{Kop}\\
     &=- t \sum_{i,j}^N \left ( c_i^\dagger c_j + c_j^\dagger c_i \right )  + \sum_m^5 \epsilon_m d_m^\dagger d_m
-    + \sum_m^5 \sum_j^3 \left ( V_{mj} d_m^\dagger c_j + V^*_{mj} c_j^\dagger d_m \right )  \; \text{.} \label{eqn:full_Hamiltonian}
-\end{align}
+    + \sum_m^5 \sum_j^3 \left ( V_{mj} d_m^\dagger c_j + \overline{V}_{mj} c_j^\dagger d_m \right )  \; \text{.} \numberthis \label{eqn:full_Hamiltonian}
+\end{align*}
 Der Term $H_0$ beschreibt mit dem Hüpfparameter $t$ das Hüpfen zwischen nächsten Nachbarn des ungestörten Graphengitters.
+Aufgrund der Periodizität des ungestörten Graphens und der Abstandsabhängigkeit ist der Parameter $t$ für alle 
+Summanden gleich.
 $H_\text{Def}$ umfasst die Störstelle lokal. Der Vernichter(Erzeuger) $d_m^{(\dagger)}$ vernichtet(erzeugt) dabei ein
 Elektron in dem $m$-ten $d$-Orbital mit der Orbitalenergie\cite{anders-fkt} $\epsilon_m$.
 In dem letzten Term des Hamiltonians $H_\text{Kop}$ wird die Kopplung mit den Slater-Koster-integralen
@@ -36,9 +38,33 @@ Die Skalarprodukte ausgewertet und der Abstand eingesetzt ergibt
     m = \sin(\varphi_i) \sin(\theta) \; , \quad
     n = \cot(\theta) \sin(\theta) = \cos(\theta) \; .
 \end{equation*}
-
-
-
+Diese Ausdrücke für die Richtungskosinus werden in die fünf Slater-Koster-Integrale für die Kopplung zwischen den drei umliegenden 
+$p_z$-Orbitale der Kohlenstoffatome und den fünf $d$-Orbitalen des Manganatoms (siehe Anhang \ref{TEMPLATE}) eingesetzt.
+Diese ergeben die Tabelle \ref{tab:slaterkosters }.
+\begin{table}
+    \centering
+    \caption{Slater-Koster-Integrale für den Überlapp der $p_z$-Orbitale des $j$-ten umliegenden
+    Kohlenstoffatom und der fünf $3d$-Orbitale der Manganatoms in Abhängigkeit von dem Winkel $\theta$.}
+    \label{tab:slaterkosters}
+    \begin{tabular}{l c c c}
+    & \multicolumn{3}{c}{$j$-tes Kohlenstoffatom}\\
+    \cmidrule(lr){2-4}
+    & {$1$} & {$2$} & {$3$} \\
+    \midrule
+    {$E_{z,xy}$      }  & {$0$}                                               & {$-\frac{3}{4}bV_{pd\sigma} + \frac{\sqrt{3}}{2}bV_{pd\pi}$}          & {$ \frac{3}{4}bV_{pd\sigma}-\frac{\sqrt{3}}{2}bV_{pd\pi}$}         \vspace{0.5cm} \\ 
+    {$E_{z,xz}$      }  & {$\sqrt{3}fV_{pd\sigma} + hV_{pd\pi}$}              & {$-\frac{\sqrt{3}}{2}fV_{pd\sigma} - \frac{1}{2} hV_{pd\pi}$}         & {$-\frac{\sqrt{3}}{2}fV_{pd\sigma} - \frac{1}{2} hV_{pd\pi}$}      \vspace{0.5cm} \\
+    {$E_{z,zy}$      }  & {$0$}                                               & {$ \frac{3}{2}fV_{pd\sigma}+\frac{\sqrt{3}}{2} hV_{pd\pi}$}           & {$-\frac{3}{2}fV_{pd\sigma}-\frac{\sqrt{3}}{2} hV_{pd\pi}$}        \vspace{0.5cm} \\
+    {$E_{z,3z^2-r^2}$}  & {$q V_{pd\sigma}+\sqrt{3}bV_{pd\pi}$}               & {$q V_{pd\sigma}+\sqrt{3}bV_{pd\pi}$}                                 & {$q V_{pd\sigma}+\sqrt{3}bV_{pd\pi}$} \vspace{0.5cm} \\
+    {$E_{z,x^2-y^2}$ }  & {$\frac{\sqrt{3}}{2}bV_{pd\sigma}-bV_{pd\pi}$}      & {$-\frac{\sqrt{3}}{4}bV_{pd\sigma}+\frac{1}{2}bV_{pd\pi}$}           & {$-\frac{\sqrt{3}}{4}bV_{pd\sigma}+\frac{1}{2}bV_{pd\pi}$}                       \\ 
+    \bottomrule
+    \end{tabular}
+  \end{table}
+Um die Übersichtlichkeit zu gewährleisten wurden die von dem Winkel $\theta$ abhängigen Koeffizienten zu
+\begin{align*}
+b & \coloneq \sin^2(\theta) \cos(\theta)        & f &  \coloneq \cos^2(\theta) \sin(\theta)                             \\                     
+h & \coloneq \sin(\theta)(1-2\cos^2(\theta))    & q &  \coloneq \cos^3(\theta) - \frac{1}{2}\sin^2(\theta) \cos(\theta)
+\end{align*}
+umdefiniert.
 \section{Berechnung der Greenschen Funktionen}
 \label{sec:calc_greensfunction}
 Aufgrund der Gitterperiodizität kann für die Operatoren $c_i$ und $c_j$ eine Fouriertransformation der Form 
@@ -100,7 +126,7 @@ Für den ersten Kommutator folgt
                 \end{split}\\ 
                 = 0\; \text{.}
 \end{align*} \\
-\textcolor{red}{!!!!!!!!!!!!!!!!!!!METHODE MIT LINEARKOMBINATIONEN!!!!!!!!!!!!!!!!!!!} \\
+\section{Linearkombinationen}
 Aufgrund der dreizähligen Drehsymmetrie der Kohlenstoffatome um den Mangandefekt, können neue Vernichter aus Linearkombinationen der $c_i$
 in $H_\text{Kop}$ aufgestellt werden, so dass das Lineare Gleichungssystem mit komplexen Vorfaktoren 
 \begin{align*}
