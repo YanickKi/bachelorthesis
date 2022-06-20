@@ -127,8 +127,9 @@ Für den ersten Kommutator folgt
                 = 0\; \text{.}
 \end{align*} \\
 \section{Linearkombinationen}
-Aufgrund der dreizähligen Drehsymmetrie der Kohlenstoffatome um den Mangandefekt, können neue Vernichter aus Linearkombinationen der $c_i$
-in $H_\text{Kop}$ aufgestellt werden, so dass das Lineare Gleichungssystem mit komplexen Vorfaktoren 
+Aufgrund der dreizähligen Drehsymmetrie der Kohlenstoffatome um den Mangandefekt, können die Vernichter $c_i$
+transformiert werden.
+Dazu lassen sich die neuen $\tilde{c}_i$ durch Linearkombinationen der alten $c_i$ aufstellen, so dass das lineare Gleichungssystem mit komplexen Vorfaktoren 
 \begin{align*}
     \tilde{c}_0 &= \frac{1}{\sqrt{3}}\left (c_1 + c_2 + c_3 \right ) \\
     \tilde{c}_1 &= \frac{1}{\sqrt{3}}\left (c_1 + \symup{e}^{\symup{i}\frac{2\pi}{3}} c_2 + \symup{e}^{\symup{i}\frac{4\pi}{3}}c_3 \right ) \\
@@ -166,10 +167,21 @@ Nun werden in in Gleichung \eqref{eqn:lcinhamiltonian} neue Linearkombinationen 
 Diese lauten 
 \begin{align*}
     \tilde{d}_0 &= \frac{1}{\sqrt{2}} (d_5-\symup{i}d_1) & \tilde{d}_1 &= \frac{1}{\sqrt{2}} (d_5-\symup{i}d_1) \\
-    \tilde{d}_2 &= \frac{1}{\sqrt{2}} (d_2+\symup{i}d_3) & \tilde{d}_3 &= \frac{1}{\sqrt{2}} (d_2-\symup{i}d_3) \; . 
+    \tilde{d}_2 &= \frac{1}{\sqrt{2}} (d_2+\symup{i}d_3) & \tilde{d}_3 &= \frac{1}{\sqrt{2}} (d_2-\symup{i}d_3) \; .   \numberthis \label{eqn:newdi}
 \end{align*}
-Der Vorfaktor $\frac{1}{2}$ dient erneut zur Normierung und gewährt ebenfalls die Antikommutatorrelation $\{ \tilde{d}_i, \tilde{d}^\dagger_j \} = \delta_{ij}$ .
-Mit den neuen Linearkombinationen für Vernichter $d_i$ vereinfacht sich $H_\text{Kop}$ zu 
-%\begin{equation*}
-%    
-%\end{equation*}
+Der Vorfaktor $\frac{1}{\sqrt{2}}$ dient erneut zur Normierung und gewährt ebenfalls die Antikommutatorrelation $\{ \tilde{d}_i, \tilde{d}^\dagger_j \} = \delta_{ij}$.
+Wie in den Gleichungen \eqref{eqn:newdi} zu erkennen ist, mischen zweimal jeweils zwei Orbitale.
+Einerseits mischt das Orbital $d_{xy}$ (Vernichter $d_1$) mit dem $d_{x^2-y^2}$-Orbital (Vernichter $d_5$).
+Anderseits mischt das $d_{xz}$- mit dem $d_{zy}$-Orbital.
+Im folgenden wird untersucht, welche Vernichter $\tilde{d}_i$ mit welchen $\tilde{c}_i$ koppeln.
+Dazu werden die neuen Linearkombinationen für die Operatoren der Manganorbitale in den Hamiltonian $H_\text{Kop}$ eingesetzt, so dass sich dieser zu
+\begin{equation}
+            \begin{split}
+                H_\text{Kop} = \frac{\sqrt{2}}{\sqrt{3}} 
+                & \left ( \frac{3}{4}\sqrt{3} b V_{pd\sigma} + \frac{3}{2}  b   V_{pd\pi} \right )      \left ( \tilde{d}^\dagger_0 \tilde{c}_1 + \tilde{d}^\dagger_1 \tilde{c}_2 \right )   \\
+            +    & \left ( \frac{3}{2}\sqrt{3} f V_{pd\sigma} + \frac{3}{2}  h   V_{pd\pi} \right )     \left ( \tilde{d}^\dagger_2 \tilde{c}_1 + \tilde{d}^\dagger_3 \tilde{c}_2 \right )   \\
+            +    & \left ( \frac{3}{\sqrt{2}} q V_{pd\sigma} + \frac{\sqrt{3}}{\sqrt{2}} 3 b V_{pd\pi} \right ) \tilde{d}^\dagger_4 \tilde{c}_0 + \text{h.c.} \; .
+            \end{split}
+            \label{eqn:Hkopnice}
+\end{equation}
+vereinfacht. 
