@@ -99,16 +99,73 @@ In $H_\text{Def}$ und $H_\text{Kop}$ werden die transformierten Erzeuger ohne we
     \end{equation}
 bestimmt werden kann.
 Nun können die Einträge der gesuchten Matrix $\underline{\underline{G}}$ werden mit Hilfe der Bewegungsleichung \eqref{eqn:fouriereom} 
-\begin{equation*}
-    G_{d_m, d_{m'}^\dagger}(z) = \langle \{ d_m, d_{m'}^\dagger \} \rangle - G_{[H,d_m], d_{m'}^\dagger} (z)
-\end{equation*}
+\begin{equation}
+    zG_{d_m, d_{m'}^\dagger}(z) = \langle \{ d_m, d_{m'}^\dagger \} \rangle - G_{[H,d_m], d_{m'}^\dagger} (z) \label{eqn:eomgreenansatz}
+\end{equation}
 bestimmt werden.
 Dazu wird der Kommutator $[H,d_m]$ aufgrund der Linearität dessen in drei einzelne Kommutatoren unterteilt, so dass
 \begin{equation*}
     [H,d_m] = [H_0,d_m] + [H_\text{Def},d_m] +[H_\text{Kop},d_m] 
 \end{equation*}
 berechnet werden muss.
+Somit lautet der gesamte Kommutator
+\begin{equation}
+    \begin{split}
+    [H, d_m] = &-t \sum_{j,\vec{k}} \left ( \symup{e}^{\symup{i}\vec{k} \vec{\delta}_j}      \left [ c^\dagger_{\text{A},\vec{k}}  
+        c_{\text{B},\vec{k}}, d_m \right ] + \symup{e}^{-\symup{i}\vec{k} \vec{\delta}_j}   \left [ c^\dagger_{\text{B},\vec{k}}  
+        c_{\text{A},\vec{k}}, d_m \right ]  \right ) \\
+        &+\sum_{m'} \varepsilon_{m'} \left [ d^\dagger_{m'} d_{m'}, d_{m} \right ] \\
+        &+ \frac{1}{\sqrt{N}} \sum_{m'j\vec{k}} \left ( V_{m'j} \symup{e}^{\symup{i}\vec{k} (\vec{l} + \vec{\delta}_j)}   
+        \left [d^\dagger_{m'}c_{\text{B}, \vec{k}}, d_m \right ]
+        +  V_{m'j} \symup{e}^{-\symup{i}\vec{k} (\vec{l} + \vec{\delta}_j)}   
+        \left [c^\dagger_{\text{B},\vec{k}} d_{m'},  d_m \right ]
+        \right ) \; . \label{eqn:commutator_H_dm}
+    \end{split}
+\end{equation} 
+Die Kommutatoren werden im folgenden seperat ausgrechnet, damit diese hinterher nur noch eingesetzt werden müssen.
 Für den ersten Kommutator folgt
+\begin{equation}
+    \left [ c^\dagger_{\text{A},\vec{k}}  c_{\text{B},\vec{k}}, d_m \right ]  = c^\dagger_{\text{A},\vec{k}}  c_{\text{B},\vec{k}}  d_m 
+        -  d_m c^\dagger_{\text{A},\vec{k}}  c_{\text{B},\vec{k}}
+        = - c^\dagger_{\text{A},\vec{k}} d_m c_{\text{B},\vec{k}} + c^\dagger_{\text{A},\vec{k}} d_m c_{\text{B},\vec{k}} = 0
+\end{equation}
+bei dem Kommutator $\left [ c^\dagger_{\text{B},\vec{k}} c_{\text{A},\vec{k}}, d_m \right ]$ ist die Vorgehensweise und das Ergebnis gleich,
+so auf eine explizites Vorrechnen verzichtet wird.
+Weiterhin wird 
+\begin{align*}
+    \left [ d^\dagger_{m'} d_{m'}, d_{m} \right ] &= d^\dagger_{m'} d_{m'} d_{m} - d_{m} d^\dagger_{m'} d_{m'}  =
+    d^\dagger_{m'} d_{m} d_{m'} - \delta_{mm'} d_{m'} +  d^\dagger_{m'} d_{m} d_{m'} \\
+    &= - \delta_{mm'} d_{m'}
+\end{align*} 
+berechnet.
+Die Kommutatoren mit den Operatoren in $H_\text{Kop}$ ergeben 
+\begin{align*}
+    \left [d^\dagger_{m'} c_{\text{B},\vec{k}}, d_m \right ] &= d^\dagger_{m'} c_{\text{B},\vec{k}} d_m -d_m d^\dagger_{m'}c_{\text{B}, \vec{k}} 
+    = - d^\dagger_{m'} d_m c_{\text{B},\vec{k}} - \delta_{mm'} c_{\text{B},\vec{k}} + d^\dagger_{m'} d_m c_{\text{B},\vec{k}} \\
+    &= - \delta_{mm'} c_{\text{B},\vec{k}}
+\end{align*}
+und 
+\begin{align*}
+    \left [c^\dagger_{\text{B},\vec{k}} d_{m'},  d_m \right ] = c^\dagger_{\text{B},\vec{k}} d_{m'} d_m - d_m c^\dagger_{\text{B},\vec{k}} d_{m'} 
+    = - c^\dagger_{\text{B},\vec{k}} d_{m} d_{m'} + c^\dagger_{\text{B},\vec{k}} d_m  d_{m'} = 0 \; . 
+\end{align*}
+Werden nun alle eben berechneten Kommutatoren in \eqref{eqn:commutator_H_dm} eingestzt, folgt mittels Auswertung der Kronecker-Delta
+\begin{equation}
+    \begin{split}
+        [H, d_m] =& -\sum_{m'} \varepsilon_{m'} \delta_{mm'} d_{m'} - 
+        \frac{1}{\sqrt{N}} \sum_{m'j\vec{k}} V_{m'j} \symup{e}^{\symup{i}\vec{k} (\vec{l} + \vec{\delta}_j)}  \delta_{mm'} c_{\text{B}, \vec{k}} \\
+        = &- \varepsilon_m d_m - \frac{1}{\sqrt{N}} \sum_{j\vec{k}} V_{mj} \symup{e}^{\symup{i}\vec{k} (\vec{l} + \vec{\delta}_j)} c_{\text{B}, \vec{k}} \; .
+        \label{eqn:commutator_H_dm_eingesetzt}
+    \end{split}
+\end{equation}
+Die Summationen über $m'$ sind in Gleichung \eqref{eqn:commutator_H_dm_eingesetzt} aufgrund der Kronecker-Delta entfallen.
+Der somit berechnete Kommutator kann in die ursprüngliche Bewegungsleichung \eqref{eqn:eomgreenansatz} einsgetzt werden, woraus mit 
+$\langle \{ d_m, d_{m'}^\dagger \} \rangle = \delta_{mm'}$ und \eqref{eqn:commutator_H_dm_eingesetzt}
+\begin{equation*}
+    zG_{d_m, d_{m'}^\dagger}(z) = \delta_{mm'} + \varepsilon_m G_{d_m, d^\dagger_m}(z) + \frac{1}{\sqrt{N}}\sum_{j\vec{k}} V_{mj} 
+    \symup{e}^{\symup{i}\vec{k} (\vec{l} + \vec{\delta}_j)} G_{c_{\text{B},\vec{k}}, d^\dagger_m}
+\end{equation*}
+folgt, da der Antikommutator das Kronecker-Delta ergibt, und der Erwartungswert von einer Konstanen die Konstante selbst ist.
 \begin{align*}
     [H_0,d_m]   = -t \sum_{j, \vec{k}}(&\symup{e}^{i\vec{k}\vec{l}} [c^\dagger_{A,\vec{k}} c_{B,\vec{k}'}, d_m]
                 +\symup{e}^{-i\vec{k}\vec{l}} [c^\dagger_{B,\vec{k}}c_{A,\vec{k}}, d_m] ) \\
@@ -125,7 +182,8 @@ Für den ersten Kommutator folgt
                     + c^\dagger_{B,\vec{k}} d_m  c_{A,\vec{k}}))
                 \end{split}\\ 
                 = 0\; \text{.}
-\end{align*} \\
+\end{align*}
+Der Kommutator
 \section{Linearkombinationen}
 Aufgrund der dreizähligen Drehsymmetrie der Kohlenstoffatome um den Mangandefekt, können die Vernichter $c_i$
 transformiert werden.
