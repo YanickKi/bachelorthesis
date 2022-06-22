@@ -82,8 +82,8 @@ Damit lässt sich der Hamiltonian des ungestörten Graphens zu
     \symup{e}^{i\vec{k}\vec{l}}c_{A,\vec{k}}) \\
     &= -\frac{t}{N} \sum_{\vec{l}, j} \sum_{\vec{k},\vec{k}'} ( \symup{e}^{-i(\vec{k}- \vec{k}')\vec{l}}\symup{e}^{i\vec{k}\vec{l}}c^\dagger_{A,\vec{k}} c_{B,\vec{k}'} + 
     \symup{e}^{i(\vec{k}- \vec{k}')\vec{l}} \symup{e}^{-i\vec{k}\vec{l}} c^\dagger_{B,\vec{k}}c_{A,\vec{k}}) \\
-    &= -t \sum_{\vec{l}, \vec{k}} ( \symup{e}^{i\vec{k}\vec{l}}c^\dagger_{A,\vec{k}} c_{B,\vec{k}'} + 
-    \symup{e}^{-i\vec{k}\vec{l}} c^\dagger_{B,\vec{k}}c_{A,\vec{k}})
+    &= -t \sum_{j\vec{k}} ( \symup{e}^{i\vec{k}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}} + 
+    \symup{e}^{-i\vec{k}\vec{\delta_j}} c^\dagger_{B,\vec{k}}c_{A,\vec{k}})
 \end{align*}
 schreiben.
 In dem letzten Schritt wurde $\sum_{\vec{l}}^N \symup{e}^{-i(\vec{k}- \vec{k}')\vec{l}} 
@@ -91,9 +91,9 @@ In dem letzten Schritt wurde $\sum_{\vec{l}}^N \symup{e}^{-i(\vec{k}- \vec{k}')\
 In $H_\text{Def}$ und $H_\text{Kop}$ werden die transformierten Erzeuger ohne weitere Vereinfachungen eingesetzt,  so dass der Gesamthamiltonian zu 
 \begin{equation}
     \begin{split}
-        H = &-t \sum_{j, \vec{k}} ( \symup{e}^{i\vec{k}\vec{l}}c^\dagger_{A,\vec{k}} c_{B,\vec{k}'} + 
-            \symup{e}^{-i\vec{k}\vec{l}} c^\dagger_{B,\vec{k}}c_{A,\vec{k}}) + \sum_m \epsilon_m d_m^\dagger d_m \\
-            &+ \frac{1}{\sqrt{N}}\sum_{m,j,\vec{k}} ( V_{mj}  \symup{e}^{i\vec{k}(\vec{l}+\vec{\delta}_j)} d_m^\dagger c_{\text{B},\vec{k}} 
+        H = &-t \sum_{j \vec{k}} ( \symup{e}^{i\vec{k}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}} + 
+            \symup{e}^{-i\vec{k}\vec{\delta}_j} c^\dagger_{B,\vec{k}}c_{A,\vec{k}}) + \sum_m \epsilon_m d_m^\dagger d_m \\
+            &+ \frac{1}{\sqrt{N}}\sum_{mj\vec{k}} ( V_{mj}  \symup{e}^{i\vec{k}(\vec{l}+\vec{\delta}_j)} d_m^\dagger c_{\text{B},\vec{k}} 
             + V^*_{mj} \symup{e}^{-i\vec{k}(\vec{l}+\vec{\delta}_j)}c^\dagger_{\text{B},\vec{k}} d_m )
     \end{split}
     \end{equation}
@@ -112,7 +112,7 @@ berechnet werden muss.
 Somit lautet der gesamte Kommutator
 \begin{equation}
     \begin{split}
-    [H, d_m] = &-t \sum_{j,\vec{k}} \left ( \symup{e}^{\symup{i}\vec{k} \vec{\delta}_j}      \left [ c^\dagger_{\text{A},\vec{k}}  
+    [H, d_m] = &-t \sum_{j\vec{k}} \left ( \symup{e}^{\symup{i}\vec{k} \vec{\delta}_j}      \left [ c^\dagger_{\text{A},\vec{k}}  
         c_{\text{B},\vec{k}}, d_m \right ] + \symup{e}^{-\symup{i}\vec{k} \vec{\delta}_j}   \left [ c^\dagger_{\text{B},\vec{k}}  
         c_{\text{A},\vec{k}}, d_m \right ]  \right ) \\
         &+\sum_{m'} \varepsilon_{m'} \left [ d^\dagger_{m'} d_{m'}, d_{m} \right ] \\
@@ -168,7 +168,7 @@ $\langle \{ d_m, d_{m'}^\dagger \} \rangle = \delta_{mm'}$ und \eqref{eqn:commut
     \iff &G_{d_m, d_{m'}^\dagger} = \frac{\delta_{mm'} +  \frac{1}{\sqrt{N}}\sum_{j\vec{k}} V_{mj} 
     \symup{e}^{\symup{i}\vec{k} (\vec{l} + \vec{\delta}_j)} G_{c_{\text{B},\vec{k}}, d^\dagger_{m'}}} {z-\varepsilon_m} \numberthis \label{eqn:greensumgestellt}
 \end{align*}
-folgt, da der Antikommutator das Kronecker-Delta ergibt, und der Erwartungswert von einer Konstanen die Konstante selbst ist.
+folgt, da der Antikommutator das Kronecker-Delta $\delta_{mm'}$ ergibt, und der Erwartungswert von einer Konstanen die Konstante selbst ist.
 In Gleichung \eqref{eqn:greensumgestellt} kommt die Greensunktion $G_{c_{\text{B},\vec{k}}, d^\dagger_{m'}}$ vor, so dass diese
 ebenfalls bestimmt werden muss, wofür 
 \begin{equation}
@@ -227,7 +227,7 @@ Mit der selbigen Begründung wie bei der Berechung von \eqref{eqn:commutator_H_c
 \end{align*}
 berechnet, womit 
 \begin{equation}
-    G_{c_{\text{A},\vec{k}},d^\dagger_{m'}} = - \frac{-t \sum_{j}\symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} G_{c_{\text{B},\vec{k}}, d^\dagger_{m'}}} {z} \label{eqn:greensfunction_cA}
+    G_{c_{\text{A},\vec{k}},d^\dagger_{m'}} = - \frac{t \sum_{j}\symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} G_{c_{\text{B},\vec{k}}, d^\dagger_{m'}}} {z} \label{eqn:greensfunction_cA}
 \end{equation}
 folgt.
 Da keine neuen Greensfunktionen mehr auftauchen, sind alle nötigen Kommutatoren berechnet worden. 
@@ -235,7 +235,7 @@ Nun können die Greensfunktion ineinander eingesetzt werden, um die Matrix $\und
 Somit wird Gleichung \eqref{eqn:greensfunction_cA} in Gleichung \eqref{eqn:greensfunction_cB} eingesetzt, so dass sich die Greensfunktion
 \begin{equation}
     G_{c_{\text{B},\vec{k}}, d^\dagger_{m'}} = \frac{z\sum_{mj} V_{mj} \symup{e}^{-\symup{i}\vec{k} (\vec{l}+\vec{\delta}_j)} G_{d_m, d_{m'}^\dagger}}
-    {\sqrt{N}\left ( z-t^2\sum_j \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \sum_j \symup{e}^{\symup{-i}\vec{k}\vec{\delta}_j} \right )} \label{eqn:finalgreencB}
+    {\sqrt{N}\left ( z^2-t^2\sum_j \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \sum_j \symup{e}^{\symup{-i}\vec{k}\vec{\delta}_j} \right )} \label{eqn:finalgreencB}
 \end{equation}
 ergibt.
 Um mehr Übersichtlichkeit zu gewähren wird die Definition
