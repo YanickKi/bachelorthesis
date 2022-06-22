@@ -127,7 +127,7 @@ Für den ersten Kommutator folgt
 \begin{equation}
     \left [ c^\dagger_{\text{A},\vec{k}}  c_{\text{B},\vec{k}}, d_m \right ]  = c^\dagger_{\text{A},\vec{k}}  c_{\text{B},\vec{k}}  d_m 
         -  d_m c^\dagger_{\text{A},\vec{k}}  c_{\text{B},\vec{k}}
-        = - c^\dagger_{\text{A},\vec{k}} d_m c_{\text{B},\vec{k}} + c^\dagger_{\text{A},\vec{k}} d_m c_{\text{B},\vec{k}} = 0
+        = - c^\dagger_{\text{A},\vec{k}} d_m c_{\text{B},\vec{k}} + c^\dagger_{\text{A},\vec{k}} d_m c_{\text{B},\vec{k}} = 0 \label{eqn:kommutatornull}
 \end{equation}
 bei dem Kommutator $\left [ c^\dagger_{\text{B},\vec{k}} c_{\text{A},\vec{k}}, d_m \right ]$ ist die Vorgehensweise und das Ergebnis gleich,
 so auf eine explizites Vorrechnen verzichtet wird.
@@ -145,10 +145,10 @@ Die Kommutatoren mit den Operatoren in $H_\text{Kop}$ ergeben
     &= - \delta_{mm'} c_{\text{B},\vec{k}}
 \end{align*}
 und 
-\begin{align*}
+\begin{equation}
     \left [c^\dagger_{\text{B},\vec{k}} d_{m'},  d_m \right ] = c^\dagger_{\text{B},\vec{k}} d_{m'} d_m - d_m c^\dagger_{\text{B},\vec{k}} d_{m'} 
-    = - c^\dagger_{\text{B},\vec{k}} d_{m} d_{m'} + c^\dagger_{\text{B},\vec{k}} d_m  d_{m'} = 0 \; . 
-\end{align*}
+    = - c^\dagger_{\text{B},\vec{k}} d_{m} d_{m'} + c^\dagger_{\text{B},\vec{k}} d_m  d_{m'} = 0 \; . \label{eqn:commutatornulldagger}
+\end{equation}
 Werden nun alle eben berechneten Kommutatoren in \eqref{eqn:commutator_H_dm} eingestzt, folgt mittels Auswertung der Kronecker-Delta
 \begin{equation}
     \begin{split}
@@ -161,11 +161,42 @@ Werden nun alle eben berechneten Kommutatoren in \eqref{eqn:commutator_H_dm} ein
 Die Summationen über $m'$ sind in Gleichung \eqref{eqn:commutator_H_dm_eingesetzt} aufgrund der Kronecker-Delta entfallen.
 Der somit berechnete Kommutator kann in die ursprüngliche Bewegungsleichung \eqref{eqn:eomgreenansatz} einsgetzt werden, woraus mit 
 $\langle \{ d_m, d_{m'}^\dagger \} \rangle = \delta_{mm'}$ und \eqref{eqn:commutator_H_dm_eingesetzt}
-\begin{equation*}
-    zG_{d_m, d_{m'}^\dagger}(z) = \delta_{mm'} + \varepsilon_m G_{d_m, d^\dagger_m}(z) + \frac{1}{\sqrt{N}}\sum_{j\vec{k}} V_{mj} 
-    \symup{e}^{\symup{i}\vec{k} (\vec{l} + \vec{\delta}_j)} G_{c_{\text{B},\vec{k}}, d^\dagger_m}
-\end{equation*}
+\begin{align*}
+    z&G_{d_m, d_{m'}^\dagger}(z) = \delta_{mm'} + \varepsilon_m G_{d_m, d^\dagger_{m'}}(z) + \frac{1}{\sqrt{N}}\sum_{j\vec{k}} V_{mj} 
+    \symup{e}^{\symup{i}\vec{k} (\vec{l} + \vec{\delta}_j)} G_{c_{\text{B},\vec{k}}, d^\dagger_{m'}} \\
+    \iff &G_{d_m, d_{m'}^\dagger}(z) = \frac{\delta_{mm'} +  \frac{1}{\sqrt{N}}\sum_{j\vec{k}} V_{mj} 
+    \symup{e}^{\symup{i}\vec{k} (\vec{l} + \vec{\delta}_j)} G_{c_{\text{B},\vec{k}}, d^\dagger_{m'}}} {z-\varepsilon_m} \numberthis \label{eqn:greensumgestellt}
+\end{align*}
 folgt, da der Antikommutator das Kronecker-Delta ergibt, und der Erwartungswert von einer Konstanen die Konstante selbst ist.
+In Gleichung \eqref{eqn:greensumgestellt} kommt die Greensunktion $G_{c_{\text{B},\vec{k}}, d^\dagger_{m'}}$ vor, so dass diese
+ebenfalls bestimmt werden muss, wofür 
+\begin{equation}
+    \begin{split}
+        \left [ H, c_{\text{B},\vec{k'}} \right ] = &-t \sum_{j,\vec{k'}} \left ( \symup{e}^{\symup{i}\vec{k'} \vec{\delta}_j}      \left [ c^\dagger_{\text{A},\vec{k'}}  
+        c_{\text{B},\vec{k'}}, c_{\text{B},\vec{k}} \right ] + \symup{e}^{-\symup{i}\vec{k'} \vec{\delta}_j}   \left [ c^\dagger_{\text{B},\vec{k'}}  
+        c_{\text{A},\vec{k'}}, c_{\text{B},\vec{k}} \right ]  \right ) \\
+        &+\sum_{m} \varepsilon_{m} \left [ d^\dagger_{m} d_{m}, c_{\text{B},\vec{k}}\right ] \\
+        &+ \frac{1}{\sqrt{N}} \sum_{m'j\vec{k'}} \left ( V_{mj} \symup{e}^{\symup{i}\vec{k'} (\vec{l} + \vec{\delta}_j)}   
+        \left [d^\dagger_{m}c_{\text{B}, \vec{k'}}, c_{\text{B},\vec{k}} \right ]
+        +  V_{mj} \symup{e}^{-\symup{i}\vec{k'} (\vec{l} + \vec{\delta}_j)}   
+        \left [c^\dagger_{\text{B},\vec{k'}} d_{m},  c_{\text{B},\vec{k}} \right ]
+        \right ) \; . \label{eqn:commutator_H_cB}
+    \end{split}
+\end{equation}
+Mit der selben Vorgehensweise wie in \eqref{eqn:kommutatornull} und \eqref{eqn:commutatornulldagger} verschwinden die 
+Kommutator die kein $c^\dagger_{\text{B},\vec{k'}}$ enthalten, da die Operatoren ohne Berücksichtigung der Kommutatorrelation 
+$\left \{ c_i, c^\dagger_j \right \} = \delta_{ij}$ verschoben werden können.
+Somit bleiben nur noch 
+\begin{align*}
+    \left [ c^\dagger_{\text{B},\vec{k'}} c_{\text{A},\vec{k'}}, c_{\text{B},\vec{k}} \right ]
+        &= c^\dagger_{\text{B},\vec{k'}} c_{\text{A},\vec{k'}} c_{\text{B},\vec{k}} - c_{\text{B},\vec{k}} c^\dagger_{\text{B},\vec{k'}} c_{\text{A},\vec{k'}} \\
+        &= - c^\dagger_{\text{B},\vec{k'}} c_{\text{B},\vec{k}} c_{\text{A},\vec{k'}} - \delta_{\vec{k}\vec{k'}} c_{\text{A},\vec{k'}}
+        + c^\dagger_{\text{B},\vec{k'}} c_{\text{B},\vec{k}} =  - \delta_{\vec{k}\vec{k'}} c_{\text{A},\vec{k'}}
+\end{align*}
+ 
+
+
+
 \begin{align*}
     [H_0,d_m]   = -t \sum_{j, \vec{k}}(&\symup{e}^{i\vec{k}\vec{l}} [c^\dagger_{A,\vec{k}} c_{B,\vec{k}'}, d_m]
                 +\symup{e}^{-i\vec{k}\vec{l}} [c^\dagger_{B,\vec{k}}c_{A,\vec{k}}, d_m] ) \\
