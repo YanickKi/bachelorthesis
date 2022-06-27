@@ -260,17 +260,17 @@ und die Änderung der Notaton für die Einträge der Matrix $\underline{\underli
 \end{equation*}
 durchgeführt.
 Das Ergebnis \eqref{eqn:finalgreencB} wird schlussendlich in Gleichung \eqref{eqn:greensumgestellt} eingesetzt, welche daraufhin in die gewünschte Form gebracht werden kann.
-somit folgt
+Somit folgt
 \begin{align*}
     &\left ( z- \varepsilon_m \right )  G_{mm'} = \delta_{mm'}+\sum_{j\vec{k}} V_{mj} \symup{e}^{\symup{i}\vec{k} ( \vec{l}+ \delta_j)} 
     \left ( \frac{z\sum_{mj} V_{mj} \symup{e}^{-\symup{i}\vec{k}(\vec{l} + \vec{\delta}_j)}G_{mm'}} {N (z^2-\mu_{\vec{k}})} \right ) \\
     &\iff \left ( z- \varepsilon_m - \frac{z}{N}\sum_{\vec{k}} \frac{\sum_j V_{mj} \symup{e}^{-\symup{i}\vec{k}(\vec{l} + 
     \vec{\delta}_j)} \sum_j V_{mj} \symup{e}^{-\symup{i}\vec{k}(\vec{l} + \vec{\delta}_j)}} {z^2-\mu_{\vec{k}}} \right ) G_{mm'} \\
-    & \quad \quad \quad \quad \quad - \frac{z}{N}\sum_{n \neq m, \vec{k}} \frac{\sum_j V_{nj} \symup{e}^{\symup{i}\vec{k}(\vec{l} 
+    & \quad \quad \quad \quad \quad - \frac{z}{N}\sum_{n \neq m, \vec{k}} \frac{\sum_j V_{mj} \symup{e}^{\symup{i}\vec{k}(\vec{l} 
     + \vec{\delta}_j)} \sum_j V_{nj} \symup{e}^{-\symup{i}\vec{k}(\vec{l}+\vec{\delta}_j)}} {z^2-\mu_{\vec{k}}} G_{nm'} = \delta_{mm'} \numberthis \label{eqn:matrixmultiplication_green} \; .
 \end{align*}
 Hier wird, wie vorher erwähnt wurde, ersichtlich, dass die Position des Manganatoms keinen Einfluss auf das Ergebnis hat, da sich der Gittervektor 
-$\vec{l}$ in Gleichung \eqref{eqn:matrixmultiplication_green} aufgrund des verschiedenen Vorzeichens im Exponenten weghebt.
+$\vec{l}$, bei welchem sich das Manganatom befindet, in Gleichung \eqref{eqn:matrixmultiplication_green} aufgrund des verschiedenen Vorzeichens im Exponenten weghebt.
 In Gleichung \eqref{eqn:matrixmultiplication_green} wird nun eine Matrixmultiplikation 
 \begin{equation*}
     \sum_n A_{mn}G_{nm'} = \delta_{mm'} \iff \underline{\underline{A}} \; \underline{\underline{G}} = \symbb{1}
@@ -358,3 +358,40 @@ Dazu werden die neuen Linearkombinationen für die Operatoren der Manganorbitale
             \label{eqn:Hkopnice}
 \end{equation}
 vereinfacht. 
+Hamiltonian kann als 
+\begin{align}
+    H = -t\sum_{ij}(c^\dagger_i c_j + c^\dagger_j c_i) + \varepsilon \sum_{m=0} \tilde{d}^\dagger_m \tilde{d}_m +
+    \sum_{mj}(\gamma_{mj} \tilde{d}^\dagger_m \tilde{c}_j + \gamma_{mj} \tilde{c}^\dagger_j \tilde{d}_m) \; .
+\end{align}
+Dabei sieht $\underline{\underline{\gamma}}$ wie folgt aus:
+\begin{equation*}
+    \underline{\underline{\gamma}} = 
+    \begin{pmatrix}
+        0               &\gamma_{01} &  0           \\
+        0               & 0&             \gamma_{12}\\
+        0               &\gamma_{21}    &  0        \\
+        0               & 0&  \gamma_{32}           \\
+        \gamma_{40}     & 0& 0                      \\
+    \end{pmatrix}
+\end{equation*}
+geschrieben werden.
+Fouriertrafo für neue $\tilde{c}_i$ : 
+\begin{align*}
+    \tilde{c}_0 &= \frac{1}{\sqrt{3N}}\sum_{j\vec{k}}\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)}                                                      \\
+    \tilde{c}_1 &= \frac{1}{\sqrt{3N}}\sum_{j\vec{k}}\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)+\symup{i}\frac{2(j-1)\pi}{3}} c_{\text{B}, \vec{k}}   \\
+    \tilde{c}_2 &= \frac{1}{\sqrt{3N}}\sum_{j\vec{k}}\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)-\symup{i}\frac{2(j-1)\pi}{3}} c_{\text{B}, \vec{k}}    \\
+\end{align*}
+mit $\alpha_j \coloneq \symup{i}\frac{2(j-1)\pi}{3}$ und dessen Eigenschaft folgt $\overline{\alpha}_j = - \alpha_j$
+\begin{align*}
+    H = &-t \sum_{j \vec{k}} ( \symup{e}^{i\vec{k}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}} + 
+    \symup{e}^{-i\vec{k}\vec{\delta}_j} c^\dagger_{B,\vec{k}}c_{A,\vec{k}}) + 
+    \varepsilon \sum_m \tilde{d}^\dagger_m \tilde{d}_m \\
+    &+\frac{1}{\sqrt{3N}} \sum_{m=0}^4 \sum_{j=0}^2 \sum_{\vec{k}} 
+    (\gamma_{mj} \symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)+(-1)^m \alpha_j(1-\delta_{m4})} c_{\text{B}, \vec{k}} \tilde{d}^\dagger_m c_{B,\vec{k}} \\
+    &+ \gamma_{mj}  \symup{e}^{-i{\vec{k}}(\vec{l}+\vec{\delta}_j)-(-1)^m \alpha_j(1-\delta_{m4})} c^\dagger_{B,\vec{k}} \tilde{d}_m)
+\end{align*}
+Hybridisierungsfunktion gegeben durch 
+\begin{align*}
+    \frac{z}{3N} \sum_{\vec{k}} \frac{\sum_j \gamma_{mj} \symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)+(-1)^m \alpha_j(1-\delta_{m4})} }
+    {z^2 - t^2 \sum_j \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \sum_j \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_j}}
+\end{align*}
