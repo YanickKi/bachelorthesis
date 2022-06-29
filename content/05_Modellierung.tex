@@ -3,18 +3,18 @@
 Der Hamiltonian des betrachteten Graphens mit Mangandefekt lautet
 \begin{align*}
    H &=  H_0 + H_\text{Def} + H_\text{Kop}\\
-    &=- t \sum_{i=1}^N \sum_{j=1}^N\left ( c_i^\dagger c_j + c_j^\dagger c_i \right )  + \sum_{m=1}^5 \epsilon_m d_m^\dagger d_m
+    &=- t \sum_{i=1}^N \sum_{n=1}^N\left ( c_i^\dagger c_n + c_n^\dagger c_i \right )  + \sum_{m=1}^5 \epsilon_m d_m^\dagger d_m
     + \sum_{m=1}^5 \sum_{j=1}^3 \left ( V_{mj} d_m^\dagger c_j + \overline{V}_{mj} c_j^\dagger d_m \right )  \; \text{.} \numberthis \label{eqn:full_Hamiltonian}
 \end{align*}
 Die Summation über $N$ Basen in dem Term $H_0$ läuft nur über nächste Nachbarn.
-Der Vernichter(Erzeuger) $c_i^{(\dagger)}$ vernichtet(erzeugt) ein Elektron im $p_z$-Orbital am Gitterplatz $i$.
+Der Vernichter(Erzeuger) $c_i(c_i^{\dagger})$ vernichtet(erzeugt) ein Elektron im $p_z$-Orbital am Gitterplatz $i$.
 Damit wird mit dem Hüpfparameter $t$ das Hüpfen zwischen nächsten Nachbarn des ungestörten Graphengitters beschrieben.
 Aufgrund der Periodizität und der ausschließlichen Betrachtung des Hüpfens zwischen $p_z$-Orbitale, ist der  
 Hüpfparameter $t$ für alle Summanden gleich.   
-$H_\text{Def}$ umfasst die Störstelle. 
+Die Störstelle wird mit dem Hamiltonian $H_\text{Def}$ umfasst. 
 Der Vernichter(Erzeuger) $d_m^{(\dagger)}$ vernichtet(erzeugt) dabei ein Elektron in dem $m$-ten $3d$-Orbital mit der 
-Orbitalenergie\cite{anders-fkt} $\epsilon_m$.
-In dem letzten Term des Hamiltonians $H_\text{Kop}$ wird die Kopplung der $3d$-Orbitale des Manganatoms mit 
+Orbitalenergie $\epsilon_m$.\cite{anders-fkt}
+In dem letzten Term des Hamiltonians, $H_\text{Kop}$, wird die Kopplung der $3d$-Orbitale des Manganatoms und 
 den $p_z$-Orbitalen der drei umliegenden Kohlenstoffatomen (siehe Abbildung \ref{fig:mangan_impurity_inplane}) aufgefasst.
 Die auftretenden Hüpfparameter sind nicht wie zuvor bei $H_0$ für alle Summanden gleich, da fünf verschiedene Orbitale
 des Manganatoms und die verschiedenen räumlichen Anordnungen der drei umliegenden Kohlenstoffatome einen Einfluss haben.
@@ -26,15 +26,15 @@ Sofern es eindeutig ist, wird im Folgenden auf explizite Angabe des Startwerts d
 \label{sec:slaterkostercalc}
 Zur Berechnung der Slater-Koster-Integrale werden die Richtungskosinus benötigt, welche durch
 \begin{equation*}
-    l = \frac{\vec{\delta} \cdot \hat{x}}{\left | \vec{\delta} \right |} \; , \quad
-    m = \frac{\vec{\delta} \cdot \hat{y}}{\left | \vec{\delta} \right |} \; , \quad
-    n = \frac{\vec{\delta} \cdot \hat{z}}{\left | \vec{\delta} \right |}
+    l = \frac{\vec{d} \cdot \hat{x}}{\left | \vec{d} \right |} \; , \quad
+    m = \frac{\vec{d} \cdot \hat{y}}{\left | \vec{d} \right |} \; , \quad
+    n = \frac{\vec{d} \cdot \hat{z}}{\left | \vec{d} \right |}
 \end{equation*}
 gegeben sind.
 Dabei sind $\hat{x}$, $\hat{y}$ und $\hat{z}$ die Einheitsvektoren in die jeweiligen Richtungen. 
-Der Betrag des Abstandsvektors (siehe Abschnitt \ref{sec:structure}) für das $i$-te Kohlenstoffatom um das Manganatom ist durch 
+Der Betrag des Abstandsvektors (siehe Abschnitt \ref{sec:structure}) für das $j$-te der drei umligenden Kohlenstoffatom um das Manganatom ist durch 
 \begin{equation}
-    \left | \vec{\delta} \right | = a \sqrt{\cos^2(\varphi_i) + \sin^2(\varphi_i) + \cot^2(\theta)} = a \sqrt{1+\cot^2(\theta)} = \frac{a}{\sin(\theta)} \label{eqn:distance}
+    \left | \vec{d} \right | = a \sqrt{\cos^2(\varphi_i) + \sin^2(\varphi_i) + \cot^2(\theta)} = a \sqrt{1+\cot^2(\theta)} = \frac{a}{\sin(\theta)} \label{eqn:distance}
 \end{equation}
 gegeben.
 In Gleichung \eqref{eqn:distance} wurde die trigonometrische Beziehung $\sin(\theta) = \sqrt{1+\cot^2(\theta)}$ \cite{trig} mit der Beschränkung
@@ -47,12 +47,12 @@ Die Skalarprodukte ausgewertet und der Abstand eingesetzt ergibt
     n = \cot(\theta) \sin(\theta) = \cos(\theta) \; .
 \end{equation*}
 Diese Ausdrücke für die Richtungskosinus werden in die Slater-Koster-Integrale für die Kopplung zwischen den drei umliegenden 
-$p_z$-Orbitale der Kohlenstoffatome und den fünf $3d$-Orbitalen des Manganatoms (siehe Anhang \ref{TEMPLATE}) eingesetzt.
-Diese ergeben die Tabelle \ref{tab:slaterkosters}.
+$p_z$-Orbitale der Kohlenstoffatome und den fünf $3d$-Orbitalen des Manganatoms (siehe Anhang \ref{TEMPLATE}) eingesetzt,
+so dass sich die Werte in Tabelle \ref{tab:slaterkosters} ergeben.
 \begin{table}
     \centering
     \caption{Slater-Koster-Integrale für den Überlapp der $p_z$-Orbitale des $j$-ten umliegenden
-    Kohlenstoffatom und der fünf $3d$-Orbitale des Manganatoms in Abhängigkeit von dem Winkel $\theta$.}
+    Kohlenstoffatom und der fünf $3d$-Orbitale des Manganatoms in Abhängigkeit des Winkels $\theta$.}
     \label{tab:slaterkosters}
     \begin{tabular}{l c c c}
     & \multicolumn{3}{c}{$j$-tes Kohlenstoffatom}\\
@@ -69,22 +69,22 @@ Diese ergeben die Tabelle \ref{tab:slaterkosters}.
   \end{table}
 Um die Übersichtlichkeit zu gewährleisten, wurden die von dem Winkel $\theta$ abhängigen Koeffizienten zu
 \begin{align*}
-b & \coloneq \sin^2(\theta) \cos(\theta)        & f &  \coloneq \cos^2(\theta) \sin(\theta)                             \\                     
-h & \coloneq \sin(\theta)(1-2\cos^2(\theta))    & q &  \coloneq \cos^3(\theta) - \frac{1}{2}\sin^2(\theta) \cos(\theta)
+b & \coloneq -\sin^2(\theta) \cos(\theta)        & f &  \coloneq -\cos^2(\theta) \sin(\theta)                             \\                     
+h & \coloneq -\sin(\theta)(1-2\cos^2(\theta))    & q &  \coloneq -\cos^3(\theta) + \frac{1}{2}\sin^2(\theta) \cos(\theta)
 \end{align*}
 umdefiniert.
 \section{Hybridisierungsfunktion}
 \label{sec:calc_greensfunction}
-Aufgrund der Gitterperiodizität kann für die Operatoren $c_i$ und $c_j$ eine Fouriertransformation der Form 
+Aufgrund der Gitterperiodizität kann für die Operatoren $c_i$ und $c_n$ eine Fouriertransformation der Form 
 \begin{equation}
     c_i = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{i\vec{k}\vec{l}} c_{\text{A}, \vec{k}} \; , 
-    \quad c_j = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{i\vec{k}(\vec{l}+\vec{\delta}_j)} c_{\text{B}, \vec{k}} \label{eqn:fourier_ladder}
+    \quad c_n = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{i\vec{k}(\vec{l}+\vec{\delta}_j)} c_{\text{B}, \vec{k}} \label{eqn:fourier_ladder}
 \end{equation}
 angesetzt werden.
 Dabei sind $N$ die Anzahl der Basen, $\vec{l}$ der Gittervektor der Basis, $\vec{k}$ der Wellenvektor, $\vec{\delta}_j$ der Abstandsvektor
 des $j$-ten Kohlenstoffatoms auf dem Untergitter B, welches der nächste Nachbar des Kohlenstoffatoms auf dem Untergitter A mit dem Gittervektor $\vec{l}$ ist 
-und $c_{A, \vec{k}}$ bzw. $c_{B, \vec{k}}$ die Fourier-tranfsfromierten $p_z$-Orbitale\cite{anders-fkt} auf dem Untergitter A bzw. B.
-Die $\vec{k}$-Werte werden aus der ersten Brillouin Zone genommen.\cite{anders-fkt}
+und $c_{A, \vec{k}}$ bzw. $c_{B, \vec{k}}$ die Fourier-transformierten $p_z$-Orbitale auf dem Untergitter A bzw. B.\cite{anders-fkt}
+Die $\vec{k}$-Werte werden aus der ersten Brillouin-Zone genommen.\cite{anders-fkt}
 Damit lässt sich der Hamiltonian des ungestörten Graphens zu 
 \begin{align*}
     H_0 &= -\frac{t}{N} \sum_{j\vec{l}} \sum_{\vec{k}\vec{k}'} ( \symup{e}^{-i\vec{k}\vec{l}}c^\dagger_{A,\vec{k}} 
@@ -108,15 +108,15 @@ In $H_\text{Kop}$ werden die transformierten Erzeuger ohne weitere Vereinfachung
     \end{split}
 \end{equation*}
 bestimmt werden kann.
-Auf welchem Gitterplatz das Mangatom sitzt, wurde hierbei variabel gelassen.
+Auf welchem Gitterplatz das Mangantom sitzt, wurde hierbei variabel gelassen.
 Jedoch macht es in dieser Modellierung keinen Unterschied, welche Position das Manganatom einnimmt, wie sich im Verlauf der Berechnung auch zeigt.
 Nun können die Einträge der gesuchten Matrix $\underline{\underline{G}}$ mit Hilfe der Bewegungsleichung \eqref{eqn:fouriereom} 
 \begin{equation}
     zG_{d_m, d_{m'}^\dagger}(z) = \langle \{ d_m, d_{m'}^\dagger \} \rangle - G_{[H,d_m], d_{m'}^\dagger} (z) \label{eqn:eomgreenansatz}
 \end{equation}
 bestimmt werden.
-Da sich das Argument der Greensfunktion nicht ändert, wird im folgenden drauf verzichtet, das Argument mit anzugeben.
-Dazu wird der Kommutator $[H,d_m]$ aufgrund der Linearität dessen in drei einzelne Kommutatoren unterteilt, so dass
+Da sich das Argument der Greensche Funktion nicht ändert, wird im Folgenden drauf verzichtet, das Argument mit anzugeben.
+Dazu wird der Kommutator $[H,d_m]$ aufgrund der Linearität in drei einzelne Kommutatoren unterteilt, so dass
 \begin{equation*}
     [H,d_m] = [H_0,d_m] + [H_\text{Def},d_m] +[H_\text{Kop},d_m] 
 \end{equation*}
@@ -135,7 +135,7 @@ Somit lautet der gesamte Kommutator
         \right ) \; . \label{eqn:commutator_H_dm}
     \end{split}
 \end{equation} 
-Die Kommutatoren werden im folgenden seperat ausgrechnet, damit diese hinterher nur noch eingesetzt werden müssen.
+Die Kommutatoren werden im Folgenden separat ausgrechnet, damit diese hinterher nur noch eingesetzt werden müssen.
 Für den ersten Kommutator folgt
 \begin{equation}
     \left [ c^\dagger_{\text{A},\vec{k}}  c_{\text{B},\vec{k}}, d_m \right ]  = c^\dagger_{\text{A},\vec{k}}  c_{\text{B},\vec{k}}  d_m 
@@ -171,7 +171,7 @@ Werden nun alle eben berechneten Kommutatoren in \eqref{eqn:commutator_H_dm} ein
 \end{align*}
 Die Summationen über $m'$ sind in Gleichung \eqref{eqn:commutator_H_dm_eingesetzt} aufgrund der Kronecker-Delta entfallen.
 Der somit berechnete Kommutator kann in die ursprüngliche Bewegungsleichung \eqref{eqn:eomgreenansatz} eingesetzt werden, woraus mit 
-$\langle \{ d_m, d_{m'}^\dagger \} \rangle = \delta_{mm'}$ und \eqref{eqn:commutator_H_dm_eingesetzt}
+$\langle \{ d_m, d_{m'}^\dagger \} \rangle = \delta_{mm'}$ und Gleichung \eqref{eqn:commutator_H_dm_eingesetzt}
 \begin{align*}
     z&G_{d_m, d_{m'}^\dagger} = \delta_{mm'} + \varepsilon_m G_{d_m, d^\dagger_{m'}} + \frac{1}{\sqrt{N}}\sum_{j\vec{k}} V_{mj} 
     \symup{e}^{\symup{i}\vec{k} (\vec{l} + \vec{\delta}_j)} G_{c_{\text{B},\vec{k}}, d^\dagger_{m'}} \\
@@ -196,7 +196,7 @@ ebenfalls bestimmt werden muss, wofür
 \end{equation}
 benötigt wird.
 Mit der selben Vorgehensweise wie in \eqref{eqn:kommutatornull} und \eqref{eqn:commutatornulldagger} verschwinden die 
-Kommutator die kein $c^\dagger_{\text{B},\vec{k}'}$ enthalten, da die Operatoren ohne Berücksichtigung der Kommutatorrelation 
+Kommutatoren, die kein $c^\dagger_{\text{B},\vec{k}'}$ enthalten, da die Operatoren ohne Berücksichtigung der Kommutatorrelation 
 $\left \{ c_i, c^\dagger_j \right \} = \delta_{ij}$ verschoben werden können.
 Somit bleiben nur noch 
 \begin{align*}
@@ -214,7 +214,7 @@ und
         &= - \delta_{\vec{k}\vec{k}'} d_m
 \end{align*}
 übrig.
-somit kann der gesamte Kommutator \eqref{eqn:commutator_H_cB} als 
+Nun kann der gesamte Kommutator \eqref{eqn:commutator_H_cB} als 
 \begin{align*}
     \left [ H, c_{\text{B},\vec{k}} \right ]
      &= t \sum_{j,\vec{k}'} \symup{e}^{-\symup{i}\vec{k}' \vec{\delta}_j} \delta_{\vec{k}\vec{k}'} c_{\text{A},\vec{k}'}
@@ -242,17 +242,17 @@ berechnet, womit
     G_{c_{\text{A},\vec{k}},d^\dagger_{m'}} = - \frac{t \sum_{j}\symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} G_{c_{\text{B},\vec{k}}, d^\dagger_{m'}}} {z} \label{eqn:greensfunction_cA}
 \end{equation}
 folgt.
-Da keine neuen Greensfunktionen mehr auftauchen, sind alle nötigen Kommutatoren berechnet worden. 
-Nun können die Greensfunktion ineinander eingesetzt werden, um die Matrix $\underline{\underline{G}}$ zu bestimmen.
-Somit wird Gleichung \eqref{eqn:greensfunction_cA} in Gleichung \eqref{eqn:greensfunction_cB} eingesetzt, so dass sich die Greensfunktion
+Da keine neuen Greensche Funktionen mehr auftauchen, sind alle nötigen Kommutatoren berechnet worden. 
+Nun können die Greensche Funktion ineinander eingesetzt werden, um die Matrix $\underline{\underline{G}}$ zu bestimmen.
+Somit wird Gleichung \eqref{eqn:greensfunction_cA} in Gleichung \eqref{eqn:greensfunction_cB} eingesetzt, so dass sich die Greensche Funktion
 \begin{equation}
     G_{c_{\text{B},\vec{k}}, d^\dagger_{m'}} = \frac{z\sum_{mj} V_{mj} \symup{e}^{-\symup{i}\vec{k} (\vec{l}+\vec{\delta}_j)} G_{d_m, d_{m'}^\dagger}}
-    {\sqrt{N}\left ( z^2-t^2\sum_j \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \sum_j \symup{e}^{\symup{-i}\vec{k}\vec{\delta}_j} \right )} \label{eqn:finalgreencB}
+    {\sqrt{N}\left ( z^2-t^2\sum_j \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \sum_{j'} \symup{e}^{\symup{-i}\vec{k}\vec{\delta}_{j'}} \right )} \label{eqn:finalgreencB}
 \end{equation}
 ergibt.
 Um mehr Übersichtlichkeit zu gewähren wird die Definition
 \begin{equation*}
-     \mu_{\vec{k}} \coloneq t^2 \sum_j \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \sum_j \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_j} 
+     \mu_{\vec{k}} \coloneq t^2 \sum_j \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \sum_{j'} \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_{j'}} 
 \end{equation*}  
 und die Änderung der Notaton für die Einträge der Matrix $\underline{\underline{G}}$
 \begin{equation*}
@@ -263,11 +263,11 @@ Das Ergebnis \eqref{eqn:finalgreencB} wird schlussendlich in Gleichung \eqref{eq
 Somit folgt
 \begin{align*}
     &\left ( z- \varepsilon_m \right )  G_{mm'} = \delta_{mm'}+\sum_{j\vec{k}} V_{mj} \symup{e}^{\symup{i}\vec{k} ( \vec{l}+ \delta_j)} 
-    \left ( \frac{z\sum_{mj} V_{mj} \symup{e}^{-\symup{i}\vec{k}(\vec{l} + \vec{\delta}_j)}G_{mm'}} {N (z^2-\mu_{\vec{k}})} \right ) \\
+    \left ( \frac{z\sum_{mj'} V_{mj'} \symup{e}^{-\symup{i}\vec{k}(\vec{l} + \vec{\delta}_{j'})}G_{mm'}} {N (z^2-\mu_{\vec{k}})} \right ) \\
     &\iff \left ( z- \varepsilon_m - \frac{z}{N}\sum_{\vec{k}} \frac{\sum_j V_{mj} \symup{e}^{-\symup{i}\vec{k}(\vec{l} + 
-    \vec{\delta}_j)} \sum_j V_{mj} \symup{e}^{-\symup{i}\vec{k}(\vec{l} + \vec{\delta}_j)}} {z^2-\mu_{\vec{k}}} \right ) G_{mm'} \\
+    \vec{\delta}_j)} \sum_{j'} V_{mj'} \symup{e}^{-\symup{i}\vec{k}(\vec{l} + \vec{\delta}_{j'})}} {z^2-\mu_{\vec{k}}} \right ) G_{mm'} \\
     & \quad \quad \quad \quad \quad - \frac{z}{N}\sum_{n \neq m, \vec{k}} \frac{\sum_j V_{mj} \symup{e}^{\symup{i}\vec{k}(\vec{l} 
-    + \vec{\delta}_j)} \sum_j V_{nj} \symup{e}^{-\symup{i}\vec{k}(\vec{l}+\vec{\delta}_j)}} {z^2-\mu_{\vec{k}}} G_{nm'} = \delta_{mm'} \numberthis \label{eqn:matrixmultiplication_green} \; .
+    + \vec{\delta}_j)} \sum_{j'} V_{nj'} \symup{e}^{-\symup{i}\vec{k}(\vec{l}+\vec{\delta}_{j'})}} {z^2-\mu_{\vec{k}}} G_{nm'} = \delta_{mm'} \numberthis \label{eqn:matrixmultiplication_green} \; .
 \end{align*}
 Hier wird, wie vorher erwähnt wurde, ersichtlich, dass die Position des Manganatoms keinen Einfluss auf das Ergebnis hat, da sich der Gittervektor 
 $\vec{l}$, bei welchem sich das Manganatom befindet, in Gleichung \eqref{eqn:matrixmultiplication_green} aufgrund des verschiedenen Vorzeichens im Exponenten weghebt.
@@ -282,8 +282,8 @@ Somit bildet die Matrix $\underline{\underline{A}}$ die Inverse zu der Matrix $\
 Die Einträge der Inversen sind mit $\mu_{\vec{k}}$ eingesetzt durch
 \begin{equation}
     \left (  \underline{\underline{G}}^{-1} \right )_{mn} = \left ( z- \varepsilon_m \right ) \delta_{mn} - \frac{z}{N}\sum_{\vec{k}}
-    \frac{\sum_j V_{mj}\symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}\sum_j V_{nj}\symup{e}^{-\symup{i}\vec{k}\vec{\delta}_j}}
-    {z^2-t^2\sum_j \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \sum_j \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_j}}
+    \frac{\sum_j V_{mj}\symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}\sum_{j'} V_{nj'}\symup{e}^{-\symup{i}\vec{k}\vec{\delta}_{j'}}}
+    {z^2-t^2\sum_j \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \sum_{j'} \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_{j'}}}
 \end{equation}
 gegeben.
 Die Inverse der Matrix  $\underline{\underline{G}}$ besitzt die Struktur 
@@ -296,8 +296,8 @@ die Orbitalenergien $\varepsilon_m$ auf der Hauptdiagonale stehen hat.
 Die Matrix $\underline{\underline{\symup{\Delta}}}$ ist die gesuchte Hybridisierungsfunktion mit 
 \begin{equation*}
     \left ( \underline{\underline{\symup{\Delta}}} \right )_{mn} =  \frac{z}{N}\sum_{\vec{k}}
-    \frac{\sum_j V_{mj}\symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}\sum_j V_{nj}\symup{e}^{-\symup{i}\vec{k}\vec{\delta}_j}}
-    {z^2-t^2\sum_j \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \sum_j \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_j}} \; .
+    \frac{\sum_j V_{mj}\symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}\sum_{j'} V_{nj'}\symup{e}^{-\symup{i}\vec{k}\vec{\delta}_j}}
+    {z^2-t^2\sum_j \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \sum_{j'} \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_{j'}}} \; .
 \end{equation*}
 \section{Linearkombinationen}
 Aufgrund der dreizähligen Drehsymmetrie der Kohlenstoffatome um den Mangandefekt, können die Vernichter $c_i$
@@ -339,8 +339,8 @@ Somit ergibt sich
 Nun werden in in Gleichung \eqref{eqn:lcinhamiltonian} neue Linearkombinationen der Vernichter $d_i$ ersichtlich.
 Diese lauten 
 \begin{align*}
-    \tilde{d}_0 &= \frac{1}{\sqrt{2}} (d_5-\symup{i}d_1) & \tilde{d}_1 &= \frac{1}{\sqrt{2}} (d_5+\symup{i}d_1) \\
-    \tilde{d}_2 &= \frac{1}{\sqrt{2}} (d_2+\symup{i}d_3) & \tilde{d}_3 &= \frac{1}{\sqrt{2}} (d_2-\symup{i}d_3) \; .   \numberthis \label{eqn:newdi}
+    \tilde{d}_0 &= \frac{1}{\sqrt{2}} (d_5-\symup{i}d_1) & \tilde{d}_2 &= \frac{1}{\sqrt{2}} (d_5+\symup{i}d_1) \\
+    \tilde{d}_1 &= \frac{1}{\sqrt{2}} (d_2+\symup{i}d_3) & \tilde{d}_3 &= \frac{1}{\sqrt{2}} (d_2-\symup{i}d_3) \; .   \numberthis \label{eqn:newdi}
 \end{align*}
 Der Vorfaktor $\frac{1}{\sqrt{2}}$ dient erneut zur Normierung und gewährt ebenfalls die Antikommutatorrelation $\{ \tilde{d}_i, \tilde{d}^\dagger_j \} = \delta_{ij}$.
 Wie in den Gleichungen \eqref{eqn:newdi} zu erkennen ist, mischen zweimal jeweils zwei Orbitale.
@@ -351,8 +351,8 @@ Dazu werden die neuen Linearkombinationen für die Operatoren der Manganorbitale
 \begin{equation}
             \begin{split}
                 H_\text{Kop} = \frac{\sqrt{2}}{\sqrt{3}} 
-                & \left ( \frac{3}{4}\sqrt{3} b V_{pd\sigma} + \frac{3}{2}  b   V_{pd\pi} \right )      \left ( \tilde{d}^\dagger_0 \tilde{c}_1 + \tilde{d}^\dagger_1 \tilde{c}_2 \right )   \\
-            +    & \left ( \frac{3}{2}\sqrt{3} f V_{pd\sigma} + \frac{3}{2}  h   V_{pd\pi} \right )     \left ( \tilde{d}^\dagger_2 \tilde{c}_1 + \tilde{d}^\dagger_3 \tilde{c}_2 \right )   \\
+                & \left ( \frac{3}{4}\sqrt{3} b V_{pd\sigma} + \frac{3}{2}  b   V_{pd\pi} \right )      \left ( \tilde{d}^\dagger_0 \tilde{c}_1 + \tilde{d}^\dagger_2 \tilde{c}_2 \right )   \\
+            +    & \left ( \frac{3}{2}\sqrt{3} f V_{pd\sigma} + \frac{3}{2}  h   V_{pd\pi} \right )     \left ( \tilde{d}^\dagger_1 \tilde{c}_1 + \tilde{d}^\dagger_3 \tilde{c}_2 \right )   \\
             +    & \left ( \frac{3}{\sqrt{2}} q V_{pd\sigma} + \frac{\sqrt{3}}{\sqrt{2}} 3 b V_{pd\pi} \right ) \tilde{d}^\dagger_4 \tilde{c}_0 + \text{h.c.} \; .
             \end{split}
             \label{eqn:Hkopnice}
@@ -367,31 +367,41 @@ Dabei sieht $\underline{\underline{\gamma}}$ wie folgt aus:
 \begin{equation*}
     \underline{\underline{\gamma}} = 
     \begin{pmatrix}
-        0               &\gamma_{01} &  0           \\
-        0               & 0&             \gamma_{12}\\
-        0               &\gamma_{21}    &  0        \\
-        0               & 0&  \gamma_{32}           \\
-        \gamma_{40}     & 0& 0                      \\
+        0               &\gamma_{01}    &   0           \\
+        0               &\gamma_{11}   &   0           \\
+        0               &0              &   \gamma_{22} \\
+        0               & 0             &   \gamma_{32} \\
+        \gamma_{40}     & 0             &   0           \\
     \end{pmatrix}
 \end{equation*}
 geschrieben werden.
 Fouriertrafo für neue $\tilde{c}_i$ : 
 \begin{align*}
-    \tilde{c}_0 &= \frac{1}{\sqrt{3N}}\sum_{j\vec{k}}\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)}                                                      \\
-    \tilde{c}_1 &= \frac{1}{\sqrt{3N}}\sum_{j\vec{k}}\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)+\symup{i}\frac{2(j-1)\pi}{3}} c_{\text{B}, \vec{k}}   \\
-    \tilde{c}_2 &= \frac{1}{\sqrt{3N}}\sum_{j\vec{k}}\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)-\symup{i}\frac{2(j-1)\pi}{3}} c_{\text{B}, \vec{k}}    \\
+    \tilde{c}_0 &= \frac{1}{\sqrt{3N}}\sum_{j\vec{k}}\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)}                              c_{\text{B}, \vec{k}}  \\
+    \tilde{c}_1 &= \frac{1}{\sqrt{3N}}\sum_{j\vec{k}}\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)+\symup{i}\frac{2(j-1)\pi}{3}} c_{\text{B}, \vec{k}}  \\
+    \tilde{c}_2 &= \frac{1}{\sqrt{3N}}\sum_{j\vec{k}}\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)-\symup{i}\frac{2(j-1)\pi}{3}} c_{\text{B}, \vec{k}}  
 \end{align*}
-mit $\alpha_j \coloneq \symup{i}\frac{2(j-1)\pi}{3}$ und dessen Eigenschaft folgt $\overline{\alpha}_j = - \alpha_j$
 \begin{align*}
-    H = &-t \sum_{j \vec{k}} ( \symup{e}^{i\vec{k}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}} + 
+    H = &-t \sum_{\vec{k}}\sum_{j=1}^3  ( \symup{e}^{i\vec{k}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}} + 
     \symup{e}^{-i\vec{k}\vec{\delta}_j} c^\dagger_{B,\vec{k}}c_{A,\vec{k}}) + 
-    \varepsilon \sum_m \tilde{d}^\dagger_m \tilde{d}_m \\
-    &+\frac{1}{\sqrt{3N}} \sum_{m=0}^4 \sum_{j=0}^2 \sum_{\vec{k}} 
-    (\gamma_{mj} \symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)+(-1)^m \alpha_j(1-\delta_{m4})} c_{\text{B}, \vec{k}} \tilde{d}^\dagger_m c_{B,\vec{k}} \\
-    &+ \gamma_{mj}  \symup{e}^{-i{\vec{k}}(\vec{l}+\vec{\delta}_j)-(-1)^m \alpha_j(1-\delta_{m4})} c^\dagger_{B,\vec{k}} \tilde{d}_m)
+    \varepsilon \sum_{m=0}^4 \tilde{d}^\dagger_m \tilde{d}_m \\
+    &+\frac{1}{\sqrt{3N}} \sum_{\vec{k}} \sum_{m=0}^4 \sum_{l=0}^2 \sum_{j=1}^3 
+    (\gamma_{ml} \symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)+(-1)^{(\delta_{m2}+\delta_{m3})}     i\frac{2(j-1)\pi}{3}(1-\delta_{m4})}\tilde{d}^\dagger_m c_{B,\vec{k}} \\
+    &+ \gamma_{mj}  \symup{e}^{-i{\vec{k}}(\vec{l}+\vec{\delta}_j)-(-1)^{(\delta_{m2}+\delta_{m3})} i\frac{2(j-1)\pi}{3}(1-\delta_{m4})} c^\dagger_{B,\vec{k}} \tilde{d}_m)
 \end{align*}
 Hybridisierungsfunktion gegeben durch 
 \begin{align*}
-    \frac{z}{3N} \sum_{\vec{k}} \frac{\sum_j \gamma_{mj} \symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)+(-1)^m \alpha_j(1-\delta_{m4})} }
-    {z^2 - t^2 \sum_j \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \sum_j \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_j}}
+    \symup{\Delta}_{mn} = \frac{z}{3N} \sum_{\vec{k}} \frac{\sum_{jl} \gamma_{ml} \symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)+(-1)^{(\delta_{m2}+\delta_{m3})}     i\frac{2(j-1)\pi}{3}(1-\delta_{m4})}
+    \sum_{j'l'} \gamma_{nl'} \symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_{j'})-(-1)^{(\delta_{n2}+\delta_{n3})}     i\frac{2(j'-1)\pi}{3}(1-\delta_{n4})} }
+    {z^2 - t^2 \left (3+2\cos(\sqrt{3}ak_y)+2\cos(\frac{3}{2}ak_x+\frac{\sqrt{3}}{2}ak_y) + 2\cos(\frac{3}{2}ak_x-\frac{\sqrt{3}}{2}ak_y) \right )  }
 \end{align*}
+\begin{equation*}
+    \underline{\underline{\symup{\Delta}}} = 
+    \begin{pmatrix}
+        \symup{\Delta}_{00}     & \symup{\Delta}_{01}   & 0                     & 0                     & 0                     \\
+        \symup{\Delta}_{10}     & \symup{\Delta}_{11}   & 0                     & 0                     & 0                     \\
+        0                       & 0                     & \symup{\Delta}_{22}   & \symup{\Delta}_{23}   & 0                     \\
+        0                       & 0                     & \symup{\Delta}_{32}   & \symup{\Delta}_{33}   & 0                     \\
+        0                       & 0                         & 0                     & 0                 & \symup{\Delta}_{44}   \\
+    \end{pmatrix}
+\end{equation*}
