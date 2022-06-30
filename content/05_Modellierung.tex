@@ -296,7 +296,7 @@ die Orbitalenergien $\varepsilon_m$ auf der Hauptdiagonale stehen hat.
 Die Matrix $\underline{\underline{\symup{\Delta}}}$ ist die gesuchte Hybridisierungsfunktion mit 
 \begin{equation*}
     \left ( \underline{\underline{\symup{\Delta}}} \right )_{mn} =  \frac{z}{N}\sum_{\vec{k}}
-    \frac{\sum_j V_{mj}\symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}\sum_{j'} V_{nj'}\symup{e}^{-\symup{i}\vec{k}\vec{\delta}_j}}
+    \frac{\sum_j V_{mj}\symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}\sum_{j'} V_{nj'}\symup{e}^{-\symup{i}\vec{k}\vec{\delta}_{j'}}}
     {z^2-t^2\sum_j \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \sum_{j'} \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_{j'}}} \; .
 \end{equation*}
 \section{Linearkombinationen}
@@ -360,8 +360,8 @@ Dazu werden die neuen Linearkombinationen für die Operatoren der Manganorbitale
 vereinfacht. 
 Hamiltonian kann als 
 \begin{align}
-    H = -t\sum_{ij}(c^\dagger_i c_j + c^\dagger_j c_i) + \varepsilon \sum_{m=0} \tilde{d}^\dagger_m \tilde{d}_m +
-    \sum_{mj}(\gamma_{mj} \tilde{d}^\dagger_m \tilde{c}_j + \gamma_{mj} \tilde{c}^\dagger_j \tilde{d}_m) \; .
+    H = -t\sum_{ij}(c^\dagger_i c_j + c^\dagger_j c_i) + \varepsilon \sum_{m=0}^4 \tilde{d}^\dagger_m \tilde{d}_m +
+    \sum_{m=0}^4\sum_{l=0}^2(\gamma_{mj} \tilde{d}^\dagger_m \tilde{c}_l + \gamma_{ml} \tilde{c}^\dagger_l \tilde{d}_m) \; .
 \end{align}
 Dabei sieht $\underline{\underline{\gamma}}$ wie folgt aus:
 \begin{equation*}
@@ -393,15 +393,94 @@ Hybridisierungsfunktion gegeben durch
 \begin{align*}
     \symup{\Delta}_{mn} = \frac{z}{3N} \sum_{\vec{k}} \frac{\sum_{jl} \gamma_{ml} \symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)+(-1)^{(\delta_{m2}+\delta_{m3})}     i\frac{2(j-1)\pi}{3}(1-\delta_{m4})}
     \sum_{j'l'} \gamma_{nl'} \symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_{j'})-(-1)^{(\delta_{n2}+\delta_{n3})}     i\frac{2(j'-1)\pi}{3}(1-\delta_{n4})} }
-    {z^2 - t^2 \left (3+2\cos(\sqrt{3}ak_y)+2\cos(\frac{3}{2}ak_x+\frac{\sqrt{3}}{2}ak_y) + 2\cos(\frac{3}{2}ak_x-\frac{\sqrt{3}}{2}ak_y) \right )  }
+    {z^2 - |\varepsilon_{\vec{k}}|^2}
 \end{align*}
+mit der Dispersionsrelation $\varepsilon^{\pm}_{\vec{k}} = \pm  t \sum_j\symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \sum_{j'}\symup{e}^{-\symup{i}\vec{k}\vec{\delta}_{j'}}$.
+%\begin{equation*}
+%    \underline{\underline{\symup{\Delta}}} = 
+%    \begin{pmatrix}
+%        \symup{\Delta}_{00}     & \symup{\Delta}_{01}   & 0                     & 0                     & 0                     \\
+%        \symup{\Delta}_{10}     & \symup{\Delta}_{11}   & 0                     & 0                     & 0                     \\
+%        0                       & 0                     & \symup{\Delta}_{22}   & \symup{\Delta}_{23}   & 0                     \\
+%        0                       & 0                     & \symup{\Delta}_{32}   & \symup{\Delta}_{33}   & 0                     \\
+%        0                       & 0                         & 0                     & 0                 & \symup{\Delta}_{44}   \\
+%    \end{pmatrix}
+%\end{equation*}
+\section{Andere Variante}
+Der Hamiltonian des ungestörten Graphens ist
 \begin{equation*}
-    \underline{\underline{\symup{\Delta}}} = 
+    - t \sum_{i=1}^N \sum_{j=1}^N\left ( c_i^\dagger c_j + c_j^\dagger c_i \right ) \; .
+\end{equation*}
+Mit den Fouriertransformationen für $c_i$ und $c_j$ 
+\begin{equation}
+    c_i = \frac{1}{\sqrt{N}} \sum_{\vec{k}} \symup{e}^{i\vec{k}\vec{l}} c_{\text{A}, \vec{k}} \; , 
+    \quad c_j = \frac{1}{\sqrt{N}} \sum_{\vec{k}} \symup{e}^{i\vec{k}(\vec{l}+\vec{\delta}_j)} c_{\text{B}, \vec{k}} 
+\end{equation}
+ergibt sich der Hamiltonian mit Vereinfachungen zu
+\begin{equation}
+    H = -t \sum_{\vec{k}}\sum_{j=1}^3( \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}c^\dagger_{\text{A},\vec{k}} c_{\text{B},\vec{k}} + \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_j}c^\dagger_{\text{B},\vec{k}} c_{\text{A},\vec{k}} ) \; .
+\end{equation} 
+Der Vektor $\symup{\delta}_j$ ist dabei der Abstandsvektor des nächsten Nachbarn auf dem Untergitter B.
+Nun die Greensfunktionen mit Bewegungsleichung ausrechnen, wobei erst die Kommutatoren
+\begin{align}
+    \left [H,  c_{\text{B},\vec{k}} \right ] &= t \sum_j \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_j} c_{\text{A},\vec{k}} \\
+    \left [H,  c_{\text{A},\vec{k}} \right ] &= t \sum_j \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} c_{\text{B},\vec{k}}
+\end{align}
+benötigt werden. 
+Damit erhält man die Greensfunktionen:
+\begin{align}
+    G_{c_{\text{A},\vec{k}}, c^\dagger_{\text{B},\vec{k}}} &=  \frac{\sum_j \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} G_{c_{\text{B},\vec{k}}, c^\dagger_{\text{B},\vec{k}}}}{z}\\
+    zG_{c_{\text{B},\vec{k}}, c^\dagger_{\text{B},\vec{k}}} &= 1 -  \sum_j \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_j} G_{c_{\text{A},\vec{k}}, c^\dagger_{\text{B},\vec{k}}} \; .
+\end{align}
+Die Greensfunktion $G_{c_{\text{A},\vec{k}}, c^\dagger_{\text{B},\vec{k}}}$ in $G_{c_{\text{B},\vec{k}}, c^\dagger_{\text{B},\vec{k}}}$ einsetzten:
+\begin{align}
+    zG_{c_{\text{B},\vec{k}}, c^\dagger_{\text{B},\vec{k}}} &= 1 - \sum_j \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_j} \frac{\sum_{j'} \symup{e}^{\symup{i}\vec{k}\vec{\delta}_{j}} G_{c_{\text{B},\vec{k}}, c^\dagger_{\text{B},\vec{k}}}}{z}\\
+    \iff G_{c_{\text{B},\vec{k}}, c^\dagger_{\text{B},\vec{k}}} &= \frac{z}{z^2 - \varepsilon^2_{\vec{k}}  } \; .
+\end{align}
+Dabei ergibt sich die Dispersionsrelation von Graphen mit $\varepsilon^{\pm}_{\vec{k}} = \pm  t \sum_j\symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \sum_{j'}\symup{e}^{-\symup{i}\vec{k}\vec{\delta}_{j'}}$.
+Jetzt 
+\begin{equation}
+    G_{\tilde{c}_i, \tilde{c}^\dagger_j} = \sum_{\vec{k}} D_i D^\dagger_j G_{c_{\text{B},\vec{k}}, c^\dagger_{\text{B},\vec{k}}} \label{eqn:koe}
+\end{equation}
+ausnutzen, wobei $D_i$ und $D_j$ die Koeffizienten von den Fouriertransformationen 
+\begin{align}
+    \tilde{c}_0 &= \frac{1}{\sqrt{3N}}\sum_{\vec{k}} \sum_{j=1}^3\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)}                              c_{\text{B}, \vec{k}}  \\
+    \tilde{c}_1 &= \frac{1}{\sqrt{3N}}\sum_{\vec{k}} \sum_{j=1}^3\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)+\symup{i}\frac{2(j-1)\pi}{3}} c_{\text{B}, \vec{k}}  \\
+    \tilde{c}_2 &= \frac{1}{\sqrt{3N}}\sum_{\vec{k}} \sum_{j=1}^3\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)-\symup{i}\frac{2(j-1)\pi}{3}} c_{\text{B}, \vec{k}}  
+\end{align}
+sind.
+Die Koeffizienten sind
+\begin{align}
+    D_0 &= \frac{1}{\sqrt{3N}}\sum_{j=1}^3\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)} \\
+    D_1 &= \frac{1}{\sqrt{3N}}\sum_{j=1}^3\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)+\symup{i}\frac{2(j-1)\pi}{3}}  \\
+    D_2 &= \frac{1}{\sqrt{3N}}\sum_{j=1}^3\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)-\symup{i}\frac{2(j-1)\pi}{3}} \; .
+\end{align}
+Werden die Koeffizienten $D_i$ nun in \eqref{eqn:koe} eingesetzt, ergibt sich
+\begin{align}
+    G_{\tilde{c}_0, \tilde{c}^\dagger_0} &= \frac{z}{3N} \sum_{\vec{k}} \frac{\sum_j \symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)} \sum_{j'} \symup{e}^{-i{\vec{k}}(\vec{l}+\vec{\delta}_{j'})}                                                            }{z^2-\varepsilon_{\vec{k}}^2} \\
+    G_{\tilde{c}_1, \tilde{c}^\dagger_1} &= \frac{z}{3N} \sum_{\vec{k}} \frac{\sum_j \symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)+\symup{i}\frac{2(j-1)\pi}{3}} \sum_{j'} \symup{e}^{-i{\vec{k}}(\vec{l}+\vec{\delta}_{j'})-\symup{i}\frac{2(j'-1)\pi}{3}} }{z^2-\varepsilon_{\vec{k}}^2} \\
+    G_{\tilde{c}_2, \tilde{c}^\dagger_2} &= \frac{z}{3N} \sum_{\vec{k}} \frac{\sum_j \symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)-\symup{i}\frac{2(j-1)\pi}{3}} \sum_{j'} \symup{e}^{-i{\vec{k}}(\vec{l}+\vec{\delta}_{j'})+\symup{i}\frac{2(j'-1)\pi}{3}} }{z^2-\varepsilon_{\vec{k}}^2} \; .
+\end{align}
+Mit der Matrix $\underline{\underline{\gamma}}$
+\begin{equation*}
+    (\underline{\underline{\gamma}})_{ml} = 
     \begin{pmatrix}
-        \symup{\Delta}_{00}     & \symup{\Delta}_{01}   & 0                     & 0                     & 0                     \\
-        \symup{\Delta}_{10}     & \symup{\Delta}_{11}   & 0                     & 0                     & 0                     \\
-        0                       & 0                     & \symup{\Delta}_{22}   & \symup{\Delta}_{23}   & 0                     \\
-        0                       & 0                     & \symup{\Delta}_{32}   & \symup{\Delta}_{33}   & 0                     \\
-        0                       & 0                         & 0                     & 0                 & \symup{\Delta}_{44}   \\
+        0               &\gamma_{01}    &   0           \\
+        0               &\gamma_{11}   &   0           \\
+        0               &0              &   \gamma_{22} \\
+        0               & 0             &   \gamma_{32} \\
+        \gamma_{40}     & 0             &   0           \\
     \end{pmatrix}
 \end{equation*}
+dessen Einträge die Vorfaktoren aus dem Hamiltonian $H_\text{Kop}$ \eqref{eqn:Hkopnice} mit den neuen $\tilde{c_l}$ und $\tilde{d}_m$ sind,
+sieht $\underline{\underline{\symup{\Delta}}}$ wie folgt aus:
+\begin{equation}
+    (\underline{\underline{\symup{\Delta}}})_{mn} = 
+    \begin{pmatrix}
+        \gamma_{01}^2           G_{\tilde{c}_1, \tilde{c}^\dagger_1}        & \gamma_{01}\gamma_{11}  G_{\tilde{c}_1, \tilde{c}^\dagger_1}      & 0                                                                 & 0                                                             & 0                                                             \\
+        \gamma_{01}\gamma_{11}  G_{\tilde{c}_1, \tilde{c}^\dagger_1}        & \gamma_{11}^2           G_{\tilde{c}_1, \tilde{c}^\dagger_1}      & 0                                                                 & 0                                                             & 0                                                             \\
+        0                                                                   & 0                                                                 & \gamma_{22}^2           G_{\tilde{c}_2, \tilde{c}^\dagger_2}      & \gamma_{22}\gamma_{32}  G_{\tilde{c}_2, \tilde{c}^\dagger_2}   & 0                                                             \\
+        0                                                                   & 0                                                                 & \gamma_{22}\gamma_{32}  G_{\tilde{c}_2, \tilde{c}^\dagger_2}      & \gamma_{32}^2          G_{\tilde{c}_2, \tilde{c}^\dagger_2}   & 0                                                             \\
+        0                                                                   & 0                                                                 & 0                                                                 & 0                                                             & \gamma_{40}^2           G_{\tilde{c}_0, \tilde{c}^\dagger_0}  \\
+    \end{pmatrix}
+\end{equation}
