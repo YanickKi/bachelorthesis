@@ -1,13 +1,14 @@
 \chapter{Einleitung}
 \section{Motivation}
-Motiviert wurde diese Arbeit durch das Paper \cite{doi:10.1021/acsnano.1c00139}.
+Motiviert wurde diese Arbeit durch das Paper \cite{doi:10.1021/acsnano.1c00139}, aus welchem jegliche Informationen dieses 
+Abschnitts entnommen wurden.
 In dem dort behandelten Experiment wird mittels ultralow-energy ion implantation Mangan (Mn) in eine einzelne Graphenstörstelle, wobei sich das Graphen auf einem Kupfersubstrat befindet, eingesetzt.
 Es wurden die Positionen des Mangans im Bezug auf die Moiré Superstruktur (Abbildung \ref{fig:ascnano_structure}), die elektronischen und magnetischen Eigenschaften und die Konzentration der Mangan-Defekte
 untersucht.
 Die Moiré Superstruktur bildet sich aus, da die vertikale Ausrichtung zwischen dem Graphen und dem Kupfer kontinuierlich variiert.
 Graphen mit Manganstörstellen eignet sich für die Untersuchung elektrischer und magnetischer Eigenschaften, da es bei einer Konzentration von ca. $\qty{0.04}{\percent}$ 
 die Dirac-ähnlichen Bänder beibehält und es somit ein ideales System für das Studieren der Interaktion
-zwischen lokalen magnetischen Momenten und den Diracelektronen darstellt.
+zwischen lokalen magnetischen Momenten und den Dirac-Elektronen (siehe Abschnitt \ref{sec:propertiesofgraphene})darstellt.
 Abbildung \ref{fig:ascnano_structure}(a) zeigt die Probe auf atomarer Ebene, worin auch die Moiré Superstruktur dargestellt ist.
 Die Stellen mit hoher Symmetrie bezüglich des Stapelns des Graphens auf dem Substrat werden in 
 Abbildung \ref{fig:ascnano_structure}(b-d) aufgezeigt.
@@ -33,7 +34,7 @@ eine höhere Energie aufweist und somit instabiler ist.
 \begin{figure}
     \centering
     \includegraphics[width = \textwidth]{Plots/images_large_nn1c00139_0003.jpeg}
-    \caption{(a) zeigt eine RTM, wo Mangan auf den beiden verschiedenen Untergittern von Graphen implantiert wurde. In der
+    \caption{(a) zeigt eine RTM, wo Mangan in die beiden verschiedenen Untergittern von Graphen implantiert wurde. In der
     RTM äußern sich diese mittels dreieckigen Strukturen, welche zueinander gespiegelt liegen.
     (b-c) zeigen RTM simuliert mittels DFT um TOP-FCC Stapeln. In (b) liegt das Mn-Atom auf einem FCC
     und in (c) auf einem TOP Gitterplatz. (d-g) zeigen die Anordnung des Manganatoms respektive des Gitterplatzes
@@ -41,27 +42,6 @@ eine höhere Energie aufweist und somit instabiler ist.
     (Abbildung entnommen aus \cite{doi:10.1021/acsnano.1c00139})}
     \label{fig:ascnano_defect}
 \end{figure}
-\section{Eigenschaften von Graphen}
-Graphen ist ein zweidimensionales, aus einer Atomschicht bestehendes Allotrop von Kohlenstoff (Cu), angeordnet in einem hexagonalen
-Bravais-Gitter. 
-Der größte Teil der Bindung geht von den $sp^2$-Hybridorbitalen aus, welche eine $\sigma$-Bindung eingehen, so dass 
-die die Bindungspartner in einem Winkel vom $\ang{120;;}$ zueinander liegen. 
-Das zu der Graphenebene senkrecht liegende p-Orbital sorgt mit dessen $\pi$-Bindung für eine gute Leitfähigkeit.\cite{graphene_properties}
-Eine $\sigma$ und eine $\pi$-Bindung sorgen für eine Doppelbindung.
-Graphen ist aufgrund dessen Eigenschaften von großem Interesse und ein aktuelles Forschungsthema.
-Einerseits ist die  Dichte mit $\qty{0.77}{\milli\gram\per\metre\squared}$ extrem gering, obwohl 
-Graphen eine hundertfache Stärke von Stahl bei der selben Dicke aufweist.\cite{graphene_properties} 
-Anderseits ist Graphen das bisher bekannte am besten leitende Material bei Raumtemperetur mit einer Leitfähigkeit von 
-$\qty{e6}{\siemens\per\metre}$\cite{graphene_properties}. 
-Dies lässt sich mit den Elektronen aus den schwachen $\pi$-Bindungen erklären, welche sich frei bewegen können.
-Außerdem sind die Bänder mit der Dispersionsrelation
-\begin{equation*}
-    \epsilon_{\vec{k}} \propto \pm \sqrt{3+2\cos(\sqrt{3}ak_y)+2\cos(\frac{3}{2}ak_x+\frac{\sqrt{3}}{2}ak_y) + 2\cos(\frac{3}{2}ak_x-\frac{\sqrt{3}}{2}ak_y) }
-\end{equation*}
-und der Form eines Kegels nennenswert.
-Das negative bzw. positive Vorzeichen gehört zu dem Valenz- bzw. Leitungsband. 
-Die Bänder berühren sich and den Diracpunkten\footnote{An den Diracpunkten ist die Dispersionsrelation null.}, wodurch ein Austausch von Elektronen auch bei verschwindender thermischer Anregung 
-stattfinden kann.\cite{graphene_properties}
 \section{Struktur von Graphen und der Störstelle}
 \label{sec:structure}
 Die Struktur von Graphen kann nur mit einer zweiatomigen Basis beschrieben werden, da sonst keine Translationsinvarianz vorherrschen würde.
@@ -116,5 +96,43 @@ Abstandsvektoren durch
     \vec{d}_2 = a \begin{pmatrix} -\frac{1}{2} \\[4pt] \frac{\sqrt{3}}{2}  \\[4pt] \cot (\theta)\end{pmatrix}, \quad 
     \vec{d}_3 = a \begin{pmatrix} -\frac{1}{2} \\[4pt] -\frac{\sqrt{3}}{2} \\[4pt] \cot (\theta)\end{pmatrix}
 \end{equation*}
-angegeben werden können. 
-In dieser Arbeit wird nur der Überlapp zwischen den 5 $3d$-Orbitalen des Manganatoms und den $p_z$-Orbitalen der umliegenden Kohlenstoffatome betrachtet.
+angegeben werden können.\\
+Die erste Brillouin-Zone ist, wie in Abbildung \ref{TEMPLATE} dargestellt, ein um $\ang{90;;}$ gedrehtes Hexagon 
+\section{Eigenschaften von Graphen}
+\label{sec:propertiesofgraphene}
+Graphen ist ein zweidimensionales, aus einer Atomschicht bestehendes Allotrop von Kohlenstoff (Cu), angeordnet in einem hexagonalen
+Bravais-Gitter. 
+Der größte Teil der Bindung geht von den $sp^2$-Hybridorbitalen aus, mit welcher ein Kohlenstoffatom mit drei umliegenden
+Nachbarn in trigonalen und planaren Anordnung eine $\sigma$-Bindung eingeht.\cite{RevModPhys.81.109}
+Das dazu senkrecht stehende $p$-Orbital führt jedoch zu einer weitern Bindung, der $\pi$-Bindung, so dass ein Kohlenstoffatom
+mit einem der drei nächsten Nachbarn eine Doppelbindung eingeht.
+Dabei sorgt das $\sigma$-Band für die Robustheit der Gitterstruktur.\cite{RevModPhys.81.109}
+Aufgrund des Pauli-Prinzips haben diese Bänder eine volle Schale, welche somit ein sehr tiefes Valenzband
+formen.\cite{RevModPhys.81.109}
+Da jedes $p$-Orbital, welches senkrecht auf der Graphenebene steht, eine Elektron
+besitzt, ist das $\pi$-Band halb gefüllt, womit sich die Elektronen frei bewegen können.\cite{RevModPhys.81.109}\cite{graphene_properties}
+Dieses $\pi$-Bindung trägt auch mit sehr großem Anteil zu der Leitfähigkeit von Graphen bei.\cite{graphene_properties}
+Die Bandstruktur kann mittels einem Tight-Binding-Modell ermittelt werden, woraus mittels der Annahme eines nächsten-Nachbarns-Hüpfens
+die Dispersionsrelation 
+\begin{equation*}
+    \epsilon_{\vec{k}} \propto \pm \sqrt{3+2\cos(\sqrt{3}ak_y)+2\cos(\frac{3}{2}ak_x+\frac{\sqrt{3}}{2}ak_y) + 2\cos(\frac{3}{2}ak_x-\frac{\sqrt{3}}{2}ak_y) }
+\end{equation*}
+folgt (die Rechung dazu befindet sich im Anhang \ref{TEMPLATE}).
+Das negative bzw. positive Vorzeichen gehört zu dem Valenz- ($\pi$) bzw. Leitungsband ($\pi^*$).\cite{RevModPhys.81.109}
+Das Valenz- und Leitungsband berühren sich in zwei inäquivalenten Punkten der ersten Brillouin-Zone ($\vec{K}$ und $\vec{K}'$), welche 
+auch Dirac-Punkte genannt werden.\cite{10.1093/nsr/nwu080}
+Wird die Dispersionsrelation um diese beiden Punkte entwickelt, wird die Dispersionsrelationrelation linear, welche mit 
+\begin{equation}
+    E = \hbar v_{\text{F}} | k | 
+\end{equation}
+in der nähe der beiden Punkte die Form eines Kegels (sog. \textit{Dirac cone}) besitzt.\cite{10.1093/nsr/nwu080}\cite{Avouris2007}
+Jedoch verschwindet die Zustandsdichte in diesen Punkten, wodurch Graphen als ein bandlückenloser Halbleiter mit einer verschwindenen 
+Zustandsdichte am Fermi-Niveau gesehen werden kann.\cite{10.1093/nsr/nwu080}
+Aufgrund dieser linearen Dispersion, können die Elektronen durch die masselose Dirac-Gleichung beschrieben werden, wobei sich die 
+die Elektron (in dem Fall sog. Dirac-Elektronen)  mit der Fermigeschwindigkeit, welche ca. 300 mal kleiner als die Lichtgeschwindigkeit ist,
+statt der Lichtgeschwindigkeit fortbewegen.\cite{Avouris2007}
+Graphen ist ebenfalls aufgrund dessen makroskopischen Eigenschaften von großem Interesse und ein aktuelles Forschungsthema.
+Einerseits ist die  Dichte mit $\qty{0.77}{\milli\gram\per\metre\squared}$ extrem gering, obwohl 
+Graphen eine hundertfache Stärke von Stahl bei der selben Dicke aufweist.\cite{graphene_properties} 
+Anderseits ist Graphen das bisher bekannte am besten leitende Material bei Raumtemperetur mit einer Leitfähigkeit von 
+$\qty{e6}{\siemens\per\metre}$.\cite{graphene_properties}
