@@ -44,27 +44,39 @@ eine höhere Energie aufweist und somit instabiler ist.
 \end{figure}
 \section{Struktur von Graphen und der Störstelle}
 \label{sec:structure}
-Die Struktur von Graphen kann nur mit einer zweiatomigen Basis beschrieben werden, da sonst keine Translationsinvarianz vorherrschen würde.
-Dazu kann das Kristallgitter in zwei Gitter (A und B) aufgeteilt werden.
-Die in der Abbildung \ref{fig:graphene_lattice} eingezeichneten Nächsten-Nachbarn-Vektoren können durch einen Drehwinkel $\varphi_i$ beschrieben werden, so dass sich 
-mit dem Gitterabstand a
-\begin{equation*}
-    \vec{\delta}_i(\varphi_i) = a\begin{pmatrix} \sin (\varphi_i) \\ \cos (\varphi_i)     \end{pmatrix}
-\end{equation*}
-ergibt.
-Wird das Koordinatensystem so gelegt, so dass $\vec{\delta}_1$ auf der x-Achse liegt, lassen sich die Abstandsvektoren mittels 
+\begin{figure}
+    \begin{minipage}{0.49\textwidth}
+        Die Struktur von Graphen kann nur mit einer zweiatomigen Basis beschrieben werden, da sonst keine Translationsinvarianz vorherrschen würde.
+        Dazu kann das Kristallgitter in zwei Gitter (A und B) aufgeteilt werden.
+        Die in der Abbildung \ref{fig:graphene_lattice} eingezeichneten Nächsten-Nachbarn-Vektoren können durch einen Drehwinkel $\varphi_i$ beschrieben werden, so dass sich 
+        mit dem Gitterabstand a
+        \begin{equation*}
+            \vec{\delta}_i(\varphi_i) = a\begin{pmatrix} \sin (\varphi_i) \\ \cos (\varphi_i)     \end{pmatrix}
+        \end{equation*}
+        ergibt. 
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.5\textwidth}
+        \centering
+            \includegraphics[width=0.8\textwidth]{Plots/graphene_lattice.pdf}
+            \captionsetup{width=0.9\textwidth}
+            \caption{Bildunterschrift.}
+            \label{fig:Bild}
+       \end{minipage}
+\end{figure}
+Wird das Koordinatensystem so gelegt, so dass $\vec{\delta}_1$ auf der x-Achse liegt, lassen sich die Abstandsvektoren mittels
 \begin{equation*}
     \vec{\delta}_1 = a \begin{pmatrix} 1            \\[4pt] 0                   \end{pmatrix}, \quad
     \vec{\delta}_2 = a \begin{pmatrix} -\frac{1}{2} \\[4pt] \frac{\sqrt{3}}{2}  \end{pmatrix}, \quad 
     \vec{\delta}_3 = a \begin{pmatrix} -\frac{1}{2} \\[4pt] -\frac{\sqrt{3}}{2} \end{pmatrix}
 \end{equation*}
-darstellen. \\ 
-\begin{figure}
-    \centering
-    \includegraphics[width = 0.5\textwidth]{Plots/graphene_lattice.pdf}
-    \caption{Honigwabengitter von ungestörtem Graphen mit eingezeichneten Nächste-Nachbar-Vektoren.}
-    \label{fig:graphene_lattice}
-\end{figure}
+darstellen.
+%\begin{figure}
+%    \centering
+%    \includegraphics[width = 0.5\textwidth]{Plots/graphene_lattice.pdf}
+%    \caption{Honigwabengitter von ungestörtem Graphen mit eingezeichneten Nächste-Nachbar-Vektoren.}
+%    \label{fig:graphene_lattice}
+%\end{figure}
 Wird nun ohne Beschränkung der Allgemeinheit ein Kohlenstoffatom aus dem Untergitter A entfernt und dort ein Manganatom eingesetzt, ändern sich die
 Abstandsvektoren. 
 Dies liegt daran, dass das Manganatom zu groß ist und nicht in diese Stelle passt, so dass es aus der Ebene entweicht und eine $z$-Komponente besitzt.
@@ -108,20 +120,6 @@ Die reziproken Gittervektoren
 \FloatBarrier
 \section{Eigenschaften von Graphen}
 \label{sec:propertiesofgraphene}
-\begin{figure}
-    \begin{minipage}{0.49\textwidth}
-        Text text text
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.5\textwidth}
-        \centering
-            \includegraphics[width=0.8\textwidth]{Plots/graphene_lattice.pdf}
-            \captionsetup{width=0.9\textwidth}
-            \caption{Bildunterschrift.}
-            \label{fig:Bild}
-       \end{minipage}
-\end{figure}
-
 Graphen ist ein zweidimensionales, aus einer Atomschicht bestehendes Allotrop von Kohlenstoff (C), angeordnet in einem hexagonalen
 Bravais-Gitter. 
 Der größte Teil der Bindung geht von den $sp^2$-Hybridorbitalen aus, mit welcher ein Kohlenstoffatom mit drei umliegenden
@@ -151,10 +149,11 @@ in der nähe der beiden Punkte die Form eines Kegels (sog. \textit{Dirac cone}) 
 Jedoch verschwindet die Zustandsdichte in diesen Punkten, wodurch Graphen als ein bandlückenloser Halbleiter mit einer verschwindenen 
 Zustandsdichte am Fermi-Niveau gesehen werden kann.\cite{10.1093/nsr/nwu080}
 Aufgrund dieser linearen Dispersion können die Elektronen durch die masselose Dirac-Gleichung beschrieben werden, wobei sich die 
-die Elektron (in dem Fall sog. Dirac-Elektronen)  mit der Fermigeschwindigkeit, welche ca. 300 mal kleiner als die Lichtgeschwindigkeit ist,
-statt der Lichtgeschwindigkeit fortbewegen.\cite{Avouris2007}
+die Elektronen (in dem Fall sog. Dirac-Elektronen) mit der Fermigeschwindigkeit statt der Lichtgeschwindigkeit $c$ fortbewegen,
+wessen Verhältnis $\sfrac{v_\text{F}}{c} \approx \sfrac{1}{300}$ ist.\cite{Avouris2007}
+Dies führt zu einer sehr hohen Ladungsträgerbeweglichkeit.\cite{https://doi.org/10.1002/adma.201201482}
 Graphen ist ebenfalls aufgrund dessen makroskopischen Eigenschaften von großem Interesse und ein aktuelles Forschungsthema.
 Einerseits ist die  Dichte mit $\qty{0.77}{\milli\gram\per\metre\squared}$ extrem gering, obwohl 
 Graphen eine hundertfache Stärke von Stahl bei der selben Dicke aufweist.\cite{graphene_properties} 
-Anderseits ist Graphen das bisher bekannte am besten leitende Material bei Raumtemperetur mit einer Leitfähigkeit von 
+Anderseits ist Graphen das bisher bekannte, am besten leitende Material bei Raumtemperetur mit einer Leitfähigkeit von 
 $\qty{e6}{\siemens\per\metre}$.\cite{graphene_properties}
