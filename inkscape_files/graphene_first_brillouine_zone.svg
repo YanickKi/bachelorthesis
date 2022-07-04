@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="67.078003mm"
-   height="66.776001mm"
-   viewBox="0 0 67.078002 66.776001"
+   width="52.890129mm"
+   height="67.684792mm"
+   viewBox="0 0 52.890128 67.684792"
    version="1.1"
    id="svg5"
    inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
@@ -28,9 +28,9 @@
      showgrid="true"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:zoom="4"
-     inkscape:cx="174.125"
-     inkscape:cy="94.375"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="42.072853"
+     inkscape:cy="177.83736"
      inkscape:window-width="1920"
      inkscape:window-height="1024"
      inkscape:window-x="0"
@@ -51,8 +51,8 @@
        units="mm"
        visible="true"
        enabled="false"
-       originx="-52.502128"
-       originy="-4.9408491" />
+       originx="-67.502121"
+       originy="-4.0339812" />
   </sodipodi:namedview>
   <defs
      id="defs2">
@@ -305,7 +305,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-52.502195,-4.9408382)">
+     transform="translate(-67.50219,-4.0339702)">
     <path
        style="fill:none;fill-opacity:1;stroke:#787878;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M 67.78357,30.059005 67.75219,50.058979"
@@ -343,33 +343,33 @@
        id="text2879"><tspan
          sodipodi:role="line"
          id="tspan2877"
-         style="font-size:7.05556px;stroke-width:0.264583;fill:#3c3c3c;fill-opacity:1"
+         style="font-size:7.05556px;fill:#3c3c3c;fill-opacity:1;stroke-width:0.264583"
          x="104.22483"
          y="30.336405">K</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:5.29167px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="114.99682"
-       y="42.683762"
+       x="115.80894"
+       y="42.047157"
        id="text2879-3"><tspan
          sodipodi:role="line"
          id="tspan2877-0"
          style="font-size:5.29167px;stroke-width:0.264583"
-         x="114.99682"
-         y="42.683762">k<tspan
+         x="115.80894"
+         y="42.047157">k<tspan
    style="font-size:65%;baseline-shift:sub"
    id="tspan7632">x</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:5.29167px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="78.635109"
-       y="8.9646778"
+       x="82.581108"
+       y="8.0556393"
        id="text2879-3-3"><tspan
          sodipodi:role="line"
          id="tspan2877-0-0"
          style="font-size:5.29167px;stroke-width:0.264583"
-         x="78.635109"
-         y="8.9646778">k<tspan
+         x="82.581108"
+         y="8.0556393">k<tspan
    style="font-size:65%;baseline-shift:sub"
    id="tspan7630">y</tspan></tspan></text>
     <text
@@ -380,7 +380,7 @@
        id="text2883"><tspan
          sodipodi:role="line"
          id="tspan2881"
-         style="font-size:7.05556px;stroke-width:0.264583;fill:#3c3c3c;fill-opacity:1"
+         style="font-size:7.05556px;fill:#3c3c3c;fill-opacity:1;stroke-width:0.264583"
          x="104.22483"
          y="55.374062">K'</tspan></text>
     <path
@@ -467,7 +467,7 @@
    style="font-size:65%;baseline-shift:sub;fill:#ffc324;fill-opacity:1"
    id="tspan6064">2</tspan></tspan></text>
     <path
-       style="fill:#005f6a;stroke:#ffc324;stroke-width:0.195185;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Sstart-7-0);fill-opacity:1"
+       style="fill:#005f6a;fill-opacity:1;stroke:#ffc324;stroke-width:0.195185;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Sstart-7-0)"
        d="m 105.30527,66.985284 c -1.60509,0 -1.60509,0 -1.60509,0"
        id="path31594-8" />
     <text
