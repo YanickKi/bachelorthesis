@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html class="js mozilla layout-large" lang="de"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>Roundcube Webmail :: Schreiben</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1.0"><meta name="theme-color" content="#f4f4f4"><meta name="msapplication-navbutton-color" content="#f4f4f4">
+	<link rel="shortcut icon" href="https://webmail.tu-dortmund.de/roundcubemail/images/favicon_tu.png?s=1594917459">
+	<link rel="stylesheet" href="Roundcube%20Webmail%20Schreiben-Dateien/bootstrap.css">
+	
+		<link rel="stylesheet" href="Roundcube%20Webmail%20Schreiben-Dateien/styles.css">
+		
+	
+	
+		<script>
+		try {
+			if (document.cookie.indexOf('colorMode=dark') > -1
+				|| (document.cookie.indexOf('colorMode=light') === -1 && window.matchMedia('(prefers-color-scheme: dark)').matches)
+			) {
+				document.documentElement.className += ' dark-mode';
+			}
+		} catch (e) { }
+		</script>
+	
+<link rel="stylesheet" type="text/css" href="Roundcube%20Webmail%20Schreiben-Dateien/jquery-ui.css"><link rel="stylesheet" type="text/css" href="Roundcube%20Webmail%20Schreiben-Dateien/contextmenu.css"><script src="Roundcube%20Webmail%20Schreiben-Dateien/jquery.js"></script><script src="Roundcube%20Webmail%20Schreiben-Dateien/common.js"></script><script src="Roundcube%20Webmail%20Schreiben-Dateien/app.js"></script><script src="Roundcube%20Webmail%20Schreiben-Dateien/publickey.js"></script><script src="Roundcube%20Webmail%20Schreiben-Dateien/tinymce.js"></script><script src="Roundcube%20Webmail%20Schreiben-Dateien/editor.js"></script><script src="Roundcube%20Webmail%20Schreiben-Dateien/list.js"></script><script>
+/*
+        @licstart  The following is the entire license notice for the 
+        JavaScript code in this page.
+
+        Copyright (C) The Roundcube Dev Team
+
+        The JavaScript code in this page is free software: you can redistribute
+        it and/or modify it under the terms of the GNU General Public License
+        as published by the Free Software Foundation, either version 3 of
+        the License, or (at your option) any later version.
+
+        The code is distributed WITHOUT ANY WARRANTY; without even the implied
+        warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+        See the GNU GPL for more details.
+
+        @licend  The above is the entire license notice
+        for the JavaScript code in this page.
+*/
+var rcmail = new rcube_webmail();
+rcmail.set_env({"task":"mail","standard_windows":false,"locale":"de_DE","devel_mode":null,"rcversion":10503,"cookie_domain":"","cookie_path":"/","cookie_secure":true,"dark_mode_support":true,"skin":"elastic","blankpage":"skins/elastic/watermark.html","refresh_interval":60,"session_lifetime":600,"action":"compose","comm_path":"./?_task=mail","user_id":"20yrr3eCuPpZdjie","compose_extwin":false,"date_format":"yy-mm-dd","date_format_localized":"JJJJ-MM-TT","contextmenu":true,"contextmenu_mouseover_timeout":400,"browser_capabilities":{"pdf":"1","flash":"0","tiff":"0","webp":"1","pgpmime":"0"},"compose_id":"93530098062bdaac45c77a","session_id":"j5vd7inuklrite57lgg9arbhqn","mailbox":"INBOX","top_posting":false,"sig_below":false,"save_localstorage":true,"is_sent":false,"mimetypes":["text/plain","text/html","image/jpeg","image/gif","image/png","image/bmp","image/webp","application/x-javascript","application/pdf"],"keyservers":["https://keys.openpgp.org/"],"mailvelope_main_keyring":false,"drafts_mailbox":"INBOX.Drafts","draft_autosave":300,"default_font":"Verdana,Geneva,sans-serif","default_font_size":"10pt","show_sig":true,"max_disclosed_recipients":5,"max_filesize":8388608,"filesizeerror":"Die hochzuladende Datei überschreitet die Maximalgröße von 8,0 MB.","max_filecount":"20","filecounterror":"Sie können maximal 20 Dateien mit einmal hochladen.","attachments":[],"filedrop":{"action":"upload","fieldname":"_attachments"},"signatures":[],"identities":{"21644":{"replyto":"yanick.kind@tu-dortmund.de","email":"yanick.kind@tu-dortmund.de"},"21643":{"replyto":"yanick.kind@udo.edu","email":"yanick.kind@udo.edu"}},"autocomplete_max":15,"autocomplete_min_length":1,"composebody":"composebody","editor_config":{"mode":"","lang":"de","skin_path":"skins/elastic","spellcheck":0,"spelldict":0,"content_css":"skins/elastic/styles/embed.css","disabled_plugins":["spellchecker"],"disabled_buttons":[],"extra_plugins":[],"extra_buttons":[],"content_style":"body {font-family: Verdana,Geneva,sans-serif; font-size: 10pt;}"},"textresponses":[],"pagecount":0,"current_page":0,"request_token":"jcwryK9FVaCFS1vnnheTDjSFPXbvTPau"});
+rcmail.add_label({"loading":"Wird geladen …","servererror":"Serverfehler!","connerror":"Verbindungsfehler (Fehler beim Erreichen des Servers)!","requesttimedout":"Zeitüberschreitung der Anforderung","refreshing":"Aktualisierung läuft …","windowopenerror":"Das Popup-Fenster wurde blockiert!","uploadingmany":"Dateien werden hochgeladen …","uploading":"Datei wird hochgeladen …","close":"Schließen","save":"Speichern","cancel":"Abbrechen","alerttitle":"Achtung","confirmationtitle":"Sind Sie sich sicher...","delete":"Löschen","continue":"Weiter","ok":"OK","vcard_attachments.addvcardmsg":"Kontakt im Adressbuch speichern","vcard_attachments.vcardsavefailed":"Der Kontakt konnte nicht gespeichert werden","vcard_attachments.attachvcard":"vCard anhängen","vcard_attachments.vcardattached":"vCard-Datei angehängt.","vcard_attachments.vcard":"vCard","vcard_attachments.forwardvcard":"vCard weiterleiten","vcard_attachments.contactsattached":"There are $num contacts attached to this message.","vcard_attachments.importedsuccessfully":"Contact(s) imported successfully to the address book.","notuploadedwarning":"Es wurden noch nicht alle Dateien hochgeladen. Bitte warten oder Hochladen abbrechen.","savingmessage":"Nachricht wird gespeichert …","siginserted":"Signatur erfolgreich eingefügt.","responseinserted":"Antwort erfolgreich eingefügt.","messagesaved":"Nachricht als Entwurf gespeichert.","converting":"Formatierungen werden antfernt …","editorwarning":"Wenn sie den Editor wechseln, könnten Textformatierungen verloren gehen. Möchten sie fortfahren?","discard":"Verwerfen","fileuploaderror":"Hochladen der Datei fehlgeschlagen.","sendmessage":"Nachricht jetzt senden","newresponse":"Neue Antwort erstellen","responsename":"Name","responsetext":"Text der Antwort","savingresponse":"Antwortvorlage wird gespeichert …","restoresavedcomposedata":"Es wurde ein nicht versandter Entwurf einer Nachricht gefunden.\n\nBetreff: $subject\nGespeichert am: $date\n\nMöchten Sie diese Nachricht wiederherstellen?","restoremessage":"Nachricht wiederherstellen?","restore":"Wiederherstellen","ignore":"Ignorieren","selectimportfile":"Bitte wählen Sie eine Datei zum Importieren aus.","messageissent":"Die Nachricht wurde bereits gesendet, aber noch nicht gespeichert. Wollen Sie es jetzt speichern?","loadingdata":"Daten werden geladen …","nopubkeyfor":"Kein gültiger öffentlicher Schlüssel für $email gefunden","nopubkeyforsender":"Kein gültiger öffentlicher Schlüssel für Ihre Absenderidentität gefunden. Möchten Sie die Nachricht nur für die Empfänger verschlüsseln?","encryptnoattachments":"Bereits hochgeladene Anhänge können nicht verschlüsselt werden. Bitte fügen Sie sie erneut im Verschlüsselungseditor hinzu.","encryptedsendialog":"Verschlüsselte Nachricht wird gesendet","searchpubkeyservers":"Möchten Sie öffentliche Schlüsselserver nach den fehlenden Schlüsseln durchsuchen?","importpubkeys":"Öffentliche Schlüssel importieren","encryptpubkeysfound":"Die folgenden öffentlichen Schlüssel wurden gefunden:","search":"Suche","import":"Importieren","keyid":"Schlüsselkennung","keylength":"Bits","keyexpired":"Abgelaufen","keyrevoked":"Widerrufen","keyimportsuccess":"Öffentlicher Schlüssel $key erfolgreich in Ihren Schlüsselbund importiert.","keyservererror":"Fehler beim Holen des Schlüssels vom Schlüsselserver.","attaching":"Datei wird angehängt …","namex":"Name","attachmentrename":"Anhang umbenennen","nosubject":"(kein Betreff)","nosenderwarning":"Bitte geben Sie die E-Mail-Adresse des Senders an.","norecipientwarning":"Bitte geben Sie mindestens einen Empfänger an.","nosubjectwarning":"Die Betreffzeile ist leer. Möchten Sie jetzt einen Betreff eingeben?","nobodywarning":"Diese Nachricht ohne Inhalt senden?","notsentwarning":"Die Nachricht wurde nicht gesendet und hat nicht gespeicherte Änderungen. Möchten Sie Ihre Änderungen verwerfen?","sendingmessage":"Nachricht wird gesendet …","searching":"Suche läuft …","disclosedrecipwarning":"Alle Empfänger sehen die E-Mail Adressen der anderen Empfänger. Um deren Privatsphäre zu schützen, können Sie das BCC-Feld verwenden.","disclosedreciptitle":"Zu viele öffentliche Empfänger","bccinstead":"Blindkopie verwenden","nosubjecttitle":"Kein Betreff","back":"Zurück","errortitle":"Ein Fehler ist aufgetreten!","options":"Optionen","plaintoggle":"Einfacher Text","htmltoggle":"HTML","previous":"Vorherige(r)","next":"Nächste(r)","select":"Auswahl","browse":"Durchsuchen","choosefile":"Datei auswählen…","choosefiles":"Dateien auswählen…","darkmode":"Dunkler Modus","lightmode":"Heller Modus","recipientsadded":"Empfänger erfolgreich hinzugefügt.","nocontactselected":"Sie haben noch keinen Kontakt ausgewählt.","recipient":"Empfänger","insert":"Hinzufügen","insertcontact":"Kontakt(e) einfügen","recipientedit":"Empfänger bearbeiten","uploadprogress":"$percent ($current von $total)","GB":"GB","MB":"MB","KB":"KB","B":"B","autocompletechars":"Geben Sie mind. $min Zeichen für die Auto-Vervollständigung ein.","autocompletemore":"Mehrere Treffer. Bitte geben Sie mehr Buchstaben ein.","selectimage":"Bild auswählen","addimage":"Bild hinzufügen","selectmedia":"Film auswählen","addmedia":"Film hinzufügen"});
+rcmail.gui_container("taskbar","taskmenu");
+rcmail.gui_container("composeoptions","compose-options");
+rcmail.gui_container("toolbar","compose-toolbar");
+rcmail.gui_container("attachmentmenu","attachmentoptionsmenu");rcmail.register_button('attach-vcard', 'rcmbtn100', 'link', 'listbutton vcard', '', '');
+rcmail.register_button('compose', 'rcmbtn101', 'link', '', '', '');
+rcmail.register_button('mail', 'rcmbtn102', 'link', '', '', '');
+rcmail.register_button('addressbook', 'rcmbtn103', 'link', '', 'contacts selected', '');
+rcmail.register_button('settings', 'rcmbtn104', 'link', '', 'settings selected', '');
+rcmail.register_button('logout', 'rcmbtn107', 'link', '', '', '');
+rcmail.gui_object('attachmentlist', 'attachment-list');
+rcmail.gui_object('filedrop', 'compose-attachments');
+rcmail.register_button('savedraft', 'rcmbtn108', 'link', 'save draft', '', '');
+rcmail.register_button('insert-sig', 'rcmbtn110', 'link', 'signature', '', '');
+rcmail.register_button('compose-encrypted', 'rcmbtn111', 'link', 'encrypt', 'encrypt selected', '');
+rcmail.gui_object('messageform', 'form');
+rcmail.register_button('send', 'rcmbtn112', 'button', '', '', '');
+rcmail.register_button('extwin', 'rcmbtn113', 'link', '', '', '');
+rcmail.gui_object('uploadform', 'uploadformFrm');
+rcmail.gui_object('responseslist', 'responseslist');
+rcmail.register_button('save-response', 'rcmbtn114', 'link', 'create responses active', '', '');
+rcmail.register_button('open-attachment', 'attachmenuopen', 'link', 'extwin active', '', '');
+rcmail.register_button('download-attachment', 'attachmenudownload', 'link', 'download active', '', '');
+rcmail.register_button('rename-attachment', 'attachmenurename', 'link', 'rename active', '', '');
+rcmail.register_button('compose-encrypted', 'rcmbtn116', 'link', 'encrypt active', '', '');
+rcmail.register_button('compose-encrypted-signed', 'rcmbtn117', 'link', 'encrypt sign active', '', '');
+rcmail.gui_object('qsearchbox', 'searchform');
+rcmail.register_button('reset-search', 'rcmbtn119', 'link', '', '', '');
+rcmail.gui_object('addressbookslist', 'directorylist');
+rcmail.gui_object('contactslist', 'contacts-table');
+rcmail.register_button('firstpage', 'rcmbtn120', 'link', 'firstpage', '', '');
+rcmail.register_button('previouspage', 'rcmbtn121', 'link', 'prevpage', '', '');
+rcmail.register_button('nextpage', 'rcmbtn122', 'link', 'nextpage', '', '');
+rcmail.register_button('lastpage', 'rcmbtn123', 'link', 'lastpage', '', '');
+rcmail.gui_object('message', 'messagestack');
+</script>
+
+<script src="Roundcube%20Webmail%20Schreiben-Dateien/vcardattach.js"></script><script src="Roundcube%20Webmail%20Schreiben-Dateien/jquery-ui.js"></script><script src="Roundcube%20Webmail%20Schreiben-Dateien/jquery_002.js"></script><script src="Roundcube%20Webmail%20Schreiben-Dateien/contextmenu.js"></script><script src="Roundcube%20Webmail%20Schreiben-Dateien/functions.js"></script>
+</head>
+<body class="task-mail action-compose">
+	
+		<div id="layout">
+	
+
+<div id="layout-menu">
+	<h2 id="aria-label-tasknav" class="voice">Anwendungsaufgaben</h2>
+	<div class="popover-header">
+		<img src="Roundcube%20Webmail%20Schreiben-Dateien/Icon-Webmailer.png" id="logo" alt="Logo">
+		<a class="button icon cancel"><span class="inner">Schließen</span></a>
+	</div>
+	<div id="taskmenu" class="menu toolbar" role="navigation" aria-labelledby="aria-label-tasknav">
+		<span class="action-buttons">
+			
+				<a class="compose selected" title="Neue Nachricht schreiben" id="rcmbtn101" role="button" href="https://webmail.tu-dortmund.de/roundcubemail/?_task=mail&amp;_action=compose" onclick="return rcmail.command('compose','',this,event)" tabindex="0" aria-disabled="false"><span class="inner">Schreiben</span></a>
+			
+		</span>
+		
+			<a class="mail" id="rcmbtn102" role="button" href="https://webmail.tu-dortmund.de/roundcubemail/?_task=mail" onclick="return rcmail.command('list','',this,event);" tabindex="-1" aria-disabled="false"><span class="inner">E-Mail</span></a>
+		
+		<a class="contacts" id="rcmbtn103" role="button" href="https://webmail.tu-dortmund.de/roundcubemail/?_task=addressbook" onclick="return rcmail.command('switch-task','addressbook',this,event)" tabindex="0" aria-disabled="false"><span class="inner">Kontakte</span></a>
+		
+		<a class="settings" id="rcmbtn104" role="button" href="https://webmail.tu-dortmund.de/roundcubemail/?_task=settings" onclick="return rcmail.command('switch-task','settings',this,event)" tabindex="0" aria-disabled="false"><span class="inner">Einstellungen</span></a>
+		<span class="special-buttons">
+			
+				
+				
+				<a class="theme dark" id="rcmbtn105" role="button" href="#"><span class="inner">Dunkler Modus</span></a>
+			
+			<a class="about" onclick="UI.about_dialog(this)" id="rcmbtn106" role="button" href="#"><span class="inner">Über</span></a>
+			<a class="logout" id="rcmbtn107" role="button" href="https://webmail.tu-dortmund.de/roundcubemail/?_task=logout" onclick="return rcmail.command('switch-task','logout',this,event)" tabindex="0" aria-disabled="false"><span class="inner">Abmelden</span></a>
+		</span>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+<h1 class="voice">Schreiben</h1>
+
+<!-- compose options and attachments list -->
+<div id="layout-sidebar" class="listbox sidebar-right">
+	<div class="header">
+		<a class="button icon back-content-button hidden-big" href="#content" data-hidden="big"><span class="inner">Zurück</span></a>
+		<span class="header-title all-sizes" style="margin-right: 0px; margin-left: 0px; padding-right: 0px;">Optionen und Anhänge</span>
+	</div>
+	<div class="scroller">
+		<!-- attachments -->
+		<div id="compose-attachments" class="file-upload droptarget" role="region" aria-labelledby="aria-label-compose-attachments">
+			<h2 id="aria-label-compose-attachments" class="voice">Anhänge</h2>
+			<div class="upload-form">
+				<div class="hint">Maximal erlaubte Dateigröße ist 8,0 MB</div>
+				<button type="button" class="btn btn-secondary attach" tabindex="2" onclick="rcmail.upload_input('uploadform')">Datei anhängen</button>
+			<button class="btn btn-secondary attach vcard" type="button" tabindex="2">vCard anhängen</button></div>
+			<ul id="attachment-list" class="attachmentslist" data-tabindex="2"><li id="rcmfile99011656597674010064200" class="application pdf"><a href="#load" class="filename" onclick="return rcmail.command('load-attachment','rcmfile99011656597674010064200', this, event)" tabindex="2"><span class="attachment-name">thesis.pdf</span><span class="attachment-size">(1,1 MB)</span></a><a href="#" tabindex="2" title="Optionen" class="button icon dropdown skip-content"><span class="inner">Optionen</span></a><a href="#delete" onclick="return rcmail.command('remove-attachment','rcmfile99011656597674010064200', this, event)" title="Löschen" class="delete" aria-label="Löschen thesis.pdf" tabindex="2"></a></li></ul>
+			
+		</div>
+		<!-- compose options -->
+		<div id="compose-options" class="formcontent" role="region" aria-labelledby="aria-label-composeoptions">
+			<h2 id="aria-label-composeoptions" class="voice">Erstellungsoptionen</h2>
+			
+			
+			<div class="form-group row form-check">
+				<label for="compose-mdn" class="col-form-label col-6">Empfangsbestätigung (MDN)</label>
+				<div class="col-6 form-check">
+					<div class="custom-control custom-switch"><input name="_mdn" id="compose-mdn" tabindex="2" class="form-check-input custom-control-input" value="1" type="checkbox"><label for="compose-mdn" class="custom-control-label" title=""></label></div>
+				</div>
+			</div>
+			
+			
+			<div class="form-group row form-check">
+				<label for="compose-dsn" class="col-form-label col-6">Übermittlungsbestätigung (DSN)</label>
+				<div class="col-6 form-check">
+					<div class="custom-control custom-switch"><input name="_dsn" id="compose-dsn" tabindex="2" class="form-check-input custom-control-input" value="1" type="checkbox"><label for="compose-dsn" class="custom-control-label" title=""></label></div>
+				</div>
+			</div>
+			
+			<div class="form-group row">
+				<label for="compose-priority" class="col-form-label col-6">Priorität</label>
+				<div class="col-6">
+					<select name="_priority" id="compose-priority" tabindex="2" class="custom-select form-control pretty-select">
+<option value="5">Niedrigste</option><option value="4">Niedrig</option><option value="0" selected="selected">Normal</option><option value="2">Hoch</option><option value="1">Höchste</option></select>
+				</div>
+			</div>
+			
+			<div class="form-group row">
+				<label for="compose-store-target" class="col-form-label col-6">Nachricht speichern in</label>
+				<div class="col-6">
+					<select name="_store_target" id="compose-store-target" tabindex="2" class="custom-select form-control pretty-select">
+<option value="">- nicht speichern -</option><option value="INBOX">Posteingang</option><option value="INBOX.Drafts">Entwürfe</option><option value="INBOX.Sent" selected="selected">Gesendet</option><option value="INBOX.Trash">Gelöscht</option><option value="INBOX.Archives">Archives</option><option value="INBOX.Archives.2022">&nbsp;&nbsp;&nbsp;&nbsp;2022</option></select>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+<div class="column-resizer inverted"></div></div>
+
+<div id="layout-content" class="listbox selected" role="main">
+	<h2 id="aria-label-toolbar" class="voice">Anwendungstoolbar</h2>
+	<div class="header">
+		<a class="button icon task-menu-button" href="#menu"><span class="inner">Menü</span></a>
+		<span class="header-title">Schreiben</span>
+		<div id="composestatusbar" class="position-absolute"><a class="button icon attach"></a></div>
+		<!-- toolbar -->
+		
+	<ul class="menu toolbar listing iconized" id="toolbar-menu"><li role="menuitem" class="hidden-big"><a class="options" href="#options" onclick="UI.show_sidebar()" data-hidden="big"><span class="inner">Optionen und Anhänge</span></a></li><li role="menuitem"><a class="save draft" title="Nachricht speichern" tabindex="2" data-content-button="true" id="rcmbtn108" role="button" data-tabindex="2" aria-disabled="false" href="#" onclick="return rcmail.command('savedraft','',this,event)"><span class="inner">Speichern</span></a></li><li role="menuitem" class="spacer"></li><li role="menuitem" class="hidden-small"><a class="attach" title="Datei anhängen" data-hidden="small" onclick="if (!$(this).is('.disabled')) rcmail.upload_input('uploadform')" aria-haspopup="true" aria-expanded="false" tabindex="2" id="rcmbtn109" role="button" href="#"><span class="inner">Anhang</span></a></li><li role="menuitem"><a class="signature disabled" title="Signatur einfügen" tabindex="-1" id="rcmbtn110" role="button" data-tabindex="2" aria-disabled="true" href="#" onclick="return rcmail.command('insert-sig','',this,event)"><span class="inner">Signatur</span></a></li><li role="menuitem"><a href="#responses" class="responses active" label="responses" title="Schnellantwort hinzufügen" unselectable="on" tabindex="2" data-popup="responses-menu" aria-haspopup="true" aria-expanded="false" aria-owns="responses-menu" data-original-title="Schnellantwort hinzufügen"><span class="inner">Schnellantworten</span></a></li><li role="menuitem"><span class="dropbutton disabled" style="display:none"><a class="encrypt disabled" title="Nachricht mit Mailvelope verschlüsseln" tabindex="-1" id="rcmbtn111" role="button" data-tabindex="2" aria-disabled="true" href="#" onclick="return rcmail.command('compose-encrypted','',this,event)"><span class="inner">Verschlüsseln</span></a><a href="#encryption" id="encryption-menu-button" class="dropdown disabled" tabindex="2" data-popup="encryption-menu" aria-haspopup="true" aria-expanded="false" aria-owns="encryption-menu" data-original-title="" title="">
+					<span class="inner">Nachricht mit Mailvelope verschlüsseln</span>
+				</a></span></li></ul><a class="button icon toolbar-menu-button active" href="#menu" data-popup="toolbar-menu" aria-haspopup="true" aria-expanded="false" aria-owns="toolbar-menu" data-original-title="" title=""></a></div>
+	<div id="compose-content" class="formcontainer content">
+		<form name="form" method="post" class="formcontent scroller" action="https://webmail.tu-dortmund.de/roundcubemail/?_task=mail&amp;_unlock=loading1656597973879&amp;_framed=1" target="savetarget">
+<input type="hidden" name="_token" value="jcwryK9FVaCFS1vnnheTDjSFPXbvTPau"><input type="hidden" name="_task" value="mail"><input type="hidden" name="_action" value="send"><input type="hidden" name="_id" value="93530098062bdaac45c77a"><input type="hidden" name="_attachments" value="99011656597674010064200">
+		
+		<!-- message headers -->
+		<div id="compose-headers" role="region" aria-labelledby="aria-label-composeheaders">
+			<h2 id="aria-label-composeheaders" class="voice">Nachrichtenkopfzeilen</h2>
+			<div class="compose-headers">
+				<div id="compose_from" class="form-group row">
+					<label for="_from" class="col-2 col-form-label">Von</label>
+					<div class="col-10">
+						<div class="input-group">
+							<select name="_from" id="_from" tabindex="1" class="form-control custom-select pretty-select" onchange="rcmail.change_identity(this)">
+<option value="21644" selected="selected">Yanick Sebastian Kind &lt;yanick.kind@tu-dortmund.de&gt;</option><option value="21643">Yanick Sebastian Kind &lt;yanick.kind@udo.edu&gt;</option></select>
+							<span class="input-group-append">
+								<a href="#identities" onclick="return rcmail.command('switch-task', 'settings/identities')" class="input-group-text icon edit" title="Identitäten bearbeiten" tabindex="1"><span class="inner">Identitäten bearbeiten</span></a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div id="compose_to" class="form-group row">
+					<label for="_to" class="col-2 col-form-label">An</label>
+					<div class="col-10">
+						<div class="input-group">
+							<textarea name="_to" spellcheck="false" id="_to" tabindex="-1" data-recipient-input="true" style="position: absolute; opacity: 0; left: -5000px; width: 10px;" autocomplete="off" aria-autocomplete="list" aria-expanded="false" role="combobox">frithjof.anders@tu-dortmund.de,</textarea><ul class="form-control recipient-input ac-input rounded-left ui-sortable"><li class="recipient"><span class="name">frithjof.anders@tu-dortmund.de</span><span class="email">,</span><a class="button icon remove"></a></li><li class="input"><input type="text" tabindex="1" autocomplete="off" aria-autocomplete="list" aria-expanded="false" role="combobox" aria-haspopup="false"></li></ul>
+							<span class="input-group-append">
+								<a href="#add-contact" onclick="UI.recipient_selector('to')" class="input-group-text icon add recipient" title="Kontakt hinzufügen" tabindex="1"><span class="inner">Kontakt hinzufügen</span></a>
+							</span>
+							<span class="input-group-append">
+								<a href="#add-header" data-popup="headers-menu" class="input-group-text icon add active" title="Empfänger hinzufügen (Kopfzeile)" tabindex="1" aria-haspopup="true" aria-expanded="false" aria-owns="headers-menu" data-original-title="Empfänger hinzufügen (Kopfzeile)"><span class="inner">Empfänger hinzufügen (Kopfzeile)</span></a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div id="compose_cc" class="hidden form-group row">
+					<label for="_cc" class="col-2 col-form-label">Kopie</label>
+					<div class="col-10">
+						<div class="input-group">
+							<textarea name="_cc" spellcheck="false" id="_cc" tabindex="-1" data-recipient-input="true" style="position: absolute; opacity: 0; left: -5000px; width: 10px;" autocomplete="off" aria-autocomplete="list" aria-expanded="false" role="combobox"></textarea><ul class="form-control recipient-input ac-input rounded-left ui-sortable"><li class="input"><input type="text" tabindex="1" autocomplete="off" aria-autocomplete="list" aria-expanded="false" role="combobox"></li></ul>
+							<span class="input-group-append">
+								<a href="#add-contact" onclick="UI.recipient_selector('cc')" class="input-group-text icon add recipient" title="Kontakt hinzufügen" tabindex="1"><span class="inner">Kontakt hinzufügen</span></a>
+							</span>
+							<span class="input-group-append">
+								<a href="#delete" onclick="UI.header_reset('_cc')" class="input-group-text icon delete" title="Löschen" tabindex="1"><span class="inner">Löschen</span></a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div id="compose_bcc" class="hidden form-group row">
+					<label for="_bcc" class="col-2 col-form-label">Blindkopie</label>
+					<div class="col-10">
+						<div class="input-group">
+							<textarea name="_bcc" spellcheck="false" id="_bcc" tabindex="-1" data-recipient-input="true" style="position: absolute; opacity: 0; left: -5000px; width: 10px;" autocomplete="off" aria-autocomplete="list" aria-expanded="false" role="combobox"></textarea><ul class="form-control recipient-input ac-input rounded-left ui-sortable"><li class="input"><input type="text" tabindex="1" autocomplete="off" aria-autocomplete="list" aria-expanded="false" role="combobox"></li></ul>
+							<span class="input-group-append">
+								<a href="#add-contact" onclick="UI.recipient_selector('bcc')" class="input-group-text icon add recipient" title="Kontakt hinzufügen" tabindex="1"><span class="inner">Kontakt hinzufügen</span></a>
+							</span>
+							<span class="input-group-append">
+								<a href="#delete" onclick="UI.header_reset('_bcc')" class="input-group-text icon delete" title="Löschen" tabindex="1"><span class="inner">Löschen</span></a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div id="compose_replyto" class="form-group row">
+					<label for="_replyto" class="col-2 col-form-label">Antwort an</label>
+					<div class="col-10">
+						<div class="input-group">
+							<input name="_replyto" spellcheck="false" id="_replyto" tabindex="-1" data-recipient-input="true" value="yanick.kind@tu-dortmund.de," type="text" style="position: absolute; opacity: 0; left: -5000px; width: 10px;" autocomplete="off" aria-autocomplete="list" aria-expanded="false" role="combobox"><ul class="form-control recipient-input ac-input rounded-left ui-sortable"><li class="recipient"><span class="name">yanick.kind@tu-dortmund.de</span><span class="email">,</span><a class="button icon remove"></a></li><li class="input"><input type="text" tabindex="1" autocomplete="off" aria-autocomplete="list" aria-expanded="false" role="combobox"></li></ul>
+							<span class="input-group-append">
+								<a href="#add-contact" onclick="UI.recipient_selector('replyto')" class="input-group-text icon add recipient" title="Kontakt hinzufügen" tabindex="1"><span class="inner">Kontakt hinzufügen</span></a>
+							</span>
+							<span class="input-group-append">
+								<a href="#delete" onclick="UI.header_reset('_replyto')" class="input-group-text icon delete" title="Löschen" tabindex="1"><span class="inner">Löschen</span></a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div id="compose_followupto" class="hidden form-group row">
+					<label for="_followupto" class="col-2 col-form-label">Followup-To</label>
+					<div class="col-10">
+						<div class="input-group">
+							<input name="_followupto" spellcheck="false" id="_followupto" tabindex="-1" data-recipient-input="true" type="text" style="position: absolute; opacity: 0; left: -5000px; width: 10px;" autocomplete="off" aria-autocomplete="list" aria-expanded="false" role="combobox"><ul class="form-control recipient-input ac-input rounded-left ui-sortable"><li class="input"><input type="text" tabindex="1" autocomplete="off" aria-autocomplete="list" aria-expanded="false" role="combobox"></li></ul>
+							<span class="input-group-append">
+								<a href="#add-contact" onclick="UI.recipient_selector('followupto')" class="input-group-text icon add recipient" title="Kontakt hinzufügen" tabindex="1"><span class="inner">Kontakt hinzufügen</span></a>
+							</span>
+							<span class="input-group-append">
+								<a href="#delete" onclick="UI.header_reset('_followupto')" class="input-group-text icon delete" title="Löschen" tabindex="1"><span class="inner">Löschen</span></a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div id="compose_subject" class="form-group row">
+					<label for="compose-subject" class="col-2 col-form-label">Betreff</label>
+					<div class="col-10">
+						<input name="_subject" id="compose-subject" tabindex="1" class="form-control" spellcheck="true" value="Hybridisierungsfunktion nach dem Gespräch  gestern" type="text">
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- message compose body -->
+		<div id="composebodycontainer" class="html-editor">
+			<label for="composebody" class="voice">Nachrichten-Body</label>
+			
+<input type="hidden" name="_draft_saveid" value="137"><input type="hidden" name="_draft" value="1"><input type="hidden" name="_is_html" value="0"><input type="hidden" name="_framed" value="1">
+<textarea name="_message" id="composebody" cols="70" rows="20" class="form-control" tabindex="1" data-html-editor="1" style="height: 479.25px;">Hallo
+ Herr Professor Anders,
+
+ich habe mir zu dem Gespräch von gestern mal Gedanken gemacht und es 
+versucht es so umzusetzen. 
+Nur bin ich mir sehr unsicher, ob ich Sie die ganze Zeit richtig 
+verstanden habe. Frau Deltenre habe ich bereits gefragt, jedoch konnte 
+Sie mir keine standfeste Antwort geben. Sie meinte, dass ich Ihnen 
+schreiben und die bisherigen Ergebnisse anhängen soll.
+Die Umsetzung nach dem gestrigen Gespräch befindet in sich in dem 
+Abschnitt "Andere Variante" (Seite 18).
+Die Ergebnisse sind lediglich skizziert und noch nicht perfekt 
+ausformuliert.
+
+Ich würde mich über eine Antwort sehr freuen.
+
+Mit freundlichen Grüßen
+Yanick Kind</textarea><div class="editor-toolbar"><a class="mce-i-html" href="#" tabindex="-1" title="HTML"></a></div>
+			
+			<select name="editorSelector" id="editor-selector" class="hidden form-control custom-select pretty-select" onchange="return rcmail.command('toggle-editor', {id: 'composebody', html: this.value == 'html'}, '', event)">
+<option value="html">HTML</option><option value="plain" selected="selected">Einfacher Text</option></select>
+			
+		</div>
+		<input type="hidden" name="_mdn" value=""><input type="hidden" name="_dsn" value=""><input type="hidden" name="_priority" value="0"><input type="hidden" name="_store_target" value="INBOX.Sent"></form>
+		<div class="formbuttons">
+			<button class="btn btn-primary send" tabindex="1" data-content-button="true" type="button" id="rcmbtn112" onclick="return rcmail.command('send','',this,event)" value="Senden">Senden</button>
+			<div class="float-right">
+				<a data-hidden="small" class="button icon btn btn-link extwin hidden-small" data-tabindex="1" id="rcmbtn113" role="button" href="#" onclick="return rcmail.command('extwin','',this,event)" tabindex="1" aria-disabled="false">In neuem Fenster öffnen</a>
+			</div>
+		</div>
+	</div>
+<div class="footer menu toolbar content-frame-navigation hide-nav-buttons"><a class="button prev"><span class="inner">Vorherige(r)</span></a><span class="buttons"><a id="rcmbtn108-clone" href="#" class="save draft button" tabindex="0" aria-disabled="false"><span class="inner">Speichern</span></a><a id="rcmbtn112-clone" href="#" class="primary send button"><span class="inner">Senden</span></a></span><a class="button next"><span class="inner">Nächste(r)</span></a></div></div>
+
+<div id="uploadform"><form id="uploadformFrm" name="uploadform" method="post" enctype="multipart/form-data" class="smart-upload" action="./?_task=mail">
+<input type="hidden" name="_token" value="jcwryK9FVaCFS1vnnheTDjSFPXbvTPau"><div class="custom-file"><input multiple="" id="uploadformInput" type="file" name="_attachments[]" class="smart-upload custom-file-input" onchange="rcmail.command('send-attachment', this.form); this.value=null" tabindex="-1"><label class="custom-file-label" data-browse="Durchsuchen">Dateien auswählen…</label></div></form></div>
+
+<div id="spell-menu" class="popupmenu" data-popup-init="spellmenu"></div>
+
+<div id="headers-menu" class="popupmenu" data-popup-init="headersmenu" aria-hidden="true">
+	<h3 id="aria-label-headersmenu" class="voice">Menü zum Hinzufügen der Empfänger (Kopfzeile) </h3>
+	<ul class="menu listing" role="menu" aria-labelledby="aria-label-headersmenu">
+		<li role="menuitem"><a data-target="cc" href="#" role="button" tabindex="-1" class="recipient active">Kopie</a></li>
+		<li role="menuitem"><a data-target="bcc" href="#" role="button" tabindex="-1" class="recipient active">Blindkopie</a></li>
+		<li role="menuitem"><a data-target="replyto" href="#" role="button" tabindex="-1" class="recipient active">Antwort an</a></li>
+		<li role="menuitem"><a data-target="followupto" href="#" role="button" tabindex="-1" class="recipient active">Followup-To</a></li>
+	</ul>
+</div>
+
+<div id="responses-menu" class="popupmenu" aria-hidden="true">
+	<h3 id="aria-label-responsesmenu" class="voice">Schnellantworten Menü</h3>
+	<ul class="menu listing" role="menu" aria-labelledby="aria-label-responsesmenu">
+		<li role="separator" class="separator"><label>Schnellantwort hinzufügen</label></li>
+		<ul id="responseslist" class="rounded-0"><li><a href="#" class="insertresponse placeholder disabled" unselectable="on" tabindex="0" aria-disabled="true">No responses available</a></li></ul>
+		<li role="separator" class="separator"><label>Schnellantworten verwalten</label></li>
+		<li role="menuitem"><a class="create responses active" unselectable="on" id="rcmbtn114" role="button" tabindex="0" aria-disabled="false" href="#" onclick="return rcmail.command('save-response','',this,event)">Neue Antwort erstellen</a></li>
+		<li role="menuitem"><a class="edit responses active" onclick="return rcmail.command('switch-task', 'settings/responses')" id="rcmbtn115" role="button" href="#">Schnellantworten bearbeiten</a></li>
+	</ul>
+</div>
+
+<div id="attachmentmenu" class="popupmenu">
+	<h3 id="aria-label-attachmentmenu" class="voice">Anhangsoptionen</h3>
+	<ul class="menu listing" role="menu" aria-labelledby="aria-label-attachmentmenu">
+		<li role="menuitem"><a id="attachmenuopen" class="extwin active" role="button" tabindex="0" aria-disabled="false" href="#" onclick="return rcmail.command('open-attachment','',this,event)">Öffnen</a></li>
+		<li role="menuitem"><a id="attachmenudownload" class="download active" role="button" tabindex="0" aria-disabled="false" href="#" onclick="return rcmail.command('download-attachment','',this,event)">Herunterladen</a></li>
+		<li role="menuitem"><a id="attachmenurename" class="rename active" role="button" tabindex="0" aria-disabled="false" href="#" onclick="return rcmail.command('rename-attachment','',this,event)">Umbenennen</a></li>
+		
+	</ul>
+</div>
+
+<div id="encryption-menu" class="popupmenu" aria-hidden="true">
+	<ul class="menu listing" role="menu">
+		<li role="menuitem"><a class="encrypt disabled" id="rcmbtn116" role="button" tabindex="-1" aria-disabled="true" href="#" onclick="return rcmail.command('compose-encrypted','',this,event)">Nachrichten verschlüsseln</a></li>
+		<li role="menuitem"><a class="encrypt sign disabled" id="rcmbtn117" role="button" tabindex="-1" aria-disabled="true" href="#" onclick="return rcmail.command('compose-encrypted-signed','',this,event)">Verschlüsseln und unterschreiben</a></li>
+	</ul>
+</div>
+
+<div id="recipient-dialog" class="popupmenu" role="region" aria-labelledby="aria-label-composecontacts">
+	<div class="listbox">
+		<div role="search" aria-labelledby="aria-label-contactsearchform" class="searchbar menu"><h2 id="aria-label-contactsearchform" class="voice">Suchmaske für Kontakte</h2><form name="rcmqsearchform" onsubmit="rcmail.command('search'); return false" action="./?_task=mail" method="get"><label for="searchform" class="voice">Suchbegriffe</label><input name="_q" id="searchform" class="no-bs no-bs" placeholder="Suchen …" type="text"></form>
+<a class="button reset" title="Suche zurücksetzen" tabindex="0" id="rcmbtn119" role="button" href="#" onclick="return rcmail.command('reset-search','',this,event)" aria-disabled="false"><span class="inner">Suche zurücksetzen</span></a>
+
+<a href="#search" class="button search" title="Kontakte finden" tabindex="0" id="rcmbtn118" role="button"><span class="inner">Kontakte finden</span></a></div>
+		<div class="scroller" tabindex="-1">
+			<ul id="directorylist" class="treelist listing iconized notree"><li id="rcmliMA" class="addressbook"><a href="#list" rel="0" onclick="return rcmail.command('list-addresses','0',this)">Persönliches Adressbuch</a></li><li id="rcmliMQ" class="addressbook"><a href="#list" rel="1" onclick="return rcmail.command('list-addresses','1',this)">Gesammelte Empfänger</a></li><li id="rcmliMg" class="addressbook"><a href="#list" rel="2" onclick="return rcmail.command('list-addresses','2',this)">Vertrauenswürdige Absender</a></li></ul>
+			<table id="contacts-table" class="listing iconized contactlist" role="listbox" data-list="contact_list" data-list-select-replace="#recipient-dialog .pagenav-text" aria-multiselectable="true" tabindex="0"><tbody></tbody></table>
+		</div>
+		<div class="pagenav menu footer small" role="toolbar" aria-label="Listennavigation">
+	<a class="firstpage disabled" title="Erste Seite" id="rcmbtn120" role="button" tabindex="-1" aria-disabled="true" href="#" onclick="return rcmail.command('firstpage','',this,event)"><span class="inner">Erste(r)</span></a>
+	<a class="prevpage disabled" title="Seite zurück" id="rcmbtn121" role="button" tabindex="-1" aria-disabled="true" href="#" onclick="return rcmail.command('previouspage','',this,event)"><span class="inner">Vorherige(r)</span></a>
+	
+		<a class="button selection disabled" role="button" title="Auswahl"><span class="inner">Auswahl</span></a>
+	
+	<a class="nextpage disabled" title="Nächste Seite" id="rcmbtn122" role="button" tabindex="-1" aria-disabled="true" href="#" onclick="return rcmail.command('nextpage','',this,event)"><span class="inner">Nächste(r)</span></a>
+	<a class="lastpage disabled" title="Letzte Seite" id="rcmbtn123" role="button" tabindex="-1" aria-disabled="true" href="#" onclick="return rcmail.command('lastpage','',this,event)"><span class="inner">Letzte(r)</span></a>
+</div>
+
+	</div>
+</div>
+
+
+</div>
+
+<a href="https://itmc.tu-dortmund.de/das-itmc/kontakt/service-desk/" target="_blank" id="supportlink" class="hidden">Support</a>
+
+
+
+<div id="messagestack"></div>
+
+<script>
+$(function() {
+rcmail.init();
+});
+</script>
+
+
+
+<script src="Roundcube%20Webmail%20Schreiben-Dateien/bootstrap.js"></script>
+<script src="Roundcube%20Webmail%20Schreiben-Dateien/ui.js"></script>
+
+
+<div id="rcmKSearchpane" role="listbox" class="select-menu inline popupmenu popover" style="position: absolute; z-index: 30000; left: 309.833px; top: 141.5px; max-width: 400px; min-width: 200px; width: auto; display: none;"><ul class="menu listing iconized"><li id="rcmkSearchItem0" role="option" class=""><i class="icon"></i>Frithjof <b>Anders</b> &lt;frithjof.<b>anders</b>@tu-dortmund.de&gt;</li><li id="rcmkSearchItem1" role="option" class="selected" aria-selected="true"><i class="icon"></i>frithjof.<b>anders</b>@tu-dortmund.de &lt;frithjof.<b>anders</b>@tu-dortmund.de&gt;</li></ul></div></body></html>

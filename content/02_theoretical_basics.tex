@@ -66,26 +66,59 @@ folgt.
 
 \section{Tight Binding Modell}
 \label{sec:tightbinding}
-Im Allgemeinen wird das Hüpfen eines Elektrons (bei Vernachlässigung des Spins) zwischen zwei Gitterpunkten durch den Tight-Binding Hamiltonian 
+In der Tight Binding Näherung wird von stark gebundenen, lokalisierten Elektonen ausgegangen.\cite{Czycholl}
+Dazu wird der volle Hamiltonian eines Elektrons, dessen atomaren Wellenfunktionen $\Psi_{lm}(\vec{r}-\vec{l}_i - \vec{R}_{\alpha})$ mit 
+$l$ und $m$ als Drehimpulsquantenzahlen ist, im Festkörper
 \begin{equation}
-    H = - \sum_{in,i'n'} t_{n,n'}^{i,i'}  c_{in}^\dagger c_{i'n'}  \label{eqn:tight-binding-hamiltonian}
+    H = \frac{\vec{p}^2}{2m} + \sum_{i\alpha} v(\vec{r}-\vec{l}_i - \vec{R}_{\alpha}) = \frac{\vec{p}^2}{2m} + v_{\vec{R}}(\vec{r})\label{eqn:electron_hamiltonian}
 \end{equation}
-beschrieben.\cite{SC_literature}
-Dabei vernichtet(erzeugt) der Operator $c_{in}^{(\dagger)}$ ein Elektron im Orbital $n$ am Gitterpunkt $i$.
-Die Hüpfparameter zu den betrachteten Orbitalen $\Psi_{lm}$ mit den Quantenzahlen $l$ und $m$, Basisvektoren $\vec{R}_\alpha$ und Gittervektoren
-$\vec{l}_i$ sind durch die Slater-Koster Integrale \cite{PhysRev.94.1498}
-\begin{equation} 
-    V_{lm,l'm'}^{i\alpha,i'\alpha'} = -t_{lm,l'm'}^{i\alpha,i'\alpha'} = \int \symup{d}^3r \, \overline{\Psi}_{lm} (\vec{r} - \vec{R}_\alpha - \vec{l}_i)
-    V(\vec{r} - \vec{R}_\alpha - \vec{l}_i) \Psi_{l'm'} (\vec{r} - \vec{R}_ {\alpha'} - \vec{l}_{i'})
-\end{equation}
-gegeben.\cite{SC_literature}
-Hierbei ist $V(\vec{r} - \vec{R}_\alpha - \vec{l}_i)$ das atomate Potential, welches ein Elektron in der Einheitszelle $i$ am Platz $\alpha$ verspürt.
-Diese hängen jedoch nur von dem Abstand $\vec{\delta}$ ab, wodurch sich diese zu 
+betrachtet.\cite{Czycholl}
+Der Vektor $\vec{R}_{\alpha}$ ist die Position innerhalb der Basis $\alpha$ in der Einheitszelle mit dem Gittervektor $\vec{l}_i$.
+Aus den atomaren Wellenfunktionen lassen sich Blochzustände mit $\vec{k}$ als Wellenvektor
 \begin{equation}
-    E_{lm,l'm'} = \int \symup{d}^3r \, \overline{\Psi}_{lm} (\vec{r}-\vec{\delta})
-    V(\vec{r} - \vec{\delta}) \Psi_{l'm'} (\vec{r})
+    \Psi^{\alpha}_{lm}(\vec{k}, \vec{r}) = \frac{1}{\sqrt{N}} \sum_{i} \symup{e}^{\symup{i}\vec{k}\vec{l}_i} \Psi_{lm}(\vec{r}-\vec{l}_i - \vec{R}_{\alpha}) 
 \end{equation}
-ergeben.
-Diese können in die verschiedenen Bindungstypen (in dieser Problemstellung $\pi$ und $\sigma$-Bindung) zerlegt werden, so dass diese nur noch von dem Abstandsvektor 
-$\vec{\delta}$ und den Parametern $V_{ll'\beta}$ mit $l$ als Orbitale und $\beta$ als Bindungstyp ab.\cite{SC_literature}
-Die Parameter $V_{ll'\beta}$ können hinterher als Fitparameter oder experimentell-bestimmte Werte fungieren.
+konstuieren, welche die Gitterperiodizität besitzen.\cite{SC_literature}
+Für die Tight Binding Modellierung sind die Matrixelemente des Hamiltonians \eqref{eqn:electron_hamiltonian}
+relevant, welche durch
+\begin{equation*}
+    \bra{\Psi^{\alpha}_{lm}} H \ket{\Psi^{\alpha'}_{l'm'}} = \varepsilon_{lm,l'm'}^{\alpha \alpha'} \braket*{\Psi^{\alpha}_{lm}}{\Psi^{\alpha'}_{l'm'}}
+    - \frac{1}{N} \sum_{i\alpha \neq i' \alpha'} \symup{e}^{\symup{i}\vec{k}(\vec{l}_{i'}-\vec{l}_{i})}  t^{i\alpha,i'\alpha'}_{lm,l'm'}
+\end{equation*}
+gegeben sind.\cite{SC_literature}\cite{Czycholl}
+Die Orbitalenergien im Kristallfeld sind durch $\varepsilon_{lm,l'm'}^{\alpha \alpha'}$ gegeben.\cite{SC_literature}
+Dabei gilt
+\begin{equation*}
+    t^{i\alpha,i'\alpha'}_{lm,l'm'} = - \int \symup{d}^3r \; \overline{\Psi}_{lm}(\vec{r}-\vec{l}_i - \vec{R}_{\alpha}) 
+    \left ( v_{\vec{R}} (\vec{r}) - v(\vec{r} - \vec{l}_{i'} - \vec{R}_{\alpha'} )   \right ) \Psi_{l'm'}(\vec{r}-\vec{l}_{i'} - \vec{R}_{\alpha'})  \; ,
+\end{equation*}
+wobei im stark lokalisierten Fall die Dreizentren-Beiträge vernachlässigt werden können und  
+nur noch das Zweizentren-Integral 
+\begin{equation*} 
+    t^{i\alpha,i'\alpha'}_{lm,l'm'} = - \int \symup{d}^3r \; \overline{\Psi}_{lm}(\vec{r}-\vec{l}_i - \vec{R}_{\alpha}) 
+    v(\vec{r} - \vec{l}_{i} - \vec{R}_{\alpha} ) \Psi_{l'm'}(\vec{r}-\vec{l}_{i'} - \vec{R}_{\alpha'}) 
+\end{equation*}
+übrig bleibt.\cite{SC_literature}
+Dieses Zweizentren-Integral ist dann das für das Tight Binding Modell typische Hüpfmatrixelement.
+Damit kann der Tight Binding Hamiltonian in zweiter Quantisierung bei Vernachlässigung der 
+magnetischen Quantenzahl $m$ durch
+\begin{equation}
+    H = - \sum_{ii'} \sum_{\alpha \alpha'}\sum_{ll'} t^{i\alpha,i'\alpha'}_{ll'}  c_{il}^\dagger c_{i'l'}  \label{eqn:tight-binding-hamiltonian}
+\end{equation}
+angegeben werden.\cite{anders-fkt}
+Dabei vernichtet(erzeugt) der Operator $c_{il\alpha}$($c_{il\alpha}^{\dagger}$ ) ein Elektron im Orbital $l$ in der Einheitszelle $i$,
+innerhalb der Basis am Platz $\alpha$.
+Je nach Modellannahme läuft die Summe dann über z.B. nächste oder übernächste Nachbarn.
+\section{Slater-Koster-Integrale}
+Jegliche Informationen dieses Abschnitts sind aus \cite{SC_literature} entnommen worden.
+Die Slater-Koster-Integrale sind für zwei Orbitale, welche im Abstand $\vec{d}$ zueinander liegen, definiert als
+\begin{equation}
+    E_{lm,l'm'} = \int \symup{d}^3r \; \overline{\Psi}_{lm} (\vec{r}-\vec{d})
+    V(\vec{r} - \vec{d}) \Psi_{l'm'} (\vec{r}) \; ,
+\end{equation}
+worin schon erkenntlich wird, dass diese nur von dem Abstand abhängen.
+Dieses kann wiederrum in einige unabhängige Integrale $V_{ll'\beta}$ zerlegt werden, welche sich durch die Orbitale, $l$ und $l'$, sowie den Bindungen ($\sigma$, $\pi$, $\delta$) unterscheiden.
+Als Beispiel würde sich bei dem Überlapp zwischen zwei $s$-Orbitalen das Slater-Koster-integral zu $E_{s,s} = V_{ss\sigma}$ ergeben, da dieser Überlapp komplett rotationssymmetrisch um die 
+Bindungsachse ist.
+Bei einem komplexeren Überlapp würden noch weiter Bindungen mit Vorfaktoren, den Richungskosinus, vorkommen.
+Die Richtungskosinus sind Projektionen des normierten Abstandsvektors auf die Koordinatenachsen, wodurch die verschiedenen Bindungen erfasst werden können.
