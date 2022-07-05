@@ -1,4 +1,31 @@
-\chapter{Ein Anhangskapitel}
-
-Hier könnte ein Anhang stehen, falls Sie z.\,B.\ Code, Konstruktionszeichnungen oder Ähnliches mit in die Arbeit bringen wollen.
-Im Normalfall stehen jedoch alle Ihre Resultate im Hauptteil der Bachelorarbeit und ein Anhang ist überflüssig.
+\chapter{Berechung der reziproken Gittervektoren}
+\label{chap:appendixA}
+Ausgehend von den Gittervektoren des Realraums 
+\begin{equation*}
+    \vec{a}_1 = \frac{a}{2}\begin{pmatrix} 3 \\[4pt] \sqrt{3}  \end{pmatrix}, \quad
+    \vec{a}_2 = \frac{a}{2}\begin{pmatrix} 3 \\[4pt] -\sqrt{3} \end{pmatrix}       
+\end{equation*}   
+können die reziproken Gittervektoren mittels $\underline{\underline{B}} = 2\pi \left ( \underline{\underline{A}}^\text{T} \right )^{-1} $.\cite{suter}
+In der Matrix $underline{\underline{A}}$ sind die Gittervektoren in den Spalten aufgetragen.
+Somit folgt 
+\begin{equation*}
+    \underline{\underline{B}} = 2 \pi a
+    \begin{pmatrix}
+        \frac{3}{2} & \frac{\sqrt{3}}{2}  \\[0.35em]
+        \frac{3}{2} & \frac{-\sqrt{3}}{2}
+    \end{pmatrix}^{\! -1} \; .
+\end{equation*}
+Zur Berechnung der Inversen kann die Cramersche Regel für $2\times 2$ Matritzen andewendet, womit die gesuchte Matrix zu
+\begin{equation*}
+    \underline{\underline{B}} = - \frac{4\pi}{a3\sqrt{3}}
+    \begin{pmatrix}
+        -\frac{\sqrt{3}}{2} & -\frac{\sqrt{3}}{2}  \\[0.35em]
+        -\frac{3}{2} & \frac{3}{2}
+    \end{pmatrix}
+\end{equation*}
+berechnet werden kann.\cite{Cramer}
+Die Spalten sind die reziproken Gittervektoren mit 
+\begin{equation*}
+    \vec{b}_1 = \frac{2\pi}{a3\sqrt{3}}\begin{pmatrix} \sqrt{3} \\[4pt] 3  \end{pmatrix}, \quad
+    \vec{b}_2 = \frac{2\pi}{a3\sqrt{3}}\begin{pmatrix} \sqrt{3}       \\[4pt] -3 \end{pmatrix}   \; .  
+\end{equation*}   
