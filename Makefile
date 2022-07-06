@@ -1,6 +1,5 @@
 all: build/thesis.pdf
 
-
 TeXOptions = -lualatex \
 			 -interaction=nonstopmode \
 			 -halt-on-error \
