@@ -1,28 +1,29 @@
 \chapter{Einleitung}
 \section{Motivation}
 \label{sec:motivation}
-Motiviert wurde diese Arbeit durch das Paper \cite{doi:10.1021/acsnano.1c00139}, aus welchem jegliche Informationen und Bilder dieses 
+Motiviert wurde diese Arbeit durch den Artikel \cite{doi:10.1021/acsnano.1c00139}, aus welchem jegliche Informationen dieses 
 Abschnitts entnommen wurden.
 In dem dort behandelten Experiment wird mittels ultra-niederenergetischer Ionenimplantation
 (\textit{ultralow-energy ion implantation}) Mangan (Mn) in eine einzelne Graphenstörstelle, wobei sich das Graphen auf einem Kupfersubstrat befindet, eingesetzt.
 Es wurden die Positionen des Mn im Bezug auf die Moiré Superstruktur (Abbildung \ref{fig:ascnano_structure}), die elektronischen und magnetischen Eigenschaften und die Konzentration der Mn-Defekte
 untersucht.
 Die Moiré Superstruktur bildet sich aus, da die vertikale Ausrichtung zwischen dem Graphen und dem Kupfer kontinuierlich variiert.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = \textwidth]{Plots/images_large_nn1c00139_0002.jpeg}
+    \caption{(a) zeigt die Moiré Superstruktur. Durch kontinuierliche Variation der der Ausrichtung 
+    zwischen dem Kupfer und Graphen, entstehen Hochsymmetriepunkte bezüglich des Stapelns (b-d).
+    Diese Hochsymmetriepunkte und somit auch die Moiré Superstruktur können mittels Rastertunnelmikroskopie (RTM) 
+    visualisiert werden, womit eine zweidimensionale Periodizität ersichtlich wird (e).
+    (Abbildung entnommen  aus \cite{doi:10.1021/acsnano.1c00139})}
+    \label{fig:ascnano_structure}
+\end{figure}
 Graphen mit Mn-Störstellen eignet sich für die Untersuchung elektrischer und magnetischer Eigenschaften, da die Bänder bei einer Konzentration von ca. $\qty{0.04}{\percent}$ 
 die Dirac-Eigenschaften beibehalten und es somit ein ideales System für das Studieren der Interaktion
 zwischen lokalen magnetischen Momenten und den Dirac-Elektronen (siehe Abschnitt \ref{sec:propertiesofgraphene})darstellt.
 Abbildung \ref{fig:ascnano_structure}a zeigt die Probe auf atomarer Ebene, worin auch die Moiré Superstruktur deutlich wird.
 Die Stellen mit hoher Symmetrie bezüglich des Stapelns des Graphens auf dem Substrat werden in 
 Abbildung \ref{fig:ascnano_structure}b-d aufgezeigt.
-\begin{figure}
-    \centering
-    \includegraphics[width = \textwidth]{Plots/images_large_nn1c00139_0002.jpeg}
-    \caption{(a) zeigt die Moiré Superstruktur. Durch kontinuierliche Variation der der Ausrichtung 
-    zwischen dem Kupfer und Graphen, entstehen Hochsymmetriepunkte bezüglich des Stapelns (b-d).
-    Diese Hochsymmetriepunkte und somit auch die Moiré Superstruktur können mittels Rastertunnelmikroskopie (RTM) 
-    visualisiert werden, womit eine zweidimensionale Periodizität ersichtlich wird (e).}
-    \label{fig:ascnano_structure}
-\end{figure}
 Diese bilden wiederrum ein zweidimensionales Gitter (Abb. \ref{fig:ascnano_structure}e).
 Aufgrund der kurzen Reichweite der Bindungen, welche Graphen charakterisiert, und des großen Radius von Mn im Vergleich zur 
 Kohlenstofffehlstelle entweicht das Mn senkrecht zur Graphenebene.
@@ -37,10 +38,11 @@ Während das Mn zum Kupfersubstrat entweicht, nehmen die Kohlenstoffatome um die
     \caption{(a) zeigt eine RTM, in welcher ersichtlich wird, dass Mn in die beiden verschiedenen Untergittern von Graphen implantiert wurde. In der
     RTM äußern sich diese mittels dreieckigen Strukturen, welche zueinander gespiegelt liegen.
     (b-c) zeigen RTM simuliert mittels Dichtefunktionaltheorie (DFT) in einer TOP-FCC Region. In (b) liegt das Mn auf einem FCC
-    und in (c) auf einem TOP Gitterplatz. (d,e) zeigt das Mn auf einem FCC und (f,g) zeigt es auf einem TOP Platz in der Graphenebene und seitlich davon.}
+    und in (c) auf einem TOP Gitterplatz. (d,e) zeigt das Mn auf einem FCC und (f,g) zeigt es auf einem TOP Platz in der Graphenebene und seitlich davon.
+    (Abbildung entnommen  aus \cite{doi:10.1021/acsnano.1c00139})}
     \label{fig:ascnano_defect}
 \end{figure}
-Für die sechs verschiedenen Plätze des Mn (zwei Untergitter und drei Hochsymmetrieregionen) wurden DFT Rechnungen für die Energien und die magnetischen Momente gemacht.
+Für die sechs verschiedenen Plätze des Mn (zwei Untergitter und drei Hochsymmetrieregionen) wurden DFT-Rechnungen für die Energien und die magnetischen Momente gemacht.
 Dabei zeigte sich, dass diese Größen von dem lokalen Stapeln und dem Untergitter abhängen, so dass die Energie geringer ist, womit 
 diese Konfiguration (z.B. Mn auf einem FCC PLatz in einer TOP-FCC-Region) höhere Stabilität aufweist.
 Dies Tendenz zeigte sich ebenfalls in den RTM, wobei angemerkt werden muss, dass die Datenlage dazu nicht ausreicht, um
@@ -115,12 +117,12 @@ Hierbei ist es irrelevant, ob eine positive oder negative $z$-Komponente gewähl
 spiegelsymmetrisch um die Graphenebene ist. 
 Die $z$-Komponente wird negativ gewählt, damit dies konsistent mit dem Experiment ist.
 Um die Bandstruktur beschreiben zu können, wird das reziproke Gitter, 
-dessen Form ein um $\ang{90;;}$ gedrehtes Hexagon ist, benötigt.\cite{honey}
+dessen Form ein um $\ang{90;;}$ gedrehtes Hexagon ist, benötigt \cite{honey}.
 Dazu ist in Abbildung \ref{fig:first-brillouine-zone} die Erste Brillouin-Zone mit den 
-reziproken Gittervektoren (Berechung im Anhang \ref{TEMPLATE})
+reziproken Gittervektoren (Berechung im Anhang \ref{sec:rez_lattivectors_calc})
 \begin{equation*}
-    \vec{b}_1 = \frac{2\pi}{3\sqrt{3}a} \begin{pmatrix}  \sqrt{3}\\[4pt] 3  \end{pmatrix}, \quad
-    \vec{b}_2 = \frac{2\pi}{3\sqrt{3}a} \begin{pmatrix}  \sqrt{3}\\[4pt] -3 \end{pmatrix}       
+    \vec{b}_1 = \frac{2\pi}{3a} \begin{pmatrix}  1\\[4pt]   \sqrt{3}  \end{pmatrix}, \quad
+    \vec{b}_2 = \frac{2\pi}{3a} \begin{pmatrix}  1\\[4pt] - \sqrt{3} \end{pmatrix}       
 \end{equation*}    
 aufgezeigt.
 \begin{wrapfigure}{l}{0.4\textwidth}
@@ -136,42 +138,42 @@ Besonders die Eckpunkte, $\vec{K} = \sfrac{2\pi}{3\sqrt{3}a} \, (\sqrt{3},1)$
 und $\vec{K}' = \sfrac{2\pi}{3\sqrt{3}a} \, (\sqrt{3},-1)$, sind von hoher Relevanz, wie sich im folgenden Abschnitt herrausstellt.
 In dieser Modellierung wird davon ausgegangen, dass Graphen komplett eben ist. 
 In der Realität ist dem nicht so, da dem Mermin-Wagner Theorem nach langwellige Fluktuationen die reichtweitige Ordnung von zweidimensionalen Kristallen zerstören, womit
-diese eine Krümmung aufweisen.\cite{Fasolino2007}
+diese eine Krümmung aufweisen \cite{Fasolino2007}.
 \FloatBarrier
 \section{Eigenschaften von Graphen}
 \label{sec:propertiesofgraphene}
 Der größte Teil der Bindungen von Graphen geht von den $sp^2$-Hybridorbitalen aus, mit welcher ein Kohlenstoffatom mit drei umliegenden
-Nachbarn in trigonalen und planaren Anordnung eine $\sigma$-Bindung eingeht.\cite{RevModPhys.81.109}
+Nachbarn in trigonalen und planaren Anordnung eine $\sigma$-Bindung eingeht \cite{RevModPhys.81.109}.
 Das dazu senkrecht stehende $p$-Orbital führt zu einer weiteren Bindung, der $\pi$-Bindung, so dass ein Kohlenstoffatom
 mit einem der drei nächsten Nachbarn eine Doppelbindung eingeht.
-Dabei sorgt das $\sigma$-Band für die Robustheit der Gitterstruktur.\cite{RevModPhys.81.109}
+Dabei sorgt das $\sigma$-Band für die Robustheit der Gitterstruktur \cite{RevModPhys.81.109}.
 Aufgrund des Pauli-Prinzips haben diese Bänder eine volle Schale, welche somit ein sehr tiefes Valenzband
-formen.\cite{RevModPhys.81.109}
+formen \cite{RevModPhys.81.109}.
 Da jedes $p$-Orbital, welches senkrecht auf der Graphenebene steht, ein Elektron
-besitzt, ist das $\pi$-Band halb gefüllt, womit sich die Elektronen frei bewegen können.\cite{RevModPhys.81.109}\cite{graphene_properties}
-Dieses $\pi$-Band trägt auch mit sehr großem Anteil zu der Leitfähigkeit von Graphen bei.\cite{graphene_properties}
+besitzt, ist das $\pi$-Band halb gefüllt, womit sich die Elektronen frei bewegen können \cite{RevModPhys.81.109}\cite{graphene_properties}.
+Dieses $\pi$-Band trägt auch mit sehr großem Anteil zu der Leitfähigkeit von Graphen bei \cite{graphene_properties}.
 Die Bandstruktur kann mittels einem Tight-Binding-Modell ermittelt werden, woraus unter der Annahme eines nächsten-Nachbarn-Hüpfens
 die Dispersionsrelation 
 \begin{equation*}
-    \epsilon_{\vec{k}} \propto \pm \sqrt{3+2\cos(\sqrt{3}ak_y)+2\cos(\frac{3}{2}ak_x+\frac{\sqrt{3}}{2}ak_y) + 2\cos(\frac{3}{2}ak_x-\frac{\sqrt{3}}{2}ak_y) }
+    \epsilon_{\vec{k}} \propto \pm \sqrt{3+2 \cos \left ( \sqrt{3}ak_y \right )+2\cos \left ( \frac{3}{2}ak_x+\frac{\sqrt{3}}{2}ak_y \right ) + 2\cos \left ( \frac{3}{2}ak_x-\frac{\sqrt{3}}{2}ak_y \right ) }
 \end{equation*}
-folgt (die Rechung dazu befindet sich im Anhang \ref{TEMPLATE}).
-Das negative bzw. positive Vorzeichen gehört zu dem Valenz- ($\pi$) bzw. Leitungsband ($\pi^*$).\cite{RevModPhys.81.109}
+folgt (die Rechung dazu befindet sich im Anhang \ref{sec:calc_dispersion}).
+Das negative bzw. positive Vorzeichen gehört zu dem Valenz- ($\pi$) bzw. Leitungsband ($\pi^*$) \cite{RevModPhys.81.109}.
 Das Valenz- und Leitungsband berühren sich in zwei inäquivalenten Punkten der ersten Brillouin-Zone K und $\text{K}'$, welche 
-auch Dirac-Punkte genannt werden.\cite{10.1093/nsr/nwu080}
+auch Dirac-Punkte genannt werden \cite{10.1093/nsr/nwu080}.
 Wird die Dispersionsrelation um diese beiden Punkte entwickelt, nimmt die Dispersionsrelationrelation eine lineare Form an, welche mit 
 \begin{equation}
     \epsilon_{\vec{k}} \propto \pm | \vec{k} | 
 \end{equation}
-in der Nähe der beiden Punkte die Form eines Kegels (sog. \textit{Dirac cone}) besitzt.\cite{10.1093/nsr/nwu080}\cite{Avouris2007}
+in der Nähe der beiden Punkte die Form eines Kegels (sog. \textit{Dirac cone}) besitzt \cite{10.1093/nsr/nwu080}\cite{Avouris2007}.
 Jedoch verschwindet die Zustandsdichte in diesen Punkten, wodurch Graphen als ein bandlückenloser Halbleiter mit einer verschwindenen 
-Zustandsdichte am Fermi-Niveau gesehen werden kann.\cite{10.1093/nsr/nwu080}
+Zustandsdichte am Fermi-Niveau gesehen werden kann \cite{10.1093/nsr/nwu080}. 
 Aufgrund dieser linearen Dispersion können die Elektronen durch die masselose Dirac-Gleichung beschrieben werden, wobei sich 
 die Elektronen (in dem Fall sog. Dirac-Elektronen) mit der Fermigeschwindigkeit $v_\text{F}$ statt der Lichtgeschwindigkeit $c$ fortbewegen,
-dessen Verhältnis $\sfrac{v_\text{F}}{c} \approx \sfrac{1}{300}$ ist.\cite{Avouris2007}
-Dies führt zu einer sehr hohen Ladungsträgerbeweglichkeit.\cite{https://doi.org/10.1002/adma.201201482}
+dessen Verhältnis $\sfrac{v_\text{F}}{c} \approx \sfrac{1}{300}$ ist \cite{Avouris2007}.
+Dies führt zu einer sehr hohen Ladungsträgerbeweglichkeit \cite{https://doi.org/10.1002/adma.201201482}.
 Graphen ist ebenfalls aufgrund dessen makroskopischen Eigenschaften von großem Interesse und ein aktuelles Forschungsthema.
 Einerseits ist die  Dichte mit $\qty{0.77}{\milli\gram\per\metre\squared}$ extrem gering, obwohl 
-Graphen eine hundertfache Stärke von Stahl bei der selben Dicke aufweist.\cite{graphene_properties} 
+Graphen eine hundertfache Stärke von Stahl bei der selben Dicke aufweist \cite{graphene_properties}. 
 Anderseits ist Graphen das bisher bekannte, am besten leitende Material bei Raumtemperetur mit einer Leitfähigkeit von 
-$\qty{e6}{\siemens\per\metre}$.\cite{graphene_properties}
+$\qty{e6}{\siemens\per\metre}$ \cite{graphene_properties}.

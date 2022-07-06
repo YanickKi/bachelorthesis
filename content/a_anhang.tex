@@ -1,21 +1,22 @@
-\chapter{Berechung der reziproken Gittervektoren}
-\label{chap:appendixA}
+\chapter{Anhang}
+\section{Berechnung der reziproken Gittervektoren}
+\label{sec:rez_lattivectors_calc}
 Ausgehend von den Gittervektoren des Realraums 
 \begin{equation*}
     \vec{a}_1 = \frac{a}{2}\begin{pmatrix} 3 \\[4pt] \sqrt{3}  \end{pmatrix}, \quad
     \vec{a}_2 = \frac{a}{2}\begin{pmatrix} 3 \\[4pt] -\sqrt{3} \end{pmatrix}       
 \end{equation*}   
-können die reziproken Gittervektoren mittels $\underline{\underline{B}} = 2\pi \left ( \underline{\underline{A}}^\text{T} \right )^{-1} $.\cite{suter}
-In der Matrix $underline{\underline{A}}$ sind die Gittervektoren in den Spalten aufgetragen.
+können die reziproken Gittervektoren mittels $\underline{\underline{B}} = 2\pi \left ( \underline{\underline{A}}^\text{T} \right )^{-1} $ \cite{suter}.
+In der Matrix $\underline{\underline{A}}$ sind die Gittervektoren in den Spalten aufgetragen.
 Somit folgt 
 \begin{equation*}
     \underline{\underline{B}} = 2 \pi a
     \begin{pmatrix}
         \frac{3}{2} & \frac{\sqrt{3}}{2}  \\[0.35em]
-        \frac{3}{2} & \frac{-\sqrt{3}}{2}
+        \frac{3}{2} & -\frac{\sqrt{3}}{2}
     \end{pmatrix}^{\! -1} \; .
 \end{equation*}
-Zur Berechnung der Inversen kann die Cramersche Regel für $2\times 2$ Matritzen andewendet, womit die gesuchte Matrix zu
+Zur Berechnung der Inversen kann die Cramersche Regel für $2\times 2$ Matritzen angewendet werden, womit sich die gesuchte Matrix zu
 \begin{equation*}
     \underline{\underline{B}} = - \frac{4\pi}{a3\sqrt{3}}
     \begin{pmatrix}
@@ -23,9 +24,65 @@ Zur Berechnung der Inversen kann die Cramersche Regel für $2\times 2$ Matritzen
         -\frac{3}{2} & \frac{3}{2}
     \end{pmatrix}
 \end{equation*}
-berechnet werden kann.\cite{Cramer}
+ergibt \cite{Cramer}.
 Die Spalten sind die reziproken Gittervektoren mit 
 \begin{equation*}
-    \vec{b}_1 = \frac{2\pi}{a3\sqrt{3}}\begin{pmatrix} \sqrt{3} \\[4pt] 3  \end{pmatrix}, \quad
-    \vec{b}_2 = \frac{2\pi}{a3\sqrt{3}}\begin{pmatrix} \sqrt{3}       \\[4pt] -3 \end{pmatrix}   \; .  
-\end{equation*}   
+    \vec{b}_1 = \frac{2\pi}{3a}\begin{pmatrix} 1        \\[4pt]     \sqrt{3}  \end{pmatrix}, \quad
+    \vec{b}_2 = \frac{2\pi}{3a}\begin{pmatrix} 1        \\[4pt] -   \sqrt{3} \end{pmatrix}   \; .  
+\end{equation*}
+\section{Berechnung der Disepersionsrelation von Graphen}
+\label{sec:calc_dispersion}
+Der Tight Binding Hamiltonian für Graphen lautet
+\begin{equation*}
+   H= - t \sum_{i=1}^N \sum_{j=1}^N\left ( c_i^\dagger c_j + c_j^\dagger c_i \right ) \; .
+\end{equation*}
+Dazu wird der Ansatz einer Fouriertransformation 
+\begin{equation*}
+    c_i = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{i\vec{k}\vec{l}} c_{\text{A}, \vec{k}} \; , 
+    \quad c_n = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{i\vec{k}(\vec{l}+\vec{\delta}_j)} c_{\text{B}, \vec{k}}
+\end{equation*}
+gemacht. 
+Dieser Wird in den Hamiltonian eingesetzt, womit 
+\begin{align*}
+    H &= -\frac{t}{N} \sum_{j\vec{l}} \sum_{\vec{k}\vec{k}'} ( \symup{e}^{-i\vec{k}\vec{l}}c^\dagger_{A,\vec{k}} 
+    \symup{e}^{i\vec{k}'(\vec{l}+\vec{\delta}_j)}c_{B,\vec{k}'} + \symup{e}^{-i\vec{k}'(\vec{l}+\vec{\delta}_j)} c^\dagger_{B,\vec{k}'} 
+    \symup{e}^{i\vec{k}\vec{l}}c_{A,\vec{k}}) \\
+    &= -\frac{t}{N} \sum_{j\vec{l}} \sum_{\vec{k}\vec{k}'} ( \symup{e}^{-i(\vec{k}- \vec{k}')\vec{l}}\symup{e}^{i\vec{k}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}'} + 
+    \symup{e}^{i(\vec{k}- \vec{k}')\vec{l}} \symup{e}^{-i\vec{k}\vec{\delta}_j} c^\dagger_{B,\vec{k}'}c_{A,\vec{k}}) \\
+    &= -t \sum_{j\vec{k}} ( \symup{e}^{i\vec{k}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}} + 
+    \symup{e}^{-i\vec{k}\vec{\delta_j}} c^\dagger_{B,\vec{k}}c_{A,\vec{k}})
+\end{align*}
+folgt.
+In dem letzten Schritt wurde $\sum_{\vec{l}}^N \symup{e}^{-i(\vec{k}- \vec{k}')\vec{l}} 
+= \sum_{\vec{l}}^N \symup{e}^{i(\vec{k}- \vec{k}')\vec{l}} = N\delta_{\vec{k}, \vec{k}'}$ ausgenutzt, so dass die Summe über $\vec{k}'$ verschwindet.
+Der Hamiltonian kann in die Form 
+\begin{equation*}
+    H = \sum_{\vec{k}} \begin{pmatrix}
+        c_{\text{A},\vec{k}}^{\dagger} & c_{\text{B},\vec{k}}^{\dagger}
+    \end{pmatrix}
+    \begin{pmatrix}
+        0 & -t\sum_{j} \symup{e}^{i\vec{k}\vec{\delta}_j}     \\
+        -t\sum_{j} \symup{e}^{-i\vec{k}\vec{\delta}_j} & 0     
+    \end{pmatrix}
+    \begin{pmatrix}
+        c_{\text{A},\vec{k}} \\
+        c_{\text{B},\vec{k}}
+    \end{pmatrix}
+\end{equation*}
+gebracht werden.
+Die Eigenwerte der auftretenden $2 \times 2$-Matrix bilden die Dispersionsrelation.
+Somit kann diese Matrix gemäß
+\begin{equation*}
+    \begin{vmatrix}
+        -\varepsilon_{\vec{k}} & -t\sum_{j} \symup{e}^{i\vec{k}\vec{\delta}_j}     \\
+        -t\sum_{j} \symup{e}^{-i\vec{k}\vec{\delta}_j} & -\varepsilon_{\vec{k}}     
+    \end{vmatrix} \stackrel{!}{=} 0 
+    \iff \varepsilon_{\vec{k}}^2 - t^2 \left | \sum_{j} \symup{e}^{i\vec{k}\vec{\delta}_j} \right |^2 = 0 
+    \iff \varepsilon_{\vec{k}} = \pm t \left | \sum_{j} \symup{e}^{i\vec{k}\vec{\delta}_j} \right |
+\end{equation*}
+diagonalisiert werden.
+Die Summe ausgeschrieben ergibt
+\begin{equation*}
+    \varepsilon_{\vec{k}} = \pm t \sqrt{3+2 \cos \left ( \sqrt{3}ak_y \right )+2\cos \left ( \frac{3}{2}ak_x+\frac{\sqrt{3}}{2}ak_y \right ) + 2\cos \left ( \frac{3}{2}ak_x-\frac{\sqrt{3}}{2}ak_y \right ) } \; \; .
+    \label{eqn:dispersion_graphene_calc}
+\end{equation*}
