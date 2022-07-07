@@ -3,7 +3,7 @@
 Der Hamiltonian des betrachteten Graphens mit Mangandefekt lautet
 \begin{align*}
    H &=  H_0 + H_\text{Def} + H_\text{Kop}\\
-    &=- t \sum_{i=1}^N \sum_{n=1}^N\left ( c_i^\dagger c_n + c_n^\dagger c_i \right )  + \sum_{m=1}^5 \epsilon_m d_m^\dagger d_m
+    &=- t \sum_{i=1}^N \sum_{j=1}^N\left ( c_i^\dagger c_j + c_j^\dagger c_i \right )  + \sum_{m=1}^5 \epsilon_m d_m^\dagger d_m
     + \sum_{m=1}^5 \sum_{j=1}^3 \left ( V_{mj} d_m^\dagger c_j + \overline{V}_{mj} c_j^\dagger d_m \right )  \; \text{.} \numberthis \label{eqn:full_Hamiltonian}
 \end{align*}
 Die Summation über $N$ Basen in dem Term $H_0$ läuft nur über nächste Nachbarn.
@@ -68,14 +68,14 @@ h & \coloneq -\sin(\theta)(1-2\cos^2(\theta))    & q &  \coloneq -\cos^3(\theta)
 umdefiniert.
 \section{Hybridisierungsfunktion}
 \label{sec:calc_greensfunction}
-Aufgrund der Gitterperiodizität kann für die Operatoren $c_i$ und $c_n$ eine Fouriertransformation der Form 
+Aufgrund der Gitterperiodizität kann für die Operatoren $c_i$ und $c_j$ eine Fouriertransformation der Form 
 \begin{equation}
     c_i = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{i\vec{k}\vec{l}} c_{\text{A}, \vec{k}} \; , 
-    \quad c_n = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{i\vec{k}(\vec{l}+\vec{\delta}_j)} c_{\text{B}, \vec{k}} \label{eqn:fourier_ladder}
+    \quad c_j = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{i\vec{k}(\vec{l}+\vec{\delta}_j)} c_{\text{B}, \vec{k}} \label{eqn:fourier_ladder}
 \end{equation}
 angesetzt werden.
 Dabei sind $N$ die Anzahl der Basen, $\vec{l}$ der Gittervektor der Basis, $\vec{k}$ der Wellenvektor, $\vec{\delta}_j$ der Abstandsvektor
-des $j$-ten Kohlenstoffatoms auf dem Untergitter B, welches der nächste Nachbar des Kohlenstoffatoms auf dem Untergitter A mit dem Gittervektor $\vec{l}$ ist 
+des $j$-ten Kohlenstoffatoms auf dem Untergitter B, welches eins der drei nächsten Nachbarn des Kohlenstoffatoms auf dem Untergitter A mit dem Gittervektor $\vec{l}$ ist 
 und $c_{A, \vec{k}}$ bzw. $c_{B, \vec{k}}$ die Fourier-transformierten $p_z$-Orbitale auf dem Untergitter A bzw. B \cite{anders-fkt}.
 Die $\vec{k}$-Werte werden aus der ersten Brillouin-Zone genommen \cite{anders-fkt}.
 Damit lässt sich der Hamiltonian des ungestörten Graphens zu 
@@ -240,14 +240,15 @@ Nun können die Greensche Funktion ineinander eingesetzt werden, um die Matrix $
 Somit wird Gleichung \eqref{eqn:greensfunction_cA} in Gleichung \eqref{eqn:greensfunction_cB} eingesetzt, so dass sich die Greensche Funktion
 \begin{equation}
     G_{c_{\text{B},\vec{k}}, d^\dagger_{m'}} = \frac{z\sum_{mj} V_{mj} \symup{e}^{-\symup{i}\vec{k} (\vec{l}+\vec{\delta}_j)} G_{d_m, d_{m'}^\dagger}}
-    {\sqrt{N}\left ( z^2-t^2\sum_j \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \sum_{j'} \symup{e}^{\symup{-i}\vec{k}\vec{\delta}_{j'}} \right )} \label{eqn:finalgreencB}
+    {\sqrt{N}\left ( z^2-\varepsilon_{\vec{k}}^2 \right )} \label{eqn:finalgreencB}
 \end{equation}
 ergibt.
-Um mehr Übersichtlichkeit zu gewähren wird die Definition
+Um mehr Übersichtlichkeit zu gewähren, wurde das Quadrat der Dispersionsrelation von Graphen mit
 \begin{equation*}
-     \mu_{\vec{k}} \coloneq t^2 \sum_j \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \sum_{j'} \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_{j'}} 
+     \varepsilon_{\vec{k}}^2 = t^2 \sum_j \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \sum_{j'} \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_{j'}} 
 \end{equation*}  
-und die Änderung der Notaton für die Einträge der Matrix $\underline{\underline{G}}$
+umgeschrieben (für die Berechnung siehe \ref{sec:calc_dispersion})
+und die Änderung der Notation für die Einträge der Matrix $\underline{\underline{G}}$
 \begin{equation*}
     G_{d_m, d^\dagger_{m'}} \to G_{mm'}
 \end{equation*}
@@ -256,11 +257,11 @@ Das Ergebnis \eqref{eqn:finalgreencB} wird schlussendlich in Gleichung \eqref{eq
 Somit folgt
 \begin{align*}
     &\left ( z- \varepsilon_m \right )  G_{mm'} = \delta_{mm'}+\sum_{j\vec{k}} V_{mj} \symup{e}^{\symup{i}\vec{k} ( \vec{l}+ \delta_j)} 
-    \left ( \frac{z\sum_{mj'} V_{mj'} \symup{e}^{-\symup{i}\vec{k}(\vec{l} + \vec{\delta}_{j'})}G_{mm'}} {N (z^2-\mu_{\vec{k}})} \right ) \\
+    \left ( \frac{z\sum_{mj'} V_{mj'} \symup{e}^{-\symup{i}\vec{k}(\vec{l} + \vec{\delta}_{j'})}G_{mm'}} {N (z^2-\varepsilon_{\vec{k}}^2)} \right ) \\
     &\iff \left ( z- \varepsilon_m - \frac{z}{N}\sum_{\vec{k}} \frac{\sum_j V_{mj} \symup{e}^{-\symup{i}\vec{k}(\vec{l} + 
-    \vec{\delta}_j)} \sum_{j'} V_{mj'} \symup{e}^{-\symup{i}\vec{k}(\vec{l} + \vec{\delta}_{j'})}} {z^2-\mu_{\vec{k}}} \right ) G_{mm'} \\
+    \vec{\delta}_j)} \sum_{j'} V_{mj'} \symup{e}^{-\symup{i}\vec{k}(\vec{l} + \vec{\delta}_{j'})}} {z^2-\varepsilon_{\vec{k}}^2} \right ) G_{mm'} \\
     & \quad \quad \quad \quad \quad - \frac{z}{N}\sum_{n \neq m, \vec{k}} \frac{\sum_j V_{mj} \symup{e}^{\symup{i}\vec{k}(\vec{l} 
-    + \vec{\delta}_j)} \sum_{j'} V_{nj'} \symup{e}^{-\symup{i}\vec{k}(\vec{l}+\vec{\delta}_{j'})}} {z^2-\mu_{\vec{k}}} G_{nm'} = \delta_{mm'} \numberthis \label{eqn:matrixmultiplication_green} \; .
+    + \vec{\delta}_j)} \sum_{j'} V_{nj'} \symup{e}^{-\symup{i}\vec{k}(\vec{l}+\vec{\delta}_{j'})}} {z^2-\varepsilon_{\vec{k}}^2} G_{nm'} = \delta_{mm'} \numberthis \label{eqn:matrixmultiplication_green} \; .
 \end{align*}
 Hier wird, wie vorher erwähnt wurde, ersichtlich, dass die Position des Manganatoms keinen Einfluss auf das Ergebnis hat, da sich der Gittervektor 
 $\vec{l}$, bei welchem sich das Manganatom befindet, in Gleichung \eqref{eqn:matrixmultiplication_green} aufgrund des verschiedenen Vorzeichens im Exponenten weghebt.
@@ -270,13 +271,13 @@ In Gleichung \eqref{eqn:matrixmultiplication_green} wird nun eine Matrixmultipli
 \end{equation*}
 erkennbar, wobei die Vorfaktoren vor $G_{mm'}$ die Hauptdiagonalelemente und die Vorfaktoren vor $G_{nm'}$ die Nebendiagonalelemente der Matrix 
 $\underline{\underline{A}}$ bilden.
-$\symbb{1} \in \symbb{R}^{5  \times 5}$ bezeichnet die Einheitsmatrix.
+Dabei bezeichnet $\symbb{1} \in \symbb{R}^{5  \times 5}$ die Einheitsmatrix.
 Somit bildet die Matrix $\underline{\underline{A}}$ die Inverse zu der Matrix $\underline{\underline{G}}$.
-Die Einträge der Inversen sind mit $\mu_{\vec{k}}$ eingesetzt durch
+Die Einträge der Inversen sind durch
 \begin{equation}
     \left (  \underline{\underline{G}}^{-1} \right )_{mn} = \left ( z- \varepsilon_m \right ) \delta_{mn} - \frac{z}{N}\sum_{\vec{k}}
     \frac{\sum_j V_{mj}\symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}\sum_{j'} V_{nj'}\symup{e}^{-\symup{i}\vec{k}\vec{\delta}_{j'}}}
-    {z^2-t^2\sum_j \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \sum_{j'} \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_{j'}}}
+    {z^2-\varepsilon_{\vec{k}}^2}
 \end{equation}
 gegeben.
 Die Inverse der Matrix  $\underline{\underline{G}}$ besitzt die Struktur 
@@ -290,7 +291,7 @@ Die Matrix $\underline{\underline{\symup{\Delta}}}$ ist die gesuchte Hybridisier
 \begin{equation*}
     \left ( \underline{\underline{\symup{\Delta}}} \right )_{mn} =  \frac{z}{N}\sum_{\vec{k}}
     \frac{\sum_j V_{mj}\symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}\sum_{j'} V_{nj'}\symup{e}^{-\symup{i}\vec{k}\vec{\delta}_{j'}}}
-    {z^2-t^2\sum_j \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \sum_{j'} \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_{j'}}} \; .
+    {z^2-\varepsilon_{\vec{k}}^2} \; .
 \end{equation*}
 \section{Linearkombinationen}
 Aufgrund der dreizähligen Drehsymmetrie der Kohlenstoffatome um den Mangandefekt, können die Vernichter $c_i$
@@ -328,8 +329,8 @@ Somit ergibt sich
                     +\left  (-\sqrt{3}\frac{3}{2}               \symup{i}   f   V_{pd\sigma} - \frac{3}{2}  \symup{i}   h   V_{pd\pi} \right ) \tilde{c}^\dagger_2 \right ) d_3\\
         +&\left (   3 q V_{pd\sigma} + 3 \sqrt{3}  b V_{pd\pi} \right )    \tilde{c}^\dagger_0                                                                              d_4\\
         +&\left (   \left   ( \frac{3}{4}\sqrt{3}                           b   V_{pd\sigma} - \frac{3}{2}              b   V_{pd\pi} \right ) \tilde{c}^\dagger_1  
-                    +\left  ( \frac{3}{4}\sqrt{3}                           b   V_{pd\sigma} - \frac{3}{2}              b   V_{pd\pi} \right ) \tilde{c}^\dagger_2 \right ) d_5\\
-                     \Biggr) & + \text{h.c.} \; .
+                    +\left  ( \frac{3}{4}\sqrt{3}                           b   V_{pd\sigma} - \frac{3}{2}              b   V_{pd\pi} \right ) \tilde{c}^\dagger_2 \right ) d_5 \Biggr) \\
+                    & + \text{h.c.} \; .
                  \end{split}
       \label{eqn:lcinhamiltonian}
 \end{equation} 
@@ -368,7 +369,7 @@ geschrieben werden kann.
 Dabei beinhaltet die Matrix $\underline{\underline{\gamma}}$ die Kopplungsstärken der Operatoren $\tilde{d}_m$ und $\tilde{c}_i$.
 Diese ist mit $m \in \{ 0,1,2,3,4 \}$ und $l \in \{ 0,1,2 \}$ durch
 \begin{equation*}
-   \left (  \underline{\underline{\gamma}} \right )_{ml}= 
+     \underline{\underline{\gamma}} = 
     \begin{pmatrix}
         0               & \left ( \frac{3}{\sqrt{8}} b V_{pd\sigma} + \frac{\sqrt{3}}{\sqrt{2}}  b   V_{pd\pi} \right )    &   0           \\
         0               & \left ( \frac{3}{\sqrt{2}} f V_{pd\sigma} + \frac{\sqrt{3}}{\sqrt{2}}  h   V_{pd\pi} \right )   &   0           \\
@@ -409,10 +410,10 @@ folgt.
 Dabei tritt die Dispersionsrelation von Graphen $\varepsilon_{\vec{k}}$ (siehe Gleichung \eqref{eqn:dispersion_graphene_calc}) auf. 
 Um nun die gesuchte Greensche Funktion $G_{\tilde{c}_l, \tilde{c}_l^{\dagger}}$ zu erhalten, wird mit 
 \begin{equation}
-    G_{\tilde{c}_l, \tilde{c}^\dagger_{l'}} = \sum_{\vec{k}} D_l D^\dagger_{l'} G_{c_{\text{B},\vec{k}}, c^\dagger_{\text{B},\vec{k}}} \label{eqn:koe}
+    G_{\tilde{c}_l, \tilde{c}^\dagger_{l'}} = \sum_{\vec{k}} D_{l,\vec{k}} D^\dagger_{l',\vec{k}}G_{c_{\text{B},\vec{k}}, c^\dagger_{\text{B},\vec{k}}} \label{eqn:koe}
 \end{equation}
 die Greensche Funktioen $G_{c_{\text{B},\vec{k}}, c^\dagger_{\text{B},\vec{k}}}$ zurücktransformiert.
-Die dabei auftretenden Koeffizienten, $D_i$ und $D_j$, von den Fouriertransformationen der Vernichter $\tilde{c}_l$
+Die dabei auftretenden Koeffizienten $D_{l,\vec{k}}$ von den Fouriertransformationen der Vernichter $\tilde{c}_l$
 \begin{align*}
     \tilde{c}_0 &= \frac{1}{\sqrt{3N}}\sum_{\vec{k}} \sum_{j=1}^3\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)}                              c_{\text{B}, \vec{k}}  \\
     \tilde{c}_1 &= \frac{1}{\sqrt{3N}}\sum_{\vec{k}} \sum_{j=1}^3\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)+\symup{i}\frac{2(j-1)\pi}{3}} c_{\text{B}, \vec{k}}  \\
@@ -421,19 +422,19 @@ Die dabei auftretenden Koeffizienten, $D_i$ und $D_j$, von den Fouriertransforma
 sind durch
 \begin{equation}
     \begin{aligned}
-    D_0 &= \frac{1}{\sqrt{3N}}\sum_{j=1}^3\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)} \\
-    D_1 &= \frac{1}{\sqrt{3N}}\sum_{j=1}^3\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)+\symup{i}\frac{2(j-1)\pi}{3}}  \\
-    D_2 &= \frac{1}{\sqrt{3N}}\sum_{j=1}^3\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)-\symup{i}\frac{2(j-1)\pi}{3}} \; . \label{eqn:fourierko}
+    D_{0,\vec{k}} &= \frac{1}{\sqrt{3N}}\sum_{j=1}^3\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)} \\
+    D_{1,\vec{k}} &= \frac{1}{\sqrt{3N}}\sum_{j=1}^3\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)+\symup{i}\frac{2(j-1)\pi}{3}}  \\
+    D_{2,\vec{k}} &= \frac{1}{\sqrt{3N}}\sum_{j=1}^3\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)-\symup{i}\frac{2(j-1)\pi}{3}} \; . \label{eqn:fourierko}
     \end{aligned}    
 \end{equation}
 gegeben.
 Werden diese nun in \eqref{eqn:koe} eingesetzt, ergeben sich die 3 gesuchten Greensunktionen zu 
 \begin{align}
-    G_{\tilde{c}_0, \tilde{c}^\dagger_0} &= \frac{z}{3N} \sum_{\vec{k}} \frac{\sum_j \symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)} \sum_{j'} \symup{e}^{-i{\vec{k}}(\vec{l}+\vec{\delta}_{j'})}                                                            }{z^2-\varepsilon_{\vec{k}}^2} \\
-    G_{\tilde{c}_1, \tilde{c}^\dagger_1} &= \frac{z}{3N} \sum_{\vec{k}} \frac{\sum_j \symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)+\symup{i}\frac{2(j-1)\pi}{3}} \sum_{j'} \symup{e}^{-i{\vec{k}}(\vec{l}+\vec{\delta}_{j'})-\symup{i}\frac{2(j'-1)\pi}{3}} }{z^2-\varepsilon_{\vec{k}}^2} \\
-    G_{\tilde{c}_2, \tilde{c}^\dagger_2} &= \frac{z}{3N} \sum_{\vec{k}} \frac{\sum_j \symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)-\symup{i}\frac{2(j-1)\pi}{3}} \sum_{j'} \symup{e}^{-i{\vec{k}}(\vec{l}+\vec{\delta}_{j'})+\symup{i}\frac{2(j'-1)\pi}{3}} }{z^2-\varepsilon_{\vec{k}}^2} \; .
+    G_{\tilde{c}_0, \tilde{c}^\dagger_0} &= \frac{z}{3N} \sum_{\vec{k}} \frac{\sum_j \symup{e}^{i{\vec{k}}\vec{\delta}_j} \sum_{j'} \symup{e}^{-i{\vec{k}}\vec{\delta}_{j'}}                                                            }{z^2-\varepsilon_{\vec{k}}^2} \\
+    G_{\tilde{c}_1, \tilde{c}^\dagger_1} &= \frac{z}{3N} \sum_{\vec{k}} \frac{\sum_j \symup{e}^{i{\vec{k}}\vec{\delta}_j+\symup{i}\frac{2(j-1)\pi}{3}} \sum_{j'} \symup{e}^{-i{\vec{k}}\vec{\delta}_{j'}-\symup{i}\frac{2(j'-1)\pi}{3}} }{z^2-\varepsilon_{\vec{k}}^2} \\
+    G_{\tilde{c}_2, \tilde{c}^\dagger_2} &= \frac{z}{3N} \sum_{\vec{k}} \frac{\sum_j \symup{e}^{i{\vec{k}}\vec{\delta}_j-\symup{i}\frac{2(j-1)\pi}{3}} \sum_{j'} \symup{e}^{-i{\vec{k}}\vec{\delta}_{j'}+\symup{i}\frac{2(j'-1)\pi}{3}} }{z^2-\varepsilon_{\vec{k}}^2} \; .
 \end{align}
-Da zweimal nur zwei Vernichter $\tilde{d}_m$ an ein $\tilde{c}_l$ und einmal ein  Vernichter $\tilde{d}_m$ an ein $\tilde{c}_l$ koppeln, hat die Hybridisierungsfunktion
+Da zweimal nur zwei Vernichter $\tilde{d}_m$ an ein $\tilde{c}_l$ und einmal ein  Vernichter $\tilde{d}_m$ an ein $\tilde{c}_l$ koppeln, besitzt die Hybridisierungsfunktion
 eine blockdiagonale Struktur mit zwei $2 \times 2$ und ein $1 \times 1$ Blöcke auf der Hauptdiagonale, welche 
 durch Multiplikation der Kopplungsparameter $\gamma_{ml}$ mit der zu dem $m$ zugehörige Greensche Funktion $G_{\tilde{c}_l, \tilde{c}^\dagger_{l'}}$.
 Somit sieht $\underline{\underline{\symup{\Delta}}}$ wie folgt aus:
