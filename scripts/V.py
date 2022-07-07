@@ -21,11 +21,11 @@ Exy2 = -3/4*b+np.sqrt(3)/2
 Exy3 =  3/4*b+np.sqrt(3)/2
 
 
-plt.subplot(4, 2, 1)
+plt.subplot(5, 2, 1)
 plt.plot(r, Exy2)
 plt.title(r"$Exy2$")
 
-plt.subplot(4, 2, 2)
+plt.subplot(5, 2, 2)
 plt.plot(r, Exy3)
 plt.title(r"$Exy3$")
 
@@ -47,4 +47,4 @@ plt.title(r"$Exy3$")
 
 
 plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
-plt.savefig('build/figures/lattersintheta.pdf')
+plt.savefig('Plots/Es.pdf')
