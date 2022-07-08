@@ -22,8 +22,14 @@ all: build/main.pdf
 ../Plots/Faktoreninz.pdf: scripts/qinz.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS=$$(pwd): python scripts/qinz.py
 
+../Plots/Faktoreninzstacked.pdf: scripts/qinz_stacked.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python scripts/qinz_stacked.py
+
+../Plots/versuch.pdf: scripts/versuch.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python scripts/versuch.py
+
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: ../Plots/SK1.pdf ../Plots/SK2.pdf ../Plots/SK3.pdf ../Plots/Faktoreninr.pdf ../Plots/Faktorenintheta.pdf ../Plots/Faktoreninz.pdf
+build/main.pdf: ../Plots/SK1.pdf ../Plots/SK2.pdf ../Plots/SK3.pdf ../Plots/Faktoreninr.pdf ../Plots/Faktorenintheta.pdf ../Plots/Faktoreninz.pdf ../Plots/Faktoreninzstacked.pdf ../Plots/versuch.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS=build: \
