@@ -38,31 +38,31 @@ Der Tight Binding Hamiltonian für Graphen lautet
 \end{equation*}
 Dazu wird der Ansatz einer Fouriertransformation 
 \begin{equation*}
-    c_i = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{i\vec{k}\vec{l}} c_{\text{A}, \vec{k}} \; , 
-    \quad c_n = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{i\vec{k}(\vec{l}+\vec{\delta}_j)} c_{\text{B}, \vec{k}}
+    c_i = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}\vec{l}} c_{\text{A}, \vec{k}} \; , 
+    \quad c_n = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}(\vec{l}+\vec{\delta}_j)} c_{\text{B}, \vec{k}}
 \end{equation*}
 gemacht. 
 Dieser Wird in den Hamiltonian eingesetzt, womit 
 \begin{align*}
-    H &= -\frac{t}{N} \sum_{j\vec{l}} \sum_{\vec{k}\vec{k}'} ( \symup{e}^{-i\vec{k}\vec{l}}c^\dagger_{A,\vec{k}} 
-    \symup{e}^{i\vec{k}'(\vec{l}+\vec{\delta}_j)}c_{B,\vec{k}'} + \symup{e}^{-i\vec{k}'(\vec{l}+\vec{\delta}_j)} c^\dagger_{B,\vec{k}'} 
-    \symup{e}^{i\vec{k}\vec{l}}c_{A,\vec{k}}) \\
-    &= -\frac{t}{N} \sum_{j\vec{l}} \sum_{\vec{k}\vec{k}'} ( \symup{e}^{-i(\vec{k}- \vec{k}')\vec{l}}\symup{e}^{i\vec{k}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}'} + 
-    \symup{e}^{i(\vec{k}- \vec{k}')\vec{l}} \symup{e}^{-i\vec{k}\vec{\delta}_j} c^\dagger_{B,\vec{k}'}c_{A,\vec{k}}) \\
-    &= -t \sum_{j\vec{k}} ( \symup{e}^{i\vec{k}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}} + 
-    \symup{e}^{-i\vec{k}\vec{\delta_j}} c^\dagger_{B,\vec{k}}c_{A,\vec{k}})
+    H &= -\frac{t}{N} \sum_{j\vec{l}} \sum_{\vec{k}\vec{k}'} ( \symup{e}^{-\symup{i}\vec{k}\vec{l}}c^\dagger_{A,\vec{k}} 
+    \symup{e}^{\symup{i}\vec{k}'(\vec{l}+\vec{\delta}_j)}c_{B,\vec{k}'} + \symup{e}^{-\symup{i}\vec{k}'(\vec{l}+\vec{\delta}_j)} c^\dagger_{B,\vec{k}'} 
+    \symup{e}^{\symup{i}\vec{k}\vec{l}}c_{A,\vec{k}}) \\
+    &= -\frac{t}{N} \sum_{j\vec{l}} \sum_{\vec{k}\vec{k}'} ( \symup{e}^{-\symup{i}(\vec{k}- \vec{k}')\vec{l}}\symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}'} + 
+    \symup{e}^{\symup{i}(\vec{k}- \vec{k}')\vec{l}} \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_j} c^\dagger_{B,\vec{k}'}c_{A,\vec{k}}) \\
+    &= -t \sum_{j\vec{k}} ( \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}} + 
+    \symup{e}^{-\symup{i}\vec{k}\vec{\delta_j}} c^\dagger_{B,\vec{k}}c_{A,\vec{k}})
 \end{align*}
 folgt.
-In dem letzten Schritt wurde $\sum_{\vec{l}}^N \symup{e}^{-i(\vec{k}- \vec{k}')\vec{l}} 
-= \sum_{\vec{l}}^N \symup{e}^{i(\vec{k}- \vec{k}')\vec{l}} = N\delta_{\vec{k}, \vec{k}'}$ ausgenutzt, so dass die Summe über $\vec{k}'$ verschwindet.
+In dem letzten Schritt wurde $\sum_{\vec{l}}^N \symup{e}^{-\symup{i}(\vec{k}- \vec{k}')\vec{l}} 
+= \sum_{\vec{l}}^N \symup{e}^{\symup{i}(\vec{k}- \vec{k}')\vec{l}} = N\delta_{\vec{k}, \vec{k}'}$ ausgenutzt, so dass die Summe über $\vec{k}'$ verschwindet.
 Der Hamiltonian kann in die Form 
 \begin{equation*}
     H = \sum_{\vec{k}} \begin{pmatrix}
         c_{\text{A},\vec{k}}^{\dagger} & c_{\text{B},\vec{k}}^{\dagger}
     \end{pmatrix}
     \begin{pmatrix}
-        0 & -t\sum_{j} \symup{e}^{i\vec{k}\vec{\delta}_j}     \\
-        -t\sum_{j} \symup{e}^{-i\vec{k}\vec{\delta}_j} & 0     
+        0 & -t\sum_{j} \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}     \\
+        -t\sum_{j} \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_j} & 0     
     \end{pmatrix}
     \begin{pmatrix}
         c_{\text{A},\vec{k}} \\
@@ -74,11 +74,11 @@ Die Eigenwerte der auftretenden $2 \times 2$-Matrix bilden die Dispersionsrelati
 Somit kann diese Matrix gemäß
 \begin{equation*}
     \begin{vmatrix}
-        -\varepsilon_{\vec{k}} & -t\sum_{j} \symup{e}^{i\vec{k}\vec{\delta}_j}     \\
-        -t\sum_{j} \symup{e}^{-i\vec{k}\vec{\delta}_j} & -\varepsilon_{\vec{k}}     
+        -\varepsilon_{\vec{k}} & -t\sum_{j} \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}     \\
+        -t\sum_{j} \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_j} & -\varepsilon_{\vec{k}}     
     \end{vmatrix} \stackrel{!}{=} 0 
-    \iff \varepsilon_{\vec{k}}^2 - t^2 \left | \sum_{j} \symup{e}^{i\vec{k}\vec{\delta}_j} \right |^2 = 0 
-    \iff \varepsilon_{\vec{k}} = \pm t \left | \sum_{j} \symup{e}^{i\vec{k}\vec{\delta}_j} \right |
+    \iff \varepsilon_{\vec{k}}^2 - t^2 \left | \sum_{j} \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \right |^2 = 0 
+    \iff \varepsilon_{\vec{k}} = \pm t \left | \sum_{j} \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \right |
 \end{equation*}
 diagonalisiert werden.
 Die Summe ausgeschrieben ergibt

@@ -1,9 +1,10 @@
 \chapter{Theoretische Grundlagen}
 \label{chap:theoretische_grundlagen}
 \section{Greensche Funktionen}
-Die Greensche Funktion ist für zwei Operatoren mit der zeitlichen Entwicklung 
+Die Greensche Funktion ist für zwei beliebige Operatoren $A$ und $B$ mit der zeitlichen Entwicklung 
 \begin{equation}
-    A \left ( \tau \right ) = \symup{e}^{H \tau} A_\text{S} \symup{e}^{-H \tau}  \label{eqn:heisenbergpic}
+    A \left ( \tau \right ) = \symup{e}^{H \tau} A_\text{S} \symup{e}^{-H \tau}  \label{eqn:heisenbergpic}, 
+    \quad B \left ( \tau' \right ) = \symup{e}^{H \tau'} B_\text{S} \symup{e}^{-H \tau'}
 \end{equation}
 definiert als 
 \begin{align}
@@ -11,16 +12,16 @@ definiert als
     & = - \frac{1}{\hbar} \left(  \langle A \left (\tau \right ) B \left ( \tau' \right ) \rangle \symup{\Theta} \left ( \tau - \tau' \right) + s 
     \langle B \left ( \tau' \right ) A \left (\tau \right ) \rangle \symup{\Theta} \left ( \tau' - \tau \right)  \right ) \; \text{,} \label{eqn:greensfunction}
 \end{align}
-wobei $H$ der Hamiltonoperator, $A_\text{S}$ ein Operator im Schöringerbild, $T_s$ der Zeitordnungsoperator, 
+wobei $\tau = \symup{i}t$ eine komplexwertige Zeit und $t$ die gewöhnliche, relle Zeit, $H$ der Hamiltonoperator, $A_\text{S}$ ein Operator im Schöringerbild, $T_s$ der Zeitordnungsoperator, 
 $\langle \ldots \rangle$ ein Erwartungswert und $\symup{\Theta} \left ( \tau' - \tau \right)$ die Heaviside-Funktion ist \cite{greensfunction}.
 Der Parameter $s$ sorgt mit $s=+1$ für bosonische bzw. $s=-1$ für fermionische Operatoren für das richtige Vorzeichen.
-Der Erwartungswert ist bezüglich der großkanonischen Gesamtheit durch 
+Der Erwartungswert eines Operators $A$ ist bezüglich der großkanonischen Gesamtheit durch 
 \begin{equation*}
-    \langle \ldots \rangle = \frac{1}{Z} \text{Sp}(\symup{e}^{-\beta H} \ldots)
+    \langle A \rangle = \frac{1}{Z} \text{Sp}(\symup{e}^{-\beta H} A)
 \end{equation*}
 gegeben \cite{greensfunction}.
 Die Zustandssumme $Z$ stellt dabei einen Normierungsfaktor dar.
-In Gleichung \eqref{eqn:heisenbergpic} wurde das reduzierte Planksche Wirkungsquantum bereits auf eins gesetzt, was in den folgenden Abschnitten beibehalten wird.
+In Gleichung \eqref{eqn:heisenbergpic} wurde das reduzierte Planksche Wirkungsquantum $\hbar$ bereits auf eins gesetzt, was in den folgenden Abschnitten beibehalten wird.
 Da in dieser Arbeit nur fermionische Systeme betrachtet werden, wird $s$ ab jetzt ohne weitere Bemerkungen auf $-1$ gesetzt.
 Unter der Annahme, dass die partielle Ableitung von $A$ verschwindet, ist die zeitliche Entwicklung eines Operators 
 $A$ durch die Heisenbergsche Bewegungsgleichung gemäß 
@@ -45,7 +46,7 @@ Somit folgt
     \\[2ex]
     =\; & G_{[H,A],B}(\tau, \tau') - \langle \{ A,B \} \rangle \symup{\delta} \left ( \tau - \tau' \right) \; \text{.} \numberthis \label{eqn:eomgreen}
 \end{align*} 
-Dabei ist  $\symup{\delta} (\tau-\tau') = \symup{\delta} (\tau'-\tau) $ die Deltadistribution, welche durch ableiten der Heaviside-funktion gewonnen werden kann.
+Dabei ist  $\symup{\delta} (\tau-\tau') = \symup{\delta} (\tau'-\tau) $ die Deltadistribution, welche durch Ableiten der Heaviside-Funktion gewonnen werden kann.
 In der dritten Zeile wurde die Heisenbergsche Bewegungsgleichung \eqref{eqn:heisenbergeom} ausgenutzt.
 Um algebraisch anstatt mit Differentialen rechnen zu können, wird die Bewegungsgleichung \eqref{eqn:eomgreen} fouriertransformiert,
 womit sich
@@ -64,46 +65,46 @@ folgt.
 In der Tight Binding Näherung wird von stark gebundenen, lokalisierten Elektonen ausgegangen \cite{Czycholl}.
 Dazu wird der volle Hamiltonian eines Elektrons im Festkörper
 \begin{equation}
-    H = \frac{\vec{p}^2}{2m} + \sum_{i\alpha} v(\vec{r}-\vec{l}_i - \vec{R}_{\alpha}) = \frac{\vec{p}^2}{2m} + v_{\vec{R}}(\vec{r})\label{eqn:electron_hamiltonian}
+    H = \frac{\vec{p}^2}{2m} + \sum_{j\alpha} v(\vec{r}-\vec{l}_j - \vec{R}_{\alpha}) = \frac{\vec{p}^2}{2m} + v_{\vec{R}}(\vec{r})\label{eqn:electron_hamiltonian}
 \end{equation}
 betrachtet \cite{Czycholl}.
-Der Vektor $\vec{R}_{\alpha}$ ist die Position innerhalb der Basis $\alpha$ in der Einheitszelle mit dem Gittervektor $\vec{l}_i$, während
-$\vec{p} = \frac{1}{i} \vec{\nabla}$ der Impulsoperator, $m$ die Masse des Elektrons und $v_{\vec{R}}(\vec{r})$ das Potential von den Atomen in dem Festkörper, 
+Der Vektor $\vec{R}_{\alpha}$ ist die Position innerhalb der Basis $\alpha$ in der Einheitszelle mit dem Gittervektor $\vec{l}_j$, während
+$\vec{p} = -\symup{i}\vec{\nabla}$ der Impulsoperator, $m$ die Masse des Elektrons und $v_{\vec{R}}(\vec{r})$ mit $\vec{r}$ als Ortsvektor das Potential von den Atomen in dem Festkörper, 
 was auf das betrachtete Elektron wirkt, ist.
-Mitels des Wellenvektors $\vec{k}$ lassen sich aus den atomaren Wellenfunktionen $\Psi_{lm} \left (\vec{r}-\vec{l}_i - \vec{R}_{\alpha} \right )$ mit $l$ und $m$ als Drehimpulsquantenzahlen
+Mitels des Wellenvektors $\vec{k}$ lassen sich aus den atomaren Wellenfunktionen $\Psi_{lm} \left (\vec{r}-\vec{l}_j - \vec{R}_{\alpha} \right )$ mit $l$ und $m$ als Drehimpulsquantenzahlen
 Blochzustände
 \begin{equation}
-    \Psi^{\alpha}_{lm}(\vec{k}, \vec{r}) = \frac{1}{\sqrt{N}} \sum_{i} \symup{e}^{\symup{i}\vec{k}\vec{l}_i} \Psi_{lm}(\vec{r}-\vec{l}_i - \vec{R}_{\alpha}) 
+    \Psi^{\alpha}_{lm}(\vec{k}, \vec{r}) = \frac{1}{\sqrt{N}} \sum_{j} \symup{e}^{\symup{i}\vec{k}\vec{l}_j} \Psi_{lm}(\vec{r}-\vec{l}_j - \vec{R}_{\alpha}) 
 \end{equation}
 konstruieren, welche die Gitterperiodizität besitzen \cite{SC_literature}.
 Für die Tight Binding Modellierung werden die Matrixelemente des Hamiltonians \eqref{eqn:electron_hamiltonian}
 benötigt, welche sich in der Blochbasis durch
 \begin{equation*}
     \bra{\Psi^{\alpha}_{lm}(\vec{k})} H \ket{\Psi^{\alpha'}_{l'm'}(\vec{k})} = \varepsilon_{lm,l'm'}^{\alpha \alpha'} \braket*{\Psi^{\alpha}_{lm}(\vec{k})}{\Psi^{\alpha'}_{l'm'}(\vec{k})}
-    - \frac{1}{N} \sum_{i\alpha \neq i' \alpha'} \symup{e}^{\symup{i}\vec{k}(\vec{l}_{i'}-\vec{l}_{i})}  t^{i\alpha,i'\alpha'}_{lm,l'm'}
+    - \frac{1}{N} \sum_{j\alpha \neq j' \alpha'} \symup{e}^{\symup{i}\vec{k}(\vec{l}_{j'}-\vec{l}_{j})}  t^{j\alpha,j'\alpha'}_{lm,l'm'}
 \end{equation*}
 errechnen lassen \cite{SC_literature}\cite{Czycholl}.
 Die Orbitalenergien im Kristallfeld sind durch $\varepsilon_{lm,l'm'}^{\alpha \alpha'}$ gegeben \cite{SC_literature}.
 Dabei gilt
 \begin{equation*}
-    t^{i\alpha,i'\alpha'}_{lm,l'm'} = - \int \symup{d}^3r \; \overline{\Psi}_{lm} \left (\vec{r}-\vec{l}_i - \vec{R}_{\alpha} \right ) 
-    \left ( v_{\vec{R}} (\vec{r}) - v \left (\vec{r} - \vec{l}_{i'} - \vec{R}_{\alpha'} \right )   \right ) \Psi_{l'm'} \left (\vec{r}-\vec{l}_{i'} - \vec{R}_{\alpha'} \right )  \; ,
+    t^{j\alpha,j'\alpha'}_{lm,l'm'} = - \int \symup{d}^3r \; \overline{\Psi}_{lm} \left (\vec{r}-\vec{l}_j - \vec{R}_{\alpha} \right ) 
+    \left ( v_{\vec{R}} (\vec{r}) - v \left (\vec{r} - \vec{l}_{j'} - \vec{R}_{\alpha'} \right )   \right ) \Psi_{l'm'} \left (\vec{r}-\vec{l}_{j'} - \vec{R}_{\alpha'} \right )  \; ,
 \end{equation*}
 wobei im stark lokalisierten Fall die Dreizentren-Beiträge vernachlässigt werden können und  
 nur noch das Zweizentren-Integral 
 \begin{equation*} 
-    t^{i\alpha,i'\alpha'}_{lm,l'm'} = - \int \symup{d}^3r \; \overline{\Psi}_{lm} \left (\vec{r}-\vec{l}_i - \vec{R}_{\alpha} \right ) 
-    v \left ( \vec{r} - \vec{l}_{i} - \vec{R}_{\alpha} \right ) \Psi_{l'm'} \left (\vec{r}-\vec{l}_{i'} - \vec{R}_{\alpha'} \right ) 
+    t^{j\alpha,j'\alpha'}_{lm,l'm'} = - \int \symup{d}^3r \; \overline{\Psi}_{lm} \left (\vec{r}-\vec{l}_j - \vec{R}_{\alpha} \right ) 
+    v \left ( \vec{r} - \vec{l}_{j} - \vec{R}_{\alpha} \right ) \Psi_{l'm'} \left (\vec{r}-\vec{l}_{j'} - \vec{R}_{\alpha'} \right ) 
 \end{equation*}
 übrig bleibt \cite{SC_literature}.
 Dieses Zweizentren-Integral ist das für das Tight Binding Modell typische Hüpfmatrixelement.
 Damit kann der Tight Binding Hamiltonian in zweiter Quantisierung bei Vernachlässigung der 
 magnetischen Quantenzahl $m$ durch
 \begin{equation}
-    H = - \sum_{ii'} \sum_{\alpha \alpha'}\sum_{ll'} t^{i\alpha,i'\alpha'}_{ll'}  c_{il\alpha}^\dagger c_{i'l'\alpha'}  \label{eqn:tight-binding-hamiltonian}
+    H = - \sum_{jj'} \sum_{\alpha \alpha'}\sum_{ll'} t^{j\alpha,j'\alpha'}_{ll'}  c_{jl\alpha}^\dagger c_{j'l'\alpha'}  \label{eqn:tight-binding-hamiltonian}
 \end{equation}
 angegeben werden \cite{anders-fkt}.
-Dabei vernichtet(erzeugt) der Operator $c_{il\alpha}$($c_{il\alpha}^{\dagger}$ ) ein Elektron im Orbital $l$ in der Einheitszelle $i$,
+Dabei vernichtet(erzeugt) der Operator $c_{jl\alpha}$($c_{jl\alpha}^{\dagger}$ ) ein Elektron im Orbital $l$ in der Einheitszelle $j$,
 innerhalb der Basis am Platz $\alpha$.
 Je nach Modellannahme läuft die Summe dann über z.B. nächste oder übernächste Nachbarn.
 \section{Slater-Koster-Integrale}
@@ -115,7 +116,7 @@ Die Slater-Koster-Integrale (SK-Integrale) sind für zwei Orbitale definiert als
 worin schon erkenntlich wird, dass diese nur von dem Abstand $\vec{d}$ abhängen \cite{SC_literature}.
 Hierbei ist $\Psi_{lm}(\vec{r})$ wieder die atomare Wellenfunktion und $V(\vec{r})$ das Potential am Ort $\vec{r}$ \cite{SC_literature}.
 Anstatt komplexe Orbitale werden hierbei die realen Orbitale verwendet.
-Die SK-Integrale können wiederrum in einige unabhängige Integrale $V_{ll'\beta}$ zerlegt werden, welche sich durch die Orbitale, $l$ und $l'$, 
+Die SK-Integrale können wiederum in einige unabhängige Integrale $V_{ll'\beta}$ zerlegt werden, welche sich durch die Orbitale, $l$ und $l'$, 
 sowie den Bindungen $\beta \in \{\sigma ,\pi, \delta \}$ unterscheiden \cite{electronic_structure}.
 Als Beispiel würde sich bei dem Überlapp zwischen einem $s$- und $p_y$-Orbital das Integral in zwei 
 SK-Integrale, $V_{sp\sigma}$ und $V_{sp\pi}$, aufteilen (Abb. \ref{fig:TC}).

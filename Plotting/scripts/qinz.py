@@ -4,15 +4,17 @@ import numpy as np
 V_sigma = 1
 V_pi = 1
 a = 0.142e-9 
-theta =  np.linspace(np.arctan(1e24), np.arctan(a/1e-9), 1000)
+
+
+z = np.linspace(1e-100, 3e-10, 1000)
+
+theta =  np.array(np.arctan(a/z))
 
 
 b = -np.sin(theta)**2*np.cos(theta)
 f = -np.cos(theta)**2*np.sin(theta)
 h = -np.sin(theta)*(1-2*np.cos(theta)**2)
 q = -np.cos(theta)**3+0.5*np.sin(theta)**2*np.cos(theta)
-
-z = np.linspace(0, 1e-9, 1000) * 1e9
 
 r  = a * np.sqrt(1+1/(np.tan(theta)**2))
 
@@ -34,30 +36,56 @@ r  = a * np.sqrt(1+1/(np.tan(theta)**2))
 #plt.title(r"$q$")
 #
 
+z *= 1e10
+
+index_1A = np.where(z == 1)
+
 plt.figure(figsize = (1.61*5,5))
 
 plt.subplot(4, 2, 1)
 plt.plot(z, b)
-plt.xlabel(r"$z \mathbin{/} \si{\nano\meter}$")
-plt.text(-0.02, -0.37,r'a')
+xlim,ylim = plt.xlim(), plt.ylim()
+plt.plot([xlim[0], 1, 1], [b[index_1A],  b[index_1A], ylim[0]] , linestyle = '--', linewidth = 1, color = 'lightcoral')
+plt.plot(z, b, color = 'darkseagreen')
+plt.xlim(xlim)
+plt.ylim(ylim)
+plt.xlabel(r"$z \mathbin{/} \si{\angstrom}$")
+plt.text(3, -0.37,r'a')
 plt.ylabel(r"$b$")
+
+
 
 plt.subplot(4, 2, 2)
 plt.plot(z, f)
-plt.xlabel(r"$z \mathbin{/} \si{\nano\meter}$")
-plt.text(-0.02, -0.37,r'b')
+xlim,ylim = plt.xlim(), plt.ylim()
+plt.plot([xlim[0], 1, 1], [f[index_1A],  f[index_1A], ylim[0]] , linestyle = '--', linewidth = 1, color = 'lightcoral')
+plt.plot(z, f, color = 'darkseagreen')
+plt.xlim(xlim)
+plt.ylim(ylim)
+plt.xlabel(r"$z \mathbin{/} \si{\angstrom}$")
+plt.text(3, -0.08,r'b')
 plt.ylabel(r"$f$")
 
 plt.subplot(4, 2, 3)
 plt.plot(z, h)
-plt.xlabel(r"$z \mathbin{/} \si{\nano\meter}$")
-plt.text(-0.02, 0.02,r'c')
+xlim,ylim = plt.xlim(), plt.ylim()
+plt.plot([xlim[0], 1, 1], [h[index_1A],  h[index_1A], ylim[0]] , linestyle = '--', linewidth = 1, color = 'lightcoral')
+plt.plot(z, h, color = 'darkseagreen')
+plt.xlim(xlim)
+plt.ylim(ylim)
+plt.xlabel(r"$z \mathbin{/} \si{\angstrom}$")
+plt.text(3, -0.94,r'c')
 plt.ylabel(r"$h$")
 
 plt.subplot(4, 2, 4)
 plt.plot(z, q)
-plt.xlabel(r"$z \mathbin{/} \si{\nano\meter}$")
-plt.text(-0.02, -0.9,r'd')
+xlim,ylim = plt.xlim(), plt.ylim()
+plt.plot([xlim[0], 1, 1], [q[index_1A],  q[index_1A], ylim[0]] , linestyle = '--', linewidth = 1, color = 'lightcoral')
+plt.plot(z, q, color = 'darkseagreen')
+plt.xlim(xlim)
+plt.ylim(ylim)
+plt.xlabel(r"$z \mathbin{/} \si{\angstrom}$")
+plt.text(3, -0.03,r'd')
 plt.ylabel(r"$q$")
 
 
