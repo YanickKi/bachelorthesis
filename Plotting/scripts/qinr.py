@@ -34,6 +34,7 @@ r  = a * np.sqrt(1+1/(np.tan(theta)**2))
 #
 
 r *= 1e9
+plt.figure(figsize = (1.61*5,5))
 
 plt.subplot(4, 2, 1)
 plt.plot(r, b)
@@ -57,4 +58,4 @@ plt.ylabel(r"$q$")
 
 
 plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
-plt.savefig('../Plots/Faktoren.pdf')
+plt.savefig('../Plots/Faktoreninr.pdf')

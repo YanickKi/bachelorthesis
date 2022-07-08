@@ -22,21 +22,21 @@ Somit bezeichnet $V_{mj}$ das Slater-Koster-Integral für das Hüpfen zwischen d
 $j$-ten Nachbarkohlenstoffatoms.
 Da die Slater-Koster-Integrale reell sind, folgt $\overline{V}_{mj} = V_{mj}$.
 Sofern es eindeutig ist, wird im Folgenden auf explizite Angabe des Startwerts des Laufindex und der oberen Grenze bei Summationen verzichtet.
-\section{Slater-Koster-Integrale}
+\section{Bestimmung der Slater-Koster-Integrale}
 \label{sec:slaterkostercalc}
 Zur Berechnung der Slater-Koster-Integrale werden die Richtungskosinus \eqref{eqn:RK} benötigt.
 Der Betrag des Abstandsvektors (siehe Abschnitt \ref{sec:structure}) für das $j$-te der drei umligenden Kohlenstoffatom um das Manganatom ist durch 
 \begin{equation}
-    \left | \vec{d} \right | = a \sqrt{\cos^2(\varphi_i) + \sin^2(\varphi_i) + \cot^2(\theta)} = a \sqrt{1+\cot^2(\theta)} = \frac{a}{\sin(\theta)} \label{eqn:distance}
+    \left | \vec{d}_j  \right | = a \sqrt{\cos^2(\varphi_j) + \sin^2(\varphi_j) + \cot^2(\theta)} = a \sqrt{1+\cot^2(\theta)} = \frac{a}{\sin(\theta)} \label{eqn:distance}
 \end{equation}
 gegeben.
-In Gleichung \eqref{eqn:distance} wurde die trigonometrische Beziehung $\sin(\theta) = \sqrt{1+\cot^2(\theta)}$ \cite{trig} mit der Beschränkung
-$\theta \in [ 0, \sfrac{\pi}{2} ] $ ausgenutzt. 
+In Gleichung \eqref{eqn:distance} wurde zur Vereinfachung des Abstands die trigonometrische Beziehung $ \sin(\theta)^{-1} = \sqrt{1+\cot^2(\theta)}$ \cite{trig} mit der Beschränkung
+$\theta \in ( 0, \sfrac{\pi}{2} ] $ ausgenutzt. 
 Diese Beschränkung ist jedoch gerechtfertigt, da das Manganatom nur unterhalb des Graphens und mittig von den drei umliegenden Kohlenstoffatomen betrachtet wird.
 Die Skalarprodukte ausgewertet und der Abstand eingesetzt ergibt
 \begin{equation*}
-    l = \cos(\varphi_i) \sin(\theta) \; , \quad
-    m = \sin(\varphi_i) \sin(\theta) \; , \quad
+    l = \cos(\varphi_j) \sin(\theta) \; , \quad
+    m = \sin(\varphi_j) \sin(\theta) \; , \quad
     n = \cot(\theta) \sin(\theta) = \cos(\theta) \; .
 \end{equation*}
 Diese Ausdrücke für die Richtungskosinus werden in die Slater-Koster-Integrale für die Kopplung zwischen den drei umliegenden 
@@ -61,12 +61,14 @@ so dass sich die Werte in Tabelle \ref{tab:slaterkosters} ergeben.
     \end{tabular}
   \end{table}
 Um die Übersichtlichkeit zu gewährleisten, wurden die von dem Winkel $\theta$ abhängigen Koeffizienten zu
-\begin{align*}
+\begin{equation}
+    \begin{aligned}
 b & \coloneq -\sin^2(\theta) \cos(\theta)        & f &  \coloneq -\cos^2(\theta) \sin(\theta)                             \\                     
 h & \coloneq -\sin(\theta)(1-2\cos^2(\theta))    & q &  \coloneq -\cos^3(\theta) + \frac{1}{2}\sin^2(\theta) \cos(\theta)
-\end{align*}
+    \end{aligned} \label{eqn:Vorfaktoren}
+\end{equation}
 umdefiniert.
-\section{Hybridisierungsfunktion}
+\section{Bestimmung der Hybridisierungsfunktion}
 \label{sec:calc_greensfunction}
 Aufgrund der Gitterperiodizität kann für die Operatoren $c_i$ und $c_j$ eine Fouriertransformation der Form 
 \begin{equation}
@@ -293,7 +295,7 @@ Die Matrix $\underline{\underline{\symup{\Delta}}}$ ist die gesuchte Hybridisier
     \frac{\sum_j V_{mj}\symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}\sum_{j'} V_{nj'}\symup{e}^{-\symup{i}\vec{k}\vec{\delta}_{j'}}}
     {z^2-\varepsilon_{\vec{k}}^2} \; .
 \end{equation*}
-\section{Linearkombinationen}
+\section{Bestimmung der Hybridisierungsfunktion mittels Basistransformation}
 Aufgrund der dreizähligen Drehsymmetrie der Kohlenstoffatome um den Mangandefekt, können die Vernichter $c_i$
 transformiert werden.
 Dazu lassen sich die neuen $\tilde{c}_i$ durch Linearkombinationen der alten $c_i$ aufstellen, so dass das lineare Gleichungssystem mit komplexen Vorfaktoren 
@@ -311,7 +313,7 @@ Die Lösung dieses Gleichungssystems lautet
     \begin{aligned}
     c_1 &= \frac{1}{\sqrt{3}}\left (\tilde{c}_0 + \tilde{c}_1 + \tilde{c}_2 \right ) \\
     c_2 &= \frac{1}{\sqrt{3}}\left (\tilde{c}_0 - \left(\frac{1}{2} + \frac{{\sqrt{3}}}{2} \symup{i} \right) \tilde{c}_1 - \left ( \frac{1}{2} - \frac{{\sqrt{3}}}{2} \symup{i} \right ) \tilde{c}_2 \right ) \\
-    c_2 &= \frac{1}{\sqrt{3}}\left (\tilde{c}_0 - \left(  \frac{1}{2} - \frac{{\sqrt{3}}}{2} \right) \symup{i} \tilde{c}_1 - \left ( \frac{1}{2} + \frac{{\sqrt{3}}}{2} \symup{i} \right ) \tilde{c}_2 \right ) 
+    c_2 &= \frac{1}{\sqrt{3}}\left (\tilde{c}_0 - \left(  \frac{1}{2} - \frac{{\sqrt{3}}}{2} \symup{i} \right) \tilde{c}_1 - \left ( \frac{1}{2} + \frac{{\sqrt{3}}}{2} \symup{i} \right ) \tilde{c}_2 \right ) 
     \; \text{.}   \label{eqn:solutionsole}
     \end{aligned}
 \end{equation}
@@ -359,6 +361,10 @@ Werden die neuen Vernichter $\tilde{d}_m$ in Gleichung \eqref{eqn:lcinhamiltonia
 \end{equation}
 sortiert werden.
 In Gleichung \eqref{eqn:Hkopnice} zeigt sich welche Operatoren $\tilde{d}_m$ an welche Vernichter $\tilde{c}_i$ koppeln.
+An $\tilde{c}_{0}$ koppelt nur $\tilde{d}_{4}$, während an $\tilde{c}_{1}$ zwei Linearkobminationen der $3d$-Orbitale koppeln, nämlich 
+$\tilde{d}_{0}$ und $\tilde{d}_{1}$. 
+Die beiden übrigen Vernichter $\tilde{d}_{2}$ und $\tilde{d}_{3}$ koppeln an $\tilde{c}_{2}$.
+Somit liegt ein effektives Drei-Bänder Modell vor.
 In den Hamiltonian $H_\text{Def}$ aus Gleichung \eqref{eqn:full_Hamiltonian} werden die alten Vernichet $d_m$ durch die neuen Vernichter $\tilde{d}_m$ ersetzt unter 
 der Annahme, dass die Orbitalenergie $\varepsilon_m$ für alle $3d$-Orbitale des Mn gleich sind, so dass der volle Hamiltonian als
 \begin{align}
@@ -379,12 +385,12 @@ Diese ist mit $m \in \{ 0,1,2,3,4 \}$ und $l \in \{ 0,1,2 \}$ durch
     \end{pmatrix}
 \end{equation*}
 gegeben.
-Um nun die gesuchte Hybridisierungsfunktion $\underline{\underline{\symup{\Delta}}}$ zu erhalten, werden die Greensunktionen
+Um nun die gesuchte Hybridisierungsfunktion $\underline{\underline{\symup{\Delta}}}$ zu erhalten, werden die Greenschen Funktionen
 $G_{\tilde{c}_l, \tilde{c}_l^{\dagger}}$, welche mittels Rücktransformation der Greenschen Funktion 
-$G_{c_{\text{B}, \vec{k}}, c_{\text{B}, \vec{k}}^\dagger}$ ermittelt werden kann, des Graphens ohne Störstelle benötigt.
+$G_{c_{\text{B}, \vec{k}}, c_{\text{B}, \vec{k}}^\dagger}$ ermittelt werden können, des Graphens ohne Störstelle benötigt.
 Dies ist insofern gerechtfertigt, da der Einfluss des Mn mit der Systemgröße $N$ asymptotisch gegen 0 geht.
 Der Hamiltonian des ungestörten Graphens $H_0$ kann aus der Gleichung \eqref{eqn:full_Hamiltonian} übernommen werden,
-worin die Fourier-transformierten Vernichter $c_i$ und $c_j$ (siehe Gleichung \eqref{eqn:fourier_ladder}) eingesetzt werden
+worin die Fourier-transformierten Vernichter $c_i$ und $c_j$ (siehe Gleichung \eqref{eqn:fourier_ladder}) eingesetzt werden.
 Mit den Fouriertransformationen für $c_i$ und $c_j$, so dass der Hamiltonian als 
 \begin{equation}
     H = -t \sum_{\vec{k}}\sum_{j=1}^3( \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}c^\dagger_{\text{A},\vec{k}} c_{\text{B},\vec{k}} + \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_j}c^\dagger_{\text{B},\vec{k}} c_{\text{A},\vec{k}} ) \; .
@@ -415,20 +421,20 @@ Um nun die gesuchte Greensche Funktion $G_{\tilde{c}_l, \tilde{c}_l^{\dagger}}$ 
 die Greensche Funktioen $G_{c_{\text{B},\vec{k}}, c^\dagger_{\text{B},\vec{k}}}$ zurücktransformiert.
 Die dabei auftretenden Koeffizienten $D_{l,\vec{k}}$ von den Fouriertransformationen der Vernichter $\tilde{c}_l$
 \begin{align*}
-    \tilde{c}_0 &= \frac{1}{\sqrt{3N}}\sum_{\vec{k}} \sum_{j=1}^3\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)}                              c_{\text{B}, \vec{k}}  \\
-    \tilde{c}_1 &= \frac{1}{\sqrt{3N}}\sum_{\vec{k}} \sum_{j=1}^3\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)+\symup{i}\frac{2(j-1)\pi}{3}} c_{\text{B}, \vec{k}}  \\
-    \tilde{c}_2 &= \frac{1}{\sqrt{3N}}\sum_{\vec{k}} \sum_{j=1}^3\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)-\symup{i}\frac{2(j-1)\pi}{3}} c_{\text{B}, \vec{k}}  
+    \tilde{c}_0 &= \frac{1}{\sqrt{3N}}\sum_{\vec{k}} \sum_{j=1}^3\symup{e}^{\symup{i}{\vec{k}}(\vec{l}+\vec{\delta}_j)}                              c_{\text{B}, \vec{k}}  \\
+    \tilde{c}_1 &= \frac{1}{\sqrt{3N}}\sum_{\vec{k}} \sum_{j=1}^3\symup{e}^{\symup{i}{\vec{k}}(\vec{l}+\vec{\delta}_j)+\symup{i}\frac{2(j-1)\pi}{3}} c_{\text{B}, \vec{k}}  \\
+    \tilde{c}_2 &= \frac{1}{\sqrt{3N}}\sum_{\vec{k}} \sum_{j=1}^3\symup{e}^{\symup{i}{\vec{k}}(\vec{l}+\vec{\delta}_j)-\symup{i}\frac{2(j-1)\pi}{3}} c_{\text{B}, \vec{k}}  
 \end{align*}
 sind durch
 \begin{equation}
     \begin{aligned}
-    D_{0,\vec{k}} &= \frac{1}{\sqrt{3N}}\sum_{j=1}^3\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)} \\
-    D_{1,\vec{k}} &= \frac{1}{\sqrt{3N}}\sum_{j=1}^3\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)+\symup{i}\frac{2(j-1)\pi}{3}}  \\
-    D_{2,\vec{k}} &= \frac{1}{\sqrt{3N}}\sum_{j=1}^3\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)-\symup{i}\frac{2(j-1)\pi}{3}} \; . \label{eqn:fourierko}
+    D_{0,\vec{k}} &= \frac{1}{\sqrt{3N}}\sum_{j=1}^3\symup{e}^{\symup{i}{\vec{k}}(\vec{l}+\vec{\delta}_j)} \\
+    D_{1,\vec{k}} &= \frac{1}{\sqrt{3N}}\sum_{j=1}^3\symup{e}^{\symup{i}{\vec{k}}(\vec{l}+\vec{\delta}_j)+\symup{i}\frac{2(j-1)\pi}{3}}  \\
+    D_{2,\vec{k}} &= \frac{1}{\sqrt{3N}}\sum_{j=1}^3\symup{e}^{\symup{i}{\vec{k}}(\vec{l}+\vec{\delta}_j)-\symup{i}\frac{2(j-1)\pi}{3}} \; . \label{eqn:fourierko}
     \end{aligned}    
 \end{equation}
 gegeben.
-Werden diese nun in \eqref{eqn:koe} eingesetzt, ergeben sich die 3 gesuchten Greensunktionen zu 
+Werden diese nun in \eqref{eqn:koe} eingesetzt, ergeben sich die 3 gesuchten Greenschen Funktionen zu 
 \begin{align}
     G_{\tilde{c}_0, \tilde{c}^\dagger_0} &= \frac{z}{3N} \sum_{\vec{k}} \frac{\sum_j \symup{e}^{i{\vec{k}}\vec{\delta}_j} \sum_{j'} \symup{e}^{-i{\vec{k}}\vec{\delta}_{j'}}                                                            }{z^2-\varepsilon_{\vec{k}}^2} \\
     G_{\tilde{c}_1, \tilde{c}^\dagger_1} &= \frac{z}{3N} \sum_{\vec{k}} \frac{\sum_j \symup{e}^{i{\vec{k}}\vec{\delta}_j+\symup{i}\frac{2(j-1)\pi}{3}} \sum_{j'} \symup{e}^{-i{\vec{k}}\vec{\delta}_{j'}-\symup{i}\frac{2(j'-1)\pi}{3}} }{z^2-\varepsilon_{\vec{k}}^2} \\
@@ -461,10 +467,6 @@ Somit sieht $\underline{\underline{\symup{\Delta}}}$ wie folgt aus:
     \mathbf{0}      &   \mathbf{0}  &   \gamma_{40}^2           G_{\tilde{c}_0, \tilde{c}^\dagger_0}       \\
 \end{bmatrix}
 \]
-
-
-
-
 %Fouriertrafo für neue $\tilde{c}_i$ : 
 %\begin{align*}
 %    \tilde{c}_0 &= \frac{1}{\sqrt{3N}}\sum_{j\vec{k}}\symup{e}^{i{\vec{k}}(\vec{l}+\vec{\delta}_j)}                              c_{\text{B}, \vec{k}}  \\
@@ -496,3 +498,16 @@ Somit sieht $\underline{\underline{\symup{\Delta}}}$ wie folgt aus:
 %%        0                       & 0                         & 0                     & 0                 & \symup{\Delta}_{44}   \\
 %%    \end{pmatrix}
 %%\end{equation*}
+\section{Einfluss der Höhe des Mn}
+In diesem Abschnitt wird Einfluss der Position des Mn auf die Vorfaktoren der SK-Integrale (SK-Integrale in \ref{tab:slaterkosters}, Vorfaktoren in Gl. \eqref{eqn:Vorfaktoren}) beschrieben.
+Dazu sind in Abbildung \ref{fig:Faktoreninz} diese Vorfaktioren in Abhängigkeit von der Höhe des Mn $z$ graphisch dargestellt.
+\begin{figure}
+    \centering
+    \includegraphics[width = \textwidth]{Plots/Faktoreninz.pdf}
+    \caption{Vorfaktoren der SK-Integrale (Vorfaktoren in Gl. \eqref{eqn:Vorfaktoren}, SK-Integrale in \ref{tab:slaterkosters}) in Abhängigkeit der der Höhe des Mn.
+    Die Höhe varriert von $\qty{0}{\nano\metre}$ (Mn in Graphenebene) bis $\qty{1}{\nano\metre}$.}
+    \label{fig:Faktoreninz}
+\end{figure}
+Zwar wird der Fall $z=\qty{0}{\nano\metre}$ in den Graphen abgedeckt, jedoch muss beachtet werden, dass das Mn in dem Experiment \cite{doi:10.1021/acsnano.1c00139} immer außerhalb der Graphenebene lag, so dass
+dieser Fall eine rein theoretische Betrachtung ist.
+In Abbildung \ref{fig:Faktoreninz}a
