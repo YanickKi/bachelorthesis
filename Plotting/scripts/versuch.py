@@ -13,9 +13,9 @@ t = -2.74*1.602e-19
 z_plot = 1 +1j
 
 V_sigma0 = 1.602e-19
-V_sigma1 = 1.602e-20
+V_sigma1 = 9*1.602e-20
 V_pi0    = 1.602e-20
-V_pi1    = 1.602e-21
+V_pi1    = 9*1.602e-21
 r0      = a
 r1      = np.sqrt(a**2+ (3-10)**2)
 
@@ -51,11 +51,11 @@ def hybrid1(k1, k2):
         sum = 0
         for n in range(k1.size):
                     for i in range(k2.size):
-                        sum = sum + (3 + 2 * np.cos(np.sqrt(3)*a*k2[i])+2*np.cos(3/2*k1[n]+np.sqrt(3)/2*a*k2[i])+2*np.cos(3/2*k1[n]-np.sqrt(3)/2*a*k2[i]))/(z_plot**2- t**2*(3 + 2 * np.cos(np.sqrt(3)*a*k2[i])+2*np.cos(3/2*k1[n]+np.sqrt(3)/2*a*k2[i])+2*np.cos(3/2*k1[n]-np.sqrt(3)/2*a*k2[i])))
+                        sum += (3 + 2 * np.cos(np.sqrt(3)*a*k2[i])+2*np.cos(3/2*k1[n]+np.sqrt(3)/2*a*k2[i])+2*np.cos(3/2*k1[n]-np.sqrt(3)/2*a*k2[i]))/(z_plot**2-t**2*(3 + 2 * np.cos(np.sqrt(3)*a*k2[i])+2*np.cos(3/2*k1[n]+np.sqrt(3)/2*a*k2[i])+2*np.cos(3/2*k1[n]-np.sqrt(3)/2*a*k2[i])))
                         print(sum)
         return sum
 
-sum_all = np.real(hybrid1(k11, k21)) * z_plot/(k11.size*k21.size)
+sum_all = np.real(hybrid1(k11, k21)) * np.real(z_plot)/(3*k11.size*k21.size)
 
 
 ##############BEREICH2####################
