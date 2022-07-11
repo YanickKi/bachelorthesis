@@ -6,7 +6,7 @@ Ausgehend von den Gittervektoren des Realraums
     \vec{a}_1 = \frac{a}{2}\begin{pmatrix} 3 \\[4pt] \sqrt{3}  \end{pmatrix}, \quad
     \vec{a}_2 = \frac{a}{2}\begin{pmatrix} 3 \\[4pt] -\sqrt{3} \end{pmatrix}       
 \end{equation*}   
-können die reziproken Gittervektoren mittels $\underline{\underline{B}} = 2\pi \left ( \underline{\underline{A}}^\text{T} \right )^{-1} $ \cite{suter}.
+können die reziproken Gittervektoren mittels $\underline{\underline{B}} = 2\pi \left ( \underline{\underline{A}}^\text{T} \right )^{-1} $ bestimmt werden \cite{suter}.
 In der Matrix $\underline{\underline{A}}$ sind die Gittervektoren in den Spalten aufgetragen.
 Somit folgt 
 \begin{equation*}
@@ -32,23 +32,23 @@ Die Spalten sind die reziproken Gittervektoren mit
 \end{equation*}
 \section{Berechnung der Dispersionsrelation von Graphen}
 \label{sec:calc_dispersion}
-Der Tight Binding Hamiltonian für Graphen lautet
+Der Tight Binding Hamiltonian in einer nächsten-Nachbar Näherung für Graphen lautet
 \begin{equation*}
    H= - t \sum_{i=1}^N \sum_{j=1}^N\left ( c_i^\dagger c_j + c_j^\dagger c_i \right ) \; .
 \end{equation*}
-Dazu wird der Ansatz einer Fouriertransformation 
+Dazu wird eine Fouriertransformation 
 \begin{equation*}
     c_i = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}\vec{l}} c_{\text{A}, \vec{k}} \; , 
     \quad c_n = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}(\vec{l}+\vec{\delta}_j)} c_{\text{B}, \vec{k}}
 \end{equation*}
-gemacht. 
-Dieser Wird in den Hamiltonian eingesetzt, womit 
+angesetzt. 
+Dieser wird in den Hamiltonian eingesetzt, womit 
 \begin{align*}
     H &= -\frac{t}{N} \sum_{j\vec{l}} \sum_{\vec{k}\vec{k}'} ( \symup{e}^{-\symup{i}\vec{k}\vec{l}}c^\dagger_{A,\vec{k}} 
     \symup{e}^{\symup{i}\vec{k}'(\vec{l}+\vec{\delta}_j)}c_{B,\vec{k}'} + \symup{e}^{-\symup{i}\vec{k}'(\vec{l}+\vec{\delta}_j)} c^\dagger_{B,\vec{k}'} 
     \symup{e}^{\symup{i}\vec{k}\vec{l}}c_{A,\vec{k}}) \\
-    &= -\frac{t}{N} \sum_{j\vec{l}} \sum_{\vec{k}\vec{k}'} ( \symup{e}^{-\symup{i}(\vec{k}- \vec{k}')\vec{l}}\symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}'} + 
-    \symup{e}^{\symup{i}(\vec{k}- \vec{k}')\vec{l}} \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_j} c^\dagger_{B,\vec{k}'}c_{A,\vec{k}}) \\
+    &= -\frac{t}{N} \sum_{j\vec{l}} \sum_{\vec{k}\vec{k}'} ( \symup{e}^{-\symup{i}(\vec{k}- \vec{k}')\vec{l}}\symup{e}^{\symup{i}\vec{k'}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}'} + 
+    \symup{e}^{\symup{i}(\vec{k}- \vec{k}')\vec{l}} \symup{e}^{-\symup{i}\vec{k'}\vec{\delta}_j} c^\dagger_{B,\vec{k}'}c_{A,\vec{k}}) \\
     &= -t \sum_{j\vec{k}} ( \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}} + 
     \symup{e}^{-\symup{i}\vec{k}\vec{\delta_j}} c^\dagger_{B,\vec{k}}c_{A,\vec{k}})
 \end{align*}

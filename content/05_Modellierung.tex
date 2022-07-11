@@ -1,6 +1,6 @@
 \chapter{Ergebnisse}
 \label{chap:berechnung}
-Der Hamiltonian des betrachteten Graphens mit Mn-Defekt lautet
+Der Hamiltonian des betrachteten Graphens mit Mn-Defekt bei Vernachlässigung der Coulomb-Wechselwirkung zwischen den Elektronen lautet
 \begin{align*}
    H &=  H_0 + H_\text{Def} + H_\text{Kop}\\
     &=- t \sum_{i=1}^N \sum_{j=1}^N\left ( c_i^\dagger c_j + c_j^\dagger c_i \right )  + \sum_{m=1}^5 \epsilon_m d_m^\dagger d_m
@@ -72,8 +72,8 @@ umdefiniert.
 \label{sec:calc_greensfunction}
 Aufgrund der Gitterperiodizität kann für die Operatoren $c_i$ (Untergitter A) und $c_j$ (Untergitter B) eine Fouriertransformation der Form 
 \begin{equation}
-    c_i = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{i\vec{k}\vec{l}} c_{\text{A}, \vec{k}} \; , 
-    \quad c_j = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{i\vec{k}(\vec{l}+\vec{\delta}_j)} c_{\text{B}, \vec{k}} \label{eqn:fourier_ladder}
+    c_i = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}\vec{l}} c_{\text{A}, \vec{k}} \; , 
+    \quad c_j = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}(\vec{l}+\vec{\delta}_j)} c_{\text{B}, \vec{k}} \label{eqn:fourier_ladder}
 \end{equation}
 angesetzt werden.
 Dabei sind $N$ die Anzahl der Basen, $\vec{l}$ der Gittervektor der Basis, $\vec{k}$ der Wellenvektor, $\vec{\delta}_j$ der Abstandsvektor
@@ -82,13 +82,13 @@ und $c_{A, \vec{k}}$ bzw. $c_{B, \vec{k}}$ die Fourier-transformierten $p_z$-Orb
 Die $\vec{k}$-Werte werden aus der ersten Brillouin-Zone genommen \cite{anders-fkt}.
 Damit lässt sich der Hamiltonian des ungestörten Graphens zu 
 \begin{align*}
-    H_0 &= -\frac{t}{N} \sum_{j\vec{l}} \sum_{\vec{k}\vec{k}'} ( \symup{e}^{-i\vec{k}\vec{l}}c^\dagger_{A,\vec{k}} 
-    \symup{e}^{i\vec{k}'(\vec{l}+\vec{\delta}_j)}c_{B,\vec{k}'} + \symup{e}^{-i\vec{k}'(\vec{l}+\vec{\delta}_j)} c^\dagger_{B,\vec{k}'} 
+    H_0 &= -\frac{t}{N} \sum_{j\vec{l}} \sum_{\vec{k}\vec{k}'} ( \symup{e}^{-\symup{i}\vec{k}\vec{l}}c^\dagger_{A,\vec{k}} 
+    \symup{e}^{\symup{i}\vec{k}'(\vec{l}+\vec{\delta}_j)}c_{B,\vec{k}'} + \symup{e}^{-\symup{i}\vec{k}'(\vec{l}+\vec{\delta}_j)} c^\dagger_{B,\vec{k}'} 
     \symup{e}^{i\vec{k}\vec{l}}c_{A,\vec{k}}) \\
-    &= -\frac{t}{N} \sum_{j\vec{l}} \sum_{\vec{k}\vec{k}'} ( \symup{e}^{-i(\vec{k}- \vec{k}')\vec{l}}\symup{e}^{i\vec{k}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}'} + 
-    \symup{e}^{i(\vec{k}- \vec{k}')\vec{l}} \symup{e}^{-i\vec{k}\vec{\delta}_j} c^\dagger_{B,\vec{k}'}c_{A,\vec{k}}) \\
-    &= -t \sum_{j\vec{k}} ( \symup{e}^{i\vec{k}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}} + 
-    \symup{e}^{-i\vec{k}\vec{\delta_j}} c^\dagger_{B,\vec{k}}c_{A,\vec{k}})
+    &= -\frac{t}{N} \sum_{j\vec{l}} \sum_{\vec{k}\vec{k}'} ( \symup{e}^{-\symup{i}(\vec{k}- \vec{k}')\vec{l}}\symup{e}^{\symup{i}\vec{k'}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}'} + 
+    \symup{e}^{\symup{i}(\vec{k}- \vec{k}')\vec{l}} \symup{e}^{-\symup{i}\vec{k'}\vec{\delta}_j} c^\dagger_{B,\vec{k}'}c_{A,\vec{k}}) \\
+    &= -t \sum_{j\vec{k}} ( \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}} + 
+    \symup{e}^{-\symup{i}\vec{k}\vec{\delta_j}} c^\dagger_{B,\vec{k}}c_{A,\vec{k}})
 \end{align*}
 schreiben.
 In dem letzten Schritt wurde $\sum_{\vec{l}}^N \symup{e}^{-i(\vec{k}- \vec{k}')\vec{l}} 
@@ -96,10 +96,10 @@ In dem letzten Schritt wurde $\sum_{\vec{l}}^N \symup{e}^{-i(\vec{k}- \vec{k}')\
 In $H_\text{Kop}$ werden die transformierten Erzeuger ohne weitere Vereinfachungen eingesetzt,  so dass der Gesamthamiltonian zu 
 \begin{equation*}
     \begin{split}
-        H = &-t \sum_{j \vec{k}} ( \symup{e}^{i\vec{k}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}} + 
-            \symup{e}^{-i\vec{k}\vec{\delta}_j} c^\dagger_{B,\vec{k}}c_{A,\vec{k}}) + \sum_m \epsilon_m d_m^\dagger d_m \\
-            &+ \frac{1}{\sqrt{N}}\sum_{mj\vec{k}} ( V_{mj}  \symup{e}^{i\vec{k}(\vec{l}+\vec{\delta}_j)} d_m^\dagger c_{\text{B},\vec{k}} 
-            + V_{mj} \symup{e}^{-i\vec{k}(\vec{l}+\vec{\delta}_j)}c^\dagger_{\text{B},\vec{k}} d_m )
+        H = &-t \sum_{j \vec{k}} ( \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}} + 
+            \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_j} c^\dagger_{B,\vec{k}}c_{A,\vec{k}}) + \sum_m \epsilon_m d_m^\dagger d_m \\
+            &+ \frac{1}{\sqrt{N}}\sum_{mj\vec{k}} ( V_{mj}  \symup{e}^{\symup{i}\vec{k}(\vec{l}+\vec{\delta}_j)} d_m^\dagger c_{\text{B},\vec{k}} 
+            + V_{mj} \symup{e}^{-\symup{i}\vec{k}(\vec{l}+\vec{\delta}_j)}c^\dagger_{\text{B},\vec{k}} d_m )
     \end{split}
 \end{equation*}
 bestimmt werden kann.
@@ -130,7 +130,7 @@ Somit lautet der gesamte Kommutator
         \right ) \; . \label{eqn:commutator_H_dm}
     \end{split}
 \end{equation} 
-Die Kommutatoren werden im Folgenden separat ausgrechnet, damit diese hinterher nur noch eingesetzt werden müssen.
+Die Kommutatoren werden im Folgenden separat ausgerechnet, damit diese hinterher nur noch eingesetzt werden müssen.
 Für den ersten Kommutator folgt
 \begin{equation}
     \left [ c^\dagger_{\text{A},\vec{k}}  c_{\text{B},\vec{k}}, d_m \right ]  = c^\dagger_{\text{A},\vec{k}}  c_{\text{B},\vec{k}}  d_m 
@@ -230,7 +230,7 @@ Mit der selbigen Begründung wie bei der Berechung von \eqref{eqn:commutator_H_c
     \left [ c^\dagger_{\text{A},\vec{k}'} c_{\text{B},\vec{k}'}, c_{\text{A},\vec{k}} \right ]  &= c^\dagger_{\text{A},\vec{k}'}  c_{\text{B},\vec{k}'} c_{\text{A},\vec{k}}
     - c_{\text{A},\vec{k}} c^\dagger_{\text{A},\vec{k}'} c_{\text{B},\vec{k}'} \\
     &= - c^\dagger_{\text{A},\vec{k}'}  c_{\text{A},\vec{k}} c_{\text{B},\vec{k}'} - \delta_{\vec{k}\vec{k}'} c_{\text{B},\vec{k}'} 
-    + c_{\text{A},\vec{k}} c^\dagger_{\text{A},\vec{k}'} = - \delta_{\vec{k}\vec{k}'} c_{\text{B},\vec{k}'} 
+    + c^\dagger_{\text{A},\vec{k}'} c_{\text{A},\vec{k}} c_{\text{B},\vec{k}'} = - \delta_{\vec{k}\vec{k}'} c_{\text{B},\vec{k}'} 
 \end{align*}
 berechnet, womit 
 \begin{equation}
@@ -296,8 +296,15 @@ Die Matrix $\underline{\underline{\symup{\Delta}}}$ ist die gesuchte Hybridisier
     {z^2-\varepsilon_{\vec{k}}^2} \; .
 \end{equation*}
 \section{Hybridisierungsfunktion mittels Basistransformation}
-Aufgrund der dreizähligen Drehsymmetrie ($C_3$-Symmetrie) der C um den Mn-Defekt, kann für die Vernichter $c_i$ zur Vereinfachung des Problems eine
-Basistransformation angesetzt werden.
+In diesem Abschnitt wird die Hybridisierungsfunktion erneut berechnet. 
+Jedoch wird hier die Symmetrie des Problems ausgenutzt, um somit eine einfachere Struktur der Hybridisierungsfunktion zu erhalten, wie sich im 
+Folgenden ebenfalls zeigen wird.
+Diese Symmetrie steckt direkt in den SK-Integralen drin, weswegen diese explizit in den Hamiltonian eingesetzt werden.
+Dafür müssen die Vernicher $c_i$ zunächst in eine neue Basis transformiert werden.
+Die Vernichter in der neuen Basis werden zusammen mit den SK-Intgegralen in den Hamiltonian $H_\text{Kop}$ (siehe Gl. \eqref{eqn:full_Hamiltonian}), welcher die Hybridisierung
+zwischen den drei C und dem Mn beschreibt, eingesetzt,
+wonach geschaut wird, welche $3d$-Orbitale mischen. \\
+Die Ausnutzung der dreizähligen Drehsymmetrie ($C_3$-Symmetrie) der C um den Mn-Defekt zur Vereinfachung des Problems folgt mittels der Basistransformation für die Vernichter $c_i$.
 Dazu lassen sich die Operatoren in der neuen Basis $\tilde{c}_i$ durch die Linearkombinationen der Vernichter $c_i$
 \begin{equation}
     \begin{aligned}
@@ -320,7 +327,7 @@ Dazu muss das Gleichungssystem \eqref{eqn:sole} gelöst werden, dessen Lösung
     \end{aligned}
 \end{equation}
 lautet.
-Diese Linearkombinationen \eqref{eqn:solutionsole} können gemeinsam mit den SK-Integralen \ref{tab:slaterkosters} in den Hamiltonian $H_\text{Kop}$, der die Kopplung 
+Diese Linearkombinationen \eqref{eqn:solutionsole} können gemeinsam mit den SK-Integralen (Tabelle \ref{tab:slaterkosters}) in den Hamiltonian $H_\text{Kop}$, der die Kopplung 
 zwischen den $p_z$- und $3d$-Orbitalen beschreibt, eingesetzt werden.
 Somit ergibt sich 
 \begin{equation}
@@ -363,7 +370,7 @@ Werden die neuen Vernichter $\tilde{d}_m$ in Gleichung \eqref{eqn:lcinhamiltonia
             \label{eqn:Hkopnice}
 \end{equation}
 sortiert werden.
-\begin{wrapfigure}{l}{0.35\textwidth}
+\begin{wrapfigure}{r}{0.35\textwidth}
     \centering
     \includegraphics[width = 0.34\textwidth]{Plots/3band.pdf}
     \caption{Effektives Drei-Bänder Modell in dem die
@@ -379,10 +386,11 @@ die Vernichter $\tilde{d}_{0}$ und $\tilde{d}_{1}$.
 Die beiden übrigen Vernichter $\tilde{d}_{2}$ und $\tilde{d}_{3}$ koppeln an den Vernichter  $\tilde{c}_{2}$.
 In der damit beschriebenen Situation liegt ein effektives Drei-Bänder Modell vor.
 In den Hamiltonian $H_\text{Def}$ aus Gleichung \eqref{eqn:full_Hamiltonian} werden die alten Vernichter $d_m$ durch die neuen Vernichter $\tilde{d}_m$ unter 
-der Annahme, dass die Orbitalenergie $\varepsilon_m$ für alle $3d$-Orbitale des Mn gleich sind, ersetzt, so dass sich der volle Hamiltonian $H$
+der Annahme, dass die Orbitalenergie $\varepsilon_m$ für alle $3d$-Orbitale des Mn gleich ist, ersetzt, so dass sich der volle Hamiltonian $H$
 aus Gleichung \eqref{eqn:full_Hamiltonian} mit der Beschreibung des ungestörten Graphens $H_0$, 
 der Orbitale des Mn in der neuen Basis $H_{\text{Def}}$ mit der Orbitalenergie $\epsilon$ und
-der Hybridieserung zwischen dem Mn und den drei umliegenden C mit $H_\text{Kop}$ in der neuen Basis zu
+der Hybridisierung zwischen dem Mn und den drei umliegenden C mit $H_\text{Kop}$ in der neuen Basis zu\\
+\\
 \begin{align}
     H = -t\sum_{ij}(c^\dagger_i c_j + c^\dagger_j c_i) + \varepsilon \sum_{m=0}^4 \tilde{d}^\dagger_m \tilde{d}_m +
     \sum_{m=0}^4\sum_{l=0}^2(\gamma_{mj} \tilde{d}^\dagger_m \tilde{c}_l + \gamma_{ml} \tilde{c}^\dagger_l \tilde{d}_m) \; .
