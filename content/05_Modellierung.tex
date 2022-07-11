@@ -363,18 +363,31 @@ Werden die neuen Vernichter $\tilde{d}_m$ in Gleichung \eqref{eqn:lcinhamiltonia
             \label{eqn:Hkopnice}
 \end{equation}
 sortiert werden.
-In Gleichung \eqref{eqn:Hkopnice} zeigt sich welche Operatoren $\tilde{d}_m$ an welche Vernichter $\tilde{c}_i$ koppeln.
-An den Vernichter $\tilde{c}_{0}$ koppelt nur der Vernichter  $\tilde{d}_{4}$, während an den Vernichter $\tilde{c}_{1}$ zwei Linearkobminationen der $3d$-Orbitale koppeln, nämlich 
+\begin{wrapfigure}{l}{0.35\textwidth}
+    \centering
+    \includegraphics[width = 0.34\textwidth]{Plots/3band.pdf}
+    \caption{Effektives Drei-Bänder Modell in dem die
+    Vernichter $\tilde{d}_m$ und $\tilde{c}_l$ mit den Kopplungsstärken
+    $\gamma_{ml}$ (Gl. \eqref{eqn:gammakop}) koppeln.
+    Die Anordnug verdeutlicht nur das Konzept und entspricht nicht der 
+    Anordnung im Realraum.}
+    \label{fig:3band}
+\end{wrapfigure}
+In Gleichung \eqref{eqn:Hkopnice} zeigt sich welche Operatoren $\tilde{d}_m$ an welche Vernichter $\tilde{c}_l$ koppeln.
+An den Vernichter $\tilde{c}_{0}$ koppelt nur ein einziger Vernichter, $\tilde{d}_{4}$, während an den Vernichter $\tilde{c}_{1}$ zwei Linearkobminationen der $3d$-Orbitale koppeln, nämlich 
 die Vernichter $\tilde{d}_{0}$ und $\tilde{d}_{1}$. 
 Die beiden übrigen Vernichter $\tilde{d}_{2}$ und $\tilde{d}_{3}$ koppeln an den Vernichter  $\tilde{c}_{2}$.
-Somit liegt ein effektives Drei-Bänder Modell vor.
+In der damit beschriebenen Situation liegt ein effektives Drei-Bänder Modell vor.
 In den Hamiltonian $H_\text{Def}$ aus Gleichung \eqref{eqn:full_Hamiltonian} werden die alten Vernichter $d_m$ durch die neuen Vernichter $\tilde{d}_m$ unter 
-der Annahme, dass die Orbitalenergie $\varepsilon_m$ für alle $3d$-Orbitale des Mn gleich sind, ersetzt, so dass der volle Hamiltonian als
+der Annahme, dass die Orbitalenergie $\varepsilon_m$ für alle $3d$-Orbitale des Mn gleich sind, ersetzt, so dass sich der volle Hamiltonian $H$
+aus Gleichung \eqref{eqn:full_Hamiltonian} mit der Beschreibung des ungestörten Graphens $H_0$, 
+der Orbitale des Mn in der neuen Basis $H_{\text{Def}}$ mit der Orbitalenergie $\epsilon$ und
+der Hybridieserung zwischen dem Mn und den drei umliegenden C mit $H_\text{Kop}$ in der neuen Basis zu
 \begin{align}
     H = -t\sum_{ij}(c^\dagger_i c_j + c^\dagger_j c_i) + \varepsilon \sum_{m=0}^4 \tilde{d}^\dagger_m \tilde{d}_m +
     \sum_{m=0}^4\sum_{l=0}^2(\gamma_{mj} \tilde{d}^\dagger_m \tilde{c}_l + \gamma_{ml} \tilde{c}^\dagger_l \tilde{d}_m) \; .
 \end{align}
-geschrieben werden kann.
+ergibt.
 Dabei beinhaltet die Matrix $\underline{\underline{\gamma}}$ die Kopplungsstärken der Operatoren $\tilde{d}_m$ und $\tilde{c}_l$.
 Diese ist mit $m \in \{ 0,1,2,3,4 \}$ und $l \in \{ 0,1,2 \}$ durch
 \begin{equation*}
@@ -386,7 +399,7 @@ Diese ist mit $m \in \{ 0,1,2,3,4 \}$ und $l \in \{ 0,1,2 \}$ durch
         0               & 0             &   \left ( \frac{3}{\sqrt{2}} f V_{pd\sigma} + \frac{\sqrt{3}}{\sqrt{2}}  h   V_{pd\pi} \right ) \\
         \left (  \sqrt{3} q V_{pd\sigma} + 3 b V_{pd\pi} \right )     & 0             &   0           \\
     \end{pmatrix}
-\end{equation*}
+\end{equation*} \label{eqn:gammakop}
 gegeben.
 Um nun die gesuchte Hybridisierungsfunktion $\underline{\underline{\symup{\Delta}}}$ zu erhalten, werden die Greenschen Funktionen
 $G_{\tilde{c}_l, \tilde{c}_l^{\dagger}}$ des ungestörten Graphens, welche mittels Rücktransformation der Greenschen Funktion 
