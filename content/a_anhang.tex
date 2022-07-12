@@ -36,13 +36,13 @@ Der Tight Binding Hamiltonian in einer nächsten-Nachbar Näherung für Graphen 
 \begin{equation*}
    H= - t \sum_{i=1}^N \sum_{j=1}^N\left ( c_i^\dagger c_j + c_j^\dagger c_i \right ) \; .
 \end{equation*}
-Dazu wird eine Fouriertransformation 
+Dazu werden Fouriertransformationen 
 \begin{equation*}
     c_i = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}\vec{l}} c_{\text{A}, \vec{k}} \; , 
     \quad c_n = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}(\vec{l}+\vec{\delta}_j)} c_{\text{B}, \vec{k}}
 \end{equation*}
 angesetzt. 
-Dieser wird in den Hamiltonian eingesetzt, womit 
+Diese werden in den Hamiltonian eingesetzt, womit 
 \begin{align*}
     H &= -\frac{t}{N} \sum_{j\vec{l}} \sum_{\vec{k}\vec{k}'} ( \symup{e}^{-\symup{i}\vec{k}\vec{l}}c^\dagger_{A,\vec{k}} 
     \symup{e}^{\symup{i}\vec{k}'(\vec{l}+\vec{\delta}_j)}c_{B,\vec{k}'} + \symup{e}^{-\symup{i}\vec{k}'(\vec{l}+\vec{\delta}_j)} c^\dagger_{B,\vec{k}'} 
