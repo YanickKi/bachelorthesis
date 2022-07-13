@@ -39,8 +39,8 @@ Die Skalarprodukte ausgewertet und der Abstand eingesetzt ergibt
     m = \sin(\varphi_j) \sin(\theta) \; , \quad
     n = \cot(\theta) \sin(\theta) = \cos(\theta) \; .
 \end{equation*}
-Diese Ausdrücke für die Richtungskosinus werden in die SK-Integrale für die Kopplung zwischen den drei umliegenden 
-$p_z$-Orbitale der C und den fünf $3d$-Orbitalen des Mn (siehe Anhang \ref{TEMPLATE}) eingesetzt,
+Diese Ausdrücke für die Richtungskosinus werden in die SK-Integrale (entnommen aus \cite{PhysRev.94.1498}) für die Kopplung zwischen den drei umliegenden 
+$p_z$-Orbitale der C und den fünf $3d$-Orbitalen des Mn eingesetzt,
 so dass sich die Werte in Tabelle \ref{tab:slaterkosters} ergeben.
 \begin{table}
     \centering
@@ -398,7 +398,7 @@ der Hybridisierung zwischen dem Mn und den drei umliegenden C mit $H_\text{Kop}$
 ergibt.
 Dabei beinhaltet die Matrix $\underline{\underline{\gamma}}$ die Kopplungsstärken der Operatoren $\tilde{d}_m$ und $\tilde{c}_l$.
 Diese ist mit $m \in \{ 0,1,2,3,4 \}$ und $l \in \{ 0,1,2 \}$ durch
-\begin{equation*}
+\begin{equation}
      \underline{\underline{\gamma}} = 
     \begin{pmatrix}
         0               & \left ( \frac{3}{\sqrt{8}} b V_{pd\sigma} + \frac{\sqrt{3}}{\sqrt{2}}  b   V_{pd\pi} \right )    &   0           \\
@@ -406,8 +406,8 @@ Diese ist mit $m \in \{ 0,1,2,3,4 \}$ und $l \in \{ 0,1,2 \}$ durch
         0               & 0             &   \left ( \frac{3}{\sqrt{8}} b V_{pd\sigma} + \frac{\sqrt{3}}{\sqrt{2}}  b   V_{pd\pi} \right ) \\
         0               & 0             &   \left ( \frac{3}{\sqrt{2}} f V_{pd\sigma} + \frac{\sqrt{3}}{\sqrt{2}}  h   V_{pd\pi} \right ) \\
         \left (  \sqrt{3} q V_{pd\sigma} + 3 b V_{pd\pi} \right )     & 0             &   0           \\
-    \end{pmatrix}
-\end{equation*} \label{eqn:gammakop}
+    \end{pmatrix} \label{eqn:gammakop}
+\end{equation} 
 gegeben.
 Um nun die gesuchte Hybridisierungsfunktion $\underline{\underline{\symup{\Delta}}}$ zu erhalten, werden die Greenschen Funktionen
 $G_{\tilde{c}_l, \tilde{c}_l^{\dagger}}$ des ungestörten Graphens, welche mittels Rücktransformation der Greenschen Funktion 
@@ -438,7 +438,7 @@ Fortan wird $G_{c_{\text{A},\vec{k}}, c^\dagger_{\text{B},\vec{k}}}$ in die Glei
     \iff G_{c_{\text{B},\vec{k}}, c^\dagger_{\text{B},\vec{k}}} &= \frac{z}{z^2 - \varepsilon^2_{\vec{k}}  } \; 
 \end{align}
 folgt. 
-Dabei tritt die Dispersionsrelation von Graphen $\varepsilon_{\vec{k}}$ (siehe Gleichung \eqref{eqn:dispersion_graphene_calc}) auf. 
+Dabei tritt die Dispersionsrelation von Graphen $\varepsilon_{\vec{k}}$ (siehe Anhang \ref{sec:calc_dispersion}) auf. 
 Um nun die gesuchte Greensche Funktion $G_{\tilde{c}_l, \tilde{c}_l^{\dagger}}$ zu erhalten, wird mit 
 \begin{equation}
     G_{\tilde{c}_l, \tilde{c}^\dagger_{l'}} = \sum_{\vec{k}} D_{l,\vec{k}} D^\dagger_{l',\vec{k}}G_{c_{\text{B},\vec{k}}, c^\dagger_{\text{B},\vec{k}}} \label{eqn:koe}
