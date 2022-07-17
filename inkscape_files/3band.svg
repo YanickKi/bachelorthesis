@@ -29,8 +29,8 @@
      showgrid="true"
      showguides="true"
      inkscape:zoom="1.4142136"
-     inkscape:cx="52.325902"
-     inkscape:cy="261.27596"
+     inkscape:cx="96.16652"
+     inkscape:cy="279.66072"
      inkscape:window-width="1920"
      inkscape:window-height="1024"
      inkscape:window-x="0"
@@ -483,46 +483,29 @@
          id="tspan20510"
          style="stroke-width:0.264583"
          x="50.270832"
-         y="134.9375"></tspan></text>
+         y="134.9375" /></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:8.63381px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.215846"
-       x="62.177082"
-       y="162.80315"
-       id="text20516-0"><tspan
-         sodipodi:role="line"
-         id="tspan20514-8"
-         style="stroke-width:0.215846"
-         x="62.177082"
-         y="162.80315">γ<tspan
-   style="font-size:5.61198px;baseline-shift:sub;stroke-width:0.215846"
-   id="tspan20566">22</tspan></tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:8.63381px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.215846"
-       x="60.854168"
-       y="117.73959"
+       x="63.966827"
+       y="118.63388"
        id="text20516-0-0"><tspan
          sodipodi:role="line"
          id="tspan20514-8-3"
          style="stroke-width:0.215846"
-         x="60.854168"
-         y="117.73959">γ<tspan
-   style="font-size:65%;baseline-shift:sub"
-   id="tspan20712">01</tspan></tspan></text>
+         x="63.966827"
+         y="118.63388">ξ</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:8.63381px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.215846"
-       x="92.604172"
-       y="177.92981"
-       id="text20516-0-3"><tspan
+       x="66.845993"
+       y="156.25237"
+       id="text20516-0-0-7"><tspan
          sodipodi:role="line"
-         id="tspan20514-8-1"
+         id="tspan20514-8-3-5"
          style="stroke-width:0.215846"
-         x="92.604172"
-         y="177.92981">γ<tspan
-   style="font-size:65%;baseline-shift:sub"
-   id="tspan20616">32</tspan></tspan></text>
+         x="66.845993"
+         y="156.25237">ξ</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:8.63381px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.215846"
@@ -535,9 +518,7 @@
          id="tspan20514-8-9"
          style="stroke-width:0.215846"
          x="88.635422"
-         y="103.1875">γ<tspan
-   style="font-size:65%;baseline-shift:sub"
-   id="tspan20687">11</tspan></tspan></text>
+         y="103.1875">χ</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:8.63381px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.215846"
@@ -548,8 +529,19 @@
          id="tspan20514-8-6"
          style="stroke-width:0.215846"
          x="129.64583"
-         y="133.69897">γ<tspan
-   style="font-size:65%;baseline-shift:sub"
-   id="tspan20710">40</tspan></tspan></text>
+         y="133.69897">ζ</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:8.63381px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.215846"
+       x="96.100739"
+       y="176.4984"
+       id="text20516-0-03-3"
+       inkscape:transform-center-x="3.981475"
+       inkscape:transform-center-y="-0.40663581"><tspan
+         sodipodi:role="line"
+         id="tspan20514-8-9-5"
+         style="stroke-width:0.215846"
+         x="96.100739"
+         y="176.4984">χ</tspan></text>
   </g>
 </svg>

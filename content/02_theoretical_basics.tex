@@ -98,13 +98,12 @@ nur noch das Zweizentren-Integral
 \end{equation*}
 übrig bleibt \cite{SC_literature}.
 Dieses Zweizentren-Integral ist das für das Tight Binding Modell typische Hüpfmatrixelement.
-Damit kann der Tight Binding Hamiltonian in zweiter Quantisierung bei Vernachlässigung der 
-magnetischen Quantenzahl $m$ durch
+Damit kann der Tight Binding Hamiltonian in zweiter Quantisierung durch
 \begin{equation}
-    H = - \sum_{jj'} \sum_{\alpha \alpha'}\sum_{ll'} t^{j\alpha,j'\alpha'}_{ll'}  c_{jl\alpha}^\dagger c_{j'l'\alpha'}  \label{eqn:tight-binding-hamiltonian}
+    H = - \sum_{jj'} \sum_{\alpha \alpha'}\sum_{ll'} \sum_{mm'} t^{j\alpha,j'\alpha'}_{lm,l'm'}  c_{jlm\alpha}^\dagger c_{j'l'm'\alpha'}  \label{eqn:tight-binding-hamiltonian}
 \end{equation}
 angegeben werden \cite{anders-fkt}.
-Dabei vernichtet(erzeugt) der Operator $c_{jl\alpha}$($c_{jl\alpha}^{\dagger}$ ) ein Elektron im Orbital $l$ in der Einheitszelle $j$,
+Dabei vernichtet(erzeugt) der Operator $c_{jlm\alpha}$($c_{jlm\alpha}^{\dagger}$ ) ein Elektron im Orbital mit den Drehimpulsquantenzahlen $l$ und $m$ in der Einheitszelle $j$,
 innerhalb der Basis am Platz $\alpha$.
 Je nach Modellannahme läuft die Summe dann über z.B. nächste oder übernächste Nachbarn.
 \section{Slater-Koster-Integrale}
@@ -116,22 +115,21 @@ Die Slater-Koster-Integrale (SK-Integrale) sind für zwei Orbitale definiert als
 worin schon erkenntlich wird, dass diese nur von dem Abstand $\vec{d}$ abhängen \cite{SC_literature}.
 Hierbei ist $\Psi_{lm}(\vec{r})$ wieder die atomare Wellenfunktion und $V(\vec{r})$ das Potential am Ort $\vec{r}$ \cite{SC_literature}.
 Anstatt komplexe Orbitale werden hierbei die realen Orbitale verwendet.
-Die SK-Integrale können wiederum in einige unabhängige Integrale $V_{ll'\beta}$ zerlegt werden, welche sich durch die Orbitale, $l$ und $l'$, 
-sowie den Bindungen $\beta \in \{\sigma ,\pi, \delta \}$ unterscheiden \cite{electronic_structure}.
-Als Beispiel würde sich bei dem Überlapp zwischen einem $s$- und $p_y$-Orbital das Integral in zwei 
+Die SK-Integrale können wiederum in einige unabhängige Integrale $V_{ll'\eta}$ zerlegt werden, welche sich durch die Orbitale, $l$ und $l'$, 
+sowie den Bindungen $\eta \in \{\sigma ,\pi, \delta \}$ unterscheiden \cite{electronic_structure}.
+Als Beispiel würde sich bei dem Überlapp zwischen einem $s$- und $p_x$-Orbital das Integral in zwei 
 SK-Integrale, $V_{sp\sigma}$ und $V_{sp\pi}$, aufteilen (Abb. \ref{fig:TC}).
 \begin{figure}
     \centering
-    \includegraphics[width = \textwidth]{Plots/tc.png}
-    \caption{Aufteilung eines allgemeinen $s$-$p$ Zweizentren-Integrals in die Integrale $V_{sp\sigma}$ und $V_{sp\pi}$ der zugehörigen Symmetrie.
-    (Entnommen aus \cite{SC_literature})}
+    \includegraphics[width = \textwidth]{Plots/SK.pdf}
+    \caption{Aufteilung eines allgemeinen $s$-$p$ Zweizentren-Integrals in die Integrale $V_{sp\sigma}$ und $V_{sp\pi}$ der zugehörigen Symmetrie.}
     \label{fig:TC}
 \end{figure}
-Dazu wird das $p_y$-Orbital in ein $p_z$- und ein $p_x$-Orbital zerlegt, wie in Abbildung \ref{fig:TC} zu sehen ist \cite{SC_literature, electronic_structure}.
+Dazu wird das $p_x$-Orbital in ein $p_z$- und ein $p_x$-Orbital zerlegt, wie in Abbildung \ref{fig:TC} zu sehen ist \cite{SC_literature, electronic_structure}.
 Der Anteil der Bindung ausgehend von dem $p_z$-Orbital, geht in das Integral $V_{sp\sigma}$ ein, während 
 der Anteil von dem $p_x$-Orbital das Integral $V_{sp\pi}$ bildet.
 Jedoch verschwindet das Integral $V_{sp\pi}$ in diesem Beispiel aufgrund der Symmetrie \cite{SC_literature}.
-Im Allgemeinen sind die SK-Integrale \eqref{eqn:SK} durch die Zerlegung in die einzelnen Integrale $V_{ll'\beta}$ mit Vorfaktoren (siehe \cite{PhysRev.94.1498}),
+Im Allgemeinen sind die SK-Integrale \eqref{eqn:SK} durch die Zerlegung in die einzelnen Integrale $V_{ll'\eta}$ mit Vorfaktoren (siehe \cite{PhysRev.94.1498}),
 den Richtungskosinus, gegeben \cite{SC_literature}.
 Die Richtungskosinus 
 \begin{equation}
@@ -140,4 +138,4 @@ Die Richtungskosinus
     n = \frac{\vec{d} \cdot \hat{z}}{\left | \vec{d} \right |} \label{eqn:RK}
 \end{equation}
 sind die Projektionen des normierten Abstandsvektors auf die Koordinatenachsen $\hat{x}$, $\hat{y}$ und $\hat{z}$ \cite{SC_literature}.
-Wurden diese bestimmt, können die Integrale $V_{ll'\beta}$ als z.B. Fitparameter oder empirische Werte fungieren.
+Wurden diese bestimmt, können die Integrale $V_{ll'\eta}$ als z.B. Fitparameter oder empirische Werte fungieren.

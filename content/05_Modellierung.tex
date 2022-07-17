@@ -3,7 +3,8 @@
 Der Hamiltonian des betrachteten Graphens mit Mn-Defekt bei Vernachlässigung der Coulomb-Wechselwirkung zwischen den Elektronen und des Elektronenspins lautet
 \begin{align*}
    H &=  H_0 + H_\text{Def} + H_\text{Kop}\\
-    &=- t  \sum_{\langle ij \rangle} \left ( c_i^\dagger c_j + c_j^\dagger c_i \right )  + \sum_{m=1}^5 \varepsilon_m d_m^\dagger d_m
+    &=- t  \sum_{\langle ij \rangle}^N
+    \left ( c_i^\dagger c_j + c_j^\dagger c_i \right )  + \sum_{m=1}^5 \varepsilon_m d_m^\dagger d_m
     + \sum_{m=1}^5 \sum_{j=1}^3 \left ( V_{mj} d_m^\dagger c_j + \overline{V}_{mj} c_j^\dagger d_m \right )  \; \text{.} \numberthis \label{eqn:full_Hamiltonian}
 \end{align*}
 Die Summation über $N$ Einheitszellen in dem Term $H_0$ läuft nur über nächste Nachbarn.
@@ -75,11 +76,11 @@ definiert.
 \label{sec:calc_greensfunction}
 Aufgrund der Gitterperiodizität kann für die Operatoren $c_i$ (Untergitter A) und $c_j$ (Untergitter B) eine Fouriertransformation der Form 
 \begin{equation}
-    c_i = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}\vec{l}_i} c_{\text{A}, \vec{k}} \; , 
+    c_i = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}\vec{l}} c_{\text{A}, \vec{k}} \; , 
     \quad c_j = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}(\vec{l}+\vec{\delta}_j)} c_{\text{B}, \vec{k}} \label{eqn:fourier_ladder}
 \end{equation}
 angesetzt werden.
-Dabei sind $N$ die Anzahl der Einheitszellen, $\vec{l}_i$ der Gittervektor der Basis, $\vec{k}$ der Wellenvektor, $\vec{\delta}_j$ der Abstandsvektor
+Dabei sind $N$ die Anzahl der Einheitszellen, $\vec{l}$ der Gittervektor der Einheitszelle, $\vec{k}$ der Wellenvektor, $\vec{\delta}_j$ der Abstandsvektor
 des $j$-ten C auf dem Untergitter B, welches eins der drei nächsten Nachbarn des C auf dem Untergitter A mit dem Gittervektor $\vec{l}$ ist 
 und $c_{A, \vec{k}}$ bzw. $c_{B, \vec{k}}$ die Fourier-transformierten $p_z$-Orbitale auf dem Untergitter A bzw. B \cite{anders-fkt}.
 Die $\vec{k}$-Werte werden aus der ersten Brillouin-Zone genommen \cite{anders-fkt}.
@@ -378,7 +379,7 @@ sortiert werden.\\
     \includegraphics[width = 0.34\textwidth]{Plots/3band.pdf}
     \caption{Effektives Drei-Bänder Modell in dem die
     Vernichter $\tilde{d}_m$ und $\tilde{c}_l$ mit den Kopplungsstärken
-    $\gamma_{ml}$ (Gl. \eqref{eqn:gammakop}) koppeln.
+    $\xi$, $\chi$ und $\zeta$ (Gl. \eqref{eqn:gammakopcrazy}) koppeln.
     Die Anordnug verdeutlicht nur das Konzept und entspricht nicht der 
     Anordnung im Realraum.}
     \label{fig:3band}
@@ -396,8 +397,8 @@ der Orbitale des Mn in der neuen Basis $H_{\text{Def}}$ mit der Orbitalenergie $
 der Hybridisierung zwischen dem Mn und den drei umliegenden C mit $H_\text{Kop}$ in der neuen Basis zu\\
 \\
 \begin{align}
-    H = -t\sum_{ij}(c^\dagger_i c_j + c^\dagger_j c_i) + \varepsilon \sum_{m=0}^4 \tilde{d}^\dagger_m \tilde{d}_m +
-    \sum_{m=0}^4\sum_{l=0}^2(\gamma_{mj} \tilde{d}^\dagger_m \tilde{c}_l + \gamma_{ml} \tilde{c}^\dagger_l \tilde{d}_m) \; .
+    H = -t\sum_{\langle ij\rangle}^N(c^\dagger_i c_j + c^\dagger_j c_i) + \varepsilon \sum_{m=0}^4 \tilde{d}^\dagger_m \tilde{d}_m +
+    \sum_{m=0}^4\sum_{l=0}^2(\gamma_{ml} \tilde{d}^\dagger_m \tilde{c}_l + \gamma_{ml} \tilde{c}^\dagger_l \tilde{d}_m) \; .
 \end{align}
 ergibt.
 Dabei beinhaltet die Matrix $\underline{\underline{\gamma}}$ die Kopplungsstärken der Operatoren $\tilde{d}_m$ und $\tilde{c}_l$.
@@ -410,9 +411,21 @@ Diese ist mit $m \in \{ 0,1,2,3,4 \}$ und $l \in \{ 0,1,2 \}$ durch
         0               & 0             &   \left ( \frac{3}{\sqrt{8}} b V_{pd\sigma} + \frac{\sqrt{3}}{\sqrt{2}}  b   V_{pd\pi} \right ) \\
         0               & 0             &   \left ( \frac{3}{\sqrt{2}} f V_{pd\sigma} + \frac{\sqrt{3}}{\sqrt{2}}  h   V_{pd\pi} \right ) \\
         \left (  \sqrt{3} q V_{pd\sigma} + 3 b V_{pd\pi} \right )     & 0             &   0           \\
-    \end{pmatrix} \label{eqn:gammakop}
+    \end{pmatrix}
 \end{equation} 
 gegeben.
+Da nur drei von den fünf Kopplungsparametern unterschiedlich sind, wird die Matrix in der Form  
+\begin{equation}
+    \underline{\underline{\gamma}} = 
+   \begin{pmatrix}
+       0               & \xi    &   0           \\
+       0               & \chi   &   0           \\
+       0               & 0             &   \xi \\
+       0               & 0             &   \chi \\
+       \zeta     & 0             &   0           \\
+   \end{pmatrix} \label{eqn:gammakopcrazy}
+\end{equation} 
+notiert, so dass die Struktur erkenntlich wird.
 Um nun die gesuchte Hybridisierungsfunktion $\underline{\underline{\symup{\Delta}}}$ zu erhalten, werden die Greenschen Funktionen
 $G_{\tilde{c}_l, \tilde{c}_l^{\dagger}}$ des ungestörten Graphens, welche mittels Rücktransformation der Greenschen Funktion 
 $G_{c_{\text{B}, \vec{k}}, c_{\text{B}, \vec{k}}^\dagger}$ ermittelt werden können, benötigt.
