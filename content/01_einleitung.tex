@@ -4,15 +4,15 @@
 Motiviert wurde diese Arbeit durch den Artikel \cite{doi:10.1021/acsnano.1c00139}, aus welchem jegliche Informationen dieses 
 Abschnitts entnommen wurden.
 In dem dort behandelten Experiment wird mittels ultra-niederenergetischer Ionenimplantation
-(\textit{ultralow-energy ion implantation}) Mangan (Mn) in eine einzelne Graphenstörstelle, wobei sich das Graphen auf einem Kupfersubstrat befindet, eingesetzt.
+(\textit{ultralow-energy ion implantation}) Mangan (Mn) in eine einzelne Graphenfehlstelle, wobei sich das Graphen auf einem Kupfersubstrat befindet, eingesetzt.
 Es wurden die Positionen des Mn im Bezug auf die Moiré-Superstruktur (Abbildung \ref{fig:ascnano_structure}), die elektronischen und magnetischen Eigenschaften und die Konzentration der Mn-Defekte
 untersucht.
 Die Moiré-Superstruktur bildet sich aus, da die vertikale Ausrichtung zwischen dem Graphen und dem Kupfer kontinuierlich variiert.
 \begin{figure}[H]
     \centering
-    \includegraphics[width = \textwidth]{Plots/images_large_nn1c00139_0002.jpeg}
-    \caption{(a) zeigt die Moiré-Superstruktur. Durch kontinuierliche Variation der der Ausrichtung 
-    zwischen dem Kupfer und Graphen, entstehen Hochsymmetriepunkte bezüglich des Stapelns (b-d).
+    \includegraphics[width = 0.95 \textwidth]{Plots/images_large_nn1c00139_0002.jpeg}
+    \caption{(a) zeigt die Moiré-Superstruktur. Durch kontinuierliche Variation der Ausrichtung 
+    zwischen dem Kupfer und dem Graphen entstehen Hochsymmetriepunkte bezüglich des Stapelns (b-d).
     Diese Hochsymmetriepunkte und somit auch die Moiré-Superstruktur können mittels Rastertunnelmikroskopie (RTM) 
     visualisiert werden, womit eine zweidimensionale Periodizität ersichtlich wird (e).
     (Abbildung entnommen  aus \cite{doi:10.1021/acsnano.1c00139})}
@@ -27,26 +27,27 @@ Abbildung \ref{fig:ascnano_structure}b-d aufgezeigt.
 Diese bilden wiederum ein zweidimensionales Gitter (Abb. \ref{fig:ascnano_structure}e).
 Aufgrund der kurzen Reichweite der Bindungen, welche Graphen charakterisiert, und des großen Radius von Mn im Vergleich zur 
 Kohlenstoff-Fehlstelle (C-Fehlstelle) entweicht das Mn senkrecht zur Graphenebene.
-Es kann sich zwischen das Graphen und das Substrat oder zwischen Graphen und Vakuum (nach außen gerichtet) entweichen. 
-Jedoch wurden mögliche nach außen gerichtete Anordnung nur mit einer Wahrscheinlichkeit, 
-welche um mehr als zwei Größenordnungen kleiner ist, beobachtet.
+Es kann zwischen das Graphen und das Substrat oder zwischen das Graphen und das Vakuum (nach außen gerichtet) entweichen. 
+Jedoch wurden mögliche nach außen gerichtete Anordnungen nur mit einer Häufigkeit, 
+welche um mehr als zwei Größenordnungen kleiner als die Häufigkeit der Anordnung mit dem Mn 
+zwischen dem Graphen und dem Kupfersubstrat ist, beobachtet.
 Dies liegt daran, dass die Konfiguration mit dem nach außen gerichteten Mn eine höhere Energie aufweist und somit instabiler ist.
-Während das Mn zum Kupfersubstrat entweicht, nehmen die C um diese Störstelle herum eine nach außen gerichtete Positon ein.
+Während das Mn zum Kupfersubstrat entweicht, nehmen die C um diese Störstelle herum eine nach außen gerichtete Position ein.
 \begin{figure}
     \centering
-    \includegraphics[width = \textwidth]{Plots/images_large_nn1c00139_0003.jpeg}
-    \caption{(a) zeigt eine RTM, in welcher ersichtlich wird, dass Mn in die beiden verschiedenen Untergittern von Graphen implantiert wurde. In der
+    \includegraphics[width = 0.95 \textwidth]{Plots/images_large_nn1c00139_0003.jpeg}
+    \caption{(a) zeigt eine RTM, in welcher ersichtlich wird, dass Mn in die beiden verschiedenen Untergitter von Graphen implantiert wurde. In der
     RTM äußern sich diese mittels dreieckigen Strukturen, welche zueinander gespiegelt liegen.
-    (b-c) zeigen RTM simuliert mittels Dichtefunktionaltheorie (DFT) in einer TOP-FCC Region. In (b) liegt das Mn auf einem FCC
+    (b,c) zeigen RTM simuliert mittels Dichtefunktionaltheorie (DFT) in einer TOP-FCC Region. In (b) liegt das Mn auf einem FCC
     und in (c) auf einem TOP Gitterplatz. (d,e) zeigt das Mn auf einem FCC und (f,g) zeigt es auf einem TOP Platz in der Graphenebene und seitlich davon.
     (Abbildung entnommen  aus \cite{doi:10.1021/acsnano.1c00139})}
     \label{fig:ascnano_defect}
 \end{figure}
 Für die sechs verschiedenen Plätze des Mn (zwei Untergitter und drei Hochsymmetrieregionen) wurden DFT-Rechnungen für die Energien und die magnetischen Momente durchgeführt.
-Dabei zeigte sich, dass diese Größen von dem lokalen Stapeln und dem Untergitter abhängen, so dass die Energie geringer ist, womit 
-diese Konfiguration (z.B. Mn auf einem FCC Platz in einer TOP-FCC-Region) höhere Stabilität aufweist.
+Dabei zeigte sich, dass diese Größen von dem lokalen Stapeln und dem Untergitter abhängen,
+so dass manche Konfigurationen (z.B. Mn auf einem FCC Platz in einer TOP-FCC Region) eine geringere Energie und somit eine höhere Stabilität aufweisen.
 Diese Tendenz zeigte sich ebenfalls in den RTM, wobei angemerkt werden muss, dass die Datenlage dazu nicht ausreicht, um
-verlässliche Ergebnisse zu haben.  
+verlässliche Ergebnisse zu erzielen.  
 \newpage
 \FloatBarrier
 \section{Struktur von Graphen und der Störstelle}
@@ -69,21 +70,23 @@ Wird mit diesen inäquivalenten Atomen eine Basis gebildet, ergibt sich mit den 
 ein zweidimensionales, hexagonales Gitter, welches das für Graphen typische Honigwabengitter besitzt,
 wie in Abbildung \ref{fig:graphene_lattice} zu sehen ist.
 Die Abstandsvektoren $\vec{\delta}_j(\varphi_j)$ der drei benachbarten B-Atome eines A-Atoms können mit Hilfe eines 
-diskreten Drehwinkels $\varphi_j \in \{ 0,  \sfrac{2\pi}{3}, \, \sfrac{4\pi}{3} \} $ angegeben werden (Abb. \ref{fig:graphene_lattice}), so dass sich mit $a$ als Gitterabstand
+diskreten Drehwinkels $\varphi_j \in \{ 0,  \sfrac{2\pi}{3}, \, \sfrac{4\pi}{3} \} $ angegeben werden (Abb. \ref{fig:graphene_lattice}), so dass sich mit $a$ als Gitterkonstante
 $\vec{\delta}_j(\varphi_j) = a \, ( \sin (\varphi_j), \cos (\varphi_j) )$
 ergibt.
-Das Koordinatensystem kann so gelegt werden, so dass $\vec{\delta}_1$ auf der x-Achse liegt, womit sich die Abstandsvektoren mittels
+Das Koordinatensystem kann so gelegt werden, so dass $\vec{\delta}_1$ auf der $x$-Achse liegt, womit sich die Abstandsvektoren mittels
 \begin{equation*}
     \vec{\delta}_1 = a \begin{pmatrix} 1            \\[4pt] 0                   \end{pmatrix}, \quad
     \vec{\delta}_2 = a \begin{pmatrix} -\frac{1}{2} \\[4pt] \frac{\sqrt{3}}{2}  \end{pmatrix}, \quad 
     \vec{\delta}_3 = a \begin{pmatrix} -\frac{1}{2} \\[4pt] -\frac{\sqrt{3}}{2} \end{pmatrix}
 \end{equation*}
 darstellen lassen.
-Wird nun aus dem Untergitter A entfernt und dort Mn eingesetzt (Abb. \ref{fig:mangan_impurity_inplane}), 
+Wird nun aus dem Untergitter A ein C entfernt und dort Mn eingesetzt (Abb. \ref{fig:mangan_impurity}), 
 ändern sich die Abstandsvektoren, wobei es keinen Einfluss hat, auf welchem Untergitter das Mn implantiert wird.
-Dies liegt, wie im vorigen Abschnitt \ref{sec:motivation} diskutiert, daran, dass das Manganatom zu groß ist und nicht in diese Stelle passt, so dass es aus der Ebene entweicht und 
+Die Änderung der Abstandsvektoren liegt, wie im vorigen Abschnitt \ref{sec:motivation} diskutiert, daran, dass das Manganatom zu groß ist 
+und nicht in diese Stelle passt, so dass es aus der Ebene entweicht und 
 eine $z$-Komponente besitzt.
-Diese Situation ist in Abbildung sowohl in seitlicher Ansicht als auch in der Graphenebene  \ref{fig:mangan_impurity} dargestellt.
+Diese Situation ist in Abbildung \ref{fig:mangan_impurity} sowohl in der Graphenebene (Abb. \ref{fig:mangan_impurity_inplane}) als auch in der 
+seitlichen Ansicht (Abb. \ref{fig:mangan_impurity_z_component}) dargestellt.
 Die hinzukommende $z$-Komponente lässt sich mittels trigonometrischen Beziehungen zu $z = -\cot (\theta)$ bestimmen, womit die 
 Abstandsvektoren durch 
 \begin{equation}
@@ -108,8 +111,8 @@ sich die $x$- und $y$-Komponente der Abstandsvektoren nicht ändert.
     \caption{Mn-Defekt in einer seitlichen Ansicht.}%
     \label{fig:mangan_impurity_z_component}%
     \end{subfigure}%
-    \caption{Darstellung des räumlichen Anordnung des Mangandefekts aus veschiedenen Ansichten.
-    Aus dem Untergitter A wurde ein C entfernt und Mangan (orange) implantiert.
+    \caption{Darstellung der räumlichen Anordnung des Mangandefekts aus veschiedenen Ansichten.
+    Aus dem Untergitter A wurde ein C entfernt und Mn (orange) implantiert.
     Wie in Abschnitt \ref{sec:motivation} diskutiert, entweicht das Mn aus der Graphenebene.}%
     \label{fig:mangan_impurity}%
 \end{figure}%
@@ -129,8 +132,8 @@ aufgezeigt.
     \centering
     \includegraphics[width = 0.3\textwidth]{Plots/graphene_first_brillouine_zone.pdf}
     \caption{Erste Brillouin-Zone von Graphen.
-    Eingezeichnet sind die reziproken Gittervektoren $\vec{b}_1$ und $\vec{b}_2$.
-    Der $\symup{\Gamma}$-Punkt (Mitte der ersten Brillouine-Zone) und die beiden inäquivalenten
+    Eingezeichnet sind die reziproken Gittervektoren $\vec{b}_1$ und $\vec{b}_2$,
+    der $\symup{\Gamma}$-Punkt (Mitte der ersten Brillouine-Zone) und die beiden inäquivalenten
     Eckpunkte K und K$'$.}
     \label{fig:first-brillouine-zone}
 \end{wrapfigure}

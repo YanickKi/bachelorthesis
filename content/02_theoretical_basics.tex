@@ -12,7 +12,7 @@ definiert als
     & = - \frac{1}{\hbar} \left(  \langle A \left (\tau \right ) B \left ( \tau' \right ) \rangle \symup{\Theta} \left ( \tau - \tau' \right) + s 
     \langle B \left ( \tau' \right ) A \left (\tau \right ) \rangle \symup{\Theta} \left ( \tau' - \tau \right)  \right ) \; \text{,} \label{eqn:greensfunction}
 \end{align}
-wobei $\tau = \symup{i}t$ eine komplexwertige Zeit und $t$ die gewöhnliche, relle Zeit, $H$ der Hamiltonoperator, $A_\text{S}$ ein Operator im Schöringerbild, $T_s$ der Zeitordnungsoperator, 
+wobei $\tau = \symup{i}t$ eine komplexwertige Zeit und $t$ die gewöhnliche, reelle Zeit, $H$ der Hamiltonoperator, $A_\text{S}$ ein Operator im Schöringerbild, $T_s$ der Zeitordnungsoperator, 
 $\langle \ldots \rangle$ ein Erwartungswert und $\symup{\Theta} \left ( \tau' - \tau \right)$ die Heaviside-Funktion ist \cite{greensfunction}.
 Der Parameter $s$ sorgt mit $s=+1$ für bosonische bzw. $s=-1$ für fermionische Operatoren für das richtige Vorzeichen.
 Der Erwartungswert eines Operators $A$ ist bezüglich der großkanonischen Gesamtheit durch 
@@ -46,7 +46,7 @@ Somit folgt
     \\[2ex]
     =\; & G_{[H,A],B}(\tau, \tau') - \langle \{ A,B \} \rangle \symup{\delta} \left ( \tau - \tau' \right) \; \text{.} \numberthis \label{eqn:eomgreen}
 \end{align*} 
-Dabei ist  $\symup{\delta} (\tau-\tau') = \symup{\delta} (\tau'-\tau) $ die Deltadistribution, welche durch Ableiten der Heaviside-Funktion gewonnen werden kann.
+Dabei ist  $\symup{\delta} (\tau-\tau') = \symup{\delta} (\tau'-\tau) $ die Deltadistribution als Ableitung der Heaviside-Funktion.
 In der dritten Zeile wurde die Heisenbergsche Bewegungsgleichung \eqref{eqn:heisenbergeom} ausgenutzt.
 Um algebraisch anstatt mit Differentialen rechnen zu können, wird die Bewegungsgleichung \eqref{eqn:eomgreen} fouriertransformiert,
 womit sich
@@ -62,14 +62,14 @@ Eine wichtige Eigenschaft der Greenschen Funktion ist die Linearität, aus welch
 folgt.
 \section{Tight Binding Modell}
 \label{sec:tightbinding}
-In der Tight Binding Näherung wird von stark gebundenen, lokalisierten Elektonen ausgegangen \cite{Czycholl}.
+In der Tight Binding Näherung wird von stark gebundenen, lokalisierten Elektronen ausgegangen \cite{Czycholl}.
 Dazu wird der volle Hamiltonian eines Elektrons im Festkörper
 \begin{equation}
-    H = \frac{\vec{p}^2}{2m} + \sum_{j\alpha} v(\vec{r}-\vec{l}_j - \vec{R}_{\alpha}) = \frac{\vec{p}^2}{2m} + v_{\vec{R}}(\vec{r})\label{eqn:electron_hamiltonian}
+    H = \frac{\vec{p}^2}{2M} + \sum_{j\alpha} v(\vec{r}-\vec{l}_j - \vec{R}_{\alpha}) = \frac{\vec{p}^2}{2M} + v_{\vec{R}}(\vec{r})\label{eqn:electron_hamiltonian}
 \end{equation}
 betrachtet \cite{Czycholl}.
-Der Vektor $\vec{R}_{\alpha}$ ist die Position innerhalb der Basis $\alpha$ in der Einheitszelle mit dem Gittervektor $\vec{l}_j$, während
-$\vec{p} = -\symup{i}\vec{\nabla}$ der Impulsoperator, $m$ die Masse des Elektrons und $v_{\vec{R}}(\vec{r})$ mit $\vec{r}$ als Ortsvektor das Potential von den Atomen in dem Festkörper, 
+Der Vektor $\vec{R}_{\alpha}$ ist die Position innerhalb der Einheitszelle mit dem Gittervektor $\vec{l}_j$, während
+$\vec{p} = -\symup{i}\vec{\nabla}$ der Impulsoperator, $M$ die Masse des Elektrons und $v_{\vec{R}}(\vec{r})$ mit $\vec{r}$ als Ortsvektor das Potential von den Atomen in dem Festkörper, 
 was auf das betrachtete Elektron wirkt, ist.
 Mittels des Wellenvektors $\vec{k}$ lassen sich aus den lokalen atomaren Wellenfunktionen $\Psi_{lm} \left (\vec{r}-\vec{l}_j - \vec{R}_{\alpha} \right )$ mit $l$ und $m$ als Drehimpulsquantenzahlen
 Blochzustände
@@ -103,8 +103,8 @@ Damit kann der Tight Binding Hamiltonian in zweiter Quantisierung durch
     H = - \sum_{jj'} \sum_{\alpha \alpha'}\sum_{ll'} \sum_{mm'} t^{j\alpha,j'\alpha'}_{lm,l'm'}  c_{jlm\alpha}^\dagger c_{j'l'm'\alpha'}  \label{eqn:tight-binding-hamiltonian}
 \end{equation}
 angegeben werden \cite{anders-fkt}.
-Dabei vernichtet(erzeugt) der Operator $c_{jlm\alpha}$($c_{jlm\alpha}^{\dagger}$ ) ein Elektron im Orbital mit den Drehimpulsquantenzahlen $l$ und $m$ in der Einheitszelle $j$,
-innerhalb der Basis am Platz $\alpha$.
+Dabei vernichtet(erzeugt) der Operator $c_{jlm\alpha}$($c_{jlm\alpha}^{\dagger}$ ) ein Elektron in einem Orbital mit den Drehimpulsquantenzahlen $l$ und $m$ in der Einheitszelle $j$,
+innerhalb der Einheitszelle am Platz $\alpha$.
 Je nach Modellannahme läuft die Summe dann über z.B. nächste oder übernächste Nachbarn.
 \section{Slater-Koster-Integrale}
 \label{sec:theo_SK}
