@@ -107,10 +107,11 @@ Dabei vernichtet(erzeugt) der Operator $c_{jlm\alpha}$($c_{jlm\alpha}^{\dagger}$
 innerhalb der Basis am Platz $\alpha$.
 Je nach Modellannahme läuft die Summe dann über z.B. nächste oder übernächste Nachbarn.
 \section{Slater-Koster-Integrale}
+\label{sec:theo_SK}
 Die Slater-Koster-Integrale (SK-Integrale) sind für zwei Orbitale definiert als
 \begin{equation}
-    E_{lm,l'm'} = \int \symup{d}^3r \; \overline{\Psi}_{lm} (\vec{r}-\vec{d})
-    V(\vec{r} - \vec{d}) \Psi_{l'm'} (\vec{r}) \; , \label{eqn:SK}
+    E_{lm,l'm'} = \int \symup{d}^3r \; \overline{\Psi}_{lm} \left (\vec{r}-\vec{d} \, \right )
+    V \left ( \vec{r} - \vec{d} \, \right ) \Psi_{l'm'} \left (\vec{r} \right ) \; , \label{eqn:SK}
 \end{equation}
 worin schon erkenntlich wird, dass diese nur von dem Abstand $\vec{d}$ abhängen \cite{SC_literature}.
 Hierbei ist $\Psi_{lm}(\vec{r})$ wieder die atomare Wellenfunktion und $V(\vec{r})$ das Potential am Ort $\vec{r}$ \cite{SC_literature}.
@@ -126,7 +127,7 @@ SK-Integrale, $V_{sp\sigma}$ und $V_{sp\pi}$, aufteilen (Abb. \ref{fig:TC}).
     \label{fig:TC}
 \end{figure}
 Dazu wird das $p_x$-Orbital in ein $p_z$- und ein $p_x$-Orbital zerlegt, wie in Abbildung \ref{fig:TC} zu sehen ist \cite{SC_literature, electronic_structure}.
-Der Anteil der Bindung ausgehend von dem $p_z$-Orbital, geht in das Integral $V_{sp\sigma}$ ein, während 
+Der Anteil der Bindung, ausgehend von dem $p_z$-Orbital, geht in das Integral $V_{sp\sigma}$ ein, während 
 der Anteil von dem $p_x$-Orbital das Integral $V_{sp\pi}$ bildet.
 Jedoch verschwindet das Integral $V_{sp\pi}$ in diesem Beispiel aufgrund der Symmetrie \cite{SC_literature}.
 Im Allgemeinen sind die SK-Integrale \eqref{eqn:SK} durch die Zerlegung in die einzelnen Integrale $V_{ll'\eta}$ mit Vorfaktoren (siehe \cite{PhysRev.94.1498}),
@@ -138,4 +139,5 @@ Die Richtungskosinus
     n = \frac{\vec{d} \cdot \hat{z}}{\left | \vec{d} \right |} \label{eqn:RK}
 \end{equation}
 sind die Projektionen des normierten Abstandsvektors auf die Koordinatenachsen $\hat{x}$, $\hat{y}$ und $\hat{z}$ \cite{SC_literature}.
-Wurden diese bestimmt, können die Integrale $V_{ll'\eta}$ als z.B. Fitparameter oder empirische Werte fungieren.
+Wurden diese bestimmt, können die Integrale $V_{ll'\eta}$ als z.B. Fitparameter oder empirische Werte fungieren. 
+Werden die Orbitale-Indizes vertauscht (z.B. $E_{z,xy} \to E_{xy, z}$), erhalten die Richtungskosinus ein negatives Vorzeichen, d.h. $(l,m,n) \to (-l,-m,-n)$ \cite{PhysRev.94.1498}.

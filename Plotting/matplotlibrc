@@ -8,7 +8,7 @@ figure.figsize : 5.78, 3.57
 font.family : serif
 
 # Fontgrößen
-font.size : 11
+font.size : 24
 legend.fontsize : medium
 xtick.labelsize : 9
 ytick.labelsize : 9

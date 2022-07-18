@@ -39,10 +39,13 @@ $\theta \in ( 0, \sfrac{\pi}{2} ] $ ausgenutzt.
 Diese Beschränkung ist jedoch gerechtfertigt, da das Mn nur unterhalb des Graphens und mittig von den drei umliegenden C betrachtet wird.
 Die Skalarprodukte ausgewertet und der Abstand eingesetzt ergibt
 \begin{equation*}
-    l = \cos(\varphi_j) \sin(\theta) \; , \quad
-    m = \sin(\varphi_j) \sin(\theta) \; , \quad
-    n = \cot(\theta) \sin(\theta) = \cos(\theta) \; .
+    l = -\cos(\varphi_j) \sin(\theta) \; , \quad
+    m = -\sin(\varphi_j) \sin(\theta) \; , \quad
+    n = -\cot(\theta) \sin(\theta) = \cos(\theta) \; .
 \end{equation*}
+Die Richtungskosinus erhalten ein negatives Vorzeichen da z.B. $E_{z,xy}$ und nicht $E_{xy,z}$ betrachtet wird, womit die Ersetzung 
+$(l,m,n) \to (-l,-m,-n)$, wie in Abschnitt \ref{sec:theo_SK} beschrieben, durchgeführt werden muss, da die Abstandsvektoren $d_j$ aus Gleichung \eqref{eqn:disvec} von 
+Dem C zu dem Mn zeigen müssen.
 Diese Ausdrücke für die Richtungskosinus werden in die SK-Integrale (entnommen aus \cite{PhysRev.94.1498}) für die Kopplung zwischen den drei umliegenden 
 $p_z$-Orbitale der C und den fünf $3d$-Orbitalen des Mn eingesetzt,
 so dass sich die Werte in Tabelle \ref{tab:slaterkosters} ergeben.
@@ -64,7 +67,7 @@ so dass sich die Werte in Tabelle \ref{tab:slaterkosters} ergeben.
     \bottomrule
     \end{tabular}
   \end{table}
-Um die Übersichtlichkeit zu gewährleisten, wurden die von dem Winkel $\theta$ abhängigen Koeffizienten zu
+Um Übersichtlichkeit zu gewährleisten, wurden die von dem Winkel $\theta$ abhängigen Koeffizienten zu
 \begin{equation}
     \begin{aligned}
 b & \coloneq -\sin^2(\theta) \cos(\theta)        & f &  \coloneq -\cos^2(\theta) \sin(\theta)                             \\                     
@@ -76,27 +79,27 @@ definiert.
 \label{sec:calc_greensfunction}
 Aufgrund der Gitterperiodizität kann für die Operatoren $c_i$ (Untergitter A) und $c_j$ (Untergitter B) eine Fouriertransformation der Form 
 \begin{equation}
-    c_i = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}\vec{l}} c_{\text{A}, \vec{k}} \; , 
-    \quad c_j = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}(\vec{l}+\vec{\delta}_j)} c_{\text{B}, \vec{k}} \label{eqn:fourier_ladder}
+    c_i = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}\vec{l}_i} c_{\text{A}, \vec{k}} \; , 
+    \quad c_j = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}(\vec{l}_i+\vec{\delta}_j)} c_{\text{B}, \vec{k}} \label{eqn:fourier_ladder}
 \end{equation}
 angesetzt werden.
-Dabei sind $N$ die Anzahl der Einheitszellen, $\vec{l}$ der Gittervektor der Einheitszelle, $\vec{k}$ der Wellenvektor, $\vec{\delta}_j$ der Abstandsvektor
-des $j$-ten C auf dem Untergitter B, welches eins der drei nächsten Nachbarn des C auf dem Untergitter A mit dem Gittervektor $\vec{l}$ ist 
+Dabei sind $N$ die Anzahl der Einheitszellen, $\vec{l}_i$ der Gittervektor der Einheitszelle, $\vec{k}$ der Wellenvektor, $\vec{\delta}_j$ der Abstandsvektor
+des $j$-ten C auf dem Untergitter B, welches eins der drei nächsten Nachbarn des C auf dem Untergitter A mit dem Gittervektor $\vec{l}_i$ ist 
 und $c_{A, \vec{k}}$ bzw. $c_{B, \vec{k}}$ die Fourier-transformierten $p_z$-Orbitale auf dem Untergitter A bzw. B \cite{anders-fkt}.
 Die $\vec{k}$-Werte werden aus der ersten Brillouin-Zone genommen \cite{anders-fkt}.
 Damit lässt sich der Hamiltonian des ungestörten Graphens zu 
 \begin{align*}
-    H_0 &= -\frac{t}{N} \sum_{j\vec{l}} \sum_{\vec{k}\vec{k}'} ( \symup{e}^{-\symup{i}\vec{k}\vec{l}}c^\dagger_{A,\vec{k}} 
-    \symup{e}^{\symup{i}\vec{k}'(\vec{l}+\vec{\delta}_j)}c_{B,\vec{k}'} + \symup{e}^{-\symup{i}\vec{k}'(\vec{l}+\vec{\delta}_j)} c^\dagger_{B,\vec{k}'} 
-    \symup{e}^{i\vec{k}\vec{l}}c_{A,\vec{k}}) \\
-    &= -\frac{t}{N} \sum_{j\vec{l}} \sum_{\vec{k}\vec{k}'} ( \symup{e}^{-\symup{i}(\vec{k}- \vec{k}')\vec{l}}\symup{e}^{\symup{i}\vec{k'}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}'} + 
-    \symup{e}^{\symup{i}(\vec{k}- \vec{k}')\vec{l}} \symup{e}^{-\symup{i}\vec{k'}\vec{\delta}_j} c^\dagger_{B,\vec{k}'}c_{A,\vec{k}}) \\
+    H_0 &= -\frac{t}{N} \sum_{ij} \sum_{\vec{k}\vec{k}'} ( \symup{e}^{-\symup{i}\vec{k}\vec{l}_i}c^\dagger_{A,\vec{k}} 
+    \symup{e}^{\symup{i}\vec{k}'(\vec{l}_i+\vec{\delta}_j)}c_{B,\vec{k}'} + \symup{e}^{-\symup{i}\vec{k}'(\vec{l}_i+\vec{\delta}_j)} c^\dagger_{B,\vec{k}'} 
+    \symup{e}^{i\vec{k}\vec{l}_i}c_{A,\vec{k}}) \\
+    &= -\frac{t}{N} \sum_{ij} \sum_{\vec{k}\vec{k}'} ( \symup{e}^{-\symup{i}(\vec{k}- \vec{k}')\vec{l}_i}\symup{e}^{\symup{i}\vec{k'}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}'} + 
+    \symup{e}^{\symup{i}(\vec{k}- \vec{k}')\vec{l}_i} \symup{e}^{-\symup{i}\vec{k'}\vec{\delta}_j} c^\dagger_{B,\vec{k}'}c_{A,\vec{k}}) \\
     &= -t \sum_{j\vec{k}} ( \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}} + 
     \symup{e}^{-\symup{i}\vec{k}\vec{\delta_j}} c^\dagger_{B,\vec{k}}c_{A,\vec{k}})
 \end{align*}
 umschreiben.
-In dem letzten Schritt wurde $\sum_{\vec{l}}^N \symup{e}^{-i(\vec{k}- \vec{k}')\vec{l}} 
-= \sum_{\vec{l}}^N \symup{e}^{i(\vec{k}- \vec{k}')\vec{l}} = N\delta_{\vec{k}, \vec{k}'}$ ausgenutzt, so dass die Summe über $\vec{k}'$ verschwindet.
+In dem letzten Schritt wurde $\sum_{i}^N \symup{e}^{-\symup{i}(\vec{k}- \vec{k}')\vec{l}_i} 
+= \sum_{i}^N \symup{e}^{\symup{i}(\vec{k}- \vec{k}')\vec{l}_i} = N\delta_{\vec{k}, \vec{k}'}$ ausgenutzt, so dass die Summe über $\vec{k}'$ verschwindet.
 In $H_\text{Kop}$ werden die transformierten Erzeuger ohne weitere Vereinfachungen eingesetzt,  so dass der Gesamthamiltonian zu 
 \begin{equation*}
     \begin{split}
@@ -571,12 +574,12 @@ Dazu sind in Abbildung \ref{fig:Faktoreninz} diese Vorfaktioren in Abhängigkeit
 Der Höhenbereich wurde in der Abbildung \ref{fig:Faktoreninz} auf $z \in [\qty{0}{\angstrom}, \qty{3}{\angstrom}]$ gewählt, da in dem Experiment aus dem Artikel \cite{doi:10.1021/acsnano.1c00139} 
 der Abstand zwischen dem Graphen und dem Kupfersubstrat als ca. $\qty{3}{\angstrom}$ identifiziert wurde, während das Mn einen Abstand von 
 ca. $\qty{1}{\angstrom}$ zu dem Graphen hat, weswegen auch die Punkte bei $z = \qty{1}{\angstrom}$ extra markiert wurden.
-Bei dem Parameter $b$ (Abb. \ref{fig:Faktoreninz}a) fällt auf, dass dieser bei einer Höhe $z = \qty{0}{\angstrom} $ den Wert null annimmt.
+Bei dem Parameter $b$ (Abb. \ref{fig:Faktoreninz}(a)) fällt auf, dass dieser bei einer Höhe $z = \qty{0}{\angstrom} $ den Wert null annimmt.
 Daraus lässt sich schließen, dass das SK-Integral $E_{z,xy}$ für alle drei umliegenden C und somit die Kopplung mit 
 dem $d_{xy}$-Orbital des Mn bei geringen Höhen verschwindend klein ist. 
-Ebenfalls ist der Abstand von der Graphenebene $z=\qty{1}{\angstrom}$ bei dem Vorfaktor $q$ von Interesse (Abb. \ref{fig:Faktoreninz}d), da dieser dort den Wert null annimmt.
+Ebenfalls ist der Abstand von der Graphenebene $z=\qty{1}{\angstrom}$ bei dem Vorfaktor $q$ von Interesse (Abb. \ref{fig:Faktoreninz}(d)), da dieser dort den Wert null annimmt.
 Zwar bildet $q$ nicht den einzigen Vorfaktor bei einem SK-Integral, jedoch ist dieser Fall prägnant, da $q=0$ genau bei dem Abstand gilt, 
 bei welchem sich das Mn laut dem Arikel \cite{doi:10.1021/acsnano.1c00139} befindet.
-In Abbildung \ref{fig:Faktoreninz}c wird ersichtlich, dass der Parameter $h$ für große Abstände sehr klein bleibt. 
+In Abbildung \ref{fig:Faktoreninz}(c) wird ersichtlich, dass der Parameter $h$ für große Abstände sehr klein bleibt. 
 Daraus kann gefolgert werden, dass der Anteil der Kopplungen ausgehend von den $\pi$-Bindungen bei dem SK-Integral $E_{z,zy}$ für die C-Atome, deren
 SK-Integral $E_{z,zy}$ verschieden von Null ist, bei großen Abständen sehr gering ist.
