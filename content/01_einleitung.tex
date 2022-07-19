@@ -74,11 +74,11 @@ diskreten Drehwinkels $\varphi_j \in \{ 0,  \sfrac{2\pi}{3}, \, \sfrac{4\pi}{3} 
 $\vec{\delta}_j(\varphi_j) = a \, ( \sin (\varphi_j), \cos (\varphi_j) )$
 ergibt.
 Das Koordinatensystem kann so gelegt werden, so dass $\vec{\delta}_1$ auf der $x$-Achse liegt, womit sich die Abstandsvektoren mittels
-\begin{equation*}
+\begin{equation}
     \vec{\delta}_1 = a \begin{pmatrix} 1            \\[4pt] 0                   \end{pmatrix}, \quad
     \vec{\delta}_2 = a \begin{pmatrix} -\frac{1}{2} \\[4pt] \frac{\sqrt{3}}{2}  \end{pmatrix}, \quad 
-    \vec{\delta}_3 = a \begin{pmatrix} -\frac{1}{2} \\[4pt] -\frac{\sqrt{3}}{2} \end{pmatrix}
-\end{equation*}
+    \vec{\delta}_3 = a \begin{pmatrix} -\frac{1}{2} \\[4pt] -\frac{\sqrt{3}}{2} \end{pmatrix} \label{eqn:nnvec}
+\end{equation}
 darstellen lassen.
 Wird nun aus dem Untergitter A ein C entfernt und dort Mn eingesetzt (Abb. \ref{fig:mangan_impurity}), 
 ändern sich die Abstandsvektoren, wobei es keinen Einfluss hat, auf welchem Untergitter das Mn implantiert wird.
@@ -96,7 +96,7 @@ Abstandsvektoren durch
 \end{equation}
 angegeben werden können.
 Wie bereits in Abbildung \ref{fig:mangan_impurity} angedeutet, wird im Folgenden angenommen, dass das Mn mittig von den nächsten Nachbarn liegt, so dass 
-sich die $x$- und $y$-Komponente der Abstandsvektoren nicht ändert.
+sich die $x$- und $y$-Komponente der Abstandsvektoren nicht ändern.
 \begin{figure}
     \begin{subfigure}{0.48\textwidth}%
     \centering%
@@ -151,25 +151,25 @@ Nachbarn in trigonalen und planaren Anordnung eine $\sigma$-Bindung eingeht \cit
 Das dazu senkrecht stehende $p$-Orbital führt zu einer weiteren Bindung, der $\pi$-Bindung, so dass ein C
 mit einem der drei nächsten Nachbarn eine Doppelbindung eingeht.
 Dabei sorgt das $\sigma$-Band für die Robustheit der Gitterstruktur \cite{RevModPhys.81.109}.
-Aufgrund des Pauli-Prinzips msind diese Bänder eine voll gefüllt, welche somit ein sehr tiefes Valenzband
+Aufgrund des Pauli-Prinzips sind diese Bänder voll gefüllt, welche somit ein sehr tiefes Valenzband
 formen \cite{RevModPhys.81.109}.
 Da jedes $p$-Orbital, welches senkrecht auf der Graphenebene steht, ein Elektron
 besitzt, ist das $\pi$-Band nur halb gefüllt, womit sich die Elektronen frei bewegen können \cite{RevModPhys.81.109, graphene_properties}.
-Dieses $\pi$-Band trägt auch mit sehr großem Anteil zu der Leitfähigkeit von Graphen bei \cite{graphene_properties}.
+Dieses $\pi$-Band trägt auch mit einem sehr großen Anteil zu der Leitfähigkeit von Graphen bei \cite{graphene_properties}.
 Die Bandstruktur kann mittels eines Tight Binding Modells ermittelt werden, woraus unter der Annahme eines nächsten-Nachbarn-Hüpfens
 die Dispersionsrelation 
 \begin{equation*}
     \epsilon_{\vec{k}} \propto \pm \sqrt{3+2 \cos \left ( \sqrt{3}ak_y \right )+2\cos \left ( \frac{3}{2}ak_x+\frac{\sqrt{3}}{2}ak_y \right ) + 2\cos \left ( \frac{3}{2}ak_x-\frac{\sqrt{3}}{2}ak_y \right ) }
 \end{equation*}
-folgt (die Rechung dazu befindet sich im Anhang \ref{sec:calc_dispersion}).
+folgt (die Rechnung dazu befindet sich im Anhang \ref{sec:calc_dispersion}).
 Das negative bzw. positive Vorzeichen gehört zu dem Valenz- ($\pi$) bzw. Leitungsband ($\pi^*$) \cite{RevModPhys.81.109}.
 Das Valenz- und Leitungsband berühren sich in zwei inäquivalenten Punkten der ersten Brillouin-Zone K und $\text{K}'$, welche 
 auch Dirac-Punkte genannt werden \cite{10.1093/nsr/nwu080}.
-Wird die Dispersionsrelation um diese beiden Punkte entwickelt, nimmt die Dispersionsrelationrelation eine lineare Form an, welche mit 
+Wird die Dispersionsrelation um diese beiden Punkte bis zur ersten Ordnung entwickelt, so dass 
 \begin{equation}
     \epsilon_{\vec{k}} \propto \pm | \vec{k} | 
 \end{equation}
-in der Nähe der beiden Punkte die Form eines Kegels (sog. \textit{Dirac cone}) besitzt \cite{10.1093/nsr/nwu080, Avouris2007}.
+folgt, besitzt diese in der Nähe der beiden Punkte die Form eines Kegels (sog. \textit{Dirac cone}) \cite{10.1093/nsr/nwu080, Avouris2007}.
 Jedoch verschwindet die Zustandsdichte in diesen Punkten, wodurch Graphen als ein bandlückenloser Halbleiter mit einer verschwindenen 
 Zustandsdichte am Fermi-Niveau gesehen werden kann \cite{10.1093/nsr/nwu080}. 
 Aufgrund dieser linearen Dispersion können die Elektronen durch die masselose Dirac-Gleichung beschrieben werden, wobei sich 
@@ -181,5 +181,5 @@ beschrieben in \cite{doi:10.1021/acsnano.1c00139}, Hinweise auf einen Kondo-Effe
 Graphen ist ebenfalls aufgrund seiner makroskopischen Eigenschaften von großem Interesse und ein aktuelles Forschungsthema.
 Einerseits ist die  Dichte mit $\qty{0.77}{\milli\gram\per\metre\squared}$ extrem gering, obwohl 
 Graphen eine hundertfache Stärke von Stahl bei der selben Dicke aufweist \cite{graphene_properties}. 
-Anderseits ist Graphen das bisher bekannte, am besten leitende Material bei Raumtemperetur mit einer Leitfähigkeit von 
+Andererseits ist Graphen das bisher bekannte, am besten leitende Material bei Raumtemperetur mit einer Leitfähigkeit von 
 $\qty{e6}{\siemens\per\metre}$ \cite{graphene_properties}.

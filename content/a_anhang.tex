@@ -34,12 +34,13 @@ Die Spalten sind die reziproken Gittervektoren mit
 \label{sec:calc_dispersion}
 Der Tight Binding Hamiltonian in einer nächsten-Nachbar Näherung für Graphen lautet
 \begin{equation*}
-   H= - t \sum_{\langle ij \rangle }^N \left ( c_i^\dagger c_j + c_j^\dagger c_i \right ) \; .
+   H= - t  \sum_{i=1}^N \sum_{j=1}^3
+   \left ( c_{\text{A},\vec{l}_i}^\dagger c_{\text{B},\vec{l}_i+\vec{\delta}_j} + c_{\text{B},\vec{l}_i+\vec{\delta}_j}^\dagger c_{\text{A},\vec{l}_i} \right ) \; .
 \end{equation*}
 Dazu werden Fouriertransformationen 
 \begin{equation*}
-    c_i = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}\vec{l}_i} c_{\text{A}, \vec{k}} \; , 
-    \quad c_j = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}(\vec{l}_i+\vec{\delta}_j)} c_{\text{B}, \vec{k}}
+    c_{\text{A},\vec{l}_i} = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}\vec{l}_i} c_{\text{A}, \vec{k}} \; , 
+    \quad c_{\text{B},\vec{l}_i+\vec{\delta}_j} = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}(\vec{l}_i+\vec{\delta}_j)} c_{\text{B}, \vec{k}}
 \end{equation*}
 angesetzt. 
 Diese werden in den Hamiltonian eingesetzt, womit 
@@ -71,7 +72,7 @@ Der Hamiltonian kann in eine Matrixmultiplikation der Form
 \end{equation*}
 gebracht werden.
 Die Eigenwerte der auftretenden $2 \times 2$-Matrix bilden die Dispersionsrelation.
-Somit kann diese Matrix gemäß
+Diese Matrix kann gemäß
 \begin{equation*}
     \begin{vmatrix}
         -\varepsilon_{\vec{k}} & -t\sum_{j} \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}     \\

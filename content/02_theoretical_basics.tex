@@ -23,37 +23,37 @@ gegeben \cite{greensfunction}.
 Die Zustandssumme $Z$ stellt dabei einen Normierungsfaktor dar.
 In Gleichung \eqref{eqn:heisenbergpic} wurde das reduzierte Planksche Wirkungsquantum $\hbar$ bereits auf eins gesetzt, was in den folgenden Abschnitten beibehalten wird.
 Da in dieser Arbeit nur fermionische Systeme betrachtet werden, wird $s$ ab jetzt ohne weitere Bemerkungen auf $-1$ gesetzt.
-Unter der Annahme, dass die partielle Ableitung von $A$ verschwindet, ist die zeitliche Entwicklung eines Operators 
-$A$ durch die Heisenbergsche Bewegungsgleichung gemäß 
+Die zeitliche Entwicklung eines Opertators $A (\tau)$ ist gemäß der Differentialgleichung 
 \begin{equation}
-\frac{\symup{d}}{\symup{d}t} A \left (\tau \right ) = \symup{i}  [H, A] \iff \frac{\symup{d}}{\symup{d}\tau} A \left (\tau \right ) = [H, A] \label{eqn:heisenbergeom}
+\frac{\partial}{\partial t} A \left (\tau \right ) = \symup{i}  [H, A] \iff \frac{\partial}{\partial \tau} A \left (\tau \right ) = [H, A] \label{eqn:heisenbergeom}
 \end{equation}
-gegeben.
+festgelegt.
 Für die hier behandelte Modellierung ist die Bewegungsgleichung für die Greensche Funktion \eqref{eqn:greensfunction} von großer Bedeutung, welche mittels 
 partieller Ableitung nach der Zeit gewonnen werden kann \cite{greensfunction}.
 Somit folgt
 \begin{align*}
     \frac{\partial}{\partial \tau} G_{A,B} \left (\tau, \tau' \right) = 
     &- \left \langle \frac{\partial}{\partial \tau}A \left (\tau \right ) B \left ( \tau' \right ) \right \rangle
-    \symup{\Theta} \left ( \tau - \tau' \right) -  \langle A \left (\tau \right ) B \left ( \tau' \right ) \rangle \symup{\delta} \left ( \tau - \tau' \right)\\
+    \symup{\Theta} \left ( \tau - \tau' \right) -  \langle A \left (\tau \right ) B \left ( \tau' \right ) \rangle \delta \left ( \tau - \tau' \right)\\
     &+ \left \langle B \left ( \tau' \right ) \frac{\partial}{\partial \tau}A \left (\tau \right ) \right \rangle \symup{\Theta} \left ( \tau' - \tau \right)
-    -  \langle B \left ( \tau' \right ) A \left (\tau \right ) \rangle \symup{\delta} \left ( \tau' - \tau \right)
+    -  \langle B \left ( \tau' \right ) A \left (\tau \right ) \rangle \delta \left ( \tau' - \tau \right)
     \\[2ex]
     = &- \left \langle [H,A] B \left ( \tau' \right ) \right \rangle
-    \symup{\Theta} \left ( \tau - \tau' \right) -  \langle A \left (\tau \right ) B \left ( \tau' \right ) \rangle \symup{\delta} \left ( \tau - \tau' \right)\\
+    \symup{\Theta} \left ( \tau - \tau' \right) -  \langle A \left (\tau \right ) B \left ( \tau' \right ) \rangle \delta \left ( \tau - \tau' \right)\\
     &+ \left \langle B \left ( \tau' \right ) [H,A] \right \rangle \symup{\Theta} \left ( \tau' - \tau \right)
-    -  \langle B \left ( \tau' \right ) A \left (\tau \right ) \rangle \symup{\delta} \left ( \tau' - \tau \right)
+    -  \langle B \left ( \tau' \right ) A \left (\tau \right ) \rangle \delta \left ( \tau' - \tau \right)
     \\[2ex]
-    =\; & G_{[H,A],B}(\tau, \tau') - \langle \{ A,B \} \rangle \symup{\delta} \left ( \tau - \tau' \right) \; \text{.} \numberthis \label{eqn:eomgreen}
+    =\; & G_{[H,A],B}(\tau, \tau') - \langle \{ A,B \} \rangle \delta \left ( \tau - \tau' \right) \; \text{.} \numberthis \label{eqn:eomgreen}
 \end{align*} 
-Dabei ist  $\symup{\delta} (\tau-\tau') = \symup{\delta} (\tau'-\tau) $ die Deltadistribution als Ableitung der Heaviside-Funktion.
-In der dritten Zeile wurde die Heisenbergsche Bewegungsgleichung \eqref{eqn:heisenbergeom} ausgenutzt.
+Dabei ist  $\delta (\tau-\tau') = \delta (\tau'-\tau) $ die Deltadistribution als Ableitung der Heaviside-Funktion und 
+$\{ A,B \} = AB+BA$ der Antikommutator.
+In der dritten Zeile wurde Gleichung \eqref{eqn:heisenbergeom} ausgenutzt.
 Um algebraisch anstatt mit Differentialen rechnen zu können, wird die Bewegungsgleichung \eqref{eqn:eomgreen} fouriertransformiert,
 womit sich
 \begin{equation}
     zG_{A,B}(z) = \langle \{A,B\} \rangle - G_{[H,A],B}(z) \label{eqn:fouriereom}
 \end{equation} 
-ergibt, wobei $\{ A,B \} = AB+BA$ der Antikommutator ist \cite{greensfunction}.
+ergibt \cite{anders-fkt}.
 Die Variable $z$ ist eine komplexwertige Frequenz.
 Eine wichtige Eigenschaft der Greenschen Funktion ist die Linearität, aus welcher mit $\alpha, \beta \in \mathbb{C}$
 \begin{equation*}
@@ -68,7 +68,7 @@ Dazu wird der volle Hamiltonian eines Elektrons im Festkörper
     H = \frac{\vec{p}^2}{2M} + \sum_{j\alpha} v(\vec{r}-\vec{l}_j - \vec{R}_{\alpha}) = \frac{\vec{p}^2}{2M} + v_{\vec{R}}(\vec{r})\label{eqn:electron_hamiltonian}
 \end{equation}
 betrachtet \cite{Czycholl}.
-Der Vektor $\vec{R}_{\alpha}$ ist die Position innerhalb der Einheitszelle mit dem Gittervektor $\vec{l}_j$, während
+Der Vektor $\vec{R}_{\alpha}$ ist die Position der Atome innerhalb der Einheitszelle mit dem Gittervektor $\vec{l}_j$, während
 $\vec{p} = -\symup{i}\vec{\nabla}$ der Impulsoperator, $M$ die Masse des Elektrons und $v_{\vec{R}}(\vec{r})$ mit $\vec{r}$ als Ortsvektor das Potential von den Atomen in dem Festkörper, 
 was auf das betrachtete Elektron wirkt, ist.
 Mittels des Wellenvektors $\vec{k}$ lassen sich aus den lokalen atomaren Wellenfunktionen $\Psi_{lm} \left (\vec{r}-\vec{l}_j - \vec{R}_{\alpha} \right )$ mit $l$ und $m$ als Drehimpulsquantenzahlen
@@ -103,8 +103,8 @@ Damit kann der Tight Binding Hamiltonian in zweiter Quantisierung durch
     H = - \sum_{jj'} \sum_{\alpha \alpha'}\sum_{ll'} \sum_{mm'} t^{j\alpha,j'\alpha'}_{lm,l'm'}  c_{jlm\alpha}^\dagger c_{j'l'm'\alpha'}  \label{eqn:tight-binding-hamiltonian}
 \end{equation}
 angegeben werden \cite{anders-fkt}.
-Dabei vernichtet(erzeugt) der Operator $c_{jlm\alpha}$($c_{jlm\alpha}^{\dagger}$ ) ein Elektron in einem Orbital mit den Drehimpulsquantenzahlen $l$ und $m$ in der Einheitszelle $j$,
-innerhalb der Einheitszelle am Platz $\alpha$.
+Dabei vernichtet(erzeugt) der Operator $c_{jlm\alpha}$($c_{jlm\alpha}^{\dagger}$ ) ein Elektron in einem Orbital mit den Drehimpulsquantenzahlen $l$ und $m$ innerhalb der Einheitszelle $j$
+am Platz $\alpha$.
 Je nach Modellannahme läuft die Summe dann über z.B. nächste oder übernächste Nachbarn.
 \section{Slater-Koster-Integrale}
 \label{sec:theo_SK}
@@ -116,7 +116,7 @@ Die Slater-Koster-Integrale (SK-Integrale) sind für zwei Orbitale definiert als
 worin schon erkenntlich wird, dass diese nur von dem Abstand $\vec{d}$ abhängen \cite{SC_literature}.
 Hierbei ist $\Psi_{lm}(\vec{r})$ wieder die atomare Wellenfunktion und $V(\vec{r})$ das Potential am Ort $\vec{r}$ \cite{SC_literature}.
 Anstatt komplexe Orbitale werden hierbei die realen Orbitale verwendet.
-Die SK-Integrale können wiederum in einige unabhängige Integrale $V_{ll'\eta}$ zerlegt werden, welche sich durch die Orbitale, $l$ und $l'$, 
+Die SK-Integrale können wiederum in einige unabhängige Integrale $V_{ll'\eta}$ zerlegt werden, welche sich durch die Drehimpulsquantenzahl $l$ bzw. $l'$, 
 sowie den Bindungen $\eta \in \{\sigma ,\pi, \delta \}$ unterscheiden \cite{electronic_structure}.
 Als Beispiel würde sich bei dem Überlapp zwischen einem $s$- und $p_x$-Orbital das Integral in zwei 
 SK-Integrale, $V_{sp\sigma}$ und $V_{sp\pi}$, aufteilen (Abb. \ref{fig:TC}).
@@ -138,6 +138,6 @@ Die Richtungskosinus
     m = \frac{\vec{d} \cdot \hat{y}}{\left | \vec{d} \right |} \; , \quad
     n = \frac{\vec{d} \cdot \hat{z}}{\left | \vec{d} \right |} \label{eqn:RK}
 \end{equation}
-sind die Projektionen des normierten Abstandsvektors auf die Koordinatenachsen $\hat{x}$, $\hat{y}$ und $\hat{z}$ \cite{SC_literature}.
+sind die Projektionen des normierten Abstandsvektors auf die Einheitsvektoren $\hat{x}$, $\hat{y}$ und $\hat{z}$ \cite{SC_literature}.
 Wurden diese bestimmt, können die Integrale $V_{ll'\eta}$ als z.B. Fitparameter oder empirische Werte fungieren. 
-Werden die Orbitale-Indizes vertauscht (z.B. $E_{z,xy} \to E_{xy, z}$), erhalten die Richtungskosinus ein negatives Vorzeichen, d.h. $(l,m,n) \to (-l,-m,-n)$ \cite{PhysRev.94.1498}.
+Werden die Orbital-Indizes vertauscht (z.B. $E_{z,xy} \to E_{xy, z}$), erhalten die Richtungskosinus ein negatives Vorzeichen, d.h. $(l,m,n) \to (-l,-m,-n)$ \cite{PhysRev.94.1498}.

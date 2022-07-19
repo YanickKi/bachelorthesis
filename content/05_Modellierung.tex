@@ -1,17 +1,22 @@
 \chapter{Ergebnisse}
 \label{chap:berechnung}
 Der Hamiltonian des betrachteten Graphens mit Mn-Defekt bei Vernachlässigung der Coulomb-Wechselwirkung zwischen den Elektronen und des Elektronenspins lautet
-\begin{align*}
+\begin{equation}
+    \begin{aligned}
    H &=  H_0 + H_\text{Def} + H_\text{Kop}\\
-    &=- t  \sum_{\langle ij \rangle}^N
-    \left ( c_i^\dagger c_j + c_j^\dagger c_i \right )  + \sum_{m=1}^5 \varepsilon_m d_m^\dagger d_m
-    + \sum_{m=1}^5 \sum_{j=1}^3 \left ( V_{mj} d_m^\dagger c_j + \overline{V}_{mj} c_j^\dagger d_m \right )  \; \text{.} \numberthis \label{eqn:full_Hamiltonian}
-\end{align*}
+    &= - t  \sum_{i=1}^N \sum_{j=1}^3
+    \left ( c_{\text{A},\vec{l}_i}^\dagger c_{\text{B},\vec{l}_i+\vec{\delta}_j} + c_{\text{B},\vec{l}_i+\vec{\delta}_j}^\dagger c_{\text{A},\vec{l}_i} \right )  + \sum_{m=1}^5 \varepsilon_m d_m^\dagger d_m \\
+    & \quad \quad \quad \quad \quad \quad+ \sum_{m=1}^5 \sum_{j=1}^3 \left ( V_{mj} d_m^\dagger c_{\text{B},\vec{l}+\vec{\delta}_j} + \overline{V}_{mj} c_{\text{B},\vec{l}+\vec{\delta}_j}^\dagger d_m \right )  \; \text{.} \label{eqn:full_Hamiltonian}
+    \end{aligned}
+\end{equation}
 Die Summation über $N$ Einheitszellen in dem Term $H_0$ läuft nur über nächste Nachbarn.
-Der Vernichter(Erzeuger) $c_i(c_i^{\dagger})$ vernichtet(erzeugt) ein Elektron im $p_z$-Orbital 
-eines C am Gitterplatz $i$.
+Der Vernichter(Erzeuger) $c_{\text{A},\vec{l}_i}(c_{\text{A},\vec{l}_i}^{\dagger})$ vernichtet(erzeugt) ein Elektron im $p_z$-Orbital 
+eines C auf dem Untergitter A mit dem Gittervektor $\vec{l}_i$, während der Vernichter(Erzeuger)
+$c_{\text{B},\vec{l}_i+\vec{\delta}_j}(c_{\text{B},\vec{l}_i+\vec{\delta}_j}^{\dagger})$
+ein Elektron im $p_z$-Orbital eines C auf dem Untergitter B, welches der nächste Nachbar eines C auf dem Untergitter A ist, vernichtet.
+Der Vektor $\vec{\delta}_j$ ist der nächste-Nachbar-Abstandsvektor (siehe Gl. \eqref{eqn:nnvec} und Abb. \ref{fig:graphene_lattice}).
 Damit wird mit dem Hüpfparameter $t$ das Hüpfen zwischen nächsten Nachbarn des ungestörten Graphengitters beschrieben.
-Aufgrund der Periodizität und der ausschließlichen Betrachtung des Hüpfens zwischen $p_z$-Orbitalen, ist der  
+Aufgrund der Periodizität und der ausschließlichen Betrachtung des Hüpfens zwischen $p_z$-Orbitalen ist der  
 Hüpfparameter $t$ für alle Summanden gleich.   
 Die Störstelle wird mit dem Hamiltonian $H_\text{Def}$ beschrieben. 
 Der Vernichter(Erzeuger) $d_m(d_m^{\dagger})$ vernichtet(erzeugt) dabei ein Elektron in dem $m$-ten $3d$-Orbital des Mn mit der 
@@ -22,14 +27,16 @@ Dabei sitzt das Mn auf dem Untergitter A mit dem Gittervektor $\vec{l}$, weswege
 zu diesem Gitterplatz $\vec{l}$ läuft.
 Die auftretenden Hüpfparameter sind nicht wie zuvor bei $H_0$ für alle Summanden gleich, da fünf verschiedene Orbitale
 des Mn und die verschiedenen räumlichen Anordnungen der drei umliegenden C einen Einfluss haben.
-Somit bezeichnet $V_{mj}$ das SK-Integral für das Hüpfen zwischen dem $m$-ten $3d$-Orbital des Mn mit dem $p_z$-Orbital des 
+Somit bezeichnet $V_{mj}$ das SK-Integral für das Hüpfen zwischen dem $m$-ten $3d$-Orbital des Mn und dem $p_z$-Orbital des 
 $j$-ten benachbarten C.
 Da die SK-Integrale reell sind, folgt $\overline{V}_{mj} = V_{mj}$.
+Auf welchem Gitterplatz das Mn sitzt, wurde hierbei mit dem beliebigen Gittervektor $\vec{l}$ variabel gelassen.
+Jedoch macht es in dieser Modellierung keinen Unterschied, welche Position das Mn einnimmt, wie sich im Verlauf der Berechnung auch zeigt.
 Sofern es eindeutig ist, wird im Folgenden auf explizite Angabe des Startwerts des Laufindex und der oberen Grenze bei Summationen verzichtet.
 \section{Slater-Koster-Integrale}
 \label{sec:slaterkostercalc}
 Zur Berechnung der SK-Integrale werden die Richtungskosinus \eqref{eqn:RK} benötigt.
-Der Betrag des Abstandsvektors (siehe Abschnitt \ref{sec:structure}) für das $j$-te der drei umligenden C um das Mn ist durch 
+Der Betrag des Abstandsvektors (siehe Abschnitt \ref{sec:structure}) für das $j$-te der drei umliegenden C um das Mn ist durch 
 \begin{equation}
     \left | \vec{d}_j  \right | = a \sqrt{\cos^2(\varphi_j) + \sin^2(\varphi_j) + \cot^2(\theta)} = a \sqrt{1+\cot^2(\theta)} = \frac{a}{\sin(\theta)} \label{eqn:distance}
 \end{equation}
@@ -44,8 +51,8 @@ Die Skalarprodukte ausgewertet und der Abstand eingesetzt ergibt
     n = -\cot(\theta) \sin(\theta) = \cos(\theta) \; .
 \end{equation*}
 Die Richtungskosinus erhalten ein negatives Vorzeichen da z.B. $E_{z,xy}$ und nicht $E_{xy,z}$ betrachtet wird, womit die Ersetzung 
-$(l,m,n) \to (-l,-m,-n)$, wie in Abschnitt \ref{sec:theo_SK} beschrieben, durchgeführt werden muss, da die Abstandsvektoren $d_j$ aus Gleichung \eqref{eqn:disvec} von 
-Dem C zu dem Mn zeigen müssen.
+$(l,m,n) \to (-l,-m,-n)$, wie in Abschnitt \ref{sec:theo_SK} beschrieben, durchgeführt werden muss, da die Abstandsvektoren $\vec{d_j}$ aus Gleichung \eqref{eqn:disvec} von 
+dem C zu dem Mn zeigen.
 Diese Ausdrücke für die Richtungskosinus werden in die SK-Integrale (entnommen aus \cite{PhysRev.94.1498}) für die Kopplung zwischen den drei umliegenden 
 $p_z$-Orbitale der C und den fünf $3d$-Orbitalen des Mn eingesetzt,
 so dass sich die Werte in Tabelle \ref{tab:slaterkosters} ergeben.
@@ -77,21 +84,19 @@ h & \coloneq -\sin(\theta)(1-2\cos^2(\theta))    & q &  \coloneq -\cos^3(\theta)
 definiert.
 \section{Hybridisierungsfunktion}
 \label{sec:calc_greensfunction}
-Aufgrund der Gitterperiodizität kann für die Operatoren $c_i$ (Untergitter A) und $c_j$ (Untergitter B) eine Fouriertransformation der Form 
+Aufgrund der Gitterperiodizität kann für die Operatoren $c_{\text{A},\vec{l}_i}$ und $c_{\text{B},\vec{l}_i+\vec{\delta}_j}$ aus Gleichung \eqref{eqn:full_Hamiltonian} eine Fouriertransformation der Form 
 \begin{equation}
-    c_i = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}\vec{l}_i} c_{\text{A}, \vec{k}} \; , 
-    \quad c_j = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}(\vec{l}_i+\vec{\delta}_j)} c_{\text{B}, \vec{k}} \label{eqn:fourier_ladder}
+    c_{\text{A},\vec{l}_i} = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}\vec{l}_i} c_{\text{A}, \vec{k}} \; , 
+    \quad c_{\text{B},\vec{l}_i+\vec{\delta}_j} = \frac{1}{\sqrt{N}} \sum_{\vec{k}}^{1. \, \text{BZ}} \symup{e}^{\symup{i}\vec{k}(\vec{l}_i+\vec{\delta}_j)} c_{\text{B}, \vec{k}} \label{eqn:fourier_ladder}
 \end{equation}
 angesetzt werden.
-Dabei sind $N$ die Anzahl der Einheitszellen, $\vec{l}_i$ der Gittervektor der Einheitszelle, $\vec{k}$ der Wellenvektor, $\vec{\delta}_j$ der Abstandsvektor
-des $j$-ten C auf dem Untergitter B, welches eins der drei nächsten Nachbarn des C auf dem Untergitter A mit dem Gittervektor $\vec{l}_i$ ist 
-und $c_{A, \vec{k}}$ bzw. $c_{B, \vec{k}}$ die Fourier-transformierten $p_z$-Orbitale auf dem Untergitter A bzw. B \cite{anders-fkt}.
+Dabei sind $c_{\text{A}, \vec{k}}$ bzw. $c_{\text{B}, \vec{k}}$ die Fourier-transformierten $p_z$-Orbitale auf dem Untergitter A bzw. B \cite{anders-fkt}.
 Die $\vec{k}$-Werte werden aus der ersten Brillouin-Zone genommen \cite{anders-fkt}.
 Damit lässt sich der Hamiltonian des ungestörten Graphens zu 
 \begin{align*}
     H_0 &= -\frac{t}{N} \sum_{ij} \sum_{\vec{k}\vec{k}'} ( \symup{e}^{-\symup{i}\vec{k}\vec{l}_i}c^\dagger_{A,\vec{k}} 
     \symup{e}^{\symup{i}\vec{k}'(\vec{l}_i+\vec{\delta}_j)}c_{B,\vec{k}'} + \symup{e}^{-\symup{i}\vec{k}'(\vec{l}_i+\vec{\delta}_j)} c^\dagger_{B,\vec{k}'} 
-    \symup{e}^{i\vec{k}\vec{l}_i}c_{A,\vec{k}}) \\
+    \symup{e}^{\symup{i}\vec{k}\vec{l}_i}c_{A,\vec{k}}) \\
     &= -\frac{t}{N} \sum_{ij} \sum_{\vec{k}\vec{k}'} ( \symup{e}^{-\symup{i}(\vec{k}- \vec{k}')\vec{l}_i}\symup{e}^{\symup{i}\vec{k'}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}'} + 
     \symup{e}^{\symup{i}(\vec{k}- \vec{k}')\vec{l}_i} \symup{e}^{-\symup{i}\vec{k'}\vec{\delta}_j} c^\dagger_{B,\vec{k}'}c_{A,\vec{k}}) \\
     &= -t \sum_{j\vec{k}} ( \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}c^\dagger_{A,\vec{k}} c_{B,\vec{k}} + 
@@ -110,15 +115,13 @@ In $H_\text{Kop}$ werden die transformierten Erzeuger ohne weitere Vereinfachung
     \end{split}
 \end{equation*}
 bestimmt werden kann.
-Auf welchem Gitterplatz das Mn sitzt, wurde hierbei variabel gelassen.
-Jedoch macht es in dieser Modellierung keinen Unterschied, welche Position das Mn einnimmt, wie sich im Verlauf der Berechnung auch zeigt.
 Nun können die Einträge der gesuchten Greenschen Funktionen $\underline{\underline{G}}$ mit Hilfe der Bewegungsgleichung \eqref{eqn:fouriereom} 
 \begin{equation}
     zG_{d_m, d_{m'}^\dagger}(z) = \langle \{ d_m, d_{m'}^\dagger \} \rangle - G_{[H,d_m], d_{m'}^\dagger} (z) \label{eqn:eomgreenansatz}
 \end{equation}
 bestimmt werden.
 Da sich das Argument der Greenschen Funktion nicht ändert, wird im Folgenden darauf verzichtet, das Argument mit anzugeben.
-Dazu wird der Kommutator $[H,d_m]$ aufgrund der Linearität in drei einzelne Kommutatoren unterteilt, so dass
+Der Kommutator $[H,d_m]$ wird aufgrund der Linearität in drei einzelne Kommutatoren unterteilt, so dass
 \begin{equation*}
     [H,d_m] = [H_0,d_m] + [H_\text{Def},d_m] +[H_\text{Kop},d_m] 
 \end{equation*}
@@ -257,11 +260,11 @@ Um mehr Übersichtlichkeit zu gewähren, wurde das Quadrat der Dispersionsrelati
      \varepsilon_{\vec{k}}^2 = t^2 \sum_j \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j} \sum_{j'} \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_{j'}} 
 \end{equation*}  
 umgeschrieben (für die Berechnung siehe \ref{sec:calc_dispersion}).
-Ebenfalls wird die Änderung der Notation für die Einträge der Matrix $\underline{\underline{G}}$
+Ebenfalls wird die Änderung der Notation 
 \begin{equation*}
     G_{d_m, d^\dagger_{m'}} \to G_{mm'}
 \end{equation*}
-durchgeführt.
+für die Einträge der Matrix $\underline{\underline{G}}$, welche die gesuchten Greenschen Funktionen sind, durchgeführt.
 Das Ergebnis \eqref{eqn:finalgreencB} wird schlussendlich in Gleichung \eqref{eqn:greensumgestellt} eingesetzt, welche daraufhin in die gewünschte Form gebracht werden kann.
 Somit folgt
 \begin{align*}
@@ -295,7 +298,7 @@ Die Inverse der Matrix  $\underline{\underline{G}}$ besitzt die Struktur
 \end{equation}
 Die diagonale Matrix $\underline{\underline{Z}} = z\symbb{1}$ ist durch die Skalierung der Einheitsmatrix mit $z$ gegeben, während die Energiematrix 
 $\underline{\underline{E}} = \diag{\varepsilon_1, \varepsilon_2, \varepsilon_3, \varepsilon_4, \varepsilon_5}$
-die Orbitalenergien $\varepsilon_m$ auf der Hauptdiagonale stehen hat.
+die Orbitalenergien $\varepsilon_m$ auf der Hauptdiagonalen stehen hat.
 Die Matrix $\underline{\underline{\symup{\Delta}}}$ ist die gesuchte Hybridisierungsfunktion mit 
 \begin{equation*}
     \left ( \underline{\underline{\symup{\Delta}}} \right )_{mn} =  \frac{z}{N}\sum_{\vec{k}}
@@ -306,30 +309,30 @@ Die Matrix $\underline{\underline{\symup{\Delta}}}$ ist die gesuchte Hybridisier
 In diesem Abschnitt wird die Hybridisierungsfunktion erneut berechnet. 
 Jedoch wird hier die Symmetrie des Problems ausgenutzt, um somit eine einfachere Struktur der Hybridisierungsfunktion zu erhalten, wie sich im 
 Folgenden ebenfalls zeigen wird.
-Diese Symmetrie ist in den SK-Integralen enthalten, weswegen diese explizit in den Hamiltonian eingesetzt werden.
-Dafür müssen die Vernichter $c_i$ zunächst in eine neue Basis transformiert werden.
-Die Vernichter in der neuen Basis werden zusammen mit den SK-Intgegralen in den Hamiltonian $H_\text{Kop}$ (siehe Gl. \eqref{eqn:full_Hamiltonian}), welcher die Hybridisierung
+Die Symmetrie ist in den SK-Integralen enthalten, weswegen diese explizit in den Hamiltonian eingesetzt werden.
+Dafür müssen die Vernichter $c_{\text{B},\vec{l}+\vec{\delta}_j}$ zunächst in eine neue Basis transformiert werden.
+Die Vernichter in der neuen Basis werden zusammen mit den SK-Integralen in den Hamiltonian $H_\text{Kop}$ (siehe Gl. \eqref{eqn:full_Hamiltonian}), welcher die Hybridisierung
 zwischen den drei C und dem Mn beschreibt, eingesetzt,
 wonach geschaut wird, welche $3d$-Orbitale mischen. \\
-Die Ausnutzung der dreizähligen Drehsymmetrie ($C_3$-Symmetrie) der C um den Mn-Defekt zur Vereinfachung des Problems folgt mittels der Basistransformation für die Vernichter $c_i$.
-Dazu lassen sich die Operatoren in der neuen Basis $\tilde{c}_i$ durch die Linearkombinationen der Vernichter $c_i$
+Die Ausnutzung der dreizähligen Drehsymmetrie ($C_3$-Symmetrie) der C um den Mn-Defekt zur Vereinfachung des Problems folgt mittels der Basistransformation für die Vernichter $c_{\text{B},\vec{l}+\vec{\delta}_j}$.
+Dazu lassen sich die Operatoren in der neuen Basis $\tilde{c}_i$ durch die Linearkombinationen der Vernichter $c_{\text{B},\vec{l}+\vec{\delta}_j}$
 \begin{equation}
     \begin{aligned}
-    \tilde{c}_0 &= \frac{1}{\sqrt{3}}\left (c_1 + c_2 + c_3 \right ) \\
-    \tilde{c}_1 &= \frac{1}{\sqrt{3}}\left (c_1+ \symup{e}^{\symup{i}\frac{2\pi}{3}} c_2 + \symup{e}^{\symup{i}\frac{4\pi}{3}}c_3 \right ) \\
-    \tilde{c}_2 &= \frac{1}{\sqrt{3}}\left (c_1 + \symup{e}^{\symup{i}\frac{4\pi}{3}} c_2 + \symup{e}^{\symup{i}\frac{2\pi}{3}}c_3 \right ) \label{eqn:sole} 
+    \tilde{c}_0 &= \frac{1}{\sqrt{3}}\left (c_{\text{B},\vec{l}+\vec{\delta}_1} + c_{\text{B},\vec{l}+\vec{\delta}_2} + c_{\text{B},\vec{l}+\vec{\delta}_3} \right ) \\
+    \tilde{c}_1 &= \frac{1}{\sqrt{3}}\left (c_{\text{B},\vec{l}+\vec{\delta}_1}+ \symup{e}^{\symup{i}\frac{2\pi}{3}} c_{\text{B},\vec{l}+\vec{\delta}_2} + \symup{e}^{\symup{i}\frac{4\pi}{3}}c_{\text{B},\vec{l}+\vec{\delta}_3} \right ) \\
+    \tilde{c}_2 &= \frac{1}{\sqrt{3}}\left (c_{\text{B},\vec{l}+\vec{\delta}_1} + \symup{e}^{\symup{i}\frac{4\pi}{3}} c_{\text{B},\vec{l}+\vec{\delta}_2} + \symup{e}^{\symup{i}\frac{2\pi}{3}}c_{\text{B},\vec{l}+\vec{\delta}_3} \right ) \label{eqn:sole} 
     \end{aligned}
 \end{equation}
 darstellen. 
 Der Faktor $\sfrac{1}{\sqrt{3}}$ sichert dabei die Normierung und das Erfüllen der Antikommutatorrelation $\{\tilde{c}_i,\tilde{c}^\dagger_j\} = \delta_{ij}$.
-Damit die Vernichter $\tilde{c}_i$ in den Hamiltonoperator eingesetzt werden können, werden die Vernichter $c_i$ in Abhängigkeit von den Vernichtern in
+Damit die Vernichter $\tilde{c}_i$ in den Hamiltonoperator eingesetzt werden können, werden die Vernichter $c_{\text{B},\vec{l}+\vec{\delta}_j}$ in Abhängigkeit von den Vernichtern in
 der neuen Basis gebraucht. 
 Dazu muss das Gleichungssystem \eqref{eqn:sole} gelöst werden, dessen Lösung    
 \begin{equation}
     \begin{aligned}
-    c_1 &= \frac{1}{\sqrt{3}}\left (\tilde{c}_0 + \tilde{c}_1 + \tilde{c}_2 \right ) \\
-    c_2 &= \frac{1}{\sqrt{3}}\left (\tilde{c}_0 + \symup{e}^{\symup{i}\frac{4\pi}{3}} \tilde{c}_1 + \symup{e}^{\symup{i}\frac{2\pi}{3}} \tilde{c}_2 \right ) \\
-    c_2 &= \frac{1}{\sqrt{3}}\left (\tilde{c}_0 + \symup{e}^{\symup{i}\frac{2\pi}{3}} \tilde{c}_1 + \symup{e}^{\symup{i}\frac{4\pi}{3}} \tilde{c}_2 \right ) 
+    c_{\text{B},\vec{l}+\vec{\delta}_1} &= \frac{1}{\sqrt{3}}\left (\tilde{c}_0 + \tilde{c}_1 + \tilde{c}_2 \right ) \\
+    c_{\text{B},\vec{l}+\vec{\delta}_2} &= \frac{1}{\sqrt{3}}\left (\tilde{c}_0 + \symup{e}^{\symup{i}\frac{4\pi}{3}} \tilde{c}_1 + \symup{e}^{\symup{i}\frac{2\pi}{3}} \tilde{c}_2 \right ) \\
+    c_{\text{B},\vec{l}+\vec{\delta}_3} &= \frac{1}{\sqrt{3}}\left (\tilde{c}_0 + \symup{e}^{\symup{i}\frac{2\pi}{3}} \tilde{c}_1 + \symup{e}^{\symup{i}\frac{4\pi}{3}} \tilde{c}_2 \right ) 
     \label{eqn:solutionsole}
     \end{aligned}
 \end{equation}
@@ -365,7 +368,7 @@ Im Folgenden wird $d_4 = \tilde{d}_4$ zur Erleichterung der Notation genutzt.
 Der Vorfaktor $\sfrac{1}{\sqrt{2}}$ dient erneut zur Normierung und gewährt ebenfalls die Antikommutatorrelation $\{ \tilde{d}_i, \tilde{d}^\dagger_j \} = \delta_{ij}$.
 Wie in den Gleichungen \eqref{eqn:newdi} zu erkennen ist, mischen zweimal jeweils zwei Orbitale.
 Einerseits mischt das Orbital $d_{xy}$ (Vernichter $d_1$) mit dem $d_{x^2-y^2}$-Orbital (Vernichter $d_5$).
-Anderseits mischt das $d_{xz}$- mit dem $d_{zy}$-Orbital.
+Andererseits mischt das $d_{xz}$- mit dem $d_{zy}$-Orbital.
 Werden die neuen Vernichter $\tilde{d}_m$ in Gleichung \eqref{eqn:lcinhamiltonian} gebildet, können die Terme dort gemäß
 \begin{equation}
             \begin{split}
@@ -381,14 +384,14 @@ sortiert werden.\\
     \centering
     \includegraphics[width = 0.34\textwidth]{Plots/3band.pdf}
     \caption{Effektives Drei-Bänder Modell in dem die
-    Vernichter $\tilde{d}_m$ und $\tilde{c}_l^{\dagger}$ mit den Kopplungsstärken
+    Vernichter $\tilde{d}_m$ und Erzeuger $\tilde{c}_l^{\dagger}$ mit den Kopplungsstärken
     $\xi$, $\chi$ und $\zeta$ (Gl. \eqref{eqn:gammakopcrazy}) koppeln.
     Die Anordnug verdeutlicht nur das Konzept und entspricht nicht der 
     Anordnung im Realraum.}
     \label{fig:3band}
 \end{wrapfigure}
-In Gleichung \eqref{eqn:Hkopnice} zeigt sich welche Operatoren $\tilde{d}_m^{\dagger}$ an welche Vernichter $\tilde{c}_l$ koppeln.
-An den Vernichter $\tilde{c}_{0}$ koppelt nur ein einziger Erzeuger, $\tilde{d}_{4}^{\dagger}$, da das Orbital $d_{z^2}$ invariant unter einer Drehung ist,
+In Gleichung \eqref{eqn:Hkopnice} zeigt sich, welche Erzeuger $\tilde{d}_m^{\dagger}$ an welche Vernichter $\tilde{c}_l$ koppeln.
+An den Vernichter $\tilde{c}_{0}$ koppelt nur ein einziger Erzeuger, $\tilde{d}_{4}^{\dagger}$, da das Orbital $d_{3z^2-r^2}$ invariant unter einer Drehung ist,
 während an den Vernichter $\tilde{c}_{1}$ zwei Linearkobminationen der $3d$-Orbitale koppeln, nämlich 
 die Erzeuger $\tilde{d}_{0}^{\dagger}$ und $\tilde{d}_{1}^{\dagger}$. 
 Die beiden übrigen Erzeuger $\tilde{d}_{2}^{\dagger}$ und $\tilde{d}_{3}^{\dagger}$ koppeln an den Vernichter  $\tilde{c}_{2}$.
@@ -399,12 +402,13 @@ aus Gleichung \eqref{eqn:full_Hamiltonian} mit der Beschreibung des ungestörten
 der Orbitale des Mn in der neuen Basis $H_{\text{Def}}$ mit der Orbitalenergie $\varepsilon$ und
 der Hybridisierung zwischen dem Mn und den drei umliegenden C mit $H_\text{Kop}$ in der neuen Basis zu\\
 \\
-\begin{align}
-    H = -t\sum_{\langle ij\rangle}^N(c^\dagger_i c_j + c^\dagger_j c_i) + \varepsilon \sum_{m=0}^4 \tilde{d}^\dagger_m \tilde{d}_m +
-    \sum_{m=0}^4\sum_{l=0}^2(\gamma_{ml} \tilde{d}^\dagger_m \tilde{c}_l + \gamma_{ml} \tilde{c}^\dagger_l \tilde{d}_m) \; .
-\end{align}
+\begin{multline}
+    H = -t\sum_{i=1}^N \sum_{j=1}^3 \left ( c_{\text{A},\vec{l}_i}^\dagger c_{\text{B},\vec{l}_i+\vec{\delta}_j} + 
+    c_{\text{B},\vec{l}_i+\vec{\delta}_j}^\dagger c_{\text{A},\vec{l}_i} \right ) + \varepsilon \sum_{m=0}^4 \tilde{d}^\dagger_m \tilde{d}_m \\
+    +\sum_{m=0}^4\sum_{l=0}^2(\gamma_{ml} \tilde{d}^\dagger_m \tilde{c}_l + \gamma_{ml} \tilde{c}^\dagger_l \tilde{d}_m) \; .
+\end{multline}
 ergibt.
-Dabei beinhaltet die Matrix $\underline{\underline{\gamma}}$ die Kopplungsstärken der Operatoren $\tilde{d}_m$ und $\tilde{c}_l$.
+Dabei beinhaltet die Matrix $\underline{\underline{\gamma}}$ die Kopplungsstärken zwischen den Operatoren $\tilde{d}_m^\dagger$ und $\tilde{c}_l$.
 Diese ist mit $m \in \{ 0,1,2,3,4 \}$ und $l \in \{ 0,1,2 \}$ durch
 \begin{equation*}
      \underline{\underline{\gamma}} = 
@@ -435,7 +439,7 @@ $G_{c_{\text{B}, \vec{k}}, c_{\text{B}, \vec{k}}^\dagger}$ ermittelt werden kön
 Da der Einfluss des Mn mit der Systemgröße $N$ asymptotisch gegen 0 geht, ist die Verwendung der 
 Greenschen Funktionen des Graphens ohne Störstelle gerechtfertigt.
 Der Hamiltonian des ungestörten Graphens $H_0$ kann aus der Gleichung \eqref{eqn:full_Hamiltonian} übernommen werden,
-worin die Fourier-transformierten Vernichter $c_i$ und $c_j$ (siehe Gleichung \eqref{eqn:fourier_ladder}) eingesetzt werden,
+worin die Fourier-transformierten Vernichter $c_{\text{A},\vec{l}_i}$ und $c_{\text{B},\vec{l}_i+\vec{\delta}_j}$ (siehe Gleichung \eqref{eqn:fourier_ladder}) eingesetzt werden,
 so dass sich der Hamiltonian $H_0$ zu  
 \begin{equation}
     H = -t \sum_{\vec{k}}\sum_{j=1}^3( \symup{e}^{\symup{i}\vec{k}\vec{\delta}_j}c^\dagger_{\text{A},\vec{k}} c_{\text{B},\vec{k}} + \symup{e}^{-\symup{i}\vec{k}\vec{\delta}_j}c^\dagger_{\text{B},\vec{k}} c_{\text{A},\vec{k}} ) \; .
@@ -479,12 +483,14 @@ sind durch
     \end{aligned}    
 \end{equation}
 gegeben.
-Werden diese nun in \eqref{eqn:koe} eingesetzt, ergeben sich die drei gesuchten Greenschen Funktionen zu 
-\begin{align}
+Werden diese nun in Gleichung \eqref{eqn:koe} eingesetzt, ergeben sich die drei gesuchten Greenschen Funktionen zu 
+\begin{equation}
+    \begin{aligned}
     G_{\tilde{c}_0, \tilde{c}^\dagger_0} &= \frac{z}{3N} \sum_{\vec{k}} \frac{\sum_j \symup{e}^{i{\vec{k}}\vec{\delta}_j} \sum_{j'} \symup{e}^{-i{\vec{k}}\vec{\delta}_{j'}}                                                            }{z^2-\varepsilon_{\vec{k}}^2} \\
     G_{\tilde{c}_1, \tilde{c}^\dagger_1} &= \frac{z}{3N} \sum_{\vec{k}} \frac{\sum_j \symup{e}^{i{\vec{k}}\vec{\delta}_j+\symup{i}\frac{2(j-1)\pi}{3}} \sum_{j'} \symup{e}^{-i{\vec{k}}\vec{\delta}_{j'}-\symup{i}\frac{2(j'-1)\pi}{3}} }{z^2-\varepsilon_{\vec{k}}^2} \\
     G_{\tilde{c}_2, \tilde{c}^\dagger_2} &= \frac{z}{3N} \sum_{\vec{k}} \frac{\sum_j \symup{e}^{i{\vec{k}}\vec{\delta}_j-\symup{i}\frac{2(j-1)\pi}{3}} \sum_{j'} \symup{e}^{-i{\vec{k}}\vec{\delta}_{j'}+\symup{i}\frac{2(j'-1)\pi}{3}} }{z^2-\varepsilon_{\vec{k}}^2} \; .
-\end{align}
+    \end{aligned}
+\end{equation}
 Da zweimal nur zwei Erzeuger $\tilde{d}_m^{\dagger}$ an einen Vernichter $\tilde{c}_l$ und einmal ein Operator $\tilde{d}_m^{\dagger}$ an einen Operator $\tilde{c}_l$ koppeln
 (siehe \eqref{eqn:Hkopnice}), 
 besitzt die Hybridisierungsfunktion
@@ -563,7 +569,7 @@ angegeben werden.
 %%\end{equation*}
 \section{Einfluss der Höhe des Mn}
 In diesem Abschnitt wird der Einfluss der Position des Mn auf die Vorfaktoren der SK-Integrale (SK-Integrale in Tabelle \ref{tab:slaterkosters}, Vorfaktoren in Gl. \eqref{eqn:Vorfaktoren}) beschrieben.
-Dazu sind in Abbildung \ref{fig:Faktoreninz} diese Vorfaktioren in Abhängigkeit von der Höhe des Mn $z$ graphisch dargestellt.
+Dazu sind in Abbildung \ref{fig:Faktoreninz} diese Vorfaktoren in Abhängigkeit von der Höhe des Mn $z$ graphisch dargestellt.
 \begin{figure}
     \centering
     \includegraphics[width = \textwidth]{Plots/Faktoreninz.pdf}
